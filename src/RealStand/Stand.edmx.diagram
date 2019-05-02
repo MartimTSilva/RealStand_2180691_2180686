@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a97d476df0f6453a8f888bf2c7b3394a" Name="Diagram1" >
+        <EntityTypeShape EntityType="Stand.Cliente" Width="1.5" PointX="1.75" PointY="3.875" />
+        <EntityTypeShape EntityType="Stand.Parcela" PointX="4.5" PointY="2.125" Width="1.5" />
+        <EntityTypeShape EntityType="Stand.Venda" PointX="4.5" PointY="4.5" Width="1.5" />
+        <EntityTypeShape EntityType="Stand.Servico" PointX="7.25" PointY="2.125" Width="1.5" />
+        <EntityTypeShape EntityType="Stand.Aluguer" PointX="4.5" PointY="7.125" Width="1.5" />
+        <EntityTypeShape EntityType="Stand.CarroVenda" PointX="7.125" PointY="5" Width="1.5" />
+        <EntityTypeShape EntityType="Stand.Carro" Width="1.5" PointX="10.25" PointY="4.125" />
+        <EntityTypeShape EntityType="Stand.CarroAluguer" Width="1.5" PointX="10.25" PointY="6.625" />
+        <EntityTypeShape EntityType="Stand.CarroOficina" Width="1.5" PointX="10.25" PointY="1.625" />
+        <InheritanceConnector EntityType="Stand.CarroVenda" />
+        <InheritanceConnector EntityType="Stand.CarroOficina" />
+        <InheritanceConnector EntityType="Stand.CarroAluguer" />
+        <AssociationConnector Association="Stand.ClienteCarroOficina" />
+        <AssociationConnector Association="Stand.ParcelaServico" />
+        <AssociationConnector Association="Stand.ClienteVenda" />
+        <AssociationConnector Association="Stand.VendaCarroVenda" />
+        <AssociationConnector Association="Stand.ClienteAluguer" />
+        <AssociationConnector Association="Stand.AluguerCarroAluguer" />
+        <AssociationConnector Association="Stand.ServicoCarroOficina" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
