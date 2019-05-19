@@ -12,6 +12,7 @@ namespace RealStand
 {
     public partial class window : Form
     {
+        private StandContainer RealStand;
         public window()
         {
             InitializeComponent();
@@ -49,6 +50,16 @@ namespace RealStand
             _stringFlags.Alignment = StringAlignment.Center;
             _stringFlags.LineAlignment = StringAlignment.Center;
             g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
+        }
+
+        private void window_Load(object sender, EventArgs e)
+        {
+            RealStand = new StandContainer();
+            LerDados();
+        }
+        private void LerDados()
+        {
+            listBoxClientesOficina.DataSource = RealStand.Clientes.ToList<Cliente>();
         }
     }
 }
