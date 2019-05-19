@@ -15,7 +15,7 @@ namespace RealStand
     public partial class Parcela
     {
         public int Id { get; set; }
-        public string Valor { get; set; }
+        public decimal Valor { get; set; }
         public string Descricao { get; set; }
         public int ServicoId { get; set; }
     

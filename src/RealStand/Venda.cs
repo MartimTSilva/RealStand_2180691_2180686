@@ -15,9 +15,9 @@ namespace RealStand
     public partial class Venda
     {
         public int Id { get; set; }
-        public string Valor { get; set; }
+        public decimal Valor { get; set; }
         public string Estado { get; set; }
-        public string Data { get; set; }
+        public System.DateTime Data { get; set; }
         public int ClienteId { get; set; }
     
         public virtual Cliente Cliente { get; set; }
