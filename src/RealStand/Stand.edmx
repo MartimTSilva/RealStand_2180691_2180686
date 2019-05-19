@@ -62,16 +62,16 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="NIF" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NIF" Type="smallint" Nullable="false" />
     <Property Name="Morada" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Contacto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Contacto" Type="smallint" Nullable="false" />
   </EntityType>
   <EntityType Name="Parcelas">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Valor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Nullable="false" />
     <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ServicoId" Type="int" Nullable="false" />
   </EntityType>
@@ -80,9 +80,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Valor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Nullable="false" />
     <Property Name="Estado" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Data" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
     <Property Name="ClienteId" Type="int" Nullable="false" />
     <Property Name="CarroVenda_Id" Type="int" Nullable="false" />
   </EntityType>
@@ -91,10 +91,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DataEntrega" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DataEntrega" Type="datetime" Nullable="false" />
     <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DataSaida" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Property1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DataSaida" Type="datetime" Nullable="false" />
     <Property Name="CarroOficinaId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Aluguers">
@@ -102,10 +101,10 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DataInicio" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DataFim" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Valor" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Kms" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DataInicio" Type="datetime" Nullable="false" />
+    <Property Name="DataFim" Type="datetime" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Nullable="false" />
+    <Property Name="Kms" Type="smallint" Nullable="false" />
     <Property Name="ClienteId" Type="int" Nullable="false" />
     <Property Name="CarroAluguerId" Type="int" Nullable="false" />
   </EntityType>
@@ -114,7 +113,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NumeroChassis" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NumeroChassis" Type="smallint" Nullable="false" />
     <Property Name="Marca" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Modelo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Combustivel" Type="nvarchar(max)" Nullable="false" />
@@ -124,7 +123,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Matricula" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Kms" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kms" Type="smallint" Nullable="false" />
     <Property Name="ClienteId" Type="int" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
   </EntityType>
