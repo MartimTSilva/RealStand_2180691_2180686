@@ -15,7 +15,7 @@ namespace RealStand
     public partial class Carro
     {
         public int Id { get; set; }
-        public short NumeroChassis { get; set; }
+        public int NumeroChassis { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Combustivel { get; set; }
