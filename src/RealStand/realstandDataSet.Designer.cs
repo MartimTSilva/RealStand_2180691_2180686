@@ -4782,7 +4782,7 @@ SELECT Id, DataInicio, DataFim, Valor, Kms, ClienteId, CarroAluguerId FROM Alugu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.realstandConnectionString;
+            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.RealStandConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5110,7 +5110,7 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.realstandConnectionString;
+            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.RealStandConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5446,7 +5446,7 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.realstandConnectionString;
+            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.RealStandConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5774,7 +5774,7 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.realstandConnectionString;
+            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.RealStandConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6086,7 +6086,7 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.realstandConnectionString;
+            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.RealStandConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6404,7 +6404,7 @@ SELECT Id, Nome, NIF, Morada, Contacto FROM Clientes WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.realstandConnectionString;
+            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.RealStandConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6738,7 +6738,7 @@ SELECT Id, Valor, Descricao, ServicoId FROM Parcelas WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.realstandConnectionString;
+            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.RealStandConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7067,7 +7067,7 @@ SELECT Id, DataEntrega, Tipo, DataSaida, CarroOficinaId FROM Servicos WHERE (Id 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.realstandConnectionString;
+            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.RealStandConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7405,7 +7405,7 @@ SELECT Id, Valor, Estado, Data, ClienteId, CarroVenda_Id FROM Vendas WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.realstandConnectionString;
+            this._connection.ConnectionString = global::RealStand.Properties.Settings.Default.RealStandConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

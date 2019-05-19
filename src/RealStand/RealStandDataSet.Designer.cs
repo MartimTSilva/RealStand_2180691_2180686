@@ -20,9 +20,9 @@ namespace RealStand {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("RealStandDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("realstandDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class RealStandDataSet : global::System.Data.DataSet {
+    public partial class realstandDataSet : global::System.Data.DataSet {
         
         private AluguersDataTable tableAluguers;
         
@@ -66,7 +66,7 @@ namespace RealStand {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public RealStandDataSet() {
+        public realstandDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -77,7 +77,7 @@ namespace RealStand {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected RealStandDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected realstandDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -267,7 +267,7 @@ namespace RealStand {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            RealStandDataSet cln = ((RealStandDataSet)(base.Clone()));
+            realstandDataSet cln = ((realstandDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -421,9 +421,9 @@ namespace RealStand {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "RealStandDataSet";
+            this.DataSetName = "realstandDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/RealStandDataSet.xsd";
+            this.Namespace = "http://tempuri.org/realstandDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableAluguers = new AluguersDataTable();
@@ -551,7 +551,7 @@ namespace RealStand {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            RealStandDataSet ds = new RealStandDataSet();
+            realstandDataSet ds = new realstandDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -769,7 +769,7 @@ namespace RealStand {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AluguersRow AddAluguersRow(System.DateTime DataInicio, System.DateTime DataFim, decimal Valor, int Kms, ClientesRow parentClientesRowByFK_ClienteAluguer, Carros_CarroAluguerRow parentCarros_CarroAluguerRowByFK_AluguerCarroAluguer) {
+            public AluguersRow AddAluguersRow(System.DateTime DataInicio, System.DateTime DataFim, decimal Valor, short Kms, ClientesRow parentClientesRowByFK_ClienteAluguer, Carros_CarroAluguerRow parentCarros_CarroAluguerRowByFK_AluguerCarroAluguer) {
                 AluguersRow rowAluguersRow = ((AluguersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -834,7 +834,7 @@ namespace RealStand {
                 base.Columns.Add(this.columnDataFim);
                 this.columnValor = new global::System.Data.DataColumn("Valor", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValor);
-                this.columnKms = new global::System.Data.DataColumn("Kms", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnKms = new global::System.Data.DataColumn("Kms", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKms);
                 this.columnClienteId = new global::System.Data.DataColumn("ClienteId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnClienteId);
@@ -921,7 +921,7 @@ namespace RealStand {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RealStandDataSet ds = new RealStandDataSet();
+                realstandDataSet ds = new realstandDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1107,7 +1107,7 @@ namespace RealStand {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CarrosRow AddCarrosRow(int NumeroChassis, string Marca, string Modelo, string Combustivel) {
+            public CarrosRow AddCarrosRow(short NumeroChassis, string Marca, string Modelo, string Combustivel) {
                 CarrosRow rowCarrosRow = ((CarrosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1156,7 +1156,7 @@ namespace RealStand {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnNumeroChassis = new global::System.Data.DataColumn("NumeroChassis", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnNumeroChassis = new global::System.Data.DataColumn("NumeroChassis", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNumeroChassis);
                 this.columnMarca = new global::System.Data.DataColumn("Marca", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMarca);
@@ -1246,7 +1246,7 @@ namespace RealStand {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RealStandDataSet ds = new RealStandDataSet();
+                realstandDataSet ds = new realstandDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1539,7 +1539,7 @@ namespace RealStand {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RealStandDataSet ds = new RealStandDataSet();
+                realstandDataSet ds = new realstandDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1715,7 +1715,7 @@ namespace RealStand {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Carros_CarroOficinaRow AddCarros_CarroOficinaRow(string Matricula, int Kms, ClientesRow parentClientesRowByFK_ClienteCarroOficina, CarrosRow parentCarrosRowByFK_CarroOficina_inherits_Carro) {
+            public Carros_CarroOficinaRow AddCarros_CarroOficinaRow(string Matricula, short Kms, ClientesRow parentClientesRowByFK_ClienteCarroOficina, CarrosRow parentCarrosRowByFK_CarroOficina_inherits_Carro) {
                 Carros_CarroOficinaRow rowCarros_CarroOficinaRow = ((Carros_CarroOficinaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Matricula,
@@ -1768,7 +1768,7 @@ namespace RealStand {
             private void InitClass() {
                 this.columnMatricula = new global::System.Data.DataColumn("Matricula", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMatricula);
-                this.columnKms = new global::System.Data.DataColumn("Kms", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnKms = new global::System.Data.DataColumn("Kms", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKms);
                 this.columnClienteId = new global::System.Data.DataColumn("ClienteId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnClienteId);
@@ -1849,7 +1849,7 @@ namespace RealStand {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RealStandDataSet ds = new RealStandDataSet();
+                realstandDataSet ds = new realstandDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2126,7 +2126,7 @@ namespace RealStand {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RealStandDataSet ds = new RealStandDataSet();
+                realstandDataSet ds = new realstandDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2312,7 +2312,7 @@ namespace RealStand {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ClientesRow AddClientesRow(string Nome, int NIF, string Morada, string Contacto) {
+            public ClientesRow AddClientesRow(string Nome, short NIF, string Morada, short Contacto) {
                 ClientesRow rowClientesRow = ((ClientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2363,11 +2363,11 @@ namespace RealStand {
                 base.Columns.Add(this.columnId);
                 this.columnNome = new global::System.Data.DataColumn("Nome", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNome);
-                this.columnNIF = new global::System.Data.DataColumn("NIF", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnNIF = new global::System.Data.DataColumn("NIF", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNIF);
                 this.columnMorada = new global::System.Data.DataColumn("Morada", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMorada);
-                this.columnContacto = new global::System.Data.DataColumn("Contacto", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnContacto = new global::System.Data.DataColumn("Contacto", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnContacto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
@@ -2383,7 +2383,6 @@ namespace RealStand {
                 this.columnMorada.AllowDBNull = false;
                 this.columnMorada.MaxLength = 2147483647;
                 this.columnContacto.AllowDBNull = false;
-                this.columnContacto.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2451,7 +2450,7 @@ namespace RealStand {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RealStandDataSet ds = new RealStandDataSet();
+                realstandDataSet ds = new realstandDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2762,7 +2761,7 @@ namespace RealStand {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RealStandDataSet ds = new RealStandDataSet();
+                realstandDataSet ds = new realstandDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3088,7 +3087,7 @@ namespace RealStand {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RealStandDataSet ds = new RealStandDataSet();
+                realstandDataSet ds = new realstandDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3432,7 +3431,7 @@ namespace RealStand {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RealStandDataSet ds = new RealStandDataSet();
+                realstandDataSet ds = new realstandDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3551,9 +3550,9 @@ namespace RealStand {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Kms {
+            public short Kms {
                 get {
-                    return ((int)(this[this.tableAluguers.KmsColumn]));
+                    return ((short)(this[this.tableAluguers.KmsColumn]));
                 }
                 set {
                     this[this.tableAluguers.KmsColumn] = value;
@@ -3632,9 +3631,9 @@ namespace RealStand {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int NumeroChassis {
+            public short NumeroChassis {
                 get {
-                    return ((int)(this[this.tableCarros.NumeroChassisColumn]));
+                    return ((short)(this[this.tableCarros.NumeroChassisColumn]));
                 }
                 set {
                     this[this.tableCarros.NumeroChassisColumn] = value;
@@ -3805,9 +3804,9 @@ namespace RealStand {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Kms {
+            public short Kms {
                 get {
-                    return ((int)(this[this.tableCarros_CarroOficina.KmsColumn]));
+                    return ((short)(this[this.tableCarros_CarroOficina.KmsColumn]));
                 }
                 set {
                     this[this.tableCarros_CarroOficina.KmsColumn] = value;
@@ -3967,9 +3966,9 @@ namespace RealStand {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int NIF {
+            public short NIF {
                 get {
-                    return ((int)(this[this.tableClientes.NIFColumn]));
+                    return ((short)(this[this.tableClientes.NIFColumn]));
                 }
                 set {
                     this[this.tableClientes.NIFColumn] = value;
@@ -3989,9 +3988,9 @@ namespace RealStand {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Contacto {
+            public short Contacto {
                 get {
-                    return ((string)(this[this.tableClientes.ContactoColumn]));
+                    return ((short)(this[this.tableClientes.ContactoColumn]));
                 }
                 set {
                     this[this.tableClientes.ContactoColumn] = value;
@@ -4604,7 +4603,7 @@ namespace RealStand {
         }
     }
 }
-namespace RealStand.RealStandDataSetTableAdapters {
+namespace RealStand.realstandDataSetTableAdapters {
     
     
     /// <summary>
@@ -4744,7 +4743,7 @@ namespace RealStand.RealStandDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataInicio", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataInicio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataFim", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataFim", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Valor", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Valor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kms", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kms", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClienteId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CarroAluguerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CarroAluguerId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -4755,7 +4754,7 @@ SELECT Id, DataInicio, DataFim, Valor, Kms, ClienteId, CarroAluguerId FROM Alugu
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataInicio", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataInicio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataFim", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataFim", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valor", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Valor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kms", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kms", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CarroAluguerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CarroAluguerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -4766,14 +4765,14 @@ SELECT Id, DataInicio, DataFim, Valor, Kms, ClienteId, CarroAluguerId FROM Alugu
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataInicio", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataInicio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataFim", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataFim", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valor", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Valor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kms", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kms", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CarroAluguerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CarroAluguerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataInicio", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataInicio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataFim", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataFim", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Valor", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "Valor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kms", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kms", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClienteId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CarroAluguerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CarroAluguerId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4801,7 +4800,7 @@ SELECT Id, DataInicio, DataFim, Valor, Kms, ClienteId, CarroAluguerId FROM Alugu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RealStandDataSet.AluguersDataTable dataTable) {
+        public virtual int Fill(realstandDataSet.AluguersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4814,9 +4813,9 @@ SELECT Id, DataInicio, DataFim, Valor, Kms, ClienteId, CarroAluguerId FROM Alugu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RealStandDataSet.AluguersDataTable GetData() {
+        public virtual realstandDataSet.AluguersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RealStandDataSet.AluguersDataTable dataTable = new RealStandDataSet.AluguersDataTable();
+            realstandDataSet.AluguersDataTable dataTable = new realstandDataSet.AluguersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4824,14 +4823,14 @@ SELECT Id, DataInicio, DataFim, Valor, Kms, ClienteId, CarroAluguerId FROM Alugu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet.AluguersDataTable dataTable) {
+        public virtual int Update(realstandDataSet.AluguersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet dataSet) {
+        public virtual int Update(realstandDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Aluguers");
         }
         
@@ -4854,12 +4853,12 @@ SELECT Id, DataInicio, DataFim, Valor, Kms, ClienteId, CarroAluguerId FROM Alugu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, System.DateTime Original_DataInicio, System.DateTime Original_DataFim, decimal Original_Valor, int Original_Kms, int Original_ClienteId, int Original_CarroAluguerId) {
+        public virtual int Delete(int Original_Id, System.DateTime Original_DataInicio, System.DateTime Original_DataFim, decimal Original_Valor, short Original_Kms, int Original_ClienteId, int Original_CarroAluguerId) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_DataInicio));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_DataFim));
             this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_Valor));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Kms));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((short)(Original_Kms));
             this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_ClienteId));
             this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_CarroAluguerId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
@@ -4882,11 +4881,11 @@ SELECT Id, DataInicio, DataFim, Valor, Kms, ClienteId, CarroAluguerId FROM Alugu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime DataInicio, System.DateTime DataFim, decimal Valor, int Kms, int ClienteId, int CarroAluguerId) {
+        public virtual int Insert(System.DateTime DataInicio, System.DateTime DataFim, decimal Valor, short Kms, int ClienteId, int CarroAluguerId) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(DataInicio));
             this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(DataFim));
             this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(Valor));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Kms));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((short)(Kms));
             this.Adapter.InsertCommand.Parameters[4].Value = ((int)(ClienteId));
             this.Adapter.InsertCommand.Parameters[5].Value = ((int)(CarroAluguerId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
@@ -4909,18 +4908,18 @@ SELECT Id, DataInicio, DataFim, Valor, Kms, ClienteId, CarroAluguerId FROM Alugu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime DataInicio, System.DateTime DataFim, decimal Valor, int Kms, int ClienteId, int CarroAluguerId, int Original_Id, System.DateTime Original_DataInicio, System.DateTime Original_DataFim, decimal Original_Valor, int Original_Kms, int Original_ClienteId, int Original_CarroAluguerId, int Id) {
+        public virtual int Update(System.DateTime DataInicio, System.DateTime DataFim, decimal Valor, short Kms, int ClienteId, int CarroAluguerId, int Original_Id, System.DateTime Original_DataInicio, System.DateTime Original_DataFim, decimal Original_Valor, short Original_Kms, int Original_ClienteId, int Original_CarroAluguerId, int Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(DataInicio));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(DataFim));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(Valor));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Kms));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(Kms));
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ClienteId));
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(CarroAluguerId));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Id));
             this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_DataInicio));
             this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_DataFim));
             this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_Valor));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Kms));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((short)(Original_Kms));
             this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_ClienteId));
             this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_CarroAluguerId));
             this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Id));
@@ -4944,7 +4943,7 @@ SELECT Id, DataInicio, DataFim, Valor, Kms, ClienteId, CarroAluguerId FROM Alugu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime DataInicio, System.DateTime DataFim, decimal Valor, int Kms, int ClienteId, int CarroAluguerId, int Original_Id, System.DateTime Original_DataInicio, System.DateTime Original_DataFim, decimal Original_Valor, int Original_Kms, int Original_ClienteId, int Original_CarroAluguerId) {
+        public virtual int Update(System.DateTime DataInicio, System.DateTime DataFim, decimal Valor, short Kms, int ClienteId, int CarroAluguerId, int Original_Id, System.DateTime Original_DataInicio, System.DateTime Original_DataFim, decimal Original_Valor, short Original_Kms, int Original_ClienteId, int Original_CarroAluguerId) {
             return this.Update(DataInicio, DataFim, Valor, Kms, ClienteId, CarroAluguerId, Original_Id, Original_DataInicio, Original_DataFim, Original_Valor, Original_Kms, Original_ClienteId, Original_CarroAluguerId, Original_Id);
         }
     }
@@ -5082,14 +5081,14 @@ SELECT Id, DataInicio, DataFim, Valor, Kms, ClienteId, CarroAluguerId FROM Alugu
                 "riginal_NumeroChassis))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroChassis", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroChassis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroChassis", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroChassis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Carros] ([NumeroChassis], [Marca], [Modelo], [Combustivel]) VA" +
                 "LUES (@NumeroChassis, @Marca, @Modelo, @Combustivel);\r\nSELECT Id, NumeroChassis," +
                 " Marca, Modelo, Combustivel FROM Carros WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroChassis", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroChassis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroChassis", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroChassis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Modelo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modelo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Combustivel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Combustivel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5098,12 +5097,12 @@ SELECT Id, DataInicio, DataFim, Valor, Kms, ClienteId, CarroAluguerId FROM Alugu
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Carros] SET [NumeroChassis] = @NumeroChassis, [Marca] = @Marca, [Modelo] = @Modelo, [Combustivel] = @Combustivel WHERE (([Id] = @Original_Id) AND ([NumeroChassis] = @Original_NumeroChassis));
 SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroChassis", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroChassis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroChassis", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroChassis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Modelo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modelo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Combustivel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Combustivel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroChassis", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroChassis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroChassis", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroChassis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -5128,7 +5127,7 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RealStandDataSet.CarrosDataTable dataTable) {
+        public virtual int Fill(realstandDataSet.CarrosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5141,9 +5140,9 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RealStandDataSet.CarrosDataTable GetData() {
+        public virtual realstandDataSet.CarrosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RealStandDataSet.CarrosDataTable dataTable = new RealStandDataSet.CarrosDataTable();
+            realstandDataSet.CarrosDataTable dataTable = new realstandDataSet.CarrosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5151,14 +5150,14 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet.CarrosDataTable dataTable) {
+        public virtual int Update(realstandDataSet.CarrosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet dataSet) {
+        public virtual int Update(realstandDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Carros");
         }
         
@@ -5181,9 +5180,9 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, int Original_NumeroChassis) {
+        public virtual int Delete(int Original_Id, short Original_NumeroChassis) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_NumeroChassis));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((short)(Original_NumeroChassis));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5204,8 +5203,8 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int NumeroChassis, string Marca, string Modelo, string Combustivel) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(NumeroChassis));
+        public virtual int Insert(short NumeroChassis, string Marca, string Modelo, string Combustivel) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((short)(NumeroChassis));
             if ((Marca == null)) {
                 throw new global::System.ArgumentNullException("Marca");
             }
@@ -5244,8 +5243,8 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int NumeroChassis, string Marca, string Modelo, string Combustivel, int Original_Id, int Original_NumeroChassis, int Id) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(NumeroChassis));
+        public virtual int Update(short NumeroChassis, string Marca, string Modelo, string Combustivel, int Original_Id, short Original_NumeroChassis, int Id) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(NumeroChassis));
             if ((Marca == null)) {
                 throw new global::System.ArgumentNullException("Marca");
             }
@@ -5265,7 +5264,7 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Combustivel));
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_NumeroChassis));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((short)(Original_NumeroChassis));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5287,7 +5286,7 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int NumeroChassis, string Marca, string Modelo, string Combustivel, int Original_Id, int Original_NumeroChassis) {
+        public virtual int Update(short NumeroChassis, string Marca, string Modelo, string Combustivel, int Original_Id, short Original_NumeroChassis) {
             return this.Update(NumeroChassis, Marca, Modelo, Combustivel, Original_Id, Original_NumeroChassis, Original_Id);
         }
     }
@@ -5464,7 +5463,7 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RealStandDataSet.Carros_CarroAluguerDataTable dataTable) {
+        public virtual int Fill(realstandDataSet.Carros_CarroAluguerDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5477,9 +5476,9 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RealStandDataSet.Carros_CarroAluguerDataTable GetData() {
+        public virtual realstandDataSet.Carros_CarroAluguerDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RealStandDataSet.Carros_CarroAluguerDataTable dataTable = new RealStandDataSet.Carros_CarroAluguerDataTable();
+            realstandDataSet.Carros_CarroAluguerDataTable dataTable = new realstandDataSet.Carros_CarroAluguerDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5487,14 +5486,14 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet.Carros_CarroAluguerDataTable dataTable) {
+        public virtual int Update(realstandDataSet.Carros_CarroAluguerDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet dataSet) {
+        public virtual int Update(realstandDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Carros_CarroAluguer");
         }
         
@@ -5744,7 +5743,7 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Carros_CarroOficina] WHERE (([Kms] = @Original_Kms) AND ([Clie" +
                 "nteId] = @Original_ClienteId) AND ([Id] = @Original_Id))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kms", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kms", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClienteId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -5754,7 +5753,7 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
                 " FROM Carros_CarroOficina WHERE (Id = @Id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Matricula", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Matricula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kms", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kms", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -5763,10 +5762,10 @@ SELECT Id, NumeroChassis, Marca, Modelo, Combustivel FROM Carros WHERE (Id = @Id
 SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Matricula", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Matricula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kms", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kms", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kms", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kms", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kms", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClienteId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -5792,7 +5791,7 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RealStandDataSet.Carros_CarroOficinaDataTable dataTable) {
+        public virtual int Fill(realstandDataSet.Carros_CarroOficinaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5805,9 +5804,9 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RealStandDataSet.Carros_CarroOficinaDataTable GetData() {
+        public virtual realstandDataSet.Carros_CarroOficinaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RealStandDataSet.Carros_CarroOficinaDataTable dataTable = new RealStandDataSet.Carros_CarroOficinaDataTable();
+            realstandDataSet.Carros_CarroOficinaDataTable dataTable = new realstandDataSet.Carros_CarroOficinaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5815,14 +5814,14 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet.Carros_CarroOficinaDataTable dataTable) {
+        public virtual int Update(realstandDataSet.Carros_CarroOficinaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet dataSet) {
+        public virtual int Update(realstandDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Carros_CarroOficina");
         }
         
@@ -5845,8 +5844,8 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Kms, int Original_ClienteId, int Original_Id) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Kms));
+        public virtual int Delete(short Original_Kms, int Original_ClienteId, int Original_Id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_Kms));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ClienteId));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
@@ -5869,14 +5868,14 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Matricula, int Kms, int ClienteId, int Id) {
+        public virtual int Insert(string Matricula, short Kms, int ClienteId, int Id) {
             if ((Matricula == null)) {
                 throw new global::System.ArgumentNullException("Matricula");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Matricula));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Kms));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((short)(Kms));
             this.Adapter.InsertCommand.Parameters[2].Value = ((int)(ClienteId));
             this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
@@ -5899,17 +5898,17 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Matricula, int Kms, int ClienteId, int Id, int Original_Kms, int Original_ClienteId, int Original_Id) {
+        public virtual int Update(string Matricula, short Kms, int ClienteId, int Id, short Original_Kms, int Original_ClienteId, int Original_Id) {
             if ((Matricula == null)) {
                 throw new global::System.ArgumentNullException("Matricula");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Matricula));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Kms));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((short)(Kms));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(ClienteId));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Id));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Kms));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((short)(Original_Kms));
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ClienteId));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
@@ -5932,7 +5931,7 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Matricula, int Kms, int ClienteId, int Original_Kms, int Original_ClienteId, int Original_Id) {
+        public virtual int Update(string Matricula, short Kms, int ClienteId, short Original_Kms, int Original_ClienteId, int Original_Id) {
             return this.Update(Matricula, Kms, ClienteId, Original_Id, Original_Kms, Original_ClienteId, Original_Id);
         }
     }
@@ -6104,7 +6103,7 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RealStandDataSet.Carros_CarroVendaDataTable dataTable) {
+        public virtual int Fill(realstandDataSet.Carros_CarroVendaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6117,9 +6116,9 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RealStandDataSet.Carros_CarroVendaDataTable GetData() {
+        public virtual realstandDataSet.Carros_CarroVendaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RealStandDataSet.Carros_CarroVendaDataTable dataTable = new RealStandDataSet.Carros_CarroVendaDataTable();
+            realstandDataSet.Carros_CarroVendaDataTable dataTable = new realstandDataSet.Carros_CarroVendaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6127,14 +6126,14 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet.Carros_CarroVendaDataTable dataTable) {
+        public virtual int Update(realstandDataSet.Carros_CarroVendaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet dataSet) {
+        public virtual int Update(realstandDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Carros_CarroVenda");
         }
         
@@ -6371,10 +6370,11 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Clientes] WHERE (([Id] = @Original_Id) AND ([NIF] = @Original_" +
-                "NIF))";
+                "NIF) AND ([Contacto] = @Original_Contacto))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NIF", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NIF", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NIF", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NIF", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contacto", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contacto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Clientes] ([Nome], [NIF], [Morada], [Contacto]) VALUES (@Nome," +
@@ -6382,21 +6382,21 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
                 "s WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NIF", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NIF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NIF", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NIF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Morada", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Morada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contacto", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contacto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contacto", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contacto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Clientes] SET [Nome] = @Nome, [NIF] = @NIF, [Morada] = @Morada, [Co" +
-                "ntacto] = @Contacto WHERE (([Id] = @Original_Id) AND ([NIF] = @Original_NIF));\r\n" +
-                "SELECT Id, Nome, NIF, Morada, Contacto FROM Clientes WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Clientes] SET [Nome] = @Nome, [NIF] = @NIF, [Morada] = @Morada, [Contacto] = @Contacto WHERE (([Id] = @Original_Id) AND ([NIF] = @Original_NIF) AND ([Contacto] = @Original_Contacto));
+SELECT Id, Nome, NIF, Morada, Contacto FROM Clientes WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NIF", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NIF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NIF", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NIF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Morada", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Morada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contacto", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contacto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contacto", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contacto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NIF", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NIF", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NIF", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NIF", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contacto", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contacto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -6421,7 +6421,7 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RealStandDataSet.ClientesDataTable dataTable) {
+        public virtual int Fill(realstandDataSet.ClientesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6434,9 +6434,9 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RealStandDataSet.ClientesDataTable GetData() {
+        public virtual realstandDataSet.ClientesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RealStandDataSet.ClientesDataTable dataTable = new RealStandDataSet.ClientesDataTable();
+            realstandDataSet.ClientesDataTable dataTable = new realstandDataSet.ClientesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6444,14 +6444,14 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet.ClientesDataTable dataTable) {
+        public virtual int Update(realstandDataSet.ClientesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet dataSet) {
+        public virtual int Update(realstandDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Clientes");
         }
         
@@ -6474,9 +6474,10 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, int Original_NIF) {
+        public virtual int Delete(int Original_Id, short Original_NIF, short Original_Contacto) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_NIF));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((short)(Original_NIF));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((short)(Original_Contacto));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6497,26 +6498,21 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nome, int NIF, string Morada, string Contacto) {
+        public virtual int Insert(string Nome, short NIF, string Morada, short Contacto) {
             if ((Nome == null)) {
                 throw new global::System.ArgumentNullException("Nome");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nome));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(NIF));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((short)(NIF));
             if ((Morada == null)) {
                 throw new global::System.ArgumentNullException("Morada");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Morada));
             }
-            if ((Contacto == null)) {
-                throw new global::System.ArgumentNullException("Contacto");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Contacto));
-            }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((short)(Contacto));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6537,29 +6533,25 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nome, int NIF, string Morada, string Contacto, int Original_Id, int Original_NIF, int Id) {
+        public virtual int Update(string Nome, short NIF, string Morada, short Contacto, int Original_Id, short Original_NIF, short Original_Contacto, int Id) {
             if ((Nome == null)) {
                 throw new global::System.ArgumentNullException("Nome");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nome));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(NIF));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((short)(NIF));
             if ((Morada == null)) {
                 throw new global::System.ArgumentNullException("Morada");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Morada));
             }
-            if ((Contacto == null)) {
-                throw new global::System.ArgumentNullException("Contacto");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Contacto));
-            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(Contacto));
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_NIF));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((short)(Original_NIF));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Original_Contacto));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6580,8 +6572,8 @@ SELECT Matricula, Kms, ClienteId, Id FROM Carros_CarroOficina WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nome, int NIF, string Morada, string Contacto, int Original_Id, int Original_NIF) {
-            return this.Update(Nome, NIF, Morada, Contacto, Original_Id, Original_NIF, Original_Id);
+        public virtual int Update(string Nome, short NIF, string Morada, short Contacto, int Original_Id, short Original_NIF, short Original_Contacto) {
+            return this.Update(Nome, NIF, Morada, Contacto, Original_Id, Original_NIF, Original_Contacto, Original_Id);
         }
     }
     
@@ -6763,7 +6755,7 @@ SELECT Id, Valor, Descricao, ServicoId FROM Parcelas WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RealStandDataSet.ParcelasDataTable dataTable) {
+        public virtual int Fill(realstandDataSet.ParcelasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6776,9 +6768,9 @@ SELECT Id, Valor, Descricao, ServicoId FROM Parcelas WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RealStandDataSet.ParcelasDataTable GetData() {
+        public virtual realstandDataSet.ParcelasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RealStandDataSet.ParcelasDataTable dataTable = new RealStandDataSet.ParcelasDataTable();
+            realstandDataSet.ParcelasDataTable dataTable = new realstandDataSet.ParcelasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6786,14 +6778,14 @@ SELECT Id, Valor, Descricao, ServicoId FROM Parcelas WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet.ParcelasDataTable dataTable) {
+        public virtual int Update(realstandDataSet.ParcelasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet dataSet) {
+        public virtual int Update(realstandDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Parcelas");
         }
         
@@ -7092,7 +7084,7 @@ SELECT Id, DataEntrega, Tipo, DataSaida, CarroOficinaId FROM Servicos WHERE (Id 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RealStandDataSet.ServicosDataTable dataTable) {
+        public virtual int Fill(realstandDataSet.ServicosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7105,9 +7097,9 @@ SELECT Id, DataEntrega, Tipo, DataSaida, CarroOficinaId FROM Servicos WHERE (Id 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RealStandDataSet.ServicosDataTable GetData() {
+        public virtual realstandDataSet.ServicosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RealStandDataSet.ServicosDataTable dataTable = new RealStandDataSet.ServicosDataTable();
+            realstandDataSet.ServicosDataTable dataTable = new realstandDataSet.ServicosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7115,14 +7107,14 @@ SELECT Id, DataEntrega, Tipo, DataSaida, CarroOficinaId FROM Servicos WHERE (Id 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet.ServicosDataTable dataTable) {
+        public virtual int Update(realstandDataSet.ServicosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet dataSet) {
+        public virtual int Update(realstandDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Servicos");
         }
         
@@ -7430,7 +7422,7 @@ SELECT Id, Valor, Estado, Data, ClienteId, CarroVenda_Id FROM Vendas WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RealStandDataSet.VendasDataTable dataTable) {
+        public virtual int Fill(realstandDataSet.VendasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7443,9 +7435,9 @@ SELECT Id, Valor, Estado, Data, ClienteId, CarroVenda_Id FROM Vendas WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RealStandDataSet.VendasDataTable GetData() {
+        public virtual realstandDataSet.VendasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RealStandDataSet.VendasDataTable dataTable = new RealStandDataSet.VendasDataTable();
+            realstandDataSet.VendasDataTable dataTable = new realstandDataSet.VendasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7453,14 +7445,14 @@ SELECT Id, Valor, Estado, Data, ClienteId, CarroVenda_Id FROM Vendas WHERE (Id =
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet.VendasDataTable dataTable) {
+        public virtual int Update(realstandDataSet.VendasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RealStandDataSet dataSet) {
+        public virtual int Update(realstandDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Vendas");
         }
         
@@ -7857,7 +7849,7 @@ SELECT Id, Valor, Estado, Data, ClienteId, CarroVenda_Id FROM Vendas WHERE (Id =
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(RealStandDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(realstandDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._carrosTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Carros.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -7948,7 +7940,7 @@ SELECT Id, Valor, Estado, Data, ClienteId, CarroVenda_Id FROM Vendas WHERE (Id =
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(RealStandDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(realstandDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._carrosTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Carros.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -8030,7 +8022,7 @@ SELECT Id, Valor, Estado, Data, ClienteId, CarroVenda_Id FROM Vendas WHERE (Id =
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(RealStandDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(realstandDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._vendasTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Vendas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -8136,7 +8128,7 @@ SELECT Id, Valor, Estado, Data, ClienteId, CarroVenda_Id FROM Vendas WHERE (Id =
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(RealStandDataSet dataSet) {
+        public virtual int UpdateAll(realstandDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
