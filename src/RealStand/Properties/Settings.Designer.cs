@@ -26,11 +26,11 @@ namespace RealStand.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=realstand;Integrated Security=" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=RealStand;Integrated Security=" +
             "True")]
-        public string realstandConnectionString {
+        public string RealStandConnectionString {
             get {
-                return ((string)(this["realstandConnectionString"]));
+                return ((string)(this["RealStandConnectionString"]));
             }
         }
     }

@@ -64,24 +64,20 @@
     <Compile Include="CarroAluguer.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
-    <Compile Include="CarroOficina.created.cs" />
     <Compile Include="CarroOficina.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
     <Compile Include="CarroVenda.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
-    <Compile Include="Cliente.created.cs" />
     <Compile Include="Cliente.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
-    <Compile Include="Parcela.created.cs" />
-    <Compile Include="realstandDataSet.Designer.cs">
+    <Compile Include="RealStandDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>realstandDataSet.xsd</DependentUpon>
+      <DependentUpon>RealStandDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Servico.created.cs" />
     <Compile Include="window.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,16 +136,16 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Stand.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="realstandDataSet.xsc">
-      <DependentUpon>realstandDataSet.xsd</DependentUpon>
+    <None Include="RealStandDataSet.xsc">
+      <DependentUpon>RealStandDataSet.xsd</DependentUpon>
     </None>
-    <None Include="realstandDataSet.xsd">
+    <None Include="RealStandDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>realstandDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>RealStandDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="realstandDataSet.xss">
-      <DependentUpon>realstandDataSet.xsd</DependentUpon>
+    <None Include="RealStandDataSet.xss">
+      <DependentUpon>RealStandDataSet.xsd</DependentUpon>
     </None>
     <None Include="Stand.edmx.diagram">
       <DependentUpon>Stand.edmx</DependentUpon>
