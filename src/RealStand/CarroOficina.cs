@@ -21,7 +21,7 @@ namespace RealStand
         }
     
         public string Matricula { get; set; }
-        public short Kms { get; set; }
+        public int Kms { get; set; }
         public int ClienteId { get; set; }
     
         public virtual Cliente Cliente { get; set; }

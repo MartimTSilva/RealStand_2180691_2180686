@@ -18,7 +18,7 @@ namespace RealStand
         public System.DateTime DataInicio { get; set; }
         public System.DateTime DataFim { get; set; }
         public decimal Valor { get; set; }
-        public short Kms { get; set; }
+        public int Kms { get; set; }
         public int ClienteId { get; set; }
         public int CarroAluguerId { get; set; }
     

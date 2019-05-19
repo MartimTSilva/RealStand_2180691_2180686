@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/19/2019 14:12:48
+-- Date Created: 05/19/2019 14:50:21
 -- Generated from EDMX file: C:\Users\Micael\Documents\GitHub\RealStand_2180691_2180686\src\RealStand\Stand.edmx
 -- --------------------------------------------------
 
@@ -88,9 +88,9 @@ GO
 CREATE TABLE [dbo].[Clientes] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(max)  NOT NULL,
-    [NIF] smallint  NOT NULL,
+    [NIF] int  NOT NULL,
     [Morada] nvarchar(max)  NOT NULL,
-    [Contacto] smallint  NOT NULL
+    [Contacto] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -130,7 +130,7 @@ CREATE TABLE [dbo].[Aluguers] (
     [DataInicio] datetime  NOT NULL,
     [DataFim] datetime  NOT NULL,
     [Valor] decimal(18,0)  NOT NULL,
-    [Kms] smallint  NOT NULL,
+    [Kms] int  NOT NULL,
     [ClienteId] int  NOT NULL,
     [CarroAluguerId] int  NOT NULL
 );
@@ -139,7 +139,7 @@ GO
 -- Creating table 'Carros'
 CREATE TABLE [dbo].[Carros] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [NumeroChassis] smallint  NOT NULL,
+    [NumeroChassis] int  NOT NULL,
     [Marca] nvarchar(max)  NOT NULL,
     [Modelo] nvarchar(max)  NOT NULL,
     [Combustivel] nvarchar(max)  NOT NULL
@@ -149,7 +149,7 @@ GO
 -- Creating table 'Carros_CarroOficina'
 CREATE TABLE [dbo].[Carros_CarroOficina] (
     [Matricula] nvarchar(max)  NOT NULL,
-    [Kms] smallint  NOT NULL,
+    [Kms] int  NOT NULL,
     [ClienteId] int  NOT NULL,
     [Id] int  NOT NULL
 );
