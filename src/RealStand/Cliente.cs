@@ -24,9 +24,9 @@ namespace RealStand
     
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string NIF { get; set; }
+        public short NIF { get; set; }
         public string Morada { get; set; }
-        public string Contacto { get; set; }
+        public short Contacto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CarroOficina> CarroOficina { get; set; }

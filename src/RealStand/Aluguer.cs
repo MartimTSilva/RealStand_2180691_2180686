@@ -15,10 +15,10 @@ namespace RealStand
     public partial class Aluguer
     {
         public int Id { get; set; }
-        public string DataInicio { get; set; }
-        public string DataFim { get; set; }
-        public string Valor { get; set; }
-        public string Kms { get; set; }
+        public System.DateTime DataInicio { get; set; }
+        public System.DateTime DataFim { get; set; }
+        public decimal Valor { get; set; }
+        public short Kms { get; set; }
         public int ClienteId { get; set; }
         public int CarroAluguerId { get; set; }
     

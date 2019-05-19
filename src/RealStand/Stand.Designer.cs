@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Micael Rodrigues\Documents\Github\RealStand_2180691_2180686\src\RealStand\Stand.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Micael\Documents\GitHub\RealStand_2180691_2180686\src\RealStand\Stand.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
