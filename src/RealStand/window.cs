@@ -54,12 +54,7 @@ namespace RealStand
 
         private void window_Load(object sender, EventArgs e)
         {
-            RealStand = new StandContainer();
-            LerDados();
-        }
-        private void LerDados()
-        {
-            listBoxClientesOficina.DataSource = RealStand.Clientes.ToList<Cliente>();
+
         }
     }
 }

@@ -37,6 +37,8 @@
             this.groupBoxParcelasOficina = new System.Windows.Forms.GroupBox();
             this.buttonRemoverParcelaOficina = new System.Windows.Forms.Button();
             this.groupBoxCriarParcelaOficina = new System.Windows.Forms.GroupBox();
+            this.labelValorOficina = new System.Windows.Forms.Label();
+            this.labelDescricaoOficina = new System.Windows.Forms.Label();
             this.buttonAdicionarParcelaOficina = new System.Windows.Forms.Button();
             this.maskedTextBoxValorParcelaOficina = new System.Windows.Forms.MaskedTextBox();
             this.textBoxDescricaoParcelaOficina = new System.Windows.Forms.TextBox();
@@ -44,23 +46,41 @@
             this.groupBoxServicosOficina = new System.Windows.Forms.GroupBox();
             this.buttonRemoverServicoOficina = new System.Windows.Forms.Button();
             this.groupBoxCriarServicoOficina = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerDataSaidaOficina = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDataEntregaOficina = new System.Windows.Forms.DateTimePicker();
+            this.labelDataSaidaOficina = new System.Windows.Forms.Label();
+            this.labelTipoServicoOficina = new System.Windows.Forms.Label();
+            this.labelDataEntregaOficina = new System.Windows.Forms.Label();
             this.buttonAdicionarServicoOficina = new System.Windows.Forms.Button();
             this.comboBoxTipoServicosOficina = new System.Windows.Forms.ComboBox();
             this.listBoxServicosOficina = new System.Windows.Forms.ListBox();
             this.groupBoxCarrosOficina = new System.Windows.Forms.GroupBox();
-            this.buttonRemoverCarroOficina = new System.Windows.Forms.Button();
+            this.groupBoxCriarCarroOficina = new System.Windows.Forms.GroupBox();
+            this.textBoxModeloOficina = new System.Windows.Forms.TextBox();
+            this.textBoxMarcaOficina = new System.Windows.Forms.TextBox();
+            this.textBoxChassiOficina = new System.Windows.Forms.TextBox();
+            this.comboBoxCombustivelOficina = new System.Windows.Forms.ComboBox();
+            this.labelCombustivelOficina = new System.Windows.Forms.Label();
+            this.labelModeloOficina = new System.Windows.Forms.Label();
+            this.labelMarcaOficina = new System.Windows.Forms.Label();
+            this.labelNChassisOficina = new System.Windows.Forms.Label();
+            this.textBoxKMsOficina = new System.Windows.Forms.TextBox();
+            this.labelQuilometragemOficina = new System.Windows.Forms.Label();
+            this.maskedTextBoxMatriculaOficina = new System.Windows.Forms.MaskedTextBox();
+            this.labelMatriculaOficina = new System.Windows.Forms.Label();
             this.buttonAdicionarCarroOficina = new System.Windows.Forms.Button();
+            this.buttonRemoverCarroOficina = new System.Windows.Forms.Button();
             this.listBoxCarrosOficina = new System.Windows.Forms.ListBox();
             this.groupBoxFichaClienteOficina = new System.Windows.Forms.GroupBox();
             this.labelTotalClienteOficina = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelTotalGastoOficina = new System.Windows.Forms.Label();
             this.labelNifClienteSelecionadoOficina = new System.Windows.Forms.Label();
             this.labelClienteSelecionadoOficina = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelNifOficina = new System.Windows.Forms.Label();
+            this.labelNomeOficina = new System.Windows.Forms.Label();
             this.groupBoxClientesOficina = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelProcurarPorOficina = new System.Windows.Forms.Label();
+            this.labelTextoOficina = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listBoxClientesOficina = new System.Windows.Forms.ListBox();
@@ -69,26 +89,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabPageAluguer = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBoxMatriculaOficina = new System.Windows.Forms.MaskedTextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBoxKMsOficina = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboBoxCombustivelOficina = new System.Windows.Forms.ComboBox();
-            this.textBoxChassiOficina = new System.Windows.Forms.TextBox();
-            this.textBoxMarcaOficina = new System.Windows.Forms.TextBox();
-            this.textBoxModeloOficina = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.dateTimePickerDataEntregaOficina = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerDataSaidaOficina = new System.Windows.Forms.DateTimePicker();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPageInicio.SuspendLayout();
             this.tabPageClientes.SuspendLayout();
@@ -98,11 +98,11 @@
             this.groupBoxServicosOficina.SuspendLayout();
             this.groupBoxCriarServicoOficina.SuspendLayout();
             this.groupBoxCarrosOficina.SuspendLayout();
+            this.groupBoxCriarCarroOficina.SuspendLayout();
             this.groupBoxFichaClienteOficina.SuspendLayout();
             this.groupBoxClientesOficina.SuspendLayout();
             this.tabPageVendas.SuspendLayout();
             this.tabPageAluguer.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -139,7 +139,7 @@
             this.tabPageInicio.Location = new System.Drawing.Point(166, 4);
             this.tabPageInicio.Margin = new System.Windows.Forms.Padding(0);
             this.tabPageInicio.Name = "tabPageInicio";
-            this.tabPageInicio.Size = new System.Drawing.Size(912, 475);
+            this.tabPageInicio.Size = new System.Drawing.Size(912, 578);
             this.tabPageInicio.TabIndex = 0;
             this.tabPageInicio.Text = "Início";
             // 
@@ -159,7 +159,7 @@
             this.tabPageClientes.Location = new System.Drawing.Point(166, 4);
             this.tabPageClientes.Name = "tabPageClientes";
             this.tabPageClientes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageClientes.Size = new System.Drawing.Size(912, 475);
+            this.tabPageClientes.Size = new System.Drawing.Size(912, 578);
             this.tabPageClientes.TabIndex = 1;
             this.tabPageClientes.Text = "Clientes";
             // 
@@ -210,8 +210,8 @@
             // 
             // groupBoxCriarParcelaOficina
             // 
-            this.groupBoxCriarParcelaOficina.Controls.Add(this.label20);
-            this.groupBoxCriarParcelaOficina.Controls.Add(this.label19);
+            this.groupBoxCriarParcelaOficina.Controls.Add(this.labelValorOficina);
+            this.groupBoxCriarParcelaOficina.Controls.Add(this.labelDescricaoOficina);
             this.groupBoxCriarParcelaOficina.Controls.Add(this.buttonAdicionarParcelaOficina);
             this.groupBoxCriarParcelaOficina.Controls.Add(this.maskedTextBoxValorParcelaOficina);
             this.groupBoxCriarParcelaOficina.Controls.Add(this.textBoxDescricaoParcelaOficina);
@@ -221,6 +221,24 @@
             this.groupBoxCriarParcelaOficina.TabIndex = 1;
             this.groupBoxCriarParcelaOficina.TabStop = false;
             this.groupBoxCriarParcelaOficina.Text = "Adicionar Nova Parcela";
+            // 
+            // labelValorOficina
+            // 
+            this.labelValorOficina.AutoSize = true;
+            this.labelValorOficina.Location = new System.Drawing.Point(6, 53);
+            this.labelValorOficina.Name = "labelValorOficina";
+            this.labelValorOficina.Size = new System.Drawing.Size(34, 13);
+            this.labelValorOficina.TabIndex = 15;
+            this.labelValorOficina.Text = "Valor:";
+            // 
+            // labelDescricaoOficina
+            // 
+            this.labelDescricaoOficina.AutoSize = true;
+            this.labelDescricaoOficina.Location = new System.Drawing.Point(6, 26);
+            this.labelDescricaoOficina.Name = "labelDescricaoOficina";
+            this.labelDescricaoOficina.Size = new System.Drawing.Size(58, 13);
+            this.labelDescricaoOficina.TabIndex = 14;
+            this.labelDescricaoOficina.Text = "Descrição:";
             // 
             // buttonAdicionarParcelaOficina
             // 
@@ -280,9 +298,9 @@
             // 
             this.groupBoxCriarServicoOficina.Controls.Add(this.dateTimePickerDataSaidaOficina);
             this.groupBoxCriarServicoOficina.Controls.Add(this.dateTimePickerDataEntregaOficina);
-            this.groupBoxCriarServicoOficina.Controls.Add(this.label18);
-            this.groupBoxCriarServicoOficina.Controls.Add(this.label17);
-            this.groupBoxCriarServicoOficina.Controls.Add(this.label16);
+            this.groupBoxCriarServicoOficina.Controls.Add(this.labelDataSaidaOficina);
+            this.groupBoxCriarServicoOficina.Controls.Add(this.labelTipoServicoOficina);
+            this.groupBoxCriarServicoOficina.Controls.Add(this.labelDataEntregaOficina);
             this.groupBoxCriarServicoOficina.Controls.Add(this.buttonAdicionarServicoOficina);
             this.groupBoxCriarServicoOficina.Controls.Add(this.comboBoxTipoServicosOficina);
             this.groupBoxCriarServicoOficina.Location = new System.Drawing.Point(0, 326);
@@ -291,6 +309,47 @@
             this.groupBoxCriarServicoOficina.TabIndex = 1;
             this.groupBoxCriarServicoOficina.TabStop = false;
             this.groupBoxCriarServicoOficina.Text = "Adicionar Novo Serviço";
+            // 
+            // dateTimePickerDataSaidaOficina
+            // 
+            this.dateTimePickerDataSaidaOficina.Location = new System.Drawing.Point(97, 76);
+            this.dateTimePickerDataSaidaOficina.Name = "dateTimePickerDataSaidaOficina";
+            this.dateTimePickerDataSaidaOficina.Size = new System.Drawing.Size(121, 20);
+            this.dateTimePickerDataSaidaOficina.TabIndex = 18;
+            // 
+            // dateTimePickerDataEntregaOficina
+            // 
+            this.dateTimePickerDataEntregaOficina.Location = new System.Drawing.Point(97, 22);
+            this.dateTimePickerDataEntregaOficina.Name = "dateTimePickerDataEntregaOficina";
+            this.dateTimePickerDataEntregaOficina.Size = new System.Drawing.Size(121, 20);
+            this.dateTimePickerDataEntregaOficina.TabIndex = 17;
+            // 
+            // labelDataSaidaOficina
+            // 
+            this.labelDataSaidaOficina.AutoSize = true;
+            this.labelDataSaidaOficina.Location = new System.Drawing.Point(6, 78);
+            this.labelDataSaidaOficina.Name = "labelDataSaidaOficina";
+            this.labelDataSaidaOficina.Size = new System.Drawing.Size(80, 13);
+            this.labelDataSaidaOficina.TabIndex = 16;
+            this.labelDataSaidaOficina.Text = "Data de Saída:";
+            // 
+            // labelTipoServicoOficina
+            // 
+            this.labelTipoServicoOficina.AutoSize = true;
+            this.labelTipoServicoOficina.Location = new System.Drawing.Point(6, 52);
+            this.labelTipoServicoOficina.Name = "labelTipoServicoOficina";
+            this.labelTipoServicoOficina.Size = new System.Drawing.Size(85, 13);
+            this.labelTipoServicoOficina.TabIndex = 15;
+            this.labelTipoServicoOficina.Text = "Tipo de Serviço:";
+            // 
+            // labelDataEntregaOficina
+            // 
+            this.labelDataEntregaOficina.AutoSize = true;
+            this.labelDataEntregaOficina.Location = new System.Drawing.Point(6, 26);
+            this.labelDataEntregaOficina.Name = "labelDataEntregaOficina";
+            this.labelDataEntregaOficina.Size = new System.Drawing.Size(88, 13);
+            this.labelDataEntregaOficina.TabIndex = 14;
+            this.labelDataEntregaOficina.Text = "Data de Entrega:";
             // 
             // buttonAdicionarServicoOficina
             // 
@@ -323,7 +382,7 @@
             // 
             // groupBoxCarrosOficina
             // 
-            this.groupBoxCarrosOficina.Controls.Add(this.groupBox1);
+            this.groupBoxCarrosOficina.Controls.Add(this.groupBoxCriarCarroOficina);
             this.groupBoxCarrosOficina.Controls.Add(this.buttonRemoverCarroOficina);
             this.groupBoxCarrosOficina.Controls.Add(this.listBoxCarrosOficina);
             this.groupBoxCarrosOficina.Location = new System.Drawing.Point(219, 114);
@@ -333,14 +392,131 @@
             this.groupBoxCarrosOficina.TabStop = false;
             this.groupBoxCarrosOficina.Text = "Carros";
             // 
-            // buttonRemoverCarroOficina
+            // groupBoxCriarCarroOficina
             // 
-            this.buttonRemoverCarroOficina.Location = new System.Drawing.Point(6, 17);
-            this.buttonRemoverCarroOficina.Name = "buttonRemoverCarroOficina";
-            this.buttonRemoverCarroOficina.Size = new System.Drawing.Size(183, 23);
-            this.buttonRemoverCarroOficina.TabIndex = 2;
-            this.buttonRemoverCarroOficina.Text = "Remover Carro";
-            this.buttonRemoverCarroOficina.UseVisualStyleBackColor = true;
+            this.groupBoxCriarCarroOficina.Controls.Add(this.textBoxModeloOficina);
+            this.groupBoxCriarCarroOficina.Controls.Add(this.textBoxMarcaOficina);
+            this.groupBoxCriarCarroOficina.Controls.Add(this.textBoxChassiOficina);
+            this.groupBoxCriarCarroOficina.Controls.Add(this.comboBoxCombustivelOficina);
+            this.groupBoxCriarCarroOficina.Controls.Add(this.labelCombustivelOficina);
+            this.groupBoxCriarCarroOficina.Controls.Add(this.labelModeloOficina);
+            this.groupBoxCriarCarroOficina.Controls.Add(this.labelMarcaOficina);
+            this.groupBoxCriarCarroOficina.Controls.Add(this.labelNChassisOficina);
+            this.groupBoxCriarCarroOficina.Controls.Add(this.textBoxKMsOficina);
+            this.groupBoxCriarCarroOficina.Controls.Add(this.labelQuilometragemOficina);
+            this.groupBoxCriarCarroOficina.Controls.Add(this.maskedTextBoxMatriculaOficina);
+            this.groupBoxCriarCarroOficina.Controls.Add(this.labelMatriculaOficina);
+            this.groupBoxCriarCarroOficina.Controls.Add(this.buttonAdicionarCarroOficina);
+            this.groupBoxCriarCarroOficina.Location = new System.Drawing.Point(0, 253);
+            this.groupBoxCriarCarroOficina.Name = "groupBoxCriarCarroOficina";
+            this.groupBoxCriarCarroOficina.Size = new System.Drawing.Size(195, 203);
+            this.groupBoxCriarCarroOficina.TabIndex = 3;
+            this.groupBoxCriarCarroOficina.TabStop = false;
+            this.groupBoxCriarCarroOficina.Text = "Adicionar Novo Carro";
+            // 
+            // textBoxModeloOficina
+            // 
+            this.textBoxModeloOficina.Location = new System.Drawing.Point(57, 122);
+            this.textBoxModeloOficina.Name = "textBoxModeloOficina";
+            this.textBoxModeloOficina.Size = new System.Drawing.Size(132, 20);
+            this.textBoxModeloOficina.TabIndex = 13;
+            // 
+            // textBoxMarcaOficina
+            // 
+            this.textBoxMarcaOficina.Location = new System.Drawing.Point(52, 96);
+            this.textBoxMarcaOficina.Name = "textBoxMarcaOficina";
+            this.textBoxMarcaOficina.Size = new System.Drawing.Size(137, 20);
+            this.textBoxMarcaOficina.TabIndex = 12;
+            // 
+            // textBoxChassiOficina
+            // 
+            this.textBoxChassiOficina.Location = new System.Drawing.Point(72, 70);
+            this.textBoxChassiOficina.Name = "textBoxChassiOficina";
+            this.textBoxChassiOficina.Size = new System.Drawing.Size(117, 20);
+            this.textBoxChassiOficina.TabIndex = 11;
+            // 
+            // comboBoxCombustivelOficina
+            // 
+            this.comboBoxCombustivelOficina.FormattingEnabled = true;
+            this.comboBoxCombustivelOficina.Items.AddRange(new object[] {
+            "Gasóleo",
+            "Gasolina",
+            "Diesel",
+            "Gás",
+            "Híbrido"});
+            this.comboBoxCombustivelOficina.Location = new System.Drawing.Point(82, 148);
+            this.comboBoxCombustivelOficina.Name = "comboBoxCombustivelOficina";
+            this.comboBoxCombustivelOficina.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxCombustivelOficina.TabIndex = 10;
+            // 
+            // labelCombustivelOficina
+            // 
+            this.labelCombustivelOficina.AutoSize = true;
+            this.labelCombustivelOficina.Location = new System.Drawing.Point(7, 151);
+            this.labelCombustivelOficina.Name = "labelCombustivelOficina";
+            this.labelCombustivelOficina.Size = new System.Drawing.Size(69, 13);
+            this.labelCombustivelOficina.TabIndex = 9;
+            this.labelCombustivelOficina.Text = "Combustível:";
+            // 
+            // labelModeloOficina
+            // 
+            this.labelModeloOficina.AutoSize = true;
+            this.labelModeloOficina.Location = new System.Drawing.Point(6, 125);
+            this.labelModeloOficina.Name = "labelModeloOficina";
+            this.labelModeloOficina.Size = new System.Drawing.Size(45, 13);
+            this.labelModeloOficina.TabIndex = 8;
+            this.labelModeloOficina.Text = "Modelo:";
+            // 
+            // labelMarcaOficina
+            // 
+            this.labelMarcaOficina.AutoSize = true;
+            this.labelMarcaOficina.Location = new System.Drawing.Point(6, 99);
+            this.labelMarcaOficina.Name = "labelMarcaOficina";
+            this.labelMarcaOficina.Size = new System.Drawing.Size(40, 13);
+            this.labelMarcaOficina.TabIndex = 7;
+            this.labelMarcaOficina.Text = "Marca:";
+            // 
+            // labelNChassisOficina
+            // 
+            this.labelNChassisOficina.AutoSize = true;
+            this.labelNChassisOficina.Location = new System.Drawing.Point(6, 73);
+            this.labelNChassisOficina.Name = "labelNChassisOficina";
+            this.labelNChassisOficina.Size = new System.Drawing.Size(61, 13);
+            this.labelNChassisOficina.TabIndex = 6;
+            this.labelNChassisOficina.Text = "Nº Chassis:";
+            // 
+            // textBoxKMsOficina
+            // 
+            this.textBoxKMsOficina.Location = new System.Drawing.Point(95, 44);
+            this.textBoxKMsOficina.Name = "textBoxKMsOficina";
+            this.textBoxKMsOficina.Size = new System.Drawing.Size(94, 20);
+            this.textBoxKMsOficina.TabIndex = 5;
+            // 
+            // labelQuilometragemOficina
+            // 
+            this.labelQuilometragemOficina.AutoSize = true;
+            this.labelQuilometragemOficina.Location = new System.Drawing.Point(6, 47);
+            this.labelQuilometragemOficina.Name = "labelQuilometragemOficina";
+            this.labelQuilometragemOficina.Size = new System.Drawing.Size(83, 13);
+            this.labelQuilometragemOficina.TabIndex = 4;
+            this.labelQuilometragemOficina.Text = "Quilometragem: ";
+            // 
+            // maskedTextBoxMatriculaOficina
+            // 
+            this.maskedTextBoxMatriculaOficina.Location = new System.Drawing.Point(70, 18);
+            this.maskedTextBoxMatriculaOficina.Mask = "AA-AA-AA";
+            this.maskedTextBoxMatriculaOficina.Name = "maskedTextBoxMatriculaOficina";
+            this.maskedTextBoxMatriculaOficina.Size = new System.Drawing.Size(50, 20);
+            this.maskedTextBoxMatriculaOficina.TabIndex = 3;
+            // 
+            // labelMatriculaOficina
+            // 
+            this.labelMatriculaOficina.AutoSize = true;
+            this.labelMatriculaOficina.Location = new System.Drawing.Point(7, 21);
+            this.labelMatriculaOficina.Name = "labelMatriculaOficina";
+            this.labelMatriculaOficina.Size = new System.Drawing.Size(55, 13);
+            this.labelMatriculaOficina.TabIndex = 2;
+            this.labelMatriculaOficina.Text = "Matrícula:";
             // 
             // buttonAdicionarCarroOficina
             // 
@@ -350,6 +526,15 @@
             this.buttonAdicionarCarroOficina.TabIndex = 1;
             this.buttonAdicionarCarroOficina.Text = "Adicionar Carro";
             this.buttonAdicionarCarroOficina.UseVisualStyleBackColor = true;
+            // 
+            // buttonRemoverCarroOficina
+            // 
+            this.buttonRemoverCarroOficina.Location = new System.Drawing.Point(6, 17);
+            this.buttonRemoverCarroOficina.Name = "buttonRemoverCarroOficina";
+            this.buttonRemoverCarroOficina.Size = new System.Drawing.Size(183, 23);
+            this.buttonRemoverCarroOficina.TabIndex = 2;
+            this.buttonRemoverCarroOficina.Text = "Remover Carro";
+            this.buttonRemoverCarroOficina.UseVisualStyleBackColor = true;
             // 
             // listBoxCarrosOficina
             // 
@@ -362,11 +547,11 @@
             // groupBoxFichaClienteOficina
             // 
             this.groupBoxFichaClienteOficina.Controls.Add(this.labelTotalClienteOficina);
-            this.groupBoxFichaClienteOficina.Controls.Add(this.label10);
+            this.groupBoxFichaClienteOficina.Controls.Add(this.labelTotalGastoOficina);
             this.groupBoxFichaClienteOficina.Controls.Add(this.labelNifClienteSelecionadoOficina);
             this.groupBoxFichaClienteOficina.Controls.Add(this.labelClienteSelecionadoOficina);
-            this.groupBoxFichaClienteOficina.Controls.Add(this.label7);
-            this.groupBoxFichaClienteOficina.Controls.Add(this.label6);
+            this.groupBoxFichaClienteOficina.Controls.Add(this.labelNifOficina);
+            this.groupBoxFichaClienteOficina.Controls.Add(this.labelNomeOficina);
             this.groupBoxFichaClienteOficina.Location = new System.Drawing.Point(219, 8);
             this.groupBoxFichaClienteOficina.Name = "groupBoxFichaClienteOficina";
             this.groupBoxFichaClienteOficina.Size = new System.Drawing.Size(681, 100);
@@ -384,15 +569,15 @@
             this.labelTotalClienteOficina.TabIndex = 5;
             this.labelTotalClienteOficina.Text = "0.00€";
             // 
-            // label10
+            // labelTotalGastoOficina
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(551, 22);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 20);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Total Gasto:";
+            this.labelTotalGastoOficina.AutoSize = true;
+            this.labelTotalGastoOficina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalGastoOficina.Location = new System.Drawing.Point(551, 22);
+            this.labelTotalGastoOficina.Name = "labelTotalGastoOficina";
+            this.labelTotalGastoOficina.Size = new System.Drawing.Size(96, 20);
+            this.labelTotalGastoOficina.TabIndex = 4;
+            this.labelTotalGastoOficina.Text = "Total Gasto:";
             // 
             // labelNifClienteSelecionadoOficina
             // 
@@ -414,30 +599,30 @@
             this.labelClienteSelecionadoOficina.TabIndex = 2;
             this.labelClienteSelecionadoOficina.Text = "Nenhum cliente selecionado";
             // 
-            // label7
+            // labelNifOficina
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 60);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "NIF:";
+            this.labelNifOficina.AutoSize = true;
+            this.labelNifOficina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNifOficina.Location = new System.Drawing.Point(6, 60);
+            this.labelNifOficina.Name = "labelNifOficina";
+            this.labelNifOficina.Size = new System.Drawing.Size(39, 20);
+            this.labelNifOficina.TabIndex = 1;
+            this.labelNifOficina.Text = "NIF:";
             // 
-            // label6
+            // labelNomeOficina
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Nome:";
+            this.labelNomeOficina.AutoSize = true;
+            this.labelNomeOficina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNomeOficina.Location = new System.Drawing.Point(6, 22);
+            this.labelNomeOficina.Name = "labelNomeOficina";
+            this.labelNomeOficina.Size = new System.Drawing.Size(55, 20);
+            this.labelNomeOficina.TabIndex = 0;
+            this.labelNomeOficina.Text = "Nome:";
             // 
             // groupBoxClientesOficina
             // 
-            this.groupBoxClientesOficina.Controls.Add(this.label9);
-            this.groupBoxClientesOficina.Controls.Add(this.label8);
+            this.groupBoxClientesOficina.Controls.Add(this.labelProcurarPorOficina);
+            this.groupBoxClientesOficina.Controls.Add(this.labelTextoOficina);
             this.groupBoxClientesOficina.Controls.Add(this.comboBox1);
             this.groupBoxClientesOficina.Controls.Add(this.textBox1);
             this.groupBoxClientesOficina.Controls.Add(this.listBoxClientesOficina);
@@ -448,23 +633,23 @@
             this.groupBoxClientesOficina.TabStop = false;
             this.groupBoxClientesOficina.Text = "Lista de Clientes";
             // 
-            // label9
+            // labelProcurarPorOficina
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(121, 21);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 13);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Procurar por:";
+            this.labelProcurarPorOficina.AutoSize = true;
+            this.labelProcurarPorOficina.Location = new System.Drawing.Point(121, 21);
+            this.labelProcurarPorOficina.Name = "labelProcurarPorOficina";
+            this.labelProcurarPorOficina.Size = new System.Drawing.Size(68, 13);
+            this.labelProcurarPorOficina.TabIndex = 4;
+            this.labelProcurarPorOficina.Text = "Procurar por:";
             // 
-            // label8
+            // labelTextoOficina
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 21);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Texto:";
+            this.labelTextoOficina.AutoSize = true;
+            this.labelTextoOficina.Location = new System.Drawing.Point(4, 21);
+            this.labelTextoOficina.Name = "labelTextoOficina";
+            this.labelTextoOficina.Size = new System.Drawing.Size(37, 13);
+            this.labelTextoOficina.TabIndex = 3;
+            this.labelTextoOficina.Text = "Texto:";
             // 
             // comboBox1
             // 
@@ -509,7 +694,7 @@
             this.tabPageVendas.Controls.Add(this.label4);
             this.tabPageVendas.Location = new System.Drawing.Point(166, 4);
             this.tabPageVendas.Name = "tabPageVendas";
-            this.tabPageVendas.Size = new System.Drawing.Size(912, 475);
+            this.tabPageVendas.Size = new System.Drawing.Size(912, 578);
             this.tabPageVendas.TabIndex = 3;
             this.tabPageVendas.Text = "Vendas";
             // 
@@ -528,7 +713,7 @@
             this.tabPageAluguer.Controls.Add(this.label5);
             this.tabPageAluguer.Location = new System.Drawing.Point(166, 4);
             this.tabPageAluguer.Name = "tabPageAluguer";
-            this.tabPageAluguer.Size = new System.Drawing.Size(912, 475);
+            this.tabPageAluguer.Size = new System.Drawing.Size(912, 578);
             this.tabPageAluguer.TabIndex = 4;
             this.tabPageAluguer.Text = "Aluguer";
             // 
@@ -540,191 +725,6 @@
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Aluguer";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textBoxModeloOficina);
-            this.groupBox1.Controls.Add(this.textBoxMarcaOficina);
-            this.groupBox1.Controls.Add(this.textBoxChassiOficina);
-            this.groupBox1.Controls.Add(this.comboBoxCombustivelOficina);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.textBoxKMsOficina);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.maskedTextBoxMatriculaOficina);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.buttonAdicionarCarroOficina);
-            this.groupBox1.Location = new System.Drawing.Point(0, 253);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(195, 203);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Adicionar Novo Carro";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Matrícula:";
-            // 
-            // maskedTextBoxMatriculaOficina
-            // 
-            this.maskedTextBoxMatriculaOficina.Location = new System.Drawing.Point(70, 18);
-            this.maskedTextBoxMatriculaOficina.Mask = "AA-AA-AA";
-            this.maskedTextBoxMatriculaOficina.Name = "maskedTextBoxMatriculaOficina";
-            this.maskedTextBoxMatriculaOficina.Size = new System.Drawing.Size(50, 20);
-            this.maskedTextBoxMatriculaOficina.TabIndex = 3;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 47);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(83, 13);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Quilometragem: ";
-            // 
-            // textBoxKMsOficina
-            // 
-            this.textBoxKMsOficina.Location = new System.Drawing.Point(95, 44);
-            this.textBoxKMsOficina.Name = "textBoxKMsOficina";
-            this.textBoxKMsOficina.Size = new System.Drawing.Size(94, 20);
-            this.textBoxKMsOficina.TabIndex = 5;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 73);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 13);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Nº Chassis:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 99);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 13);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Marca:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 125);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(45, 13);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "Modelo:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(7, 151);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(69, 13);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "Combustível:";
-            // 
-            // comboBoxCombustivelOficina
-            // 
-            this.comboBoxCombustivelOficina.FormattingEnabled = true;
-            this.comboBoxCombustivelOficina.Items.AddRange(new object[] {
-            "Gasóleo",
-            "Gasolina",
-            "Diesel",
-            "Gás",
-            "Híbrido"});
-            this.comboBoxCombustivelOficina.Location = new System.Drawing.Point(82, 148);
-            this.comboBoxCombustivelOficina.Name = "comboBoxCombustivelOficina";
-            this.comboBoxCombustivelOficina.Size = new System.Drawing.Size(107, 21);
-            this.comboBoxCombustivelOficina.TabIndex = 10;
-            // 
-            // textBoxChassiOficina
-            // 
-            this.textBoxChassiOficina.Location = new System.Drawing.Point(72, 70);
-            this.textBoxChassiOficina.Name = "textBoxChassiOficina";
-            this.textBoxChassiOficina.Size = new System.Drawing.Size(117, 20);
-            this.textBoxChassiOficina.TabIndex = 11;
-            // 
-            // textBoxMarcaOficina
-            // 
-            this.textBoxMarcaOficina.Location = new System.Drawing.Point(52, 96);
-            this.textBoxMarcaOficina.Name = "textBoxMarcaOficina";
-            this.textBoxMarcaOficina.Size = new System.Drawing.Size(137, 20);
-            this.textBoxMarcaOficina.TabIndex = 12;
-            // 
-            // textBoxModeloOficina
-            // 
-            this.textBoxModeloOficina.Location = new System.Drawing.Point(57, 122);
-            this.textBoxModeloOficina.Name = "textBoxModeloOficina";
-            this.textBoxModeloOficina.Size = new System.Drawing.Size(132, 20);
-            this.textBoxModeloOficina.TabIndex = 13;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 26);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(88, 13);
-            this.label16.TabIndex = 14;
-            this.label16.Text = "Data de Entrega:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 52);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 13);
-            this.label17.TabIndex = 15;
-            this.label17.Text = "Tipo de Serviço:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 78);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(80, 13);
-            this.label18.TabIndex = 16;
-            this.label18.Text = "Data de Saída:";
-            // 
-            // dateTimePickerDataEntregaOficina
-            // 
-            this.dateTimePickerDataEntregaOficina.Location = new System.Drawing.Point(97, 22);
-            this.dateTimePickerDataEntregaOficina.Name = "dateTimePickerDataEntregaOficina";
-            this.dateTimePickerDataEntregaOficina.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePickerDataEntregaOficina.TabIndex = 17;
-            // 
-            // dateTimePickerDataSaidaOficina
-            // 
-            this.dateTimePickerDataSaidaOficina.Location = new System.Drawing.Point(97, 76);
-            this.dateTimePickerDataSaidaOficina.Name = "dateTimePickerDataSaidaOficina";
-            this.dateTimePickerDataSaidaOficina.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePickerDataSaidaOficina.TabIndex = 18;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 26);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(58, 13);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "Descrição:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 53);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(34, 13);
-            this.label20.TabIndex = 15;
-            this.label20.Text = "Valor:";
             // 
             // window
             // 
@@ -749,6 +749,8 @@
             this.groupBoxCriarServicoOficina.ResumeLayout(false);
             this.groupBoxCriarServicoOficina.PerformLayout();
             this.groupBoxCarrosOficina.ResumeLayout(false);
+            this.groupBoxCriarCarroOficina.ResumeLayout(false);
+            this.groupBoxCriarCarroOficina.PerformLayout();
             this.groupBoxFichaClienteOficina.ResumeLayout(false);
             this.groupBoxFichaClienteOficina.PerformLayout();
             this.groupBoxClientesOficina.ResumeLayout(false);
@@ -757,8 +759,6 @@
             this.tabPageVendas.PerformLayout();
             this.tabPageAluguer.ResumeLayout(false);
             this.tabPageAluguer.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -792,40 +792,40 @@
         private System.Windows.Forms.ListBox listBoxCarrosOficina;
         private System.Windows.Forms.GroupBox groupBoxFichaClienteOficina;
         private System.Windows.Forms.Label labelTotalClienteOficina;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelTotalGastoOficina;
         private System.Windows.Forms.Label labelNifClienteSelecionadoOficina;
         private System.Windows.Forms.Label labelClienteSelecionadoOficina;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelNifOficina;
+        private System.Windows.Forms.Label labelNomeOficina;
         private System.Windows.Forms.GroupBox groupBoxClientesOficina;
         private System.Windows.Forms.ListBox listBoxClientesOficina;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelProcurarPorOficina;
+        private System.Windows.Forms.Label labelTextoOficina;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonRemoverParcelaOficina;
         private System.Windows.Forms.Button buttonRemoverServicoOficina;
         private System.Windows.Forms.Button buttonRemoverCarroOficina;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox groupBoxCriarCarroOficina;
+        private System.Windows.Forms.Label labelQuilometragemOficina;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxMatriculaOficina;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelMatriculaOficina;
         private System.Windows.Forms.TextBox textBoxKMsOficina;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelModeloOficina;
+        private System.Windows.Forms.Label labelMarcaOficina;
+        private System.Windows.Forms.Label labelNChassisOficina;
         private System.Windows.Forms.ComboBox comboBoxCombustivelOficina;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label labelCombustivelOficina;
         private System.Windows.Forms.TextBox textBoxModeloOficina;
         private System.Windows.Forms.TextBox textBoxMarcaOficina;
         private System.Windows.Forms.TextBox textBoxChassiOficina;
         private System.Windows.Forms.DateTimePicker dateTimePickerDataSaidaOficina;
         private System.Windows.Forms.DateTimePicker dateTimePickerDataEntregaOficina;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label labelDataSaidaOficina;
+        private System.Windows.Forms.Label labelTipoServicoOficina;
+        private System.Windows.Forms.Label labelDataEntregaOficina;
+        private System.Windows.Forms.Label labelValorOficina;
+        private System.Windows.Forms.Label labelDescricaoOficina;
     }
 }
 
