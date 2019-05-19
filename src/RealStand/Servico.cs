@@ -21,10 +21,9 @@ namespace RealStand
         }
     
         public int Id { get; set; }
-        public string DataEntrega { get; set; }
+        public System.DateTime DataEntrega { get; set; }
         public string Tipo { get; set; }
-        public string DataSaida { get; set; }
-        public string Property1 { get; set; }
+        public System.DateTime DataSaida { get; set; }
         public int CarroOficinaId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
