@@ -73,6 +73,11 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
+    <Compile Include="RealStandDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RealStandDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="window.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +136,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Stand.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="RealStandDataSet.xsc">
+      <DependentUpon>RealStandDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RealStandDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RealStandDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RealStandDataSet.xss">
+      <DependentUpon>RealStandDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Stand.edmx.diagram">
       <DependentUpon>Stand.edmx</DependentUpon>
     </None>

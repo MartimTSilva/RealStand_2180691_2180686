@@ -50,5 +50,20 @@ namespace RealStand
             _stringFlags.LineAlignment = StringAlignment.Center;
             g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
         }
+
+        private void clientesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.clientesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.realStandDataSet);
+
+        }
+
+        private void window_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'realStandDataSet.Clientes' table. You can move, or remove it, as needed.
+            this.clientesTableAdapter.Fill(this.realStandDataSet.Clientes);
+
+        }
     }
 }
