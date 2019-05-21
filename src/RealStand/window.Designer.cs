@@ -36,6 +36,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(window));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageInicio = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPageClientes = new System.Windows.Forms.TabPage();
             this.labelCampoDeProcura = new System.Windows.Forms.Label();
             this.labelProcurarPor = new System.Windows.Forms.Label();
@@ -193,17 +198,14 @@
             this.clientesTableAdapter = new RealStand.realstandDataSetTableAdapters.ClientesTableAdapter();
             this.tableAdapterManager = new RealStand.realstandDataSetTableAdapters.TableAdapterManager();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
             contactoLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPageInicio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPageClientes.SuspendLayout();
             this.groupBoxDadosClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
@@ -231,8 +233,6 @@
             this.groupBoxCarrosAluguer.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBoxFichaClienteVenda.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // nomeLabel
@@ -312,6 +312,54 @@
             this.tabPageInicio.Size = new System.Drawing.Size(912, 573);
             this.tabPageInicio.TabIndex = 0;
             this.tabPageInicio.Text = "Início";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 484);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(310, 75);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(310, 144);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(330, 18);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Projeto de Desenvolvimento de Aplicações";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(492, 256);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(150, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Micael Rodrigues, nº 2180691";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(517, 239);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Maritm Silva, nº 2180686";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(308, 164);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(334, 72);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // tabPageClientes
             // 
@@ -929,6 +977,7 @@
             this.listBoxCarrosOficina.FormattingEnabled = true;
             this.listBoxCarrosOficina.Location = new System.Drawing.Point(6, 46);
             this.listBoxCarrosOficina.Name = "listBoxCarrosOficina";
+            this.listBoxCarrosOficina.ScrollAlwaysVisible = true;
             this.listBoxCarrosOficina.Size = new System.Drawing.Size(183, 199);
             this.listBoxCarrosOficina.TabIndex = 0;
             // 
@@ -1062,6 +1111,7 @@
             this.listBoxClientesOficina.FormattingEnabled = true;
             this.listBoxClientesOficina.Location = new System.Drawing.Point(7, 69);
             this.listBoxClientesOficina.Name = "listBoxClientesOficina";
+            this.listBoxClientesOficina.ScrollAlwaysVisible = true;
             this.listBoxClientesOficina.Size = new System.Drawing.Size(191, 446);
             this.listBoxClientesOficina.TabIndex = 0;
             // 
@@ -1100,7 +1150,7 @@
             this.groupBox1.Controls.Add(this.dateTimePickerDataVenda);
             this.groupBox1.Controls.Add(this.labelDataVendaVendas);
             this.groupBox1.Controls.Add(this.buttonVenderCarro);
-            this.groupBox1.Location = new System.Drawing.Point(707, 375);
+            this.groupBox1.Location = new System.Drawing.Point(705, 378);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(195, 192);
             this.groupBox1.TabIndex = 21;
@@ -1178,7 +1228,7 @@
             this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.labelMarcaVendas);
             this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.labelNChassis);
             this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.buttonAdicionarCarroVendas);
-            this.groupBoxAdicionarNovoCarroVendas.Location = new System.Drawing.Point(707, 111);
+            this.groupBoxAdicionarNovoCarroVendas.Location = new System.Drawing.Point(705, 114);
             this.groupBoxAdicionarNovoCarroVendas.Name = "groupBoxAdicionarNovoCarroVendas";
             this.groupBoxAdicionarNovoCarroVendas.Size = new System.Drawing.Size(195, 242);
             this.groupBoxAdicionarNovoCarroVendas.TabIndex = 16;
@@ -1286,7 +1336,7 @@
             // 
             this.groupBoxCarrosVenda.Controls.Add(this.buttonRemoverCarrosVendas);
             this.groupBoxCarrosVenda.Controls.Add(this.listBoxCarrosVendas);
-            this.groupBoxCarrosVenda.Location = new System.Drawing.Point(342, 111);
+            this.groupBoxCarrosVenda.Location = new System.Drawing.Point(340, 114);
             this.groupBoxCarrosVenda.Name = "groupBoxCarrosVenda";
             this.groupBoxCarrosVenda.Size = new System.Drawing.Size(359, 456);
             this.groupBoxCarrosVenda.TabIndex = 20;
@@ -1307,6 +1357,7 @@
             this.listBoxCarrosVendas.FormattingEnabled = true;
             this.listBoxCarrosVendas.Location = new System.Drawing.Point(6, 55);
             this.listBoxCarrosVendas.Name = "listBoxCarrosVendas";
+            this.listBoxCarrosVendas.ScrollAlwaysVisible = true;
             this.listBoxCarrosVendas.Size = new System.Drawing.Size(347, 394);
             this.listBoxCarrosVendas.TabIndex = 0;
             // 
@@ -1317,7 +1368,7 @@
             this.groupBoxListaClientesVendas.Controls.Add(this.comboBoxCampoVendas);
             this.groupBoxListaClientesVendas.Controls.Add(this.textBoxProcurarPorVendas);
             this.groupBoxListaClientesVendas.Controls.Add(this.listBoxClientesVendas);
-            this.groupBoxListaClientesVendas.Location = new System.Drawing.Point(11, 45);
+            this.groupBoxListaClientesVendas.Location = new System.Drawing.Point(9, 48);
             this.groupBoxListaClientesVendas.Name = "groupBoxListaClientesVendas";
             this.groupBoxListaClientesVendas.Size = new System.Drawing.Size(325, 522);
             this.groupBoxListaClientesVendas.TabIndex = 19;
@@ -1365,6 +1416,7 @@
             this.listBoxClientesVendas.FormattingEnabled = true;
             this.listBoxClientesVendas.Location = new System.Drawing.Point(7, 69);
             this.listBoxClientesVendas.Name = "listBoxClientesVendas";
+            this.listBoxClientesVendas.ScrollAlwaysVisible = true;
             this.listBoxClientesVendas.Size = new System.Drawing.Size(312, 446);
             this.listBoxClientesVendas.TabIndex = 0;
             // 
@@ -1373,7 +1425,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Brown;
-            this.label14.Location = new System.Drawing.Point(12, 5);
+            this.label14.Location = new System.Drawing.Point(10, 8);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(114, 32);
             this.label14.TabIndex = 18;
@@ -1385,7 +1437,7 @@
             this.groupBoxFichaClienteVendas.Controls.Add(this.labelNomeClienteSelecionadoVendas);
             this.groupBoxFichaClienteVendas.Controls.Add(this.labelNifVendas);
             this.groupBoxFichaClienteVendas.Controls.Add(this.labelNomeVendas);
-            this.groupBoxFichaClienteVendas.Location = new System.Drawing.Point(342, 5);
+            this.groupBoxFichaClienteVendas.Location = new System.Drawing.Point(340, 8);
             this.groupBoxFichaClienteVendas.Name = "groupBoxFichaClienteVendas";
             this.groupBoxFichaClienteVendas.Size = new System.Drawing.Size(560, 100);
             this.groupBoxFichaClienteVendas.TabIndex = 17;
@@ -1701,6 +1753,7 @@
             this.listBoxCarrosAluguer.FormattingEnabled = true;
             this.listBoxCarrosAluguer.Location = new System.Drawing.Point(6, 55);
             this.listBoxCarrosAluguer.Name = "listBoxCarrosAluguer";
+            this.listBoxCarrosAluguer.ScrollAlwaysVisible = true;
             this.listBoxCarrosAluguer.Size = new System.Drawing.Size(347, 394);
             this.listBoxCarrosAluguer.TabIndex = 0;
             // 
@@ -1759,6 +1812,7 @@
             this.listBoxClientesAluguer.FormattingEnabled = true;
             this.listBoxClientesAluguer.Location = new System.Drawing.Point(7, 69);
             this.listBoxClientesAluguer.Name = "listBoxClientesAluguer";
+            this.listBoxClientesAluguer.ScrollAlwaysVisible = true;
             this.listBoxClientesAluguer.Size = new System.Drawing.Size(312, 446);
             this.listBoxClientesAluguer.TabIndex = 0;
             // 
@@ -1852,54 +1906,6 @@
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(308, 164);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(334, 72);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(517, 239);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Maritm Silva, nº 2180686";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(492, 256);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Micael Rodrigues, nº 2180691";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(310, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(330, 18);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Projeto de Desenvolvimento de Aplicações";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 484);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(310, 75);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
             // window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1915,6 +1921,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPageInicio.ResumeLayout(false);
             this.tabPageInicio.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPageClientes.ResumeLayout(false);
             this.tabPageClientes.PerformLayout();
             this.groupBoxDadosClientes.ResumeLayout(false);
@@ -1961,8 +1969,6 @@
             this.groupBox2.PerformLayout();
             this.groupBoxFichaClienteVenda.ResumeLayout(false);
             this.groupBoxFichaClienteVenda.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
