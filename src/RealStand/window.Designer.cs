@@ -55,9 +55,9 @@
             this.moradaTextBox = new System.Windows.Forms.TextBox();
             this.contactoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.clientesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -438,11 +438,13 @@
             this.buttonGravarCliente.TabIndex = 8;
             this.buttonGravarCliente.Text = "Gravar";
             this.buttonGravarCliente.UseVisualStyleBackColor = true;
+            this.buttonGravarCliente.Visible = false;
             this.buttonGravarCliente.Click += new System.EventHandler(this.buttonGravarCliente_Click);
             // 
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Nome", true));
+            this.nomeTextBox.Enabled = false;
             this.nomeTextBox.Location = new System.Drawing.Point(65, 13);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(445, 20);
@@ -461,6 +463,7 @@
             // nIFMaskedTextBox
             // 
             this.nIFMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "NIF", true));
+            this.nIFMaskedTextBox.Enabled = false;
             this.nIFMaskedTextBox.Location = new System.Drawing.Point(65, 39);
             this.nIFMaskedTextBox.Mask = "000000000";
             this.nIFMaskedTextBox.Name = "nIFMaskedTextBox";
@@ -470,6 +473,7 @@
             // moradaTextBox
             // 
             this.moradaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Morada", true));
+            this.moradaTextBox.Enabled = false;
             this.moradaTextBox.Location = new System.Drawing.Point(65, 65);
             this.moradaTextBox.Name = "moradaTextBox";
             this.moradaTextBox.Size = new System.Drawing.Size(445, 20);
@@ -478,6 +482,7 @@
             // contactoMaskedTextBox
             // 
             this.contactoMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Contacto", true));
+            this.contactoMaskedTextBox.Enabled = false;
             this.contactoMaskedTextBox.Location = new System.Drawing.Point(65, 91);
             this.contactoMaskedTextBox.Mask = "(99) 0000000";
             this.contactoMaskedTextBox.Name = "contactoMaskedTextBox";
@@ -486,7 +491,7 @@
             // 
             // clientesBindingNavigator
             // 
-            this.clientesBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.clientesBindingNavigator.AddNewItem = null;
             this.clientesBindingNavigator.BindingSource = this.clientesBindingSource;
             this.clientesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.clientesBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
@@ -513,15 +518,7 @@
             this.clientesBindingNavigator.Size = new System.Drawing.Size(906, 25);
             this.clientesBindingNavigator.TabIndex = 2;
             this.clientesBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.clientesBindingNavigator.Click += new System.EventHandler(this.clientesBindingNavigator_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -538,6 +535,15 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorSeparator2
             // 
@@ -609,6 +615,7 @@
             this.clientesListBox.Size = new System.Drawing.Size(378, 498);
             this.clientesListBox.TabIndex = 0;
             this.clientesListBox.ValueMember = "Id";
+            this.clientesListBox.Click += new System.EventHandler(this.clientesListBox_Click);
             // 
             // tabPageOficina
             // 

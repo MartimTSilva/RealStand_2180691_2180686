@@ -163,10 +163,8 @@ namespace RealStand
             standContainer.Clientes.Add(novoCliente);
             standContainer.SaveChanges();
             clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
-            nomeTextBox.Text = "";
-            nIFMaskedTextBox.Text = "";
-            moradaTextBox.Text = "";
-            contactoMaskedTextBox.Text = "";
+
+            DisableDataInsertion();
         }
 
         /// <summary>
@@ -199,6 +197,60 @@ namespace RealStand
             listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
             //Mete a listbox das parcelas da oficina sem nenhum item selecionado
             listBoxParcelasOficina.SelectedIndex = -1;
+        }
+
+        /// <summary>
+        /// Mostra os dados do cliente selecionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void clientesListBox_Click(object sender, EventArgs e)
+        {
+            AllowDataInsertion();
+
+            Cliente selectedClient = (Cliente)clientesListBox.SelectedItem;
+            nomeTextBox.Text = selectedClient.Nome;
+            nIFMaskedTextBox.Text = selectedClient.NIF;
+            moradaTextBox.Text = selectedClient.Morada;
+            contactoMaskedTextBox.Text = selectedClient.Contacto;
+        }
+
+        /// <summary>
+        /// Ativa as caixas de texto para poder adicionar um novo cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AllowDataInsertion()
+        {
+            nomeTextBox.Text = "";
+            nIFMaskedTextBox.Text = "";
+            moradaTextBox.Text = "";
+            contactoMaskedTextBox.Text = "";
+
+            nomeTextBox.Enabled = true;
+            nIFMaskedTextBox.Enabled = true;
+            moradaTextBox.Enabled = true;
+            contactoMaskedTextBox.Enabled = true;
+            buttonGravarCliente.Visible = true;
+        }
+
+        private void DisableDataInsertion()
+        {
+            nomeTextBox.Text = "";
+            nIFMaskedTextBox.Text = "";
+            moradaTextBox.Text = "";
+            contactoMaskedTextBox.Text = "";
+
+            nomeTextBox.Enabled = false;
+            nIFMaskedTextBox.Enabled = false;
+            moradaTextBox.Enabled = false;
+            contactoMaskedTextBox.Enabled = false;
+            buttonGravarCliente.Visible = false;
+        }
+
+        private void clientesBindingNavigator_Click(object sender, EventArgs e)
+        {
+            AllowDataInsertion();
         }
     }
 }
