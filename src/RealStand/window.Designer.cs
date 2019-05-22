@@ -170,7 +170,7 @@
             this.checkBoxEstadoAluguer = new System.Windows.Forms.CheckBox();
             this.textBoxModeloAluguer = new System.Windows.Forms.TextBox();
             this.textBoxMarcaAluguer = new System.Windows.Forms.TextBox();
-            this.textBoxNChassiAluguer = new System.Windows.Forms.TextBox();
+            this.textBoxChassiAluguer = new System.Windows.Forms.TextBox();
             this.comboBoxCombustivelAluguer = new System.Windows.Forms.ComboBox();
             this.labelCombustivelAluguer = new System.Windows.Forms.Label();
             this.labelModeloAluguer = new System.Windows.Forms.Label();
@@ -294,6 +294,7 @@
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 1;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
+            this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // tabPageInicio
             // 
@@ -962,6 +963,7 @@
             this.buttonAdicionarCarroOficina.TabIndex = 1;
             this.buttonAdicionarCarroOficina.Text = "Adicionar Carro";
             this.buttonAdicionarCarroOficina.UseVisualStyleBackColor = true;
+            this.buttonAdicionarCarroOficina.Click += new System.EventHandler(this.buttonAdicionarCarroOficina_Click);
             // 
             // buttonRemoverCarroOficina
             // 
@@ -1114,6 +1116,7 @@
             this.listBoxClientesOficina.ScrollAlwaysVisible = true;
             this.listBoxClientesOficina.Size = new System.Drawing.Size(191, 446);
             this.listBoxClientesOficina.TabIndex = 0;
+            this.listBoxClientesOficina.Click += new System.EventHandler(this.listBoxClientesOficina_Click);
             // 
             // labelTituloOficina
             // 
@@ -1596,7 +1599,7 @@
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.checkBoxEstadoAluguer);
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.textBoxModeloAluguer);
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.textBoxMarcaAluguer);
-            this.groupBoxAdicionarCarroAluguer.Controls.Add(this.textBoxNChassiAluguer);
+            this.groupBoxAdicionarCarroAluguer.Controls.Add(this.textBoxChassiAluguer);
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.comboBoxCombustivelAluguer);
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.labelCombustivelAluguer);
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.labelModeloAluguer);
@@ -1636,12 +1639,12 @@
             this.textBoxMarcaAluguer.Size = new System.Drawing.Size(136, 20);
             this.textBoxMarcaAluguer.TabIndex = 12;
             // 
-            // textBoxNChassiAluguer
+            // textBoxChassiAluguer
             // 
-            this.textBoxNChassiAluguer.Location = new System.Drawing.Point(73, 73);
-            this.textBoxNChassiAluguer.Name = "textBoxNChassiAluguer";
-            this.textBoxNChassiAluguer.Size = new System.Drawing.Size(116, 20);
-            this.textBoxNChassiAluguer.TabIndex = 11;
+            this.textBoxChassiAluguer.Location = new System.Drawing.Point(73, 73);
+            this.textBoxChassiAluguer.Name = "textBoxChassiAluguer";
+            this.textBoxChassiAluguer.Size = new System.Drawing.Size(116, 20);
+            this.textBoxChassiAluguer.TabIndex = 11;
             // 
             // comboBoxCombustivelAluguer
             // 
@@ -2076,7 +2079,7 @@
         private System.Windows.Forms.GroupBox groupBoxAdicionarCarroAluguer;
         private System.Windows.Forms.TextBox textBoxModeloAluguer;
         private System.Windows.Forms.TextBox textBoxMarcaAluguer;
-        private System.Windows.Forms.TextBox textBoxNChassiAluguer;
+        private System.Windows.Forms.TextBox textBoxChassiAluguer;
         private System.Windows.Forms.ComboBox comboBoxCombustivelAluguer;
         private System.Windows.Forms.Label labelCombustivelAluguer;
         private System.Windows.Forms.Label labelModeloAluguer;

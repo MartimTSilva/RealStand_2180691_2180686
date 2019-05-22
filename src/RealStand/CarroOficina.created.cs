@@ -8,15 +8,20 @@ namespace RealStand
 {
     public partial class CarroOficina
     {
-        public CarroOficina(string matricula, int kms, int clienteId)
+        public CarroOficina(string matricula, int kms, int numeroChassis, string marca, string modelo, string combustivel)
         {
             Matricula = matricula;
             Kms = kms;
-            ClienteId = clienteId;
+            NumeroChassis = numeroChassis;
+            Marca = marca;
+            Modelo = modelo;
+            Combustivel = combustivel;
+            Servico = new HashSet<Servico>();
         }
+
         public override string ToString()
         {
-            return Matricula;
+            return Marca + " - " + Modelo + "(" + Matricula + ")";
         }
     }
 }

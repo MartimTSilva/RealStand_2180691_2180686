@@ -67,12 +67,34 @@ namespace RealStand
             this.clientesTableAdapter.Fill(this.realStandDataSet.Clientes);
 
             standContainer = new StandContainer();
-            LerDados();
         }
-        private void LerDados()
+
+        private void buttonAdicionarCarroOficina_Click(object sender, EventArgs e)
         {
-            //Ler todos os dados das BD e colocar nas respectivas listboxes
-            listBoxClientesOficina.DataSource = standContainer.Clientes.ToList<Cliente>();
+            Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
+            CarroOficina novoCarroOficina = new CarroOficina(maskedTextBoxMatriculaOficina.Text, int.Parse(textBoxKMsOficina.Text), int.Parse(textBoxChassiOficina.Text), textBoxMarcaOficina.Text, textBoxModeloOficina.Text, comboBoxCombustivelOficina.SelectedText);
+            if (novoCarroOficina == null)
+            {
+                return;
+            }
+            selectedCliente.CarroOficina.Add(novoCarroOficina);
+            standContainer.SaveChanges();
+            listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
+        }
+
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 2)
+            {
+                listBoxClientesOficina.DataSource = standContainer.Clientes.ToList<Cliente>();
+                listBoxClientesOficina.SelectedIndex = -1;
+            }
+        }
+
+        private void listBoxClientesOficina_Click(object sender, EventArgs e)
+        {
+            Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
+            listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
         }
     }
 }
