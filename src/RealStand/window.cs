@@ -14,6 +14,9 @@ namespace RealStand
     {
         //Criação do Container
         private StandContainer standContainer;
+
+        private bool newclient = false;
+
         public window()
         {
             InitializeComponent();
@@ -98,6 +101,7 @@ namespace RealStand
             {
                 case 1:
                     clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
+                    clientesListBox.SelectedIndex = -1;
                     break;
                 case 2:
                     listBoxClientesOficina.DataSource = standContainer.Clientes.ToList<Cliente>();
@@ -153,14 +157,25 @@ namespace RealStand
         }
 
         /// <summary>
-        /// Adiciona cliente à base de dados
+        /// Grava dos dados do cliente na base de dados
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void buttonGravarCliente_Click(object sender, EventArgs e)
         {
-            Cliente novoCliente = new Cliente(nomeTextBox.Text, nIFMaskedTextBox.Text, moradaTextBox.Text, contactoMaskedTextBox.Text);
-            standContainer.Clientes.Add(novoCliente);
+            if(newclient)
+            {
+                Cliente novoCliente = new Cliente(nomeTextBox.Text, nIFMaskedTextBox.Text, moradaTextBox.Text, contactoMaskedTextBox.Text);
+                standContainer.Clientes.Add(novoCliente);
+            }
+            else
+            {
+                Cliente selectedClient = (Cliente)clientesListBox.SelectedItem;
+                selectedClient.Nome = nomeTextBox.Text;
+                selectedClient.NIF = nIFMaskedTextBox.Text;
+                selectedClient.Morada = moradaTextBox.Text;
+                selectedClient.Contacto = contactoMaskedTextBox.Text;
+            }
             standContainer.SaveChanges();
             clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
 
@@ -250,6 +265,7 @@ namespace RealStand
 
         private void clientesBindingNavigator_Click(object sender, EventArgs e)
         {
+            newclient = true;
             AllowDataInsertion();
         }
     }
