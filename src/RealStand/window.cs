@@ -168,5 +168,27 @@ namespace RealStand
             moradaTextBox.Text = "";
             contactoMaskedTextBox.Text = "";
         }
+
+        private void buttonAdicionarParcelaOficina_Click(object sender, EventArgs e)
+        {
+            Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
+            Parcela novaParcela = new Parcela(decimal.Parse(maskedTextBoxValorParcelaOficina.Text.Replace('€', ' ')), textBoxDescricaoParcelaOficina.Text);
+
+            if (selectedServico == null)
+            {
+                return;
+            }
+            selectedServico.Parcela.Add(novaParcela);
+            standContainer.SaveChanges();
+            listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
+        }
+
+        private void listBoxServicosOficina_Click(object sender, EventArgs e)
+        {
+            Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
+            listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
+            //Mete a listbox dos serviços da oficina sem nenhum item selecionado
+            listBoxParcelasOficina.SelectedIndex = -1;
+        }
     }
 }

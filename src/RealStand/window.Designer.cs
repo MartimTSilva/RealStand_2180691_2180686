@@ -686,6 +686,7 @@
             this.buttonAdicionarParcelaOficina.TabIndex = 2;
             this.buttonAdicionarParcelaOficina.Text = "Adicionar Parcela";
             this.buttonAdicionarParcelaOficina.UseVisualStyleBackColor = true;
+            this.buttonAdicionarParcelaOficina.Click += new System.EventHandler(this.buttonAdicionarParcelaOficina_Click);
             // 
             // maskedTextBoxValorParcelaOficina
             // 
@@ -818,6 +819,7 @@
             this.listBoxServicosOficina.Name = "listBoxServicosOficina";
             this.listBoxServicosOficina.Size = new System.Drawing.Size(211, 277);
             this.listBoxServicosOficina.TabIndex = 0;
+            this.listBoxServicosOficina.Click += new System.EventHandler(this.listBoxServicosOficina_Click);
             // 
             // groupBoxCarrosOficina
             // 
