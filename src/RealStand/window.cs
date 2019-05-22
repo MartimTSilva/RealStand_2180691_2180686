@@ -64,7 +64,7 @@ namespace RealStand
         private void window_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'realStandDataSet.Clientes' table. You can move, or remove it, as needed.
-            this.clientesTableAdapter.Fill(this.realStandDataSet.Clientes);
+            //this.clientesTableAdapter.Fill(this.realStandDataSet.Clientes);
 
             standContainer = new StandContainer();
         }
@@ -159,7 +159,7 @@ namespace RealStand
         /// <param name="e"></param>
         private void buttonGravarCliente_Click(object sender, EventArgs e)
         {
-            Cliente novoCliente = new Cliente(nomeTextBox.Text, int.Parse(nIFMaskedTextBox.Text), moradaTextBox.Text, contactoMaskedTextBox.Text);
+            Cliente novoCliente = new Cliente(nomeTextBox.Text, nIFMaskedTextBox.Text, moradaTextBox.Text, contactoMaskedTextBox.Text);
             standContainer.Clientes.Add(novoCliente);
             standContainer.SaveChanges();
             clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();

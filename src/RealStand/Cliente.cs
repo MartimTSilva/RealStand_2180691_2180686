@@ -24,7 +24,7 @@ namespace RealStand
     
         public int Id { get; set; }
         public string Nome { get; set; }
-        public int NIF { get; set; }
+        public string NIF { get; set; }
         public string Morada { get; set; }
         public string Contacto { get; set; }
     

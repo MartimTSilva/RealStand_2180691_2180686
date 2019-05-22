@@ -62,7 +62,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="NIF" Type="int" Nullable="false" />
+    <Property Name="NIF" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Morada" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Contacto" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
@@ -314,7 +314,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="NIF" Type="Int32" Nullable="false" />
+          <Property Name="NIF" Type="String" Nullable="false" />
           <Property Name="Morada" Type="String" Nullable="false" />
           <Property Name="Contacto" Type="String" Nullable="false" />
           <NavigationProperty Name="CarroOficina" Relationship="Stand.ClienteCarroOficina" FromRole="Cliente" ToRole="CarroOficina" />

@@ -8,7 +8,7 @@ namespace RealStand
 {
     partial class Cliente
     {
-        public Cliente(string nome, int nIF, string morada, string contacto)
+        public Cliente(string nome, string nIF, string morada, string contacto)
         {
             Nome = nome;
             NIF = nIF;

@@ -23,6 +23,7 @@ namespace RealStand
         public string Matricula { get; set; }
         public int Kms { get; set; }
         public int ClienteId { get; set; }
+    
         public virtual Cliente Cliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Servico> Servico { get; set; }
