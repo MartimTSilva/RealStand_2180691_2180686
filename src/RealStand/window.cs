@@ -12,6 +12,8 @@ namespace RealStand
 {
     public partial class window : Form
     {
+        //Criação do Container
+        private StandContainer standContainer;
         public window()
         {
             InitializeComponent();
@@ -63,7 +65,14 @@ namespace RealStand
         {
             // TODO: This line of code loads data into the 'realStandDataSet.Clientes' table. You can move, or remove it, as needed.
             this.clientesTableAdapter.Fill(this.realStandDataSet.Clientes);
-       
+
+            standContainer = new StandContainer();
+            LerDados();
+        }
+        private void LerDados()
+        {
+            //Ler todos os dados das BD e colocar nas respectivas listboxes
+            listBoxClientesOficina.DataSource = standContainer.Clientes.ToList<Cliente>();
         }
     }
 }
