@@ -117,6 +117,39 @@ namespace RealStand
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
             listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
+            //Mete a listbox dos Carros da oficina sem nenhum item selecionado
+            listBoxCarrosOficina.SelectedIndex = -1;
+        }
+
+        /// <summary>
+        /// Adiciona um Serviço a um carro da oficina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonAdicionarServicoOficina_Click(object sender, EventArgs e)
+        {
+            CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
+            Servico novoServico = new Servico(dateTimePickerDataEntregaOficina.Value , comboBoxTipoServicosOficina.SelectedItem.ToString(), dateTimePickerDataSaidaOficina.Value);
+            if (novoServico == null)
+            {
+                return;
+            }
+            selectedCarroOficina.Servico.Add(novoServico);
+            standContainer.SaveChanges();
+            listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+        }
+
+        /// <summary>
+        /// Mostra todos os serviços do carro selecionado da oficina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listBoxCarrosOficina_Click(object sender, EventArgs e)
+        {
+            CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
+            listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+            //Mete a listbox dos serviços da oficina sem nenhum item selecionado
+            listBoxServicosOficina.SelectedIndex = -1;
         }
 
         /// <summary>
