@@ -69,6 +69,11 @@ namespace RealStand
             standContainer = new StandContainer();
         }
 
+        /// <summary>
+        /// Adiciona um carro da oficina ao cliente que esteja selecionado na listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAdicionarCarroOficina_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
@@ -82,15 +87,26 @@ namespace RealStand
             listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
         }
 
+        /// <summary>
+        /// Ao clicar na tab "Oficina" do menu, atualiza a listbox dos clientes 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tabControl1_Click(object sender, EventArgs e)
         {
             if (tabControl1.SelectedIndex == 2)
             {
                 listBoxClientesOficina.DataSource = standContainer.Clientes.ToList<Cliente>();
+                //Mete a listbox dos clientes na Oficina sem nenhum item selecionado
                 listBoxClientesOficina.SelectedIndex = -1;
             }
         }
 
+        /// <summary>
+        /// Mostra todos os carros do cliente selecionado na listbox dos carros da oficina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listBoxClientesOficina_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
