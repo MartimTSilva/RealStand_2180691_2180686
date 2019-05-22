@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RealStand
 {
-    public partial class Cliente
+    partial class Cliente
     {
         public Cliente(string nome, int nIF, string morada, string contacto)
         {
@@ -15,6 +15,8 @@ namespace RealStand
             Morada = morada;
             Contacto = contacto;
             CarroOficina = new HashSet<CarroOficina>();
+            Venda = new HashSet<Venda>();
+            Aluguer = new HashSet<Aluguer>();
         }
 
         public override string ToString()

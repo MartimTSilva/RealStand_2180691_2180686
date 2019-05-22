@@ -438,6 +438,7 @@
             this.buttonGravarCliente.TabIndex = 8;
             this.buttonGravarCliente.Text = "Gravar";
             this.buttonGravarCliente.UseVisualStyleBackColor = true;
+            this.buttonGravarCliente.Click += new System.EventHandler(this.buttonGravarCliente_Click);
             // 
             // nomeTextBox
             // 

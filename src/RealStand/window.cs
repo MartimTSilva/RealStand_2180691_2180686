@@ -82,12 +82,24 @@ namespace RealStand
             listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
         }
 
+        /// <summary>
+        /// Atualiza os dados quando muda de tab
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tabControl1_Click(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex == 2)
+            switch (tabControl1.SelectedIndex)
             {
-                listBoxClientesOficina.DataSource = standContainer.Clientes.ToList<Cliente>();
-                listBoxClientesOficina.SelectedIndex = -1;
+                case 1:
+                    clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
+                    break;
+                case 2:
+                    listBoxClientesOficina.DataSource = standContainer.Clientes.ToList<Cliente>();
+                    listBoxClientesOficina.SelectedIndex = -1;
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -95,6 +107,23 @@ namespace RealStand
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
             listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
+        }
+
+        /// <summary>
+        /// Adiciona cliente à base de dados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonGravarCliente_Click(object sender, EventArgs e)
+        {
+            Cliente novoCliente = new Cliente(nomeTextBox.Text, int.Parse(nIFMaskedTextBox.Text), moradaTextBox.Text, contactoMaskedTextBox.Text);
+            standContainer.Clientes.Add(novoCliente);
+            standContainer.SaveChanges();
+            clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
+            nomeTextBox.Text = "";
+            nIFMaskedTextBox.Text = "";
+            moradaTextBox.Text = "";
+            contactoMaskedTextBox.Text = "";
         }
     }
 }
