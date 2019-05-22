@@ -169,6 +169,11 @@ namespace RealStand
             contactoMaskedTextBox.Text = "";
         }
 
+        /// <summary>
+        /// Adiciona uma parcela a um serviço na oficina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAdicionarParcelaOficina_Click(object sender, EventArgs e)
         {
             Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
@@ -183,11 +188,16 @@ namespace RealStand
             listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
         }
 
+        /// <summary>
+        /// Mostra todos as parcelas do serviço selecionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listBoxServicosOficina_Click(object sender, EventArgs e)
         {
             Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
             listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
-            //Mete a listbox dos serviços da oficina sem nenhum item selecionado
+            //Mete a listbox das parcelas da oficina sem nenhum item selecionado
             listBoxParcelasOficina.SelectedIndex = -1;
         }
     }
