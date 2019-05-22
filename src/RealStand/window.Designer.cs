@@ -796,6 +796,7 @@
             this.buttonAdicionarServicoOficina.TabIndex = 1;
             this.buttonAdicionarServicoOficina.Text = "Adicionar Serviço";
             this.buttonAdicionarServicoOficina.UseVisualStyleBackColor = true;
+            this.buttonAdicionarServicoOficina.Click += new System.EventHandler(this.buttonAdicionarServicoOficina_Click);
             // 
             // comboBoxTipoServicosOficina
             // 
@@ -982,6 +983,7 @@
             this.listBoxCarrosOficina.ScrollAlwaysVisible = true;
             this.listBoxCarrosOficina.Size = new System.Drawing.Size(183, 199);
             this.listBoxCarrosOficina.TabIndex = 0;
+            this.listBoxCarrosOficina.Click += new System.EventHandler(this.listBoxCarrosOficina_Click);
             // 
             // groupBoxFichaClienteOficina
             // 

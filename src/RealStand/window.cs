@@ -111,6 +111,27 @@ namespace RealStand
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
             listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
+            listBoxCarrosOficina.SelectedIndex = -1;
+        }
+
+        private void buttonAdicionarServicoOficina_Click(object sender, EventArgs e)
+        {
+            CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
+            Servico novoServico = new Servico(dateTimePickerDataEntregaOficina.Value , comboBoxTipoServicosOficina.SelectedItem.ToString(), dateTimePickerDataSaidaOficina.Value);
+            if (novoServico == null)
+            {
+                return;
+            }
+            selectedCarroOficina.Servico.Add(novoServico);
+            standContainer.SaveChanges();
+            listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+        }
+
+        private void listBoxCarrosOficina_Click(object sender, EventArgs e)
+        {
+            CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
+            listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+            listBoxServicosOficina.SelectedIndex = -1;
         }
     }
 }

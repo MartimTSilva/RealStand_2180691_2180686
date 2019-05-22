@@ -8,17 +8,17 @@ namespace RealStand
 {
     public partial class Servico
     {
-        public Servico(DateTime dataEntrega, string tipo, DateTime dataSaida, ICollection<Parcela> parcela)
+        public Servico(DateTime dataEntrega, string tipo, DateTime dataSaida)
         {
             DataEntrega = dataEntrega;
             Tipo = tipo;
             DataSaida = dataSaida;
-            this.Parcela = new HashSet<Parcela>();
+            Parcela = new HashSet<Parcela>();
         }
 
         public override string ToString()
         {
-            return Tipo;
+            return Tipo + " (" + DataEntrega + ")";
         }
     }
 }
