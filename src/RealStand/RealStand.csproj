@@ -71,6 +71,7 @@
     <Compile Include="CarroVenda.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
+    <Compile Include="Cliente.created.cs" />
     <Compile Include="Cliente.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
