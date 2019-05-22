@@ -63,7 +63,7 @@ namespace RealStand
         {
             // TODO: This line of code loads data into the 'realStandDataSet.Clientes' table. You can move, or remove it, as needed.
             this.clientesTableAdapter.Fill(this.realStandDataSet.Clientes);
-
+       
         }
     }
 }

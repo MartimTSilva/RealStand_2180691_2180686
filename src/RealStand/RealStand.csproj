@@ -64,6 +64,7 @@
     <Compile Include="CarroAluguer.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
+    <Compile Include="CarroOficina.created.cs" />
     <Compile Include="CarroOficina.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
@@ -73,11 +74,13 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
+    <Compile Include="Parcela.created.cs" />
     <Compile Include="RealStandDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RealStandDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Servico.created.cs" />
     <Compile Include="window.cs">
       <SubType>Form</SubType>
     </Compile>
