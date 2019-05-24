@@ -121,8 +121,28 @@ namespace RealStand
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
             listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
-            //Mete a listbox dos Carros da oficina sem nenhum item selecionado
+            labelClienteSelecionadoOficina.Text = selectedCliente.Nome;
+            labelNifClienteSelecionadoOficina.Text = selectedCliente.NIF;
+
+            //Mete as listboxs sem nenhum item selecionado
             listBoxCarrosOficina.SelectedIndex = -1;
+            listBoxServicosOficina.SelectedIndex = -1;
+            listBoxParcelasOficina.SelectedIndex = -1;
+            listBoxServicosOficina.DataSource = null;
+            listBoxParcelasOficina.DataSource = null;
+
+            labelClienteSelecionadoOficina.Text = selectedCliente.Nome;
+            labelNifClienteSelecionadoOficina.Text = selectedCliente.NIF;
+            GetTotal(selectedCliente);
+        }
+
+        private void GetTotal(Cliente selectedCliente)
+        {
+            if (selectedCliente == null)
+            {
+                return;
+            }
+            labelTotalClienteOficina.Text = selectedCliente.GetTotal().ToString("0.00");
         }
 
         /// <summary>
@@ -154,6 +174,7 @@ namespace RealStand
             listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
             //Mete a listbox dos serviços da oficina sem nenhum item selecionado
             listBoxServicosOficina.SelectedIndex = -1;
+            listBoxParcelasOficina.DataSource = null;
         }
 
         /// <summary>
@@ -189,6 +210,7 @@ namespace RealStand
         /// <param name="e"></param>
         private void buttonAdicionarParcelaOficina_Click(object sender, EventArgs e)
         {
+            Cliente selectedCliente = (Cliente)clientesListBox.SelectedItem;
             Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
             Parcela novaParcela = new Parcela(decimal.Parse(maskedTextBoxValorParcelaOficina.Text.Replace('€', ' ')), textBoxDescricaoParcelaOficina.Text);
 
@@ -199,6 +221,7 @@ namespace RealStand
             selectedServico.Parcela.Add(novaParcela);
             standContainer.SaveChanges();
             listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
+            GetTotal(selectedCliente);
         }
 
         /// <summary>

@@ -19,6 +19,16 @@ namespace RealStand
             Aluguer = new HashSet<Aluguer>();
         }
 
+        public float GetTotal()
+        {
+            float total = 0;
+            foreach (CarroOficina carro in this.CarroOficina.ToList())
+            {
+                total += carro.GetTotal();
+            }
+            return total;
+        }
+
         public override string ToString()
         {
             return Nome + " (" + NIF + ")";

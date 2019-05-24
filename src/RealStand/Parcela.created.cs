@@ -20,7 +20,7 @@ namespace RealStand
 
         public override string ToString()
         {
-            return Descricao + " (" + Valor + "€" + ")";
+            return Descricao + " (" + Valor.ToString("0.00") + "€" + ")";
         }
     }
 }

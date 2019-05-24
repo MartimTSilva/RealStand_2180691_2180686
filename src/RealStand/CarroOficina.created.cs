@@ -19,6 +19,16 @@ namespace RealStand
             Servico = new HashSet<Servico>();
         }
 
+        public float GetTotal()
+        {
+            float total = 0;
+            foreach (Servico servico in this.Servico.ToList())
+            {
+                total += servico.GetTotal();
+            }
+            return total;
+        }
+
         public override string ToString()
         {
             return Marca + " - " + Modelo + "(" + Matricula + ")";

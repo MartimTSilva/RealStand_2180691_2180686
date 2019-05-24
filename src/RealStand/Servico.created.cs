@@ -16,6 +16,16 @@ namespace RealStand
             Parcela = new HashSet<Parcela>();
         }
 
+        public float GetTotal()
+        {
+            float total = 0;
+            foreach (Parcela parcela in this.Parcela.ToList())
+            {
+                total += (float)parcela.Valor;
+            }
+            return total;
+        }
+
         public override string ToString()
         {
             return Tipo + " (" + DataEntrega + ")";
