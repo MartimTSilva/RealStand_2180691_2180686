@@ -607,14 +607,11 @@
             // 
             // clientesListBox
             // 
-            this.clientesListBox.DataSource = this.clientesBindingSource;
-            this.clientesListBox.DisplayMember = "Nome";
             this.clientesListBox.FormattingEnabled = true;
             this.clientesListBox.Location = new System.Drawing.Point(3, 76);
             this.clientesListBox.Name = "clientesListBox";
             this.clientesListBox.Size = new System.Drawing.Size(378, 498);
             this.clientesListBox.TabIndex = 0;
-            this.clientesListBox.ValueMember = "Id";
             this.clientesListBox.Click += new System.EventHandler(this.clientesListBox_Click);
             // 
             // tabPageOficina
