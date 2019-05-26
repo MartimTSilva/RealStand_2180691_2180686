@@ -298,6 +298,7 @@ namespace RealStand
             nIFMaskedTextBox.Text = selectedClient.NIF;
             moradaTextBox.Text = selectedClient.Morada;
             contactoMaskedTextBox.Text = selectedClient.Contacto;
+            bindingNavigatorDeleteItem.Enabled = true;
         }
 
         /// <summary>
@@ -337,6 +338,17 @@ namespace RealStand
         {
             newclient = true;
             AllowDataInsertion();
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            Cliente selectedClient = (Cliente)clientesListBox.SelectedItem;
+            standContainer.Clientes.Remove(selectedClient);
+            standContainer.SaveChanges();
+            clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
+            clientesListBox.SelectedIndex = -1;
+            bindingNavigatorDeleteItem.Enabled = false;
+            DisableDataInsertion();
         }
     }
 }

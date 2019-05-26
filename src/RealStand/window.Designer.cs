@@ -494,7 +494,7 @@
             this.clientesBindingNavigator.AddNewItem = null;
             this.clientesBindingNavigator.BindingSource = this.clientesBindingSource;
             this.clientesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.clientesBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.clientesBindingNavigator.DeleteItem = null;
             this.clientesBindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.clientesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorAddNewItem,
@@ -530,11 +530,13 @@
             // bindingNavigatorDeleteItem
             // 
             this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Enabled = false;
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -607,14 +609,11 @@
             // 
             // clientesListBox
             // 
-            this.clientesListBox.DataSource = this.clientesBindingSource;
-            this.clientesListBox.DisplayMember = "Nome";
             this.clientesListBox.FormattingEnabled = true;
             this.clientesListBox.Location = new System.Drawing.Point(3, 76);
             this.clientesListBox.Name = "clientesListBox";
             this.clientesListBox.Size = new System.Drawing.Size(378, 498);
             this.clientesListBox.TabIndex = 0;
-            this.clientesListBox.ValueMember = "Id";
             this.clientesListBox.Click += new System.EventHandler(this.clientesListBox_Click);
             // 
             // tabPageOficina
