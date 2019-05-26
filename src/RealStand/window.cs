@@ -88,6 +88,14 @@ namespace RealStand
             selectedCliente.CarroOficina.Add(novoCarroOficina);
             standContainer.SaveChanges();
             listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
+
+            //Limpa textboxes
+            maskedTextBoxMatriculaOficina.Text = "";
+            textBoxKMsOficina.Text = "";
+            textBoxChassiOficina.Text = "";
+            textBoxMarcaOficina.Text = "";
+            textBoxModeloOficina.Text = "";
+            comboBoxCombustivelOficina.Text = "";
         }
 
         /// <summary>
@@ -105,7 +113,16 @@ namespace RealStand
                     break;
                 case 2:
                     listBoxClientesOficina.DataSource = standContainer.Clientes.ToList<Cliente>();
+                    labelClienteSelecionadoOficina.Text = "Nenhum cliente selecionado";
+                    labelNifClienteSelecionadoOficina.Text = "*********";
+                    labelTotalClienteOficina.Text = "0.00€";
                     listBoxClientesOficina.SelectedIndex = -1;
+                    listBoxCarrosOficina.SelectedIndex = -1;
+                    listBoxServicosOficina.SelectedIndex = -1;
+                    listBoxParcelasOficina.SelectedIndex = -1;
+                    listBoxCarrosOficina.DataSource = null;
+                    listBoxServicosOficina.DataSource = null;
+                    listBoxParcelasOficina.DataSource = null;
                     break;
                 default:
                     break;
@@ -120,9 +137,14 @@ namespace RealStand
         private void listBoxClientesOficina_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
-            listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
-            labelClienteSelecionadoOficina.Text = selectedCliente.Nome;
-            labelNifClienteSelecionadoOficina.Text = selectedCliente.NIF;
+            try
+            {
+                listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
+            }
+            catch (System.NullReferenceException)
+            {
+                return;
+            }
 
             //Mete as listboxs sem nenhum item selecionado
             listBoxCarrosOficina.SelectedIndex = -1;
@@ -131,6 +153,7 @@ namespace RealStand
             listBoxServicosOficina.DataSource = null;
             listBoxParcelasOficina.DataSource = null;
 
+            //Preenche a ficha do cliente
             labelClienteSelecionadoOficina.Text = selectedCliente.Nome;
             labelNifClienteSelecionadoOficina.Text = selectedCliente.NIF;
             GetTotal(selectedCliente);
@@ -142,7 +165,7 @@ namespace RealStand
             {
                 return;
             }
-            labelTotalClienteOficina.Text = selectedCliente.GetTotal().ToString("0.00");
+            labelTotalClienteOficina.Text = selectedCliente.GetTotal().ToString("0.00€");
         }
 
         /// <summary>
@@ -161,6 +184,11 @@ namespace RealStand
             selectedCarroOficina.Servico.Add(novoServico);
             standContainer.SaveChanges();
             listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+
+            //Limpa textboxes
+            dateTimePickerDataEntregaOficina.Text = null;
+            comboBoxTipoServicosOficina.Text = "";
+            dateTimePickerDataSaidaOficina.Text = null;
         }
 
         /// <summary>
@@ -171,7 +199,14 @@ namespace RealStand
         private void listBoxCarrosOficina_Click(object sender, EventArgs e)
         {
             CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
-            listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+            try
+            {
+                listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+            }
+            catch (System.NullReferenceException)
+            {
+                return;
+            }
             //Mete a listbox dos serviços da oficina sem nenhum item selecionado
             listBoxServicosOficina.SelectedIndex = -1;
             listBoxParcelasOficina.DataSource = null;
@@ -222,6 +257,10 @@ namespace RealStand
             standContainer.SaveChanges();
             listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
             GetTotal(selectedCliente);
+
+            //Limpa textboxes
+            textBoxDescricaoParcelaOficina.Text = "";
+            maskedTextBoxValorParcelaOficina.Text = null;
         }
 
         /// <summary>
@@ -232,7 +271,15 @@ namespace RealStand
         private void listBoxServicosOficina_Click(object sender, EventArgs e)
         {
             Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
-            listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
+            try
+            {
+                listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
+
+            }
+            catch (System.NullReferenceException)
+            {
+                return;
+            }
             //Mete a listbox das parcelas da oficina sem nenhum item selecionado
             listBoxParcelasOficina.SelectedIndex = -1;
         }

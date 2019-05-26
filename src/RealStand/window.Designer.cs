@@ -649,7 +649,7 @@
             this.buttonRemoverParcelaOficina.Location = new System.Drawing.Point(7, 17);
             this.buttonRemoverParcelaOficina.Name = "buttonRemoverParcelaOficina";
             this.buttonRemoverParcelaOficina.Size = new System.Drawing.Size(237, 23);
-            this.buttonRemoverParcelaOficina.TabIndex = 6;
+            this.buttonRemoverParcelaOficina.TabIndex = 23;
             this.buttonRemoverParcelaOficina.Text = "Remover Parcela";
             this.buttonRemoverParcelaOficina.UseVisualStyleBackColor = true;
             // 
@@ -690,7 +690,7 @@
             this.buttonAdicionarParcelaOficina.Location = new System.Drawing.Point(7, 74);
             this.buttonAdicionarParcelaOficina.Name = "buttonAdicionarParcelaOficina";
             this.buttonAdicionarParcelaOficina.Size = new System.Drawing.Size(237, 23);
-            this.buttonAdicionarParcelaOficina.TabIndex = 2;
+            this.buttonAdicionarParcelaOficina.TabIndex = 22;
             this.buttonAdicionarParcelaOficina.Text = "Adicionar Parcela";
             this.buttonAdicionarParcelaOficina.UseVisualStyleBackColor = true;
             this.buttonAdicionarParcelaOficina.Click += new System.EventHandler(this.buttonAdicionarParcelaOficina_Click);
@@ -701,7 +701,7 @@
             this.maskedTextBoxValorParcelaOficina.Mask = "€00000.00";
             this.maskedTextBoxValorParcelaOficina.Name = "maskedTextBoxValorParcelaOficina";
             this.maskedTextBoxValorParcelaOficina.Size = new System.Drawing.Size(63, 20);
-            this.maskedTextBoxValorParcelaOficina.TabIndex = 1;
+            this.maskedTextBoxValorParcelaOficina.TabIndex = 21;
             // 
             // textBoxDescricaoParcelaOficina
             // 
@@ -709,7 +709,7 @@
             this.textBoxDescricaoParcelaOficina.Multiline = true;
             this.textBoxDescricaoParcelaOficina.Name = "textBoxDescricaoParcelaOficina";
             this.textBoxDescricaoParcelaOficina.Size = new System.Drawing.Size(175, 20);
-            this.textBoxDescricaoParcelaOficina.TabIndex = 0;
+            this.textBoxDescricaoParcelaOficina.TabIndex = 20;
             // 
             // listBoxParcelasOficina
             // 
@@ -717,7 +717,7 @@
             this.listBoxParcelasOficina.Location = new System.Drawing.Point(7, 46);
             this.listBoxParcelasOficina.Name = "listBoxParcelasOficina";
             this.listBoxParcelasOficina.Size = new System.Drawing.Size(237, 303);
-            this.listBoxParcelasOficina.TabIndex = 0;
+            this.listBoxParcelasOficina.TabIndex = 19;
             // 
             // groupBoxServicosOficina
             // 
@@ -736,7 +736,7 @@
             this.buttonRemoverServicoOficina.Location = new System.Drawing.Point(6, 17);
             this.buttonRemoverServicoOficina.Name = "buttonRemoverServicoOficina";
             this.buttonRemoverServicoOficina.Size = new System.Drawing.Size(212, 23);
-            this.buttonRemoverServicoOficina.TabIndex = 3;
+            this.buttonRemoverServicoOficina.TabIndex = 18;
             this.buttonRemoverServicoOficina.Text = "Remover Serviço";
             this.buttonRemoverServicoOficina.UseVisualStyleBackColor = true;
             // 
@@ -761,14 +761,14 @@
             this.dateTimePickerDataSaidaOficina.Location = new System.Drawing.Point(97, 76);
             this.dateTimePickerDataSaidaOficina.Name = "dateTimePickerDataSaidaOficina";
             this.dateTimePickerDataSaidaOficina.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePickerDataSaidaOficina.TabIndex = 18;
+            this.dateTimePickerDataSaidaOficina.TabIndex = 16;
             // 
             // dateTimePickerDataEntregaOficina
             // 
             this.dateTimePickerDataEntregaOficina.Location = new System.Drawing.Point(97, 22);
             this.dateTimePickerDataEntregaOficina.Name = "dateTimePickerDataEntregaOficina";
             this.dateTimePickerDataEntregaOficina.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePickerDataEntregaOficina.TabIndex = 17;
+            this.dateTimePickerDataEntregaOficina.TabIndex = 14;
             // 
             // labelDataSaidaOficina
             // 
@@ -802,7 +802,7 @@
             this.buttonAdicionarServicoOficina.Location = new System.Drawing.Point(7, 100);
             this.buttonAdicionarServicoOficina.Name = "buttonAdicionarServicoOficina";
             this.buttonAdicionarServicoOficina.Size = new System.Drawing.Size(211, 23);
-            this.buttonAdicionarServicoOficina.TabIndex = 1;
+            this.buttonAdicionarServicoOficina.TabIndex = 17;
             this.buttonAdicionarServicoOficina.Text = "Adicionar Serviço";
             this.buttonAdicionarServicoOficina.UseVisualStyleBackColor = true;
             this.buttonAdicionarServicoOficina.Click += new System.EventHandler(this.buttonAdicionarServicoOficina_Click);
@@ -817,7 +817,7 @@
             this.comboBoxTipoServicosOficina.Location = new System.Drawing.Point(97, 48);
             this.comboBoxTipoServicosOficina.Name = "comboBoxTipoServicosOficina";
             this.comboBoxTipoServicosOficina.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxTipoServicosOficina.TabIndex = 0;
+            this.comboBoxTipoServicosOficina.TabIndex = 15;
             // 
             // listBoxServicosOficina
             // 
@@ -825,7 +825,7 @@
             this.listBoxServicosOficina.Location = new System.Drawing.Point(7, 46);
             this.listBoxServicosOficina.Name = "listBoxServicosOficina";
             this.listBoxServicosOficina.Size = new System.Drawing.Size(211, 277);
-            this.listBoxServicosOficina.TabIndex = 0;
+            this.listBoxServicosOficina.TabIndex = 13;
             this.listBoxServicosOficina.Click += new System.EventHandler(this.listBoxServicosOficina_Click);
             // 
             // groupBoxCarrosOficina
@@ -867,21 +867,21 @@
             this.textBoxModeloOficina.Location = new System.Drawing.Point(57, 122);
             this.textBoxModeloOficina.Name = "textBoxModeloOficina";
             this.textBoxModeloOficina.Size = new System.Drawing.Size(132, 20);
-            this.textBoxModeloOficina.TabIndex = 13;
+            this.textBoxModeloOficina.TabIndex = 9;
             // 
             // textBoxMarcaOficina
             // 
             this.textBoxMarcaOficina.Location = new System.Drawing.Point(52, 96);
             this.textBoxMarcaOficina.Name = "textBoxMarcaOficina";
             this.textBoxMarcaOficina.Size = new System.Drawing.Size(137, 20);
-            this.textBoxMarcaOficina.TabIndex = 12;
+            this.textBoxMarcaOficina.TabIndex = 8;
             // 
             // textBoxChassiOficina
             // 
             this.textBoxChassiOficina.Location = new System.Drawing.Point(72, 70);
             this.textBoxChassiOficina.Name = "textBoxChassiOficina";
             this.textBoxChassiOficina.Size = new System.Drawing.Size(117, 20);
-            this.textBoxChassiOficina.TabIndex = 11;
+            this.textBoxChassiOficina.TabIndex = 7;
             // 
             // comboBoxCombustivelOficina
             // 
@@ -938,7 +938,7 @@
             this.textBoxKMsOficina.Location = new System.Drawing.Point(95, 44);
             this.textBoxKMsOficina.Name = "textBoxKMsOficina";
             this.textBoxKMsOficina.Size = new System.Drawing.Size(94, 20);
-            this.textBoxKMsOficina.TabIndex = 5;
+            this.textBoxKMsOficina.TabIndex = 6;
             // 
             // labelQuilometragemOficina
             // 
@@ -955,7 +955,7 @@
             this.maskedTextBoxMatriculaOficina.Mask = "AA-AA-AA";
             this.maskedTextBoxMatriculaOficina.Name = "maskedTextBoxMatriculaOficina";
             this.maskedTextBoxMatriculaOficina.Size = new System.Drawing.Size(50, 20);
-            this.maskedTextBoxMatriculaOficina.TabIndex = 3;
+            this.maskedTextBoxMatriculaOficina.TabIndex = 5;
             // 
             // labelMatriculaOficina
             // 
@@ -971,7 +971,7 @@
             this.buttonAdicionarCarroOficina.Location = new System.Drawing.Point(6, 173);
             this.buttonAdicionarCarroOficina.Name = "buttonAdicionarCarroOficina";
             this.buttonAdicionarCarroOficina.Size = new System.Drawing.Size(183, 23);
-            this.buttonAdicionarCarroOficina.TabIndex = 1;
+            this.buttonAdicionarCarroOficina.TabIndex = 11;
             this.buttonAdicionarCarroOficina.Text = "Adicionar Carro";
             this.buttonAdicionarCarroOficina.UseVisualStyleBackColor = true;
             this.buttonAdicionarCarroOficina.Click += new System.EventHandler(this.buttonAdicionarCarroOficina_Click);
@@ -981,7 +981,7 @@
             this.buttonRemoverCarroOficina.Location = new System.Drawing.Point(6, 17);
             this.buttonRemoverCarroOficina.Name = "buttonRemoverCarroOficina";
             this.buttonRemoverCarroOficina.Size = new System.Drawing.Size(183, 23);
-            this.buttonRemoverCarroOficina.TabIndex = 2;
+            this.buttonRemoverCarroOficina.TabIndex = 12;
             this.buttonRemoverCarroOficina.Text = "Remover Carro";
             this.buttonRemoverCarroOficina.UseVisualStyleBackColor = true;
             // 
@@ -992,7 +992,7 @@
             this.listBoxCarrosOficina.Name = "listBoxCarrosOficina";
             this.listBoxCarrosOficina.ScrollAlwaysVisible = true;
             this.listBoxCarrosOficina.Size = new System.Drawing.Size(183, 199);
-            this.listBoxCarrosOficina.TabIndex = 0;
+            this.listBoxCarrosOficina.TabIndex = 4;
             this.listBoxCarrosOficina.Click += new System.EventHandler(this.listBoxCarrosOficina_Click);
             // 
             // groupBoxFichaClienteOficina
@@ -1127,7 +1127,7 @@
             this.listBoxClientesOficina.Name = "listBoxClientesOficina";
             this.listBoxClientesOficina.ScrollAlwaysVisible = true;
             this.listBoxClientesOficina.Size = new System.Drawing.Size(191, 446);
-            this.listBoxClientesOficina.TabIndex = 0;
+            this.listBoxClientesOficina.TabIndex = 3;
             this.listBoxClientesOficina.Click += new System.EventHandler(this.listBoxClientesOficina_Click);
             // 
             // labelTituloOficina
