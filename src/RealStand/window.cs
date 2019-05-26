@@ -350,5 +350,14 @@ namespace RealStand
             bindingNavigatorDeleteItem.Enabled = false;
             DisableDataInsertion();
         }
+
+        private void buttonRemoverParcelaOficina_Click(object sender, EventArgs e)
+        {
+            Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
+            Parcela selectedParcela = (Parcela)listBoxParcelasOficina.SelectedItem;
+            standContainer.Parcelas.Remove(selectedParcela);
+            standContainer.SaveChanges();
+            listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
+        }
     }
 }
