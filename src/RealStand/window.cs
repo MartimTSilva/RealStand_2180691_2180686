@@ -359,5 +359,24 @@ namespace RealStand
             standContainer.SaveChanges();
             listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
         }
+
+        private void buttonRemoverServicoOficina_Click(object sender, EventArgs e)
+        {
+            Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
+            CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
+
+            if (selectedServico.Parcela.Count == 0)
+            {
+                standContainer.Servicos.Remove(selectedServico);
+                standContainer.SaveChanges();
+                listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+            }
+            else
+            {
+                MessageBox.Show("Não é possivel apagar um serviço com parcelas ativas");
+            }
+
+            
+        }
     }
 }

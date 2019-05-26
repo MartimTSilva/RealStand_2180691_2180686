@@ -739,6 +739,7 @@
             this.buttonRemoverServicoOficina.TabIndex = 18;
             this.buttonRemoverServicoOficina.Text = "Remover Serviço";
             this.buttonRemoverServicoOficina.UseVisualStyleBackColor = true;
+            this.buttonRemoverServicoOficina.Click += new System.EventHandler(this.buttonRemoverServicoOficina_Click);
             // 
             // groupBoxCriarServicoOficina
             // 
