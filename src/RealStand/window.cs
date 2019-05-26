@@ -342,8 +342,8 @@ namespace RealStand
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            Cliente selectedClient = (Cliente)clientesListBox.SelectedItem;
-            standContainer.Clientes.Remove(selectedClient);
+            Cliente selectedCliente = (Cliente)clientesListBox.SelectedItem;
+            standContainer.Clientes.Remove(selectedCliente);
             standContainer.SaveChanges();
             clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
             clientesListBox.SelectedIndex = -1;
@@ -375,8 +375,21 @@ namespace RealStand
             {
                 MessageBox.Show("Não é possivel apagar um serviço com parcelas ativas");
             }
+        }
 
-            
+        private void buttonRemoverCarroOficina_Click(object sender, EventArgs e)
+        {
+            Cliente selectedCliente = (Cliente)clientesListBox.SelectedItem;
+            CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
+            if (selectedCarroOficina.Servico.Count == 0)
+            {
+                standContainer.Carros.Remove(selectedCarroOficina);
+                standContainer.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show("Não é possivel apagar um carro com serviços ativos");
+            }
         }
     }
 }

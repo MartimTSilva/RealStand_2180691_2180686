@@ -985,6 +985,7 @@
             this.buttonRemoverCarroOficina.TabIndex = 12;
             this.buttonRemoverCarroOficina.Text = "Remover Carro";
             this.buttonRemoverCarroOficina.UseVisualStyleBackColor = true;
+            this.buttonRemoverCarroOficina.Click += new System.EventHandler(this.buttonRemoverCarroOficina_Click);
             // 
             // listBoxCarrosOficina
             // 
