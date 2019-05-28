@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/22/2019 20:26:48
--- Generated from EDMX file: C:\Users\Micael\Documents\GitHub\RealStand_2180691_2180686\src\RealStand\Stand.edmx
+-- Date Created: 05/28/2019 11:44:38
+-- Generated from EDMX file: C:\Users\Micael Rodrigues\Documents\Github\RealStand_2180691_2180686\src\RealStand\Stand.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -97,7 +97,7 @@ GO
 -- Creating table 'Parcelas'
 CREATE TABLE [dbo].[Parcelas] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Valor] decimal(18,0)  NOT NULL,
+    [Valor] float  NOT NULL,
     [Descricao] nvarchar(max)  NOT NULL,
     [ServicoId] int  NOT NULL
 );
@@ -106,7 +106,7 @@ GO
 -- Creating table 'Vendas'
 CREATE TABLE [dbo].[Vendas] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Valor] decimal(18,0)  NOT NULL,
+    [Valor] float  NOT NULL,
     [Estado] nvarchar(max)  NOT NULL,
     [Data] datetime  NOT NULL,
     [ClienteId] int  NOT NULL,
@@ -129,8 +129,8 @@ CREATE TABLE [dbo].[Aluguers] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [DataInicio] datetime  NOT NULL,
     [DataFim] datetime  NOT NULL,
-    [Valor] decimal(18,0)  NOT NULL,
-    [Kms] int  NOT NULL,
+    [Valor] float  NOT NULL,
+    [Kms] bigint  NOT NULL,
     [ClienteId] int  NOT NULL,
     [CarroAluguerId] int  NOT NULL
 );
@@ -139,7 +139,7 @@ GO
 -- Creating table 'Carros'
 CREATE TABLE [dbo].[Carros] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [NumeroChassis] int  NOT NULL,
+    [NumeroChassis] nvarchar(max)  NOT NULL,
     [Marca] nvarchar(max)  NOT NULL,
     [Modelo] nvarchar(max)  NOT NULL,
     [Combustivel] nvarchar(max)  NOT NULL
@@ -149,7 +149,7 @@ GO
 -- Creating table 'Carros_CarroOficina'
 CREATE TABLE [dbo].[Carros_CarroOficina] (
     [Matricula] nvarchar(max)  NOT NULL,
-    [Kms] int  NOT NULL,
+    [Kms] bigint  NOT NULL,
     [ClienteId] int  NOT NULL,
     [Id] int  NOT NULL
 );

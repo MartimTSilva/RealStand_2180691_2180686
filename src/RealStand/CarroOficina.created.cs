@@ -8,7 +8,7 @@ namespace RealStand
 {
     public partial class CarroOficina
     {
-        public CarroOficina(string matricula, int kms, int numeroChassis, string marca, string modelo, string combustivel)
+        public CarroOficina(string matricula, int kms, string numeroChassis, string marca, string modelo, string combustivel)
         {
             Matricula = matricula;
             Kms = kms;

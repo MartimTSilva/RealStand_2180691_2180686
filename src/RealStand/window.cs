@@ -80,7 +80,7 @@ namespace RealStand
         private void buttonAdicionarCarroOficina_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
-            CarroOficina novoCarroOficina = new CarroOficina(maskedTextBoxMatriculaOficina.Text, int.Parse(textBoxKMsOficina.Text), int.Parse(textBoxChassiOficina.Text), textBoxMarcaOficina.Text, textBoxModeloOficina.Text, comboBoxCombustivelOficina.SelectedText);
+            CarroOficina novoCarroOficina = new CarroOficina(maskedTextBoxMatriculaOficina.Text, int.Parse(textBoxKMsOficina.Text), textBoxChassiOficina.Text, textBoxMarcaOficina.Text, textBoxModeloOficina.Text, comboBoxCombustivelOficina.SelectedText);
             if (novoCarroOficina == null)
             {
                 return;
@@ -247,7 +247,7 @@ namespace RealStand
         {
             Cliente selectedCliente = (Cliente)clientesListBox.SelectedItem;
             Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
-            Parcela novaParcela = new Parcela(decimal.Parse(maskedTextBoxValorParcelaOficina.Text.Replace('€', ' ')), textBoxDescricaoParcelaOficina.Text);
+            Parcela novaParcela = new Parcela(double.Parse(maskedTextBoxValorParcelaOficina.Text.Replace('€', ' ')), textBoxDescricaoParcelaOficina.Text);
 
             if (selectedServico == null)
             {

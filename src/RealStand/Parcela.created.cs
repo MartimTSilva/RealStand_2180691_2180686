@@ -12,7 +12,7 @@ namespace RealStand
         {
         }
 
-        public Parcela(decimal valor, string descricao)
+        public Parcela(double valor, string descricao)
         {
             Valor = valor;
             Descricao = descricao;
