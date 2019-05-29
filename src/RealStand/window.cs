@@ -56,13 +56,6 @@ namespace RealStand
             g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
         }
 
-        private void clientesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.clientesBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.realStandDataSet);
-
-        }
 
         private void window_Load(object sender, EventArgs e)
         {
@@ -236,6 +229,7 @@ namespace RealStand
             clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
 
             DisableDataInsertion();
+            newclient = false;
         }
 
         /// <summary>
@@ -291,14 +285,13 @@ namespace RealStand
         /// <param name="e"></param>
         private void clientesListBox_Click(object sender, EventArgs e)
         {
-            AllowDataInsertion();
-
             Cliente selectedClient = (Cliente)clientesListBox.SelectedItem;
             nomeTextBox.Text = selectedClient.Nome;
             nIFMaskedTextBox.Text = selectedClient.NIF;
             moradaTextBox.Text = selectedClient.Morada;
             contactoMaskedTextBox.Text = selectedClient.Contacto;
-            bindingNavigatorDeleteItem.Enabled = true;
+            buttonApagarCliente.Enabled = true;
+            buttonEditarCliente.Enabled = true;
         }
 
         /// <summary>
@@ -306,13 +299,8 @@ namespace RealStand
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AllowDataInsertion()
+        private void EnableDataInsertion()
         {
-            nomeTextBox.Text = "";
-            nIFMaskedTextBox.Text = "";
-            moradaTextBox.Text = "";
-            contactoMaskedTextBox.Text = "";
-
             nomeTextBox.Enabled = true;
             nIFMaskedTextBox.Enabled = true;
             moradaTextBox.Enabled = true;
@@ -332,23 +320,6 @@ namespace RealStand
             moradaTextBox.Enabled = false;
             contactoMaskedTextBox.Enabled = false;
             buttonGravarCliente.Visible = false;
-        }
-
-        private void clientesBindingNavigator_Click(object sender, EventArgs e)
-        {
-            newclient = true;
-            AllowDataInsertion();
-        }
-
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-        {
-            Cliente selectedCliente = (Cliente)clientesListBox.SelectedItem;
-            standContainer.Clientes.Remove(selectedCliente);
-            standContainer.SaveChanges();
-            clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
-            clientesListBox.SelectedIndex = -1;
-            bindingNavigatorDeleteItem.Enabled = false;
-            DisableDataInsertion();
         }
 
         private void buttonRemoverParcelaOficina_Click(object sender, EventArgs e)
@@ -390,6 +361,35 @@ namespace RealStand
             {
                 MessageBox.Show("Não é possivel apagar um carro com serviços ativos");
             }
+        }
+
+        private void buttonEditarCliente_Click(object sender, EventArgs e)
+        {
+            EnableDataInsertion();
+        }
+
+        private void buttonApagarCliente_Click(object sender, EventArgs e)
+        {
+            Cliente selectedCliente = (Cliente)clientesListBox.SelectedItem;
+            standContainer.Clientes.Remove(selectedCliente);
+            standContainer.SaveChanges();
+            clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
+            clientesListBox.SelectedIndex = -1;
+            buttonApagarCliente.Enabled = false;
+            buttonEditarCliente.Enabled = false;
+            DisableDataInsertion();
+        }
+
+        private void buttonCriarCliente_Click(object sender, EventArgs e)
+        {
+            newclient = true;
+
+            nomeTextBox.Text = "";
+            nIFMaskedTextBox.Text = "";
+            moradaTextBox.Text = "";
+            contactoMaskedTextBox.Text = "";
+
+            EnableDataInsertion();
         }
     }
 }

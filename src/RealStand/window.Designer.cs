@@ -49,23 +49,9 @@
             this.groupBoxDadosClientes = new System.Windows.Forms.GroupBox();
             this.buttonGravarCliente = new System.Windows.Forms.Button();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.realStandDataSet = new RealStand.realstandDataSet();
             this.nIFMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.moradaTextBox = new System.Windows.Forms.TextBox();
             this.contactoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.clientesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.clientesListBox = new System.Windows.Forms.ListBox();
             this.tabPageOficina = new System.Windows.Forms.TabPage();
             this.groupBoxParcelasOficina = new System.Windows.Forms.GroupBox();
@@ -195,9 +181,15 @@
             this.labelClienteSelecionadoAluguer = new System.Windows.Forms.Label();
             this.labelNifAluguer = new System.Windows.Forms.Label();
             this.labelNomeAluguer = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.buttonApagarCliente = new System.Windows.Forms.Button();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.realStandDataSet = new RealStand.realstandDataSet();
             this.clientesTableAdapter = new RealStand.realstandDataSetTableAdapters.ClientesTableAdapter();
             this.tableAdapterManager = new RealStand.realstandDataSetTableAdapters.TableAdapterManager();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.buttonEditarCliente = new System.Windows.Forms.Button();
+            this.buttonCriarCliente = new System.Windows.Forms.Button();
+            this.buttonProcurarCliente = new System.Windows.Forms.Button();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -208,10 +200,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPageClientes.SuspendLayout();
             this.groupBoxDadosClientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.realStandDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingNavigator)).BeginInit();
-            this.clientesBindingNavigator.SuspendLayout();
             this.tabPageOficina.SuspendLayout();
             this.groupBoxParcelasOficina.SuspendLayout();
             this.groupBoxCriarParcelaOficina.SuspendLayout();
@@ -233,6 +221,8 @@
             this.groupBoxCarrosAluguer.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBoxFichaClienteVenda.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.realStandDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // nomeLabel
@@ -365,12 +355,15 @@
             // tabPageClientes
             // 
             this.tabPageClientes.BackColor = System.Drawing.Color.Silver;
+            this.tabPageClientes.Controls.Add(this.buttonProcurarCliente);
+            this.tabPageClientes.Controls.Add(this.buttonCriarCliente);
+            this.tabPageClientes.Controls.Add(this.buttonEditarCliente);
+            this.tabPageClientes.Controls.Add(this.buttonApagarCliente);
             this.tabPageClientes.Controls.Add(this.labelCampoDeProcura);
             this.tabPageClientes.Controls.Add(this.labelProcurarPor);
             this.tabPageClientes.Controls.Add(this.comboBoxCampoProcura);
             this.tabPageClientes.Controls.Add(this.textBoxProcurarPor);
             this.tabPageClientes.Controls.Add(this.groupBoxDadosClientes);
-            this.tabPageClientes.Controls.Add(this.clientesBindingNavigator);
             this.tabPageClientes.Controls.Add(this.clientesListBox);
             this.tabPageClientes.Location = new System.Drawing.Point(166, 4);
             this.tabPageClientes.Name = "tabPageClientes";
@@ -402,7 +395,7 @@
             this.comboBoxCampoProcura.FormattingEnabled = true;
             this.comboBoxCampoProcura.Location = new System.Drawing.Point(232, 53);
             this.comboBoxCampoProcura.Name = "comboBoxCampoProcura";
-            this.comboBoxCampoProcura.Size = new System.Drawing.Size(149, 21);
+            this.comboBoxCampoProcura.Size = new System.Drawing.Size(119, 21);
             this.comboBoxCampoProcura.TabIndex = 5;
             // 
             // textBoxProcurarPor
@@ -423,20 +416,23 @@
             this.groupBoxDadosClientes.Controls.Add(this.moradaTextBox);
             this.groupBoxDadosClientes.Controls.Add(contactoLabel);
             this.groupBoxDadosClientes.Controls.Add(this.contactoMaskedTextBox);
-            this.groupBoxDadosClientes.Location = new System.Drawing.Point(387, 37);
+            this.groupBoxDadosClientes.Location = new System.Drawing.Point(438, 76);
             this.groupBoxDadosClientes.Name = "groupBoxDadosClientes";
-            this.groupBoxDadosClientes.Size = new System.Drawing.Size(516, 535);
+            this.groupBoxDadosClientes.Size = new System.Drawing.Size(465, 150);
             this.groupBoxDadosClientes.TabIndex = 3;
             this.groupBoxDadosClientes.TabStop = false;
             this.groupBoxDadosClientes.Text = "Dados";
             // 
             // buttonGravarCliente
             // 
-            this.buttonGravarCliente.Location = new System.Drawing.Point(435, 506);
+            this.buttonGravarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonGravarCliente.Image")));
+            this.buttonGravarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGravarCliente.Location = new System.Drawing.Point(384, 121);
             this.buttonGravarCliente.Name = "buttonGravarCliente";
             this.buttonGravarCliente.Size = new System.Drawing.Size(75, 23);
             this.buttonGravarCliente.TabIndex = 8;
             this.buttonGravarCliente.Text = "Gravar";
+            this.buttonGravarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonGravarCliente.UseVisualStyleBackColor = true;
             this.buttonGravarCliente.Visible = false;
             this.buttonGravarCliente.Click += new System.EventHandler(this.buttonGravarCliente_Click);
@@ -447,18 +443,8 @@
             this.nomeTextBox.Enabled = false;
             this.nomeTextBox.Location = new System.Drawing.Point(65, 13);
             this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(445, 20);
+            this.nomeTextBox.Size = new System.Drawing.Size(394, 20);
             this.nomeTextBox.TabIndex = 1;
-            // 
-            // clientesBindingSource
-            // 
-            this.clientesBindingSource.DataMember = "Clientes";
-            this.clientesBindingSource.DataSource = this.realStandDataSet;
-            // 
-            // realStandDataSet
-            // 
-            this.realStandDataSet.DataSetName = "RealStandDataSet";
-            this.realStandDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // nIFMaskedTextBox
             // 
@@ -476,7 +462,7 @@
             this.moradaTextBox.Enabled = false;
             this.moradaTextBox.Location = new System.Drawing.Point(65, 65);
             this.moradaTextBox.Name = "moradaTextBox";
-            this.moradaTextBox.Size = new System.Drawing.Size(445, 20);
+            this.moradaTextBox.Size = new System.Drawing.Size(394, 20);
             this.moradaTextBox.TabIndex = 5;
             // 
             // contactoMaskedTextBox
@@ -489,130 +475,12 @@
             this.contactoMaskedTextBox.Size = new System.Drawing.Size(78, 20);
             this.contactoMaskedTextBox.TabIndex = 7;
             // 
-            // clientesBindingNavigator
-            // 
-            this.clientesBindingNavigator.AddNewItem = null;
-            this.clientesBindingNavigator.BindingSource = this.clientesBindingSource;
-            this.clientesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.clientesBindingNavigator.DeleteItem = null;
-            this.clientesBindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.clientesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem});
-            this.clientesBindingNavigator.Location = new System.Drawing.Point(3, 3);
-            this.clientesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.clientesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.clientesBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.clientesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.clientesBindingNavigator.Name = "clientesBindingNavigator";
-            this.clientesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.clientesBindingNavigator.Size = new System.Drawing.Size(906, 25);
-            this.clientesBindingNavigator.TabIndex = 2;
-            this.clientesBindingNavigator.Text = "bindingNavigator1";
-            this.clientesBindingNavigator.Click += new System.EventHandler(this.clientesBindingNavigator_Click);
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Enabled = false;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
             // clientesListBox
             // 
             this.clientesListBox.FormattingEnabled = true;
             this.clientesListBox.Location = new System.Drawing.Point(3, 76);
             this.clientesListBox.Name = "clientesListBox";
-            this.clientesListBox.Size = new System.Drawing.Size(378, 498);
+            this.clientesListBox.Size = new System.Drawing.Size(429, 485);
             this.clientesListBox.TabIndex = 0;
             this.clientesListBox.Click += new System.EventHandler(this.clientesListBox_Click);
             // 
@@ -1897,6 +1765,38 @@
             this.labelNomeAluguer.TabIndex = 0;
             this.labelNomeAluguer.Text = "Nome:";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 580);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1081, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // buttonApagarCliente
+            // 
+            this.buttonApagarCliente.Enabled = false;
+            this.buttonApagarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonApagarCliente.Image")));
+            this.buttonApagarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonApagarCliente.Location = new System.Drawing.Point(168, 9);
+            this.buttonApagarCliente.Name = "buttonApagarCliente";
+            this.buttonApagarCliente.Size = new System.Drawing.Size(75, 23);
+            this.buttonApagarCliente.TabIndex = 9;
+            this.buttonApagarCliente.Text = "Apagar";
+            this.buttonApagarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonApagarCliente.UseVisualStyleBackColor = true;
+            this.buttonApagarCliente.Click += new System.EventHandler(this.buttonApagarCliente_Click);
+            // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataMember = "Clientes";
+            this.clientesBindingSource.DataSource = this.realStandDataSet;
+            // 
+            // realStandDataSet
+            // 
+            this.realStandDataSet.DataSetName = "RealStandDataSet";
+            this.realStandDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // clientesTableAdapter
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
@@ -1915,13 +1815,44 @@
             this.tableAdapterManager.UpdateOrder = RealStand.realstandDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VendasTableAdapter = null;
             // 
-            // statusStrip1
+            // buttonEditarCliente
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 580);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1081, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
+            this.buttonEditarCliente.Enabled = false;
+            this.buttonEditarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditarCliente.Image")));
+            this.buttonEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEditarCliente.Location = new System.Drawing.Point(87, 9);
+            this.buttonEditarCliente.Name = "buttonEditarCliente";
+            this.buttonEditarCliente.Size = new System.Drawing.Size(75, 23);
+            this.buttonEditarCliente.TabIndex = 10;
+            this.buttonEditarCliente.Text = "Editar";
+            this.buttonEditarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonEditarCliente.UseVisualStyleBackColor = true;
+            this.buttonEditarCliente.Click += new System.EventHandler(this.buttonEditarCliente_Click);
+            // 
+            // buttonCriarCliente
+            // 
+            this.buttonCriarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonCriarCliente.Image")));
+            this.buttonCriarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCriarCliente.Location = new System.Drawing.Point(6, 9);
+            this.buttonCriarCliente.Name = "buttonCriarCliente";
+            this.buttonCriarCliente.Size = new System.Drawing.Size(75, 23);
+            this.buttonCriarCliente.TabIndex = 11;
+            this.buttonCriarCliente.Text = "Criar";
+            this.buttonCriarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonCriarCliente.UseVisualStyleBackColor = true;
+            this.buttonCriarCliente.Click += new System.EventHandler(this.buttonCriarCliente_Click);
+            // 
+            // buttonProcurarCliente
+            // 
+            this.buttonProcurarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonProcurarCliente.Image")));
+            this.buttonProcurarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProcurarCliente.Location = new System.Drawing.Point(357, 51);
+            this.buttonProcurarCliente.Name = "buttonProcurarCliente";
+            this.buttonProcurarCliente.Size = new System.Drawing.Size(75, 23);
+            this.buttonProcurarCliente.TabIndex = 12;
+            this.buttonProcurarCliente.Text = "Procurar";
+            this.buttonProcurarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonProcurarCliente.UseVisualStyleBackColor = true;
             // 
             // window
             // 
@@ -1944,11 +1875,6 @@
             this.tabPageClientes.PerformLayout();
             this.groupBoxDadosClientes.ResumeLayout(false);
             this.groupBoxDadosClientes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.realStandDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingNavigator)).EndInit();
-            this.clientesBindingNavigator.ResumeLayout(false);
-            this.clientesBindingNavigator.PerformLayout();
             this.tabPageOficina.ResumeLayout(false);
             this.tabPageOficina.PerformLayout();
             this.groupBoxParcelasOficina.ResumeLayout(false);
@@ -1986,6 +1912,8 @@
             this.groupBox2.PerformLayout();
             this.groupBoxFichaClienteVenda.ResumeLayout(false);
             this.groupBoxFichaClienteVenda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.realStandDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2004,18 +1932,6 @@
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private realstandDataSetTableAdapters.ClientesTableAdapter clientesTableAdapter;
         private realstandDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator clientesBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.GroupBox groupBoxDadosClientes;
         private System.Windows.Forms.TextBox nomeTextBox;
         private System.Windows.Forms.MaskedTextBox nIFMaskedTextBox;
@@ -2157,6 +2073,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonApagarCliente;
+        private System.Windows.Forms.Button buttonProcurarCliente;
+        private System.Windows.Forms.Button buttonCriarCliente;
+        private System.Windows.Forms.Button buttonEditarCliente;
     }
 }
 
