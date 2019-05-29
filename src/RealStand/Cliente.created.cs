@@ -33,5 +33,41 @@ namespace RealStand
         {
             return Nome + " (" + NIF + ")";
         }
+
+        public static bool CheckName(string name)
+        {
+            if (name == "")
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool CheckNIF(string nif)
+        {
+            if (nif.Length != 9)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool CheckMorada(string morada)
+        {
+            if (morada == "")
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool CheckContacto(string contacto)
+        {
+            if (contacto.Length != 9)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

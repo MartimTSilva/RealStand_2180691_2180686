@@ -42,6 +42,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPageClientes = new System.Windows.Forms.TabPage();
+            this.buttonProcurarCliente = new System.Windows.Forms.Button();
+            this.buttonCriarCliente = new System.Windows.Forms.Button();
+            this.buttonEditarCliente = new System.Windows.Forms.Button();
+            this.buttonApagarCliente = new System.Windows.Forms.Button();
             this.labelCampoDeProcura = new System.Windows.Forms.Label();
             this.labelProcurarPor = new System.Windows.Forms.Label();
             this.comboBoxCampoProcura = new System.Windows.Forms.ComboBox();
@@ -49,6 +53,8 @@
             this.groupBoxDadosClientes = new System.Windows.Forms.GroupBox();
             this.buttonGravarCliente = new System.Windows.Forms.Button();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.realStandDataSet = new RealStand.realstandDataSet();
             this.nIFMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.moradaTextBox = new System.Windows.Forms.TextBox();
             this.contactoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -182,14 +188,8 @@
             this.labelNifAluguer = new System.Windows.Forms.Label();
             this.labelNomeAluguer = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.buttonApagarCliente = new System.Windows.Forms.Button();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.realStandDataSet = new RealStand.realstandDataSet();
             this.clientesTableAdapter = new RealStand.realstandDataSetTableAdapters.ClientesTableAdapter();
             this.tableAdapterManager = new RealStand.realstandDataSetTableAdapters.TableAdapterManager();
-            this.buttonEditarCliente = new System.Windows.Forms.Button();
-            this.buttonCriarCliente = new System.Windows.Forms.Button();
-            this.buttonProcurarCliente = new System.Windows.Forms.Button();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -200,6 +200,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPageClientes.SuspendLayout();
             this.groupBoxDadosClientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.realStandDataSet)).BeginInit();
             this.tabPageOficina.SuspendLayout();
             this.groupBoxParcelasOficina.SuspendLayout();
             this.groupBoxCriarParcelaOficina.SuspendLayout();
@@ -221,8 +223,6 @@
             this.groupBoxCarrosAluguer.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBoxFichaClienteVenda.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.realStandDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // nomeLabel
@@ -372,6 +372,59 @@
             this.tabPageClientes.TabIndex = 1;
             this.tabPageClientes.Text = "Clientes";
             // 
+            // buttonProcurarCliente
+            // 
+            this.buttonProcurarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonProcurarCliente.Image")));
+            this.buttonProcurarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProcurarCliente.Location = new System.Drawing.Point(357, 51);
+            this.buttonProcurarCliente.Name = "buttonProcurarCliente";
+            this.buttonProcurarCliente.Size = new System.Drawing.Size(75, 23);
+            this.buttonProcurarCliente.TabIndex = 12;
+            this.buttonProcurarCliente.Text = "Procurar";
+            this.buttonProcurarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonProcurarCliente.UseVisualStyleBackColor = true;
+            // 
+            // buttonCriarCliente
+            // 
+            this.buttonCriarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonCriarCliente.Image")));
+            this.buttonCriarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCriarCliente.Location = new System.Drawing.Point(6, 9);
+            this.buttonCriarCliente.Name = "buttonCriarCliente";
+            this.buttonCriarCliente.Size = new System.Drawing.Size(75, 23);
+            this.buttonCriarCliente.TabIndex = 11;
+            this.buttonCriarCliente.Text = "Criar";
+            this.buttonCriarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonCriarCliente.UseVisualStyleBackColor = true;
+            this.buttonCriarCliente.Click += new System.EventHandler(this.buttonCriarCliente_Click);
+            // 
+            // buttonEditarCliente
+            // 
+            this.buttonEditarCliente.Enabled = false;
+            this.buttonEditarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditarCliente.Image")));
+            this.buttonEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEditarCliente.Location = new System.Drawing.Point(87, 9);
+            this.buttonEditarCliente.Name = "buttonEditarCliente";
+            this.buttonEditarCliente.Size = new System.Drawing.Size(75, 23);
+            this.buttonEditarCliente.TabIndex = 10;
+            this.buttonEditarCliente.Text = "Editar";
+            this.buttonEditarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonEditarCliente.UseVisualStyleBackColor = true;
+            this.buttonEditarCliente.Click += new System.EventHandler(this.buttonEditarCliente_Click);
+            // 
+            // buttonApagarCliente
+            // 
+            this.buttonApagarCliente.Enabled = false;
+            this.buttonApagarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonApagarCliente.Image")));
+            this.buttonApagarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonApagarCliente.Location = new System.Drawing.Point(168, 9);
+            this.buttonApagarCliente.Name = "buttonApagarCliente";
+            this.buttonApagarCliente.Size = new System.Drawing.Size(75, 23);
+            this.buttonApagarCliente.TabIndex = 9;
+            this.buttonApagarCliente.Text = "Apagar";
+            this.buttonApagarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonApagarCliente.UseVisualStyleBackColor = true;
+            this.buttonApagarCliente.Click += new System.EventHandler(this.buttonApagarCliente_Click);
+            // 
             // labelCampoDeProcura
             // 
             this.labelCampoDeProcura.AutoSize = true;
@@ -446,6 +499,16 @@
             this.nomeTextBox.Size = new System.Drawing.Size(394, 20);
             this.nomeTextBox.TabIndex = 1;
             // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataMember = "Clientes";
+            this.clientesBindingSource.DataSource = this.realStandDataSet;
+            // 
+            // realStandDataSet
+            // 
+            this.realStandDataSet.DataSetName = "RealStandDataSet";
+            this.realStandDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // nIFMaskedTextBox
             // 
             this.nIFMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "NIF", true));
@@ -470,9 +533,9 @@
             this.contactoMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Contacto", true));
             this.contactoMaskedTextBox.Enabled = false;
             this.contactoMaskedTextBox.Location = new System.Drawing.Point(65, 91);
-            this.contactoMaskedTextBox.Mask = "(99) 0000000";
+            this.contactoMaskedTextBox.Mask = "000000000";
             this.contactoMaskedTextBox.Name = "contactoMaskedTextBox";
-            this.contactoMaskedTextBox.Size = new System.Drawing.Size(78, 20);
+            this.contactoMaskedTextBox.Size = new System.Drawing.Size(70, 20);
             this.contactoMaskedTextBox.TabIndex = 7;
             // 
             // clientesListBox
@@ -1773,30 +1836,6 @@
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // buttonApagarCliente
-            // 
-            this.buttonApagarCliente.Enabled = false;
-            this.buttonApagarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonApagarCliente.Image")));
-            this.buttonApagarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonApagarCliente.Location = new System.Drawing.Point(168, 9);
-            this.buttonApagarCliente.Name = "buttonApagarCliente";
-            this.buttonApagarCliente.Size = new System.Drawing.Size(75, 23);
-            this.buttonApagarCliente.TabIndex = 9;
-            this.buttonApagarCliente.Text = "Apagar";
-            this.buttonApagarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonApagarCliente.UseVisualStyleBackColor = true;
-            this.buttonApagarCliente.Click += new System.EventHandler(this.buttonApagarCliente_Click);
-            // 
-            // clientesBindingSource
-            // 
-            this.clientesBindingSource.DataMember = "Clientes";
-            this.clientesBindingSource.DataSource = this.realStandDataSet;
-            // 
-            // realStandDataSet
-            // 
-            this.realStandDataSet.DataSetName = "RealStandDataSet";
-            this.realStandDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // clientesTableAdapter
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
@@ -1814,45 +1853,6 @@
             this.tableAdapterManager.ServicosTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = RealStand.realstandDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VendasTableAdapter = null;
-            // 
-            // buttonEditarCliente
-            // 
-            this.buttonEditarCliente.Enabled = false;
-            this.buttonEditarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditarCliente.Image")));
-            this.buttonEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEditarCliente.Location = new System.Drawing.Point(87, 9);
-            this.buttonEditarCliente.Name = "buttonEditarCliente";
-            this.buttonEditarCliente.Size = new System.Drawing.Size(75, 23);
-            this.buttonEditarCliente.TabIndex = 10;
-            this.buttonEditarCliente.Text = "Editar";
-            this.buttonEditarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonEditarCliente.UseVisualStyleBackColor = true;
-            this.buttonEditarCliente.Click += new System.EventHandler(this.buttonEditarCliente_Click);
-            // 
-            // buttonCriarCliente
-            // 
-            this.buttonCriarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonCriarCliente.Image")));
-            this.buttonCriarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCriarCliente.Location = new System.Drawing.Point(6, 9);
-            this.buttonCriarCliente.Name = "buttonCriarCliente";
-            this.buttonCriarCliente.Size = new System.Drawing.Size(75, 23);
-            this.buttonCriarCliente.TabIndex = 11;
-            this.buttonCriarCliente.Text = "Criar";
-            this.buttonCriarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCriarCliente.UseVisualStyleBackColor = true;
-            this.buttonCriarCliente.Click += new System.EventHandler(this.buttonCriarCliente_Click);
-            // 
-            // buttonProcurarCliente
-            // 
-            this.buttonProcurarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonProcurarCliente.Image")));
-            this.buttonProcurarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProcurarCliente.Location = new System.Drawing.Point(357, 51);
-            this.buttonProcurarCliente.Name = "buttonProcurarCliente";
-            this.buttonProcurarCliente.Size = new System.Drawing.Size(75, 23);
-            this.buttonProcurarCliente.TabIndex = 12;
-            this.buttonProcurarCliente.Text = "Procurar";
-            this.buttonProcurarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonProcurarCliente.UseVisualStyleBackColor = true;
             // 
             // window
             // 
@@ -1875,6 +1875,8 @@
             this.tabPageClientes.PerformLayout();
             this.groupBoxDadosClientes.ResumeLayout(false);
             this.groupBoxDadosClientes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.realStandDataSet)).EndInit();
             this.tabPageOficina.ResumeLayout(false);
             this.tabPageOficina.PerformLayout();
             this.groupBoxParcelasOficina.ResumeLayout(false);
@@ -1912,8 +1914,6 @@
             this.groupBox2.PerformLayout();
             this.groupBoxFichaClienteVenda.ResumeLayout(false);
             this.groupBoxFichaClienteVenda.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.realStandDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

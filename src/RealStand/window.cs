@@ -212,24 +212,38 @@ namespace RealStand
         /// <param name="e"></param>
         private void buttonGravarCliente_Click(object sender, EventArgs e)
         {
-            if(newclient)
+            if (Cliente.CheckName(nomeTextBox.Text) && 
+                Cliente.CheckNIF(nIFMaskedTextBox.Text) && 
+                Cliente.CheckMorada(moradaTextBox.Text) && 
+                Cliente.CheckContacto(contactoMaskedTextBox.Text))
             {
-                Cliente novoCliente = new Cliente(nomeTextBox.Text, nIFMaskedTextBox.Text, moradaTextBox.Text, contactoMaskedTextBox.Text);
-                standContainer.Clientes.Add(novoCliente);
+                if(newclient)
+                {
+                        Cliente novoCliente = new Cliente(
+                            nomeTextBox.Text, 
+                            nIFMaskedTextBox.Text, 
+                            moradaTextBox.Text, 
+                            contactoMaskedTextBox.Text);
+                        standContainer.Clientes.Add(novoCliente);
+                }
+                else
+                {
+                    Cliente selectedClient = (Cliente)clientesListBox.SelectedItem;
+                    selectedClient.Nome = nomeTextBox.Text;
+                    selectedClient.NIF = nIFMaskedTextBox.Text;
+                    selectedClient.Morada = moradaTextBox.Text;
+                    selectedClient.Contacto = contactoMaskedTextBox.Text;
+                }
+                standContainer.SaveChanges();
+                clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
+
+                DisableDataInsertion();
+                newclient = false;
             }
             else
             {
-                Cliente selectedClient = (Cliente)clientesListBox.SelectedItem;
-                selectedClient.Nome = nomeTextBox.Text;
-                selectedClient.NIF = nIFMaskedTextBox.Text;
-                selectedClient.Morada = moradaTextBox.Text;
-                selectedClient.Contacto = contactoMaskedTextBox.Text;
+                MessageBox.Show("Existem campos errados!");
             }
-            standContainer.SaveChanges();
-            clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
-
-            DisableDataInsertion();
-            newclient = false;
         }
 
         /// <summary>
@@ -286,6 +300,10 @@ namespace RealStand
         private void clientesListBox_Click(object sender, EventArgs e)
         {
             Cliente selectedClient = (Cliente)clientesListBox.SelectedItem;
+            if (selectedClient == null)
+            {
+                return;
+            }
             nomeTextBox.Text = selectedClient.Nome;
             nIFMaskedTextBox.Text = selectedClient.NIF;
             moradaTextBox.Text = selectedClient.Morada;
