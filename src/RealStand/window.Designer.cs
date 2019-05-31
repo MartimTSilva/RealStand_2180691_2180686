@@ -82,6 +82,7 @@
             this.listBoxServicosOficina = new System.Windows.Forms.ListBox();
             this.groupBoxCarrosOficina = new System.Windows.Forms.GroupBox();
             this.groupBoxCriarCarroOficina = new System.Windows.Forms.GroupBox();
+            this.numericUpDownKMsOficina = new System.Windows.Forms.NumericUpDown();
             this.textBoxModeloOficina = new System.Windows.Forms.TextBox();
             this.textBoxMarcaOficina = new System.Windows.Forms.TextBox();
             this.textBoxChassiOficina = new System.Windows.Forms.TextBox();
@@ -90,7 +91,6 @@
             this.labelModeloOficina = new System.Windows.Forms.Label();
             this.labelMarcaOficina = new System.Windows.Forms.Label();
             this.labelNChassisOficina = new System.Windows.Forms.Label();
-            this.textBoxKMsOficina = new System.Windows.Forms.TextBox();
             this.labelQuilometragemOficina = new System.Windows.Forms.Label();
             this.maskedTextBoxMatriculaOficina = new System.Windows.Forms.MaskedTextBox();
             this.labelMatriculaOficina = new System.Windows.Forms.Label();
@@ -190,6 +190,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.clientesTableAdapter = new RealStand.realstandDataSetTableAdapters.ClientesTableAdapter();
             this.tableAdapterManager = new RealStand.realstandDataSetTableAdapters.TableAdapterManager();
+            this.label4 = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -209,6 +210,7 @@
             this.groupBoxCriarServicoOficina.SuspendLayout();
             this.groupBoxCarrosOficina.SuspendLayout();
             this.groupBoxCriarCarroOficina.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKMsOficina)).BeginInit();
             this.groupBoxFichaClienteOficina.SuspendLayout();
             this.groupBoxClientesOficina.SuspendLayout();
             this.tabPageVendas.SuspendLayout();
@@ -649,6 +651,7 @@
             this.listBoxParcelasOficina.Name = "listBoxParcelasOficina";
             this.listBoxParcelasOficina.Size = new System.Drawing.Size(237, 303);
             this.listBoxParcelasOficina.TabIndex = 19;
+            this.listBoxParcelasOficina.Click += new System.EventHandler(this.listBoxParcelasOficina_Click);
             // 
             // groupBoxServicosOficina
             // 
@@ -741,6 +744,7 @@
             // 
             // comboBoxTipoServicosOficina
             // 
+            this.comboBoxTipoServicosOficina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTipoServicosOficina.FormattingEnabled = true;
             this.comboBoxTipoServicosOficina.Items.AddRange(new object[] {
             "Manutenção",
@@ -774,6 +778,8 @@
             // 
             // groupBoxCriarCarroOficina
             // 
+            this.groupBoxCriarCarroOficina.Controls.Add(this.label4);
+            this.groupBoxCriarCarroOficina.Controls.Add(this.numericUpDownKMsOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.textBoxModeloOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.textBoxMarcaOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.textBoxChassiOficina);
@@ -782,7 +788,6 @@
             this.groupBoxCriarCarroOficina.Controls.Add(this.labelModeloOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.labelMarcaOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.labelNChassisOficina);
-            this.groupBoxCriarCarroOficina.Controls.Add(this.textBoxKMsOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.labelQuilometragemOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.maskedTextBoxMatriculaOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.labelMatriculaOficina);
@@ -793,6 +798,13 @@
             this.groupBoxCriarCarroOficina.TabIndex = 3;
             this.groupBoxCriarCarroOficina.TabStop = false;
             this.groupBoxCriarCarroOficina.Text = "Adicionar Novo Carro";
+            // 
+            // numericUpDownKMsOficina
+            // 
+            this.numericUpDownKMsOficina.Location = new System.Drawing.Point(95, 44);
+            this.numericUpDownKMsOficina.Name = "numericUpDownKMsOficina";
+            this.numericUpDownKMsOficina.Size = new System.Drawing.Size(93, 20);
+            this.numericUpDownKMsOficina.TabIndex = 12;
             // 
             // textBoxModeloOficina
             // 
@@ -810,13 +822,17 @@
             // 
             // textBoxChassiOficina
             // 
-            this.textBoxChassiOficina.Location = new System.Drawing.Point(72, 70);
+            this.textBoxChassiOficina.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxChassiOficina.Location = new System.Drawing.Point(60, 70);
             this.textBoxChassiOficina.Name = "textBoxChassiOficina";
-            this.textBoxChassiOficina.Size = new System.Drawing.Size(117, 20);
+            this.textBoxChassiOficina.Size = new System.Drawing.Size(128, 21);
             this.textBoxChassiOficina.TabIndex = 7;
+            this.textBoxChassiOficina.TextChanged += new System.EventHandler(this.textBoxChassiOficina_TextChanged);
             // 
             // comboBoxCombustivelOficina
             // 
+            this.comboBoxCombustivelOficina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCombustivelOficina.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBoxCombustivelOficina.FormattingEnabled = true;
             this.comboBoxCombustivelOficina.Items.AddRange(new object[] {
             "Gasóleo",
@@ -861,16 +877,9 @@
             this.labelNChassisOficina.AutoSize = true;
             this.labelNChassisOficina.Location = new System.Drawing.Point(6, 73);
             this.labelNChassisOficina.Name = "labelNChassisOficina";
-            this.labelNChassisOficina.Size = new System.Drawing.Size(61, 13);
+            this.labelNChassisOficina.Size = new System.Drawing.Size(56, 13);
             this.labelNChassisOficina.TabIndex = 6;
-            this.labelNChassisOficina.Text = "Nº Chassis:";
-            // 
-            // textBoxKMsOficina
-            // 
-            this.textBoxKMsOficina.Location = new System.Drawing.Point(95, 44);
-            this.textBoxKMsOficina.Name = "textBoxKMsOficina";
-            this.textBoxKMsOficina.Size = new System.Drawing.Size(94, 20);
-            this.textBoxKMsOficina.TabIndex = 6;
+            this.labelNChassisOficina.Text = "Nº Chassi:";
             // 
             // labelQuilometragemOficina
             // 
@@ -1854,6 +1863,21 @@
             this.tableAdapterManager.UpdateOrder = RealStand.realstandDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VendasTableAdapter = null;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Enabled = false;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(168, 73);
+            this.label4.Name = "label4";
+            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label4.Size = new System.Drawing.Size(19, 14);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "17";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1888,6 +1912,7 @@
             this.groupBoxCarrosOficina.ResumeLayout(false);
             this.groupBoxCriarCarroOficina.ResumeLayout(false);
             this.groupBoxCriarCarroOficina.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKMsOficina)).EndInit();
             this.groupBoxFichaClienteOficina.ResumeLayout(false);
             this.groupBoxFichaClienteOficina.PerformLayout();
             this.groupBoxClientesOficina.ResumeLayout(false);
@@ -1977,7 +2002,6 @@
         private System.Windows.Forms.Label labelQuilometragemOficina;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxMatriculaOficina;
         private System.Windows.Forms.Label labelMatriculaOficina;
-        private System.Windows.Forms.TextBox textBoxKMsOficina;
         private System.Windows.Forms.Label labelModeloOficina;
         private System.Windows.Forms.Label labelMarcaOficina;
         private System.Windows.Forms.Label labelNChassisOficina;
@@ -2077,6 +2101,8 @@
         private System.Windows.Forms.Button buttonProcurarCliente;
         private System.Windows.Forms.Button buttonCriarCliente;
         private System.Windows.Forms.Button buttonEditarCliente;
+        private System.Windows.Forms.NumericUpDown numericUpDownKMsOficina;
+        private System.Windows.Forms.Label label4;
     }
 }
 
