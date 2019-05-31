@@ -209,6 +209,7 @@ namespace RealStand
             listBoxParcelasOficina.SelectedIndex = -1;
             listBoxServicosOficina.DataSource = null;
             listBoxParcelasOficina.DataSource = null;
+            CleanInputServicosOficina();
 
             //Preenche a ficha do cliente
             labelClienteSelecionadoOficina.Text = selectedCliente.Nome;
@@ -246,10 +247,7 @@ namespace RealStand
                 listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
                 listBoxServicosOficina.SelectedIndex = -1;
 
-                //Limpa textboxes
-                dateTimePickerDataEntregaOficina.Text = null;
-                comboBoxTipoServicosOficina.SelectedItem = null;
-                dateTimePickerDataSaidaOficina.Text = null;
+                CleanInputServicosOficina();
             }
             else if (!Servico.VerificaDatasServico(DataEntrega, DataSaida))
             {
@@ -285,6 +283,7 @@ namespace RealStand
             {
                 return;
             }
+
             //Mete a listbox dos serviços da oficina sem nenhum item selecionado
             listBoxServicosOficina.SelectedIndex = -1;
             listBoxParcelasOficina.DataSource = null;
@@ -315,6 +314,15 @@ namespace RealStand
                     comboBoxCombustivelOficina.SelectedIndex = 4;
                     break;
             }
+
+            CleanInputServicosOficina();
+        }
+
+        void CleanInputServicosOficina()
+        {
+            dateTimePickerDataEntregaOficina.Text = null;
+            dateTimePickerDataSaidaOficina.Text = null;
+            comboBoxTipoServicosOficina.SelectedIndex = -1;
         }
 
         /// <summary>
@@ -428,7 +436,25 @@ namespace RealStand
             {
                 return;
             }
+
+            //Coloca os dados nas textboxes
+            dateTimePickerDataEntregaOficina.Value = selectedServico.DataEntrega;
+            dateTimePickerDataSaidaOficina.Value = selectedServico.DataSaida;            
+            switch (selectedServico.Tipo)
+            {
+                case "Manutenção":
+                    comboBoxTipoServicosOficina.SelectedIndex = 0;
+                    break;
+                case "Tipo 2":
+                    comboBoxTipoServicosOficina.SelectedIndex = 1;
+                    break;
+                case "Tipo 3":
+                    comboBoxTipoServicosOficina.SelectedIndex = 2;
+                    break;
+            }
+
             //Mete a listbox das parcelas da oficina sem nenhum item selecionado
+            groupBoxCriarServicoOficina.Enabled = false;
             listBoxParcelasOficina.SelectedIndex = -1;
         }
 
@@ -504,6 +530,9 @@ namespace RealStand
                 standContainer.Servicos.Remove(selectedServico);
                 standContainer.SaveChanges();
                 listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+                dateTimePickerDataEntregaOficina.Text = null;
+                dateTimePickerDataSaidaOficina.Text = null;
+                comboBoxTipoServicosOficina.SelectedIndex = -1;
             }
             else
             {
