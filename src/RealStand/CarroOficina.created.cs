@@ -45,7 +45,7 @@ namespace RealStand
 
         public static bool VerificaKMs(int kms)
         {
-            if (kms == null)
+            if (kms == 0)
             {
                 return false;
             }

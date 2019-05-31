@@ -130,6 +130,43 @@
     <value>False</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonEditarCarroOficina.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAF8SURBVDhPYyAWfPv2zQmIz3/9+u0/kH4JxOVAzAiVxg+A
+        Cv0evXz/y6N523+WsLn/1XNX/T9w6RHIoHKoEtwAplkrf81/h9rN/y/fef6/dulJsCFAuZdQZdgBSPNj
+        qGaQBuGExf+PXXkMNoQpZC7IgP9QpZgApPnFm4+/TMrW//dq3v7/1ev3/xuWnwIbAnKJf/tOkAGXoMpR
+        AbLmsO7d/1+/ef//w/uPYENALrEHGvDmwyegsm+mUC0IgK757dsPcM0glyBpdoJqQQBCmq0qN5KvGSQO
+        lP9OE82MQPzavHzDf77Yhf8v3HqGTfMvkCVQLagAKKF38d7L/7wxC/9H9+8FR9PZG0+J0wwCQMmCSVsu
+        /vdo2ga2Oapvz3+e6IX/QYkHlIjwagYBoIINIUB/m1ds+O/SsPU/d9SC/9oFa/6Dki9BzSAAzF3vQLYF
+        dOz837Ph/P8T15/+//L16xeg5hCoEvwAaMA1IP4I1LAFiMuA2AKIWaDSBAADAwCxLsHj15hWrwAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="buttonGuardarCarroOficina.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAB8SURBVDhPY/j27VsDEP8nEzcwPH/z4T9/7KL/DMFzSMIg
+        PSBDwAaABD68/win8WFktWADwMSoASiCxGCcBpCCaWcAiI0LE20AskJc4hgGPHz6BkUhNg3ofLgBekVr
+        /+sWrAEbQo4BCaD8ADIEJEgKBhsAAiBDQBzS8bf/ACrjKp9lIwSxAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="buttonRemoverCarroOficina.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAB0SURBVDhPpY/RDYAwCETpDg7tBk7oHAgNNXDwIZbkJfJy
+        Ryox8xal7FDKDqXskMR90ClcwiA3y2M+LIoFWcPCPOId5sMyBRTge6R8EjauGF6T8knYbB1w5f4vYAEP
+        Yj4sioXf8prlMR+WP5SyQyk7lPI7TA/jgog9aVyEfAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="buttonCriarCarroOficina.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAABXSURBVDhPY/j//z9FGM749u3bfwL4PBALMEABVgOcnJxw
+        4ra2NpghCngN+PD+IwZGM+Q9EBuQZQCyIWQbAMIgtSQZgIxHDRgSBhCDcRpACsYwgDz8nwEAn6AgbEEx
+        6C8AAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAATYAAABLCAYAAAD6d6sCAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m

@@ -82,6 +82,7 @@
             this.listBoxServicosOficina = new System.Windows.Forms.ListBox();
             this.groupBoxCarrosOficina = new System.Windows.Forms.GroupBox();
             this.groupBoxCriarCarroOficina = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.numericUpDownKMsOficina = new System.Windows.Forms.NumericUpDown();
             this.textBoxModeloOficina = new System.Windows.Forms.TextBox();
             this.textBoxMarcaOficina = new System.Windows.Forms.TextBox();
@@ -94,7 +95,7 @@
             this.labelQuilometragemOficina = new System.Windows.Forms.Label();
             this.maskedTextBoxMatriculaOficina = new System.Windows.Forms.MaskedTextBox();
             this.labelMatriculaOficina = new System.Windows.Forms.Label();
-            this.buttonAdicionarCarroOficina = new System.Windows.Forms.Button();
+            this.buttonCriarCarroOficina = new System.Windows.Forms.Button();
             this.buttonRemoverCarroOficina = new System.Windows.Forms.Button();
             this.listBoxCarrosOficina = new System.Windows.Forms.ListBox();
             this.groupBoxFichaClienteOficina = new System.Windows.Forms.GroupBox();
@@ -190,7 +191,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.clientesTableAdapter = new RealStand.realstandDataSetTableAdapters.ClientesTableAdapter();
             this.tableAdapterManager = new RealStand.realstandDataSetTableAdapters.TableAdapterManager();
-            this.label4 = new System.Windows.Forms.Label();
+            this.buttonEditarCarroOficina = new System.Windows.Forms.Button();
+            this.buttonGuardarCarroOficina = new System.Windows.Forms.Button();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -766,9 +768,11 @@
             // 
             // groupBoxCarrosOficina
             // 
+            this.groupBoxCarrosOficina.Controls.Add(this.buttonEditarCarroOficina);
             this.groupBoxCarrosOficina.Controls.Add(this.groupBoxCriarCarroOficina);
             this.groupBoxCarrosOficina.Controls.Add(this.buttonRemoverCarroOficina);
             this.groupBoxCarrosOficina.Controls.Add(this.listBoxCarrosOficina);
+            this.groupBoxCarrosOficina.Controls.Add(this.buttonCriarCarroOficina);
             this.groupBoxCarrosOficina.Location = new System.Drawing.Point(219, 114);
             this.groupBoxCarrosOficina.Name = "groupBoxCarrosOficina";
             this.groupBoxCarrosOficina.Size = new System.Drawing.Size(195, 456);
@@ -778,6 +782,7 @@
             // 
             // groupBoxCriarCarroOficina
             // 
+            this.groupBoxCriarCarroOficina.Controls.Add(this.buttonGuardarCarroOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.label4);
             this.groupBoxCriarCarroOficina.Controls.Add(this.numericUpDownKMsOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.textBoxModeloOficina);
@@ -791,7 +796,6 @@
             this.groupBoxCriarCarroOficina.Controls.Add(this.labelQuilometragemOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.maskedTextBoxMatriculaOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.labelMatriculaOficina);
-            this.groupBoxCriarCarroOficina.Controls.Add(this.buttonAdicionarCarroOficina);
             this.groupBoxCriarCarroOficina.Location = new System.Drawing.Point(0, 253);
             this.groupBoxCriarCarroOficina.Name = "groupBoxCriarCarroOficina";
             this.groupBoxCriarCarroOficina.Size = new System.Drawing.Size(195, 203);
@@ -799,9 +803,29 @@
             this.groupBoxCriarCarroOficina.TabStop = false;
             this.groupBoxCriarCarroOficina.Text = "Adicionar Novo Carro";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Enabled = false;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(168, 73);
+            this.label4.Name = "label4";
+            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label4.Size = new System.Drawing.Size(19, 14);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "17";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // numericUpDownKMsOficina
             // 
             this.numericUpDownKMsOficina.Location = new System.Drawing.Point(95, 44);
+            this.numericUpDownKMsOficina.Maximum = new decimal(new int[] {
+            5000000,
+            0,
+            0,
+            0});
             this.numericUpDownKMsOficina.Name = "numericUpDownKMsOficina";
             this.numericUpDownKMsOficina.Size = new System.Drawing.Size(93, 20);
             this.numericUpDownKMsOficina.TabIndex = 12;
@@ -907,33 +931,38 @@
             this.labelMatriculaOficina.TabIndex = 2;
             this.labelMatriculaOficina.Text = "Matrícula:";
             // 
-            // buttonAdicionarCarroOficina
+            // buttonCriarCarroOficina
             // 
-            this.buttonAdicionarCarroOficina.Location = new System.Drawing.Point(6, 173);
-            this.buttonAdicionarCarroOficina.Name = "buttonAdicionarCarroOficina";
-            this.buttonAdicionarCarroOficina.Size = new System.Drawing.Size(183, 23);
-            this.buttonAdicionarCarroOficina.TabIndex = 11;
-            this.buttonAdicionarCarroOficina.Text = "Adicionar Carro";
-            this.buttonAdicionarCarroOficina.UseVisualStyleBackColor = true;
-            this.buttonAdicionarCarroOficina.Click += new System.EventHandler(this.buttonAdicionarCarroOficina_Click);
+            this.buttonCriarCarroOficina.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonCriarCarroOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonCriarCarroOficina.Image")));
+            this.buttonCriarCarroOficina.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonCriarCarroOficina.Location = new System.Drawing.Point(5, 17);
+            this.buttonCriarCarroOficina.Name = "buttonCriarCarroOficina";
+            this.buttonCriarCarroOficina.Size = new System.Drawing.Size(183, 23);
+            this.buttonCriarCarroOficina.TabIndex = 11;
+            this.buttonCriarCarroOficina.Text = "Criar";
+            this.buttonCriarCarroOficina.UseVisualStyleBackColor = true;
+            this.buttonCriarCarroOficina.Click += new System.EventHandler(this.buttonAdicionarCarroOficina_Click);
             // 
             // buttonRemoverCarroOficina
             // 
-            this.buttonRemoverCarroOficina.Location = new System.Drawing.Point(6, 17);
+            this.buttonRemoverCarroOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoverCarroOficina.Image")));
+            this.buttonRemoverCarroOficina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRemoverCarroOficina.Location = new System.Drawing.Point(5, 75);
             this.buttonRemoverCarroOficina.Name = "buttonRemoverCarroOficina";
             this.buttonRemoverCarroOficina.Size = new System.Drawing.Size(183, 23);
             this.buttonRemoverCarroOficina.TabIndex = 12;
-            this.buttonRemoverCarroOficina.Text = "Remover Carro";
+            this.buttonRemoverCarroOficina.Text = "Apagar";
             this.buttonRemoverCarroOficina.UseVisualStyleBackColor = true;
             this.buttonRemoverCarroOficina.Click += new System.EventHandler(this.buttonRemoverCarroOficina_Click);
             // 
             // listBoxCarrosOficina
             // 
             this.listBoxCarrosOficina.FormattingEnabled = true;
-            this.listBoxCarrosOficina.Location = new System.Drawing.Point(6, 46);
+            this.listBoxCarrosOficina.Location = new System.Drawing.Point(6, 104);
             this.listBoxCarrosOficina.Name = "listBoxCarrosOficina";
             this.listBoxCarrosOficina.ScrollAlwaysVisible = true;
-            this.listBoxCarrosOficina.Size = new System.Drawing.Size(183, 199);
+            this.listBoxCarrosOficina.Size = new System.Drawing.Size(183, 147);
             this.listBoxCarrosOficina.TabIndex = 4;
             this.listBoxCarrosOficina.Click += new System.EventHandler(this.listBoxCarrosOficina_Click);
             // 
@@ -1863,20 +1892,29 @@
             this.tableAdapterManager.UpdateOrder = RealStand.realstandDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VendasTableAdapter = null;
             // 
-            // label4
+            // buttonEditarCarroOficina
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Enabled = false;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(168, 73);
-            this.label4.Name = "label4";
-            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(19, 14);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "17";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonEditarCarroOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditarCarroOficina.Image")));
+            this.buttonEditarCarroOficina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEditarCarroOficina.Location = new System.Drawing.Point(5, 46);
+            this.buttonEditarCarroOficina.Name = "buttonEditarCarroOficina";
+            this.buttonEditarCarroOficina.Size = new System.Drawing.Size(183, 23);
+            this.buttonEditarCarroOficina.TabIndex = 13;
+            this.buttonEditarCarroOficina.Text = "Editar";
+            this.buttonEditarCarroOficina.UseVisualStyleBackColor = true;
+            this.buttonEditarCarroOficina.Click += new System.EventHandler(this.buttonEditarCarroOficina_Click);
+            // 
+            // buttonGuardarCarroOficina
+            // 
+            this.buttonGuardarCarroOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardarCarroOficina.Image")));
+            this.buttonGuardarCarroOficina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGuardarCarroOficina.Location = new System.Drawing.Point(6, 173);
+            this.buttonGuardarCarroOficina.Name = "buttonGuardarCarroOficina";
+            this.buttonGuardarCarroOficina.Size = new System.Drawing.Size(183, 23);
+            this.buttonGuardarCarroOficina.TabIndex = 14;
+            this.buttonGuardarCarroOficina.Text = "Guardar";
+            this.buttonGuardarCarroOficina.UseVisualStyleBackColor = true;
+            this.buttonGuardarCarroOficina.Click += new System.EventHandler(this.buttonGuardarCarroOficina_Click);
             // 
             // window
             // 
@@ -1980,7 +2018,7 @@
         private System.Windows.Forms.ComboBox comboBoxTipoServicosOficina;
         private System.Windows.Forms.ListBox listBoxServicosOficina;
         private System.Windows.Forms.GroupBox groupBoxCarrosOficina;
-        private System.Windows.Forms.Button buttonAdicionarCarroOficina;
+        private System.Windows.Forms.Button buttonCriarCarroOficina;
         private System.Windows.Forms.ListBox listBoxCarrosOficina;
         private System.Windows.Forms.GroupBox groupBoxFichaClienteOficina;
         private System.Windows.Forms.Label labelTotalClienteOficina;
@@ -2103,6 +2141,8 @@
         private System.Windows.Forms.Button buttonEditarCliente;
         private System.Windows.Forms.NumericUpDown numericUpDownKMsOficina;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonEditarCarroOficina;
+        private System.Windows.Forms.Button buttonGuardarCarroOficina;
     }
 }
 
