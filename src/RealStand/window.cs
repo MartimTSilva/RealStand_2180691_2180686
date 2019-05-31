@@ -17,6 +17,7 @@ namespace RealStand
 
         private bool newclient = false;
         private bool novoCarroOficina = false;
+        private bool novoServicoOficina = false;
 
         public window()
         {
@@ -227,41 +228,6 @@ namespace RealStand
         }
 
         /// <summary>
-        /// Adiciona um Serviço a um carro da oficina
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonAdicionarServicoOficina_Click(object sender, EventArgs e)
-        {
-            DateTime DataEntrega = dateTimePickerDataEntregaOficina.Value;
-            DateTime DataSaida = dateTimePickerDataSaidaOficina.Value;
-            string TipoServico = comboBoxTipoServicosOficina.Text;
-
-            CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
-            Servico novoServico = new Servico(DataEntrega, TipoServico, DataSaida);
-
-            if (Servico.VerificaTipoServico(TipoServico) && Servico.VerificaDatasServico(DataEntrega, DataSaida))
-            {
-                selectedCarroOficina.Servico.Add(novoServico);
-                standContainer.SaveChanges();
-                listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
-                listBoxServicosOficina.SelectedIndex = -1;
-
-                CleanInputServicosOficina();
-            }
-            else if (!Servico.VerificaDatasServico(DataEntrega, DataSaida))
-            {
-                MessageBox.Show("Erro! A data de entrada não pode ser mais recente que a data de saída.");
-
-            }
-            else if (!Servico.VerificaTipoServico(TipoServico))
-            {
-                MessageBox.Show("Erro! Tipo de serviço não selecionado.");
-
-            }
-        }
-
-        /// <summary>
         /// Mostra todos os serviços do carro selecionado da oficina
         /// </summary>
         /// <param name="sender"></param>
@@ -278,6 +244,9 @@ namespace RealStand
                 buttonRemoverCarroOficina.Enabled = true;
                 buttonRemoverParcelaOficina.Enabled = false;
                 groupBoxCriarCarroOficina.Enabled = false;
+                buttonEditarServicoOficina.Enabled = false;
+                buttonCriarServicoOficina.Enabled = true;
+                groupBoxCriarServicoOficina.Enabled = false;
             }
             catch (System.NullReferenceException)
             {
@@ -431,6 +400,7 @@ namespace RealStand
                 groupBoxParcelasOficina.Enabled = true;
                 buttonRemoverServicoOficina.Enabled = true;
                 buttonRemoverParcelaOficina.Enabled = false;
+                buttonEditarServicoOficina.Enabled = true;
             }
             catch (System.NullReferenceException)
             {
@@ -520,26 +490,6 @@ namespace RealStand
             GetTotal(selectedCliente);
         }
 
-        private void buttonRemoverServicoOficina_Click(object sender, EventArgs e)
-        {
-            Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
-            CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
-
-            if (selectedServico.Parcela.Count == 0)
-            {
-                standContainer.Servicos.Remove(selectedServico);
-                standContainer.SaveChanges();
-                listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
-                dateTimePickerDataEntregaOficina.Text = null;
-                dateTimePickerDataSaidaOficina.Text = null;
-                comboBoxTipoServicosOficina.SelectedIndex = -1;
-            }
-            else
-            {
-                MessageBox.Show("Não é possivel apagar um serviço com parcelas ativas");
-            }
-        }
-
         private void buttonRemoverCarroOficina_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
@@ -552,6 +502,8 @@ namespace RealStand
                 buttonRemoverCarroAluguer.Enabled = false;
                 CleanInputCarroOficina();
                 listBoxCarrosOficina.SelectedIndex = -1;
+                buttonRemoverCarroOficina.Enabled = false;
+                buttonEditarCarroOficina.Enabled = false;
             }
             else
             {
@@ -660,13 +612,13 @@ namespace RealStand
                     selectedCarroOficina.Combustivel = comboBoxCombustivelOficina.Text;
                 }
 
-
                 standContainer.SaveChanges();
                 listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
                 listBoxServicosOficina.SelectedIndex = -1;
                 listBoxCarrosOficina.SelectedIndex = -1;
                 CleanInputCarroOficina();
                 groupBoxCriarCarroOficina.Enabled = false;
+                buttonCriarServicoOficina.Enabled = false;
             }
             else if (!CarroOficina.VerificaMatricula(matricula))
             {
@@ -696,10 +648,97 @@ namespace RealStand
 
         private void buttonEditarCarroOficina_Click(object sender, EventArgs e)
         {
+            novoCarroOficina = false;
             groupBoxCriarCarroOficina.Enabled = true;
             buttonEditarCarroOficina.Enabled = false;
             buttonRemoverCarroOficina.Enabled = false;
             buttonGuardarCarroOficina.Enabled = true;
+        }
+
+        private void buttonRemoverServicoOficina_Click_1(object sender, EventArgs e)
+        {
+            Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
+            CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
+
+            if (selectedServico.Parcela.Count == 0)
+            {
+                standContainer.Servicos.Remove(selectedServico);
+                standContainer.SaveChanges();
+                listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+                dateTimePickerDataEntregaOficina.Text = null;
+                dateTimePickerDataSaidaOficina.Text = null;
+                comboBoxTipoServicosOficina.SelectedIndex = -1;
+                buttonRemoverServicoOficina.Enabled = false;
+                buttonEditarServicoOficina.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Não é possivel apagar um serviço com parcelas ativas");
+            }
+        }
+
+        private void buttonGuardarServicoOficina_Click(object sender, EventArgs e)
+        {
+            DateTime DataEntrega = dateTimePickerDataEntregaOficina.Value;
+            DateTime DataSaida = dateTimePickerDataSaidaOficina.Value;
+            string TipoServico = comboBoxTipoServicosOficina.Text;
+
+            CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
+            Servico novoServico = new Servico(DataEntrega, TipoServico, DataSaida);
+
+            if (Servico.VerificaTipoServico(TipoServico) && Servico.VerificaDatasServico(DataEntrega, DataSaida))
+            {
+                if (novoServicoOficina)
+                {
+                    selectedCarroOficina.Servico.Add(novoServico);
+                }
+                else
+                {
+                    Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
+                    selectedServico.DataEntrega = dateTimePickerDataEntregaOficina.Value;
+                    selectedServico.DataSaida = dateTimePickerDataSaidaOficina.Value;
+                    selectedServico.Tipo = comboBoxTipoServicosOficina.Text;
+                }
+
+                listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+                standContainer.SaveChanges();
+                listBoxServicosOficina.SelectedIndex = -1;
+                listBoxParcelasOficina.SelectedIndex = -1;
+                groupBoxCriarServicoOficina.Enabled = false;
+                CleanInputServicosOficina();
+
+            }
+            else if (!Servico.VerificaDatasServico(DataEntrega, DataSaida))
+            {
+                MessageBox.Show("Erro! A data de entrada não pode ser mais recente que a data de saída.");
+
+            }
+            else if (!Servico.VerificaTipoServico(TipoServico))
+            {
+                MessageBox.Show("Erro! Tipo de serviço não selecionado.");
+
+            }
+
+        }
+
+        private void buttonCriarServicoOficina_Click(object sender, EventArgs e)
+        {
+            novoServicoOficina = true;
+            listBoxServicosOficina.SelectedIndex = -1;
+            groupBoxCriarServicoOficina.Enabled = true;
+            buttonGuardarServicoOficina.Enabled = true;
+            buttonEditarServicoOficina.Enabled = false;
+            buttonRemoverServicoOficina.Enabled = false;
+            CleanInputServicosOficina();
+        }
+
+        private void buttonEditarServicoOficina_Click(object sender, EventArgs e)
+        {
+            novoServicoOficina = false;
+            groupBoxCriarServicoOficina.Enabled = true;
+            buttonEditarServicoOficina.Enabled = false;
+            buttonRemoverServicoOficina.Enabled = false;
+            buttonGuardarServicoOficina.Enabled = true;
         }
     }
 }
