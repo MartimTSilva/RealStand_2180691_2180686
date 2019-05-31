@@ -34,6 +34,20 @@ namespace RealStand
             return Nome + " (" + NIF + ")";
         }
 
+        public static List<Cliente> SearchClientByName(StandContainer standContainer, string searchName)
+        {
+            return (from Cliente in standContainer.Clientes
+                    where Cliente.Nome.Contains(searchName)
+                    select Cliente).ToList();
+        }
+
+        public static List<Cliente> SearchClientByNIF(StandContainer standContainer, string searchNIF)
+        {
+            return (from Cliente in standContainer.Clientes
+                    where Cliente.NIF.Contains(searchNIF)
+                    select Cliente).ToList();
+        }
+
         public static bool CheckName(string name)
         {
             if (name == "")

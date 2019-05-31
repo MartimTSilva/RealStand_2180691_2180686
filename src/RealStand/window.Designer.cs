@@ -49,7 +49,7 @@
             this.labelCampoDeProcura = new System.Windows.Forms.Label();
             this.labelProcurarPor = new System.Windows.Forms.Label();
             this.comboBoxCampoProcura = new System.Windows.Forms.ComboBox();
-            this.textBoxProcurarPor = new System.Windows.Forms.TextBox();
+            this.textBoxClienteProcurarPor = new System.Windows.Forms.TextBox();
             this.groupBoxDadosClientes = new System.Windows.Forms.GroupBox();
             this.buttonGravarCliente = new System.Windows.Forms.Button();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
@@ -362,7 +362,7 @@
             this.tabPageClientes.Controls.Add(this.labelCampoDeProcura);
             this.tabPageClientes.Controls.Add(this.labelProcurarPor);
             this.tabPageClientes.Controls.Add(this.comboBoxCampoProcura);
-            this.tabPageClientes.Controls.Add(this.textBoxProcurarPor);
+            this.tabPageClientes.Controls.Add(this.textBoxClienteProcurarPor);
             this.tabPageClientes.Controls.Add(this.groupBoxDadosClientes);
             this.tabPageClientes.Controls.Add(this.clientesListBox);
             this.tabPageClientes.Location = new System.Drawing.Point(166, 4);
@@ -383,6 +383,7 @@
             this.buttonProcurarCliente.Text = "Procurar";
             this.buttonProcurarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonProcurarCliente.UseVisualStyleBackColor = true;
+            this.buttonProcurarCliente.Click += new System.EventHandler(this.buttonProcurarCliente_Click);
             // 
             // buttonCriarCliente
             // 
@@ -446,17 +447,20 @@
             // comboBoxCampoProcura
             // 
             this.comboBoxCampoProcura.FormattingEnabled = true;
+            this.comboBoxCampoProcura.Items.AddRange(new object[] {
+            "Nome",
+            "NIF"});
             this.comboBoxCampoProcura.Location = new System.Drawing.Point(232, 53);
             this.comboBoxCampoProcura.Name = "comboBoxCampoProcura";
             this.comboBoxCampoProcura.Size = new System.Drawing.Size(119, 21);
             this.comboBoxCampoProcura.TabIndex = 5;
             // 
-            // textBoxProcurarPor
+            // textBoxClienteProcurarPor
             // 
-            this.textBoxProcurarPor.Location = new System.Drawing.Point(3, 53);
-            this.textBoxProcurarPor.Name = "textBoxProcurarPor";
-            this.textBoxProcurarPor.Size = new System.Drawing.Size(223, 20);
-            this.textBoxProcurarPor.TabIndex = 4;
+            this.textBoxClienteProcurarPor.Location = new System.Drawing.Point(3, 53);
+            this.textBoxClienteProcurarPor.Name = "textBoxClienteProcurarPor";
+            this.textBoxClienteProcurarPor.Size = new System.Drawing.Size(223, 20);
+            this.textBoxClienteProcurarPor.TabIndex = 4;
             // 
             // groupBoxDadosClientes
             // 
@@ -1941,7 +1945,7 @@
         private System.Windows.Forms.Label labelCampoDeProcura;
         private System.Windows.Forms.Label labelProcurarPor;
         private System.Windows.Forms.ComboBox comboBoxCampoProcura;
-        private System.Windows.Forms.TextBox textBoxProcurarPor;
+        private System.Windows.Forms.TextBox textBoxClienteProcurarPor;
         private System.Windows.Forms.Button buttonGravarCliente;
         private System.Windows.Forms.GroupBox groupBoxParcelasOficina;
         private System.Windows.Forms.GroupBox groupBoxCriarParcelaOficina;

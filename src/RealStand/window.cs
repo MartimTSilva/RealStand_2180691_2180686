@@ -409,5 +409,25 @@ namespace RealStand
 
             EnableDataInsertion();
         }
+
+        private void buttonProcurarCliente_Click(object sender, EventArgs e)
+        {
+            List<Cliente> clientes = new List<Cliente>();
+            switch (comboBoxCampoProcura.SelectedIndex)
+            {
+                case -1:
+                    MessageBox.Show("Têm de escolher um campo de procura!");
+                    break;
+                case 0:
+                        clientes = Cliente.SearchClientByName(standContainer, textBoxClienteProcurarPor.Text);
+                    break;
+                case 1:
+                        clientes = Cliente.SearchClientByNIF(standContainer, textBoxClienteProcurarPor.Text);
+                    break;
+                default:
+                    break;
+            }
+            clientesListBox.DataSource = clientes;
+        }
     }
 }
