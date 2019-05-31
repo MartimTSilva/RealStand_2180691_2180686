@@ -16,6 +16,7 @@ namespace RealStand
         private StandContainer standContainer;
 
         private bool newclient = false;
+        private bool novoCarroOficina = false;
 
         public window()
         {
@@ -92,46 +93,13 @@ namespace RealStand
         /// <param name="e"></param>
         private void buttonAdicionarCarroOficina_Click(object sender, EventArgs e)
         {
-            Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
-
-            string matricula = maskedTextBoxMatriculaOficina.Text;
-            int kms = int.Parse(numericUpDownKMsOficina.Text);
-            string numeroChassis = textBoxChassiOficina.Text;
-            string marca = textBoxMarcaOficina.Text;
-            string modelo = textBoxModeloOficina.Text;
-            string combustivel = comboBoxCombustivelOficina.SelectedText;
-
-            if (CarroOficina.VerificaMatricula(matricula) && CarroOficina.VerificaKMs(kms) && CarroOficina.VerificaNumeroChassis(numeroChassis) && CarroOficina.VerificaMarca(marca) && CarroOficina.VerificaModelo(modelo) & VerificaCombustivel(combustivel))
-            {
-                CarroOficina novoCarroOficina = new CarroOficina(matricula, kms, numeroChassis, marca, modelo, combustivel);
-
-                try
-                {
-                    selectedCliente.CarroOficina.Add(novoCarroOficina);
-                }
-                catch (System.NullReferenceException)
-                {
-                    return;
-                }
-
-                standContainer.SaveChanges();
-                listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
-                listBoxServicosOficina.SelectedIndex = -1;
-                listBoxCarrosOficina.SelectedIndex = -1;
-                CleanInputCarroOficina();
-            }
-            else if (!CarroOficina.VerificaNumeroChassis(numeroChassis))
-            {
-                MessageBox.Show("Número de Chassi incompleto. São 17 caracteres.");
-            }
-            else if (!CarroOficina.VerificaMatricula(matricula))
-            {
-                MessageBox.Show("Matricula inválida");
-            }
-            else
-            {
-                MessageBox.Show("Erro! Falta de informação." + "\n" + "Por favor, certifique-se que todas as caixas estão preenchidas.");
-            }
+            novoCarroOficina = true;
+            listBoxCarrosOficina.SelectedIndex = -1;
+            groupBoxCriarCarroOficina.Enabled = true;
+            buttonGuardarCarroOficina.Enabled = true;
+            buttonEditarCarroOficina.Enabled = false;
+            buttonRemoverCarroOficina.Enabled = false;
+            CleanInputCarroOficina();
         }
 
         /// <summary>
@@ -190,6 +158,8 @@ namespace RealStand
             buttonRemoverCarroOficina.Enabled = false;
             buttonRemoverServicoOficina.Enabled = false;
             buttonRemoverParcelaOficina.Enabled = false;
+            buttonEditarCarroOficina.Enabled = false;
+            buttonGuardarCarroOficina.Enabled = false;
         }
 
         /// <summary>
@@ -225,8 +195,8 @@ namespace RealStand
             try
             {
                 listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
-                groupBoxCriarCarroOficina.Enabled = true;
                 groupBoxCarrosOficina.Enabled = true;
+                CleanInputCarroOficina();
             }
             catch (System.NullReferenceException)
             {
@@ -309,6 +279,7 @@ namespace RealStand
                 buttonRemoverServicoOficina.Enabled = false;
                 buttonRemoverCarroOficina.Enabled = true;
                 buttonRemoverParcelaOficina.Enabled = false;
+                groupBoxCriarCarroOficina.Enabled = false;
             }
             catch (System.NullReferenceException)
             {
@@ -317,6 +288,33 @@ namespace RealStand
             //Mete a listbox dos serviços da oficina sem nenhum item selecionado
             listBoxServicosOficina.SelectedIndex = -1;
             listBoxParcelasOficina.DataSource = null;
+            buttonEditarCarroOficina.Enabled = true;
+
+            //Preenche textboxes com as informações do carro
+            maskedTextBoxMatriculaOficina.Text = selectedCarroOficina.Matricula;
+            numericUpDownKMsOficina.Text = selectedCarroOficina.Kms.ToString();
+            textBoxChassiOficina.Text = selectedCarroOficina.NumeroChassis;
+            textBoxMarcaOficina.Text = selectedCarroOficina.Marca;
+            textBoxModeloOficina.Text = selectedCarroOficina.Modelo;
+
+            switch (selectedCarroOficina.Combustivel)
+            {
+                case "Gasóleo":
+                    comboBoxCombustivelOficina.SelectedIndex = 0;
+                    break;
+                case "Gasolina":
+                    comboBoxCombustivelOficina.SelectedIndex = 1;
+                    break;
+                case "Diesel":
+                    comboBoxCombustivelOficina.SelectedIndex = 2;
+                    break;
+                case "Gás":
+                    comboBoxCombustivelOficina.SelectedIndex = 3;             
+                    break;
+                case "Híbrido":
+                    comboBoxCombustivelOficina.SelectedIndex = 4;
+                    break;
+            }
         }
 
         /// <summary>
@@ -522,11 +520,15 @@ namespace RealStand
                 standContainer.Carros.Remove(selectedCarroOficina);
                 standContainer.SaveChanges();
                 listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
+                buttonRemoverCarroAluguer.Enabled = false;
+                CleanInputCarroOficina();
+                listBoxCarrosOficina.SelectedIndex = -1;
             }
             else
             {
                 MessageBox.Show("Não é possivel apagar um carro com serviços ativos");
             }
+
         }
 
         private void buttonEditarCliente_Click(object sender, EventArgs e)
@@ -591,6 +593,84 @@ namespace RealStand
         {
             int remain = 17 - textBoxChassiOficina.Text.Length;
             label4.Text = remain.ToString();
+        }
+
+        private void buttonGuardarCarroOficina_Click(object sender, EventArgs e)
+        {
+            Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
+
+            string matricula = maskedTextBoxMatriculaOficina.Text;
+            int kms = int.Parse(numericUpDownKMsOficina.Text);
+            string numeroChassis = textBoxChassiOficina.Text;
+            string marca = textBoxMarcaOficina.Text;
+            string modelo = textBoxModeloOficina.Text;
+            string combustivel = comboBoxCombustivelOficina.Text;
+
+            if (CarroOficina.VerificaMatricula(matricula) && CarroOficina.VerificaKMs(kms) && CarroOficina.VerificaNumeroChassis(numeroChassis) && CarroOficina.VerificaMarca(marca) && CarroOficina.VerificaModelo(modelo) & VerificaCombustivel(combustivel))
+            {
+                if (novoCarroOficina)
+                {
+                    CarroOficina novoCarroOficina = new CarroOficina(matricula, kms, numeroChassis, marca, modelo, combustivel);
+                    try
+                    {
+                        selectedCliente.CarroOficina.Add(novoCarroOficina);
+                    }
+                    catch (System.NullReferenceException)
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
+                    selectedCarroOficina.Matricula = maskedTextBoxMatriculaOficina.Text;
+                    selectedCarroOficina.Kms = int.Parse(numericUpDownKMsOficina.Text);
+                    selectedCarroOficina.NumeroChassis = textBoxChassiOficina.Text;
+                    selectedCarroOficina.Marca = textBoxMarcaOficina.Text;
+                    selectedCarroOficina.Modelo = textBoxModeloOficina.Text;
+                    selectedCarroOficina.Combustivel = comboBoxCombustivelOficina.Text;
+                }
+
+
+                standContainer.SaveChanges();
+                listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
+                listBoxServicosOficina.SelectedIndex = -1;
+                listBoxCarrosOficina.SelectedIndex = -1;
+                CleanInputCarroOficina();
+                groupBoxCriarCarroOficina.Enabled = false;
+            }
+            else if (!CarroOficina.VerificaMatricula(matricula))
+            {
+                MessageBox.Show("Matricula inválida");
+            }
+            else if (!CarroOficina.VerificaKMs(kms))
+            {
+                MessageBox.Show("Quilometragem inválida");
+            }
+            else if (!CarroOficina.VerificaNumeroChassis(numeroChassis))
+            {
+                MessageBox.Show("Número de Chassi incompleto. São 17 caracteres");
+            }              
+            else if (!CarroOficina.VerificaMarca(marca))
+            {
+                MessageBox.Show("Marca não inserida");
+            }
+            else if (!CarroOficina.VerificaModelo(modelo))
+            {
+                MessageBox.Show("Modelo não inserido");
+            }
+            else if (!VerificaCombustivel(combustivel))
+            {
+                MessageBox.Show("Combustível não selecionado");
+            }
+        }
+
+        private void buttonEditarCarroOficina_Click(object sender, EventArgs e)
+        {
+            groupBoxCriarCarroOficina.Enabled = true;
+            buttonEditarCarroOficina.Enabled = false;
+            buttonRemoverCarroOficina.Enabled = false;
+            buttonGuardarCarroOficina.Enabled = true;
         }
     }
 }
