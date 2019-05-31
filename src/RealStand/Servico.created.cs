@@ -30,5 +30,22 @@ namespace RealStand
         {
             return Tipo + " (" + DataEntrega + ")";
         }
+
+        public static bool VerificaDatasServico(DateTime DataEntrada, DateTime DataSaida)
+        {
+            if (DataEntrada.Date > DataSaida.Date)
+            {
+                return false;
+            }
+            return true;
+        }
+        public static bool VerificaTipoServico(string TipoServico)
+        {
+            if (TipoServico == "")
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

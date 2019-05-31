@@ -33,5 +33,50 @@ namespace RealStand
         {
             return Marca + " - " + Modelo + "(" + Matricula + ")";
         }
+
+        public static bool VerificaMatricula(string matricula)
+        {
+            if (matricula == "" || matricula.Length != 8)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool VerificaKMs(int kms)
+        {
+            if (kms == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool VerificaNumeroChassis(string numeroChassis)
+        {
+            if (numeroChassis.Length < 17 || numeroChassis == "")
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool VerificaMarca(string marca)
+        {
+            if (marca == "")
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool VerificaModelo(string modelo)
+        {
+            if (modelo == "")
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

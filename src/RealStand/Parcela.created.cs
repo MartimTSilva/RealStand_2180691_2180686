@@ -22,5 +22,13 @@ namespace RealStand
         {
             return Descricao + " (" + Valor.ToString("0.00") + "€" + ")";
         }
+        public static bool VerificaDescricaoParcela(string DescricaoParcela)
+        {
+            if (DescricaoParcela == "")
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

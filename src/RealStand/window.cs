@@ -65,6 +65,26 @@ namespace RealStand
             standContainer = new StandContainer();
         }
 
+        private bool VerificaCombustivel(string combustivel)
+        {
+            if (comboBoxCombustivelOficina.SelectedIndex == -1)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        void CleanInputCarroOficina()
+        {
+            //Limpa textboxes
+            maskedTextBoxMatriculaOficina.Text = "";
+            numericUpDownKMsOficina.Text = "0";
+            textBoxChassiOficina.Text = "";
+            textBoxMarcaOficina.Text = "";
+            textBoxModeloOficina.Text = "";
+            comboBoxCombustivelOficina.SelectedItem = null;
+        }
+
         /// <summary>
         /// Adiciona um carro da oficina ao cliente que esteja selecionado na listbox
         /// </summary>
@@ -73,22 +93,103 @@ namespace RealStand
         private void buttonAdicionarCarroOficina_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
-            CarroOficina novoCarroOficina = new CarroOficina(maskedTextBoxMatriculaOficina.Text, int.Parse(textBoxKMsOficina.Text), textBoxChassiOficina.Text, textBoxMarcaOficina.Text, textBoxModeloOficina.Text, comboBoxCombustivelOficina.SelectedText);
-            if (novoCarroOficina == null)
-            {
-                return;
-            }
-            selectedCliente.CarroOficina.Add(novoCarroOficina);
-            standContainer.SaveChanges();
-            listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
 
-            //Limpa textboxes
-            maskedTextBoxMatriculaOficina.Text = "";
-            textBoxKMsOficina.Text = "";
-            textBoxChassiOficina.Text = "";
-            textBoxMarcaOficina.Text = "";
-            textBoxModeloOficina.Text = "";
-            comboBoxCombustivelOficina.Text = "";
+            string matricula = maskedTextBoxMatriculaOficina.Text;
+            int kms = int.Parse(numericUpDownKMsOficina.Text);
+            string numeroChassis = textBoxChassiOficina.Text;
+            string marca = textBoxMarcaOficina.Text;
+            string modelo = textBoxModeloOficina.Text;
+            string combustivel = comboBoxCombustivelOficina.SelectedText;
+
+            if (CarroOficina.VerificaMatricula(matricula) && CarroOficina.VerificaKMs(kms) && CarroOficina.VerificaNumeroChassis(numeroChassis) && CarroOficina.VerificaMarca(marca) && CarroOficina.VerificaModelo(modelo) & VerificaCombustivel(combustivel))
+            {
+                CarroOficina novoCarroOficina = new CarroOficina(matricula, kms, numeroChassis, marca, modelo, combustivel);
+
+                try
+                {
+                    selectedCliente.CarroOficina.Add(novoCarroOficina);
+                }
+                catch (System.NullReferenceException)
+                {
+                    return;
+                }
+
+                standContainer.SaveChanges();
+                listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
+                listBoxServicosOficina.SelectedIndex = -1;
+                listBoxCarrosOficina.SelectedIndex = -1;
+                CleanInputCarroOficina();
+            }
+            else if (!CarroOficina.VerificaNumeroChassis(numeroChassis))
+            {
+                MessageBox.Show("Número de Chassi incompleto. São 17 caracteres.");
+            }
+            else if (!CarroOficina.VerificaMatricula(matricula))
+            {
+                MessageBox.Show("Matricula inválida");
+            }
+            else
+            {
+                MessageBox.Show("Erro! Falta de informação." + "\n" + "Por favor, certifique-se que todas as caixas estão preenchidas.");
+            }
+        }
+
+        /// <summary>
+        /// Método para colocar tudo do Form da Oficina a null
+        /// </summary>
+        private void IniciaOficina()
+        {
+            //Reseta a Ficha de Cliente
+            labelClienteSelecionadoOficina.Text = "Nenhum cliente selecionado";
+            labelNifClienteSelecionadoOficina.Text = "*********";
+            labelTotalClienteOficina.Text = "0.00€";
+
+            //Esvazia todos os "inputs" da groupbox de Adicionar um carro.
+            foreach (Control c in groupBoxCriarCarroOficina.Controls)
+            {
+                if (c is TextBox)
+                {
+                    c.Text = "";
+                }
+                else if (c is MaskedTextBox)
+                {
+                    c.Text = "";
+                }
+                else if (c is NumericUpDown)
+                {
+                    c.Text = "0";
+                }
+                else if (c is ComboBox)
+                    (c as ComboBox).SelectedIndex = -1;
+            }
+            //Mais algumas Caixas
+            dateTimePickerDataEntregaOficina.Text = null;
+            comboBoxTipoServicosOficina.SelectedItem = null;
+            dateTimePickerDataSaidaOficina.Text = null;
+            textBoxDescricaoParcelaOficina.Text = "";
+            maskedTextBoxValorParcelaOficina.Text = "";
+
+            //Desseleciona todos os itens nas listboxes
+            listBoxClientesOficina.SelectedIndex = -1;
+            listBoxCarrosOficina.SelectedIndex = -1;
+            listBoxServicosOficina.SelectedIndex = -1;
+            listBoxParcelasOficina.SelectedIndex = -1;
+
+            //Reseta todas as listboxes
+            listBoxCarrosOficina.DataSource = null;
+            listBoxServicosOficina.DataSource = null;
+            listBoxParcelasOficina.DataSource = null;
+
+            //Bloqueia alguns botões e groupboxes para evitar toques aceidentais e erros
+            groupBoxCriarCarroOficina.Enabled = false;
+            groupBoxCriarServicoOficina.Enabled = false;
+            groupBoxCriarParcelaOficina.Enabled = false;
+            groupBoxCarrosOficina.Enabled = false;
+            groupBoxServicosOficina.Enabled = false;
+            groupBoxParcelasOficina.Enabled = false;
+            buttonRemoverCarroOficina.Enabled = false;
+            buttonRemoverServicoOficina.Enabled = false;
+            buttonRemoverParcelaOficina.Enabled = false;
         }
 
         /// <summary>
@@ -106,16 +207,7 @@ namespace RealStand
                     break;
                 case 2:
                     listBoxClientesOficina.DataSource = standContainer.Clientes.ToList<Cliente>();
-                    labelClienteSelecionadoOficina.Text = "Nenhum cliente selecionado";
-                    labelNifClienteSelecionadoOficina.Text = "*********";
-                    labelTotalClienteOficina.Text = "0.00€";
-                    listBoxClientesOficina.SelectedIndex = -1;
-                    listBoxCarrosOficina.SelectedIndex = -1;
-                    listBoxServicosOficina.SelectedIndex = -1;
-                    listBoxParcelasOficina.SelectedIndex = -1;
-                    listBoxCarrosOficina.DataSource = null;
-                    listBoxServicosOficina.DataSource = null;
-                    listBoxParcelasOficina.DataSource = null;
+                    IniciaOficina();
                     break;
                 default:
                     break;
@@ -133,13 +225,15 @@ namespace RealStand
             try
             {
                 listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
+                groupBoxCriarCarroOficina.Enabled = true;
+                groupBoxCarrosOficina.Enabled = true;
             }
             catch (System.NullReferenceException)
             {
                 return;
             }
 
-            //Mete as listboxs sem nenhum item selecionado
+            //Limpa e mete as listboxes sem nenhum item selecionado quando é selecionado um novo cliente.
             listBoxCarrosOficina.SelectedIndex = -1;
             listBoxServicosOficina.SelectedIndex = -1;
             listBoxParcelasOficina.SelectedIndex = -1;
@@ -168,20 +262,35 @@ namespace RealStand
         /// <param name="e"></param>
         private void buttonAdicionarServicoOficina_Click(object sender, EventArgs e)
         {
-            CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
-            Servico novoServico = new Servico(dateTimePickerDataEntregaOficina.Value , comboBoxTipoServicosOficina.SelectedItem.ToString(), dateTimePickerDataSaidaOficina.Value);
-            if (novoServico == null)
-            {
-                return;
-            }
-            selectedCarroOficina.Servico.Add(novoServico);
-            standContainer.SaveChanges();
-            listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+            DateTime DataEntrega = dateTimePickerDataEntregaOficina.Value;
+            DateTime DataSaida = dateTimePickerDataSaidaOficina.Value;
+            string TipoServico = comboBoxTipoServicosOficina.Text;
 
-            //Limpa textboxes
-            dateTimePickerDataEntregaOficina.Text = null;
-            comboBoxTipoServicosOficina.Text = "";
-            dateTimePickerDataSaidaOficina.Text = null;
+            CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
+            Servico novoServico = new Servico(DataEntrega, TipoServico, DataSaida);
+
+            if (Servico.VerificaTipoServico(TipoServico) && Servico.VerificaDatasServico(DataEntrega, DataSaida))
+            {
+                selectedCarroOficina.Servico.Add(novoServico);
+                standContainer.SaveChanges();
+                listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+                listBoxServicosOficina.SelectedIndex = -1;
+
+                //Limpa textboxes
+                dateTimePickerDataEntregaOficina.Text = null;
+                comboBoxTipoServicosOficina.SelectedItem = null;
+                dateTimePickerDataSaidaOficina.Text = null;
+            }
+            else if (!Servico.VerificaDatasServico(DataEntrega, DataSaida))
+            {
+                MessageBox.Show("Erro! A data de entrada não pode ser mais recente que a data de saída.");
+
+            }
+            else if (!Servico.VerificaTipoServico(TipoServico))
+            {
+                MessageBox.Show("Erro! Tipo de serviço não selecionado.");
+
+            }
         }
 
         /// <summary>
@@ -195,6 +304,11 @@ namespace RealStand
             try
             {
                 listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+                groupBoxCriarServicoOficina.Enabled = true;
+                groupBoxServicosOficina.Enabled = true;
+                buttonRemoverServicoOficina.Enabled = false;
+                buttonRemoverCarroOficina.Enabled = true;
+                buttonRemoverParcelaOficina.Enabled = false;
             }
             catch (System.NullReferenceException)
             {
@@ -253,22 +367,43 @@ namespace RealStand
         /// <param name="e"></param>
         private void buttonAdicionarParcelaOficina_Click(object sender, EventArgs e)
         {
-            Cliente selectedCliente = (Cliente)clientesListBox.SelectedItem;
-            Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
-            Parcela novaParcela = new Parcela(double.Parse(maskedTextBoxValorParcelaOficina.Text.Replace('€', ' ')), textBoxDescricaoParcelaOficina.Text);
-
-            if (selectedServico == null)
+            double ValorParcela;
+            try
             {
+                ValorParcela = double.Parse(maskedTextBoxValorParcelaOficina.Text.Replace('€', ' '));
+            }
+            catch (System.FormatException)
+            {
+                MessageBox.Show("Valor da parcela incorreto.");
                 return;
             }
-            selectedServico.Parcela.Add(novaParcela);
-            standContainer.SaveChanges();
-            listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
-            GetTotal(selectedCliente);
+            string DescricaoParcela = textBoxDescricaoParcelaOficina.Text;
 
-            //Limpa textboxes
-            textBoxDescricaoParcelaOficina.Text = "";
-            maskedTextBoxValorParcelaOficina.Text = null;
+            Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
+            Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
+            Parcela novaParcela = new Parcela(ValorParcela, DescricaoParcela);
+
+            if (Parcela.VerificaDescricaoParcela(DescricaoParcela))
+            {
+                if (selectedServico == null)
+                {
+                    return;
+                }
+
+                selectedServico.Parcela.Add(novaParcela);
+                standContainer.SaveChanges();
+                listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
+                listBoxParcelasOficina.SelectedIndex = -1;
+                GetTotal(selectedCliente);
+
+                //Limpa textboxes
+                textBoxDescricaoParcelaOficina.Text = "";
+                maskedTextBoxValorParcelaOficina.Text = null;
+            }
+            else if (!Parcela.VerificaDescricaoParcela(DescricaoParcela))
+            {
+                MessageBox.Show("Descrição de parcela vazia.");
+            }
         }
 
         /// <summary>
@@ -282,7 +417,10 @@ namespace RealStand
             try
             {
                 listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
-
+                groupBoxCriarParcelaOficina.Enabled = true;
+                groupBoxParcelasOficina.Enabled = true;
+                buttonRemoverServicoOficina.Enabled = true;
+                buttonRemoverParcelaOficina.Enabled = false;
             }
             catch (System.NullReferenceException)
             {
@@ -340,13 +478,18 @@ namespace RealStand
             buttonGravarCliente.Visible = false;
         }
 
+
         private void buttonRemoverParcelaOficina_Click(object sender, EventArgs e)
         {
+            Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
             Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
             Parcela selectedParcela = (Parcela)listBoxParcelasOficina.SelectedItem;
             standContainer.Parcelas.Remove(selectedParcela);
             standContainer.SaveChanges();
             listBoxParcelasOficina.DataSource = selectedServico.Parcela.ToList();
+            listBoxParcelasOficina.SelectedIndex = -1;
+            buttonRemoverParcelaOficina.Enabled = false;
+            GetTotal(selectedCliente);
         }
 
         private void buttonRemoverServicoOficina_Click(object sender, EventArgs e)
@@ -368,12 +511,13 @@ namespace RealStand
 
         private void buttonRemoverCarroOficina_Click(object sender, EventArgs e)
         {
-            Cliente selectedCliente = (Cliente)clientesListBox.SelectedItem;
+            Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
             CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
             if (selectedCarroOficina.Servico.Count == 0)
             {
                 standContainer.Carros.Remove(selectedCarroOficina);
                 standContainer.SaveChanges();
+                listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
             }
             else
             {
@@ -408,6 +552,20 @@ namespace RealStand
             contactoMaskedTextBox.Text = "";
 
             EnableDataInsertion();
+        }
+
+        private void listBoxParcelasOficina_Click(object sender, EventArgs e)
+        {
+            if (listBoxParcelasOficina.SelectedItem != null)
+            {
+                buttonRemoverParcelaOficina.Enabled = true;
+            }
+        }
+
+        private void textBoxChassiOficina_TextChanged(object sender, EventArgs e)
+        {
+            int remain = 17 - textBoxChassiOficina.Text.Length;
+            label4.Text = remain.ToString();
         }
     }
 }
