@@ -70,7 +70,11 @@
             this.textBoxDescricaoParcelaOficina = new System.Windows.Forms.TextBox();
             this.listBoxParcelasOficina = new System.Windows.Forms.ListBox();
             this.groupBoxServicosOficina = new System.Windows.Forms.GroupBox();
+            this.buttonRemoverServicoOficina = new System.Windows.Forms.Button();
+            this.buttonCriarServicoOficina = new System.Windows.Forms.Button();
+            this.buttonEditarServicoOficina = new System.Windows.Forms.Button();
             this.groupBoxCriarServicoOficina = new System.Windows.Forms.GroupBox();
+            this.buttonGuardarServicoOficina = new System.Windows.Forms.Button();
             this.dateTimePickerDataSaidaOficina = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDataEntregaOficina = new System.Windows.Forms.DateTimePicker();
             this.labelDataSaidaOficina = new System.Windows.Forms.Label();
@@ -191,10 +195,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.clientesTableAdapter = new RealStand.realstandDataSetTableAdapters.ClientesTableAdapter();
             this.tableAdapterManager = new RealStand.realstandDataSetTableAdapters.TableAdapterManager();
-            this.buttonEditarServicoOficina = new System.Windows.Forms.Button();
-            this.buttonCriarServicoOficina = new System.Windows.Forms.Button();
-            this.buttonRemoverServicoOficina = new System.Windows.Forms.Button();
-            this.buttonGuardarServicoOficina = new System.Windows.Forms.Button();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -586,6 +586,8 @@
             // 
             // buttonRemoverParcelaOficina
             // 
+            this.buttonRemoverParcelaOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoverParcelaOficina.Image")));
+            this.buttonRemoverParcelaOficina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonRemoverParcelaOficina.Location = new System.Drawing.Point(7, 17);
             this.buttonRemoverParcelaOficina.Name = "buttonRemoverParcelaOficina";
             this.buttonRemoverParcelaOficina.Size = new System.Drawing.Size(237, 23);
@@ -628,6 +630,8 @@
             // 
             // buttonAdicionarParcelaOficina
             // 
+            this.buttonAdicionarParcelaOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonAdicionarParcelaOficina.Image")));
+            this.buttonAdicionarParcelaOficina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAdicionarParcelaOficina.Location = new System.Drawing.Point(7, 74);
             this.buttonAdicionarParcelaOficina.Name = "buttonAdicionarParcelaOficina";
             this.buttonAdicionarParcelaOficina.Size = new System.Drawing.Size(237, 23);
@@ -675,6 +679,43 @@
             this.groupBoxServicosOficina.TabStop = false;
             this.groupBoxServicosOficina.Text = "Serviços";
             // 
+            // buttonRemoverServicoOficina
+            // 
+            this.buttonRemoverServicoOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoverServicoOficina.Image")));
+            this.buttonRemoverServicoOficina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRemoverServicoOficina.Location = new System.Drawing.Point(9, 75);
+            this.buttonRemoverServicoOficina.Name = "buttonRemoverServicoOficina";
+            this.buttonRemoverServicoOficina.Size = new System.Drawing.Size(208, 23);
+            this.buttonRemoverServicoOficina.TabIndex = 14;
+            this.buttonRemoverServicoOficina.Text = "Apagar";
+            this.buttonRemoverServicoOficina.UseVisualStyleBackColor = true;
+            this.buttonRemoverServicoOficina.Click += new System.EventHandler(this.buttonRemoverServicoOficina_Click_1);
+            // 
+            // buttonCriarServicoOficina
+            // 
+            this.buttonCriarServicoOficina.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonCriarServicoOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonCriarServicoOficina.Image")));
+            this.buttonCriarServicoOficina.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonCriarServicoOficina.Location = new System.Drawing.Point(9, 17);
+            this.buttonCriarServicoOficina.Name = "buttonCriarServicoOficina";
+            this.buttonCriarServicoOficina.Size = new System.Drawing.Size(208, 23);
+            this.buttonCriarServicoOficina.TabIndex = 14;
+            this.buttonCriarServicoOficina.Text = "Criar";
+            this.buttonCriarServicoOficina.UseVisualStyleBackColor = true;
+            this.buttonCriarServicoOficina.Click += new System.EventHandler(this.buttonCriarServicoOficina_Click);
+            // 
+            // buttonEditarServicoOficina
+            // 
+            this.buttonEditarServicoOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditarServicoOficina.Image")));
+            this.buttonEditarServicoOficina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEditarServicoOficina.Location = new System.Drawing.Point(9, 46);
+            this.buttonEditarServicoOficina.Name = "buttonEditarServicoOficina";
+            this.buttonEditarServicoOficina.Size = new System.Drawing.Size(208, 23);
+            this.buttonEditarServicoOficina.TabIndex = 14;
+            this.buttonEditarServicoOficina.Text = "Editar";
+            this.buttonEditarServicoOficina.UseVisualStyleBackColor = true;
+            this.buttonEditarServicoOficina.Click += new System.EventHandler(this.buttonEditarServicoOficina_Click);
+            // 
             // groupBoxCriarServicoOficina
             // 
             this.groupBoxCriarServicoOficina.Controls.Add(this.buttonGuardarServicoOficina);
@@ -689,7 +730,19 @@
             this.groupBoxCriarServicoOficina.Size = new System.Drawing.Size(224, 135);
             this.groupBoxCriarServicoOficina.TabIndex = 1;
             this.groupBoxCriarServicoOficina.TabStop = false;
-            this.groupBoxCriarServicoOficina.Text = "Adicionar Novo Serviço";
+            this.groupBoxCriarServicoOficina.Text = "Criar / Editar Serviço";
+            // 
+            // buttonGuardarServicoOficina
+            // 
+            this.buttonGuardarServicoOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardarServicoOficina.Image")));
+            this.buttonGuardarServicoOficina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGuardarServicoOficina.Location = new System.Drawing.Point(7, 105);
+            this.buttonGuardarServicoOficina.Name = "buttonGuardarServicoOficina";
+            this.buttonGuardarServicoOficina.Size = new System.Drawing.Size(210, 23);
+            this.buttonGuardarServicoOficina.TabIndex = 15;
+            this.buttonGuardarServicoOficina.Text = "Guardar";
+            this.buttonGuardarServicoOficina.UseVisualStyleBackColor = true;
+            this.buttonGuardarServicoOficina.Click += new System.EventHandler(this.buttonGuardarServicoOficina_Click);
             // 
             // dateTimePickerDataSaidaOficina
             // 
@@ -801,7 +854,7 @@
             this.groupBoxCriarCarroOficina.Size = new System.Drawing.Size(195, 203);
             this.groupBoxCriarCarroOficina.TabIndex = 3;
             this.groupBoxCriarCarroOficina.TabStop = false;
-            this.groupBoxCriarCarroOficina.Text = "Adicionar Novo Carro";
+            this.groupBoxCriarCarroOficina.Text = "Criar / Editar Carro";
             // 
             // buttonGuardarCarroOficina
             // 
@@ -1903,55 +1956,6 @@
             this.tableAdapterManager.ServicosTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = RealStand.realstandDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VendasTableAdapter = null;
-            // 
-            // buttonEditarServicoOficina
-            // 
-            this.buttonEditarServicoOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditarServicoOficina.Image")));
-            this.buttonEditarServicoOficina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEditarServicoOficina.Location = new System.Drawing.Point(9, 46);
-            this.buttonEditarServicoOficina.Name = "buttonEditarServicoOficina";
-            this.buttonEditarServicoOficina.Size = new System.Drawing.Size(208, 23);
-            this.buttonEditarServicoOficina.TabIndex = 14;
-            this.buttonEditarServicoOficina.Text = "Editar";
-            this.buttonEditarServicoOficina.UseVisualStyleBackColor = true;
-            this.buttonEditarServicoOficina.Click += new System.EventHandler(this.buttonEditarServicoOficina_Click);
-            // 
-            // buttonCriarServicoOficina
-            // 
-            this.buttonCriarServicoOficina.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonCriarServicoOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonCriarServicoOficina.Image")));
-            this.buttonCriarServicoOficina.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonCriarServicoOficina.Location = new System.Drawing.Point(9, 17);
-            this.buttonCriarServicoOficina.Name = "buttonCriarServicoOficina";
-            this.buttonCriarServicoOficina.Size = new System.Drawing.Size(208, 23);
-            this.buttonCriarServicoOficina.TabIndex = 14;
-            this.buttonCriarServicoOficina.Text = "Criar";
-            this.buttonCriarServicoOficina.UseVisualStyleBackColor = true;
-            this.buttonCriarServicoOficina.Click += new System.EventHandler(this.buttonCriarServicoOficina_Click);
-            // 
-            // buttonRemoverServicoOficina
-            // 
-            this.buttonRemoverServicoOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoverServicoOficina.Image")));
-            this.buttonRemoverServicoOficina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRemoverServicoOficina.Location = new System.Drawing.Point(9, 75);
-            this.buttonRemoverServicoOficina.Name = "buttonRemoverServicoOficina";
-            this.buttonRemoverServicoOficina.Size = new System.Drawing.Size(208, 23);
-            this.buttonRemoverServicoOficina.TabIndex = 14;
-            this.buttonRemoverServicoOficina.Text = "Apagar";
-            this.buttonRemoverServicoOficina.UseVisualStyleBackColor = true;
-            this.buttonRemoverServicoOficina.Click += new System.EventHandler(this.buttonRemoverServicoOficina_Click_1);
-            // 
-            // buttonGuardarServicoOficina
-            // 
-            this.buttonGuardarServicoOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardarServicoOficina.Image")));
-            this.buttonGuardarServicoOficina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGuardarServicoOficina.Location = new System.Drawing.Point(7, 105);
-            this.buttonGuardarServicoOficina.Name = "buttonGuardarServicoOficina";
-            this.buttonGuardarServicoOficina.Size = new System.Drawing.Size(210, 23);
-            this.buttonGuardarServicoOficina.TabIndex = 15;
-            this.buttonGuardarServicoOficina.Text = "Guardar";
-            this.buttonGuardarServicoOficina.UseVisualStyleBackColor = true;
-            this.buttonGuardarServicoOficina.Click += new System.EventHandler(this.buttonGuardarServicoOficina_Click);
             // 
             // window
             // 
