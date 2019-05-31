@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/28/2019 11:44:38
+-- Date Created: 05/31/2019 13:17:49
 -- Generated from EDMX file: C:\Users\Micael Rodrigues\Documents\Github\RealStand_2180691_2180686\src\RealStand\Stand.edmx
 -- --------------------------------------------------
 
@@ -238,7 +238,7 @@ ADD CONSTRAINT [FK_ClienteCarroOficina]
     FOREIGN KEY ([ClienteId])
     REFERENCES [dbo].[Clientes]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ClienteCarroOficina'
@@ -253,7 +253,7 @@ ADD CONSTRAINT [FK_ParcelaServico]
     FOREIGN KEY ([ServicoId])
     REFERENCES [dbo].[Servicos]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ParcelaServico'
@@ -268,7 +268,7 @@ ADD CONSTRAINT [FK_ClienteVenda]
     FOREIGN KEY ([ClienteId])
     REFERENCES [dbo].[Clientes]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ClienteVenda'
@@ -283,7 +283,7 @@ ADD CONSTRAINT [FK_VendaCarroVenda]
     FOREIGN KEY ([CarroVenda_Id])
     REFERENCES [dbo].[Carros_CarroVenda]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_VendaCarroVenda'
@@ -298,7 +298,7 @@ ADD CONSTRAINT [FK_ClienteAluguer]
     FOREIGN KEY ([ClienteId])
     REFERENCES [dbo].[Clientes]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ClienteAluguer'
@@ -328,7 +328,7 @@ ADD CONSTRAINT [FK_ServicoCarroOficina]
     FOREIGN KEY ([CarroOficinaId])
     REFERENCES [dbo].[Carros_CarroOficina]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ServicoCarroOficina'

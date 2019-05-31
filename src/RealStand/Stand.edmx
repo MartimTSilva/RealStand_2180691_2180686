@@ -143,7 +143,9 @@
     <Property Name="Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="ClienteCarroOficina">
-    <End Role="Cliente" Type="Stand.Store.Clientes" Multiplicity="1" />
+    <End Role="Cliente" Type="Stand.Store.Clientes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="CarroOficina" Type="Stand.Store.Carros_CarroOficina" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cliente">
@@ -156,7 +158,9 @@
   </Association>
   <Association Name="ParcelaServico">
     <End Role="Parcela" Type="Stand.Store.Parcelas" Multiplicity="*" />
-    <End Role="Servico" Type="Stand.Store.Servicos" Multiplicity="1" />
+    <End Role="Servico" Type="Stand.Store.Servicos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <ReferentialConstraint>
       <Principal Role="Servico">
         <PropertyRef Name="Id" />
@@ -167,7 +171,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="ClienteVenda">
-    <End Role="Cliente" Type="Stand.Store.Clientes" Multiplicity="1" />
+    <End Role="Cliente" Type="Stand.Store.Clientes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Venda" Type="Stand.Store.Vendas" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cliente">
@@ -180,7 +186,9 @@
   </Association>
   <Association Name="VendaCarroVenda">
     <End Role="Venda" Type="Stand.Store.Vendas" Multiplicity="*" />
-    <End Role="CarroVenda" Type="Stand.Store.Carros_CarroVenda" Multiplicity="1" />
+    <End Role="CarroVenda" Type="Stand.Store.Carros_CarroVenda" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <ReferentialConstraint>
       <Principal Role="CarroVenda">
         <PropertyRef Name="Id" />
@@ -191,7 +199,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="ClienteAluguer">
-    <End Role="Cliente" Type="Stand.Store.Clientes" Multiplicity="1" />
+    <End Role="Cliente" Type="Stand.Store.Clientes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Aluguer" Type="Stand.Store.Aluguers" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cliente">
@@ -216,7 +226,9 @@
   </Association>
   <Association Name="ServicoCarroOficina">
     <End Role="Servico" Type="Stand.Store.Servicos" Multiplicity="*" />
-    <End Role="CarroOficina" Type="Stand.Store.Carros_CarroOficina" Multiplicity="1" />
+    <End Role="CarroOficina" Type="Stand.Store.Carros_CarroOficina" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <ReferentialConstraint>
       <Principal Role="CarroOficina">
         <PropertyRef Name="Id" />
@@ -396,7 +408,9 @@
           <NavigationProperty Name="Servico" Relationship="Stand.ServicoCarroOficina" FromRole="CarroOficina" ToRole="Servico" />
         </EntityType>
         <Association Name="ClienteCarroOficina">
-          <End Type="Stand.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="Stand.Cliente" Role="Cliente" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="Stand.CarroOficina" Role="CarroOficina" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cliente">
@@ -408,8 +422,11 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="ParcelaServico">
-          <End Type="Stand.Parcela" Role="Parcela" Multiplicity="*" />
-          <End Type="Stand.Servico" Role="Servico" Multiplicity="1" />
+          <End Type="Stand.Parcela" Role="Parcela" Multiplicity="*" >
+          </End>
+          <End Type="Stand.Servico" Role="Servico" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <ReferentialConstraint>
             <Principal Role="Servico">
               <PropertyRef Name="Id" />
@@ -420,7 +437,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="ClienteVenda">
-          <End Type="Stand.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="Stand.Cliente" Role="Cliente" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="Stand.Venda" Role="Venda" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cliente">
@@ -432,12 +451,18 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="VendaCarroVenda">
-          <End Type="Stand.Venda" Role="Venda" Multiplicity="1" />
-          <End Type="Stand.CarroVenda" Role="CarroVenda" Multiplicity="1" />
+          <End Type="Stand.Venda" Role="Venda" Multiplicity="1" >
+          </End>
+          <End Type="Stand.CarroVenda" Role="CarroVenda" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
         </Association>
         <Association Name="ClienteAluguer">
-          <End Type="Stand.Cliente" Role="Cliente" Multiplicity="1" />
-          <End Type="Stand.Aluguer" Role="Aluguer" Multiplicity="*" />
+          <End Type="Stand.Cliente" Role="Cliente" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Stand.Aluguer" Role="Aluguer" Multiplicity="*" >
+          </End>
           <ReferentialConstraint>
             <Principal Role="Cliente">
               <PropertyRef Name="Id" />
@@ -448,8 +473,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="AluguerCarroAluguer">
-          <End Type="Stand.Aluguer" Role="Aluguer" Multiplicity="*" />
-          <End Type="Stand.CarroAluguer" Role="CarroAluguer" Multiplicity="1" />
+          <End Type="Stand.Aluguer" Role="Aluguer" Multiplicity="*" >
+          </End>
+          <End Type="Stand.CarroAluguer" Role="CarroAluguer" Multiplicity="1" >
+          </End>
           <ReferentialConstraint>
             <Principal Role="CarroAluguer">
               <PropertyRef Name="Id" />
@@ -460,8 +487,11 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="ServicoCarroOficina">
-          <End Type="Stand.Servico" Role="Servico" Multiplicity="*" />
-          <End Type="Stand.CarroOficina" Role="CarroOficina" Multiplicity="1" />
+          <End Type="Stand.Servico" Role="Servico" Multiplicity="*" >
+          </End>
+          <End Type="Stand.CarroOficina" Role="CarroOficina" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <ReferentialConstraint>
             <Principal Role="CarroOficina">
               <PropertyRef Name="Id" />
