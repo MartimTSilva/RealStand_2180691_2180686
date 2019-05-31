@@ -326,10 +326,10 @@ namespace RealStand
         /// <param name="e"></param>
         private void buttonGravarCliente_Click(object sender, EventArgs e)
         {
-            if (Cliente.CheckName(nomeTextBox.Text) && 
-                Cliente.CheckNIF(nIFMaskedTextBox.Text) && 
+            if (Cliente.CheckName(nomeTextBox.Text) &&
+                !Cliente.CheckDuplicateNIF(standContainer, nIFMaskedTextBox.Text) &&
                 Cliente.CheckMorada(moradaTextBox.Text) && 
-                Cliente.CheckContacto(contactoMaskedTextBox.Text))
+                Cliente.CheckDuplicatePhoneNumber(standContainer, contactoMaskedTextBox.Text))
             {
                 if(newclient)
                 {
@@ -353,6 +353,10 @@ namespace RealStand
 
                 DisableDataInsertion();
                 newclient = false;
+            }
+            else if (Cliente.CheckDuplicateNIF(standContainer, nIFMaskedTextBox.Text))
+            {
+                MessageBox.Show("Já existe um cliente com o mesmo NIF ou o NIF está incorreto!");
             }
             else
             {

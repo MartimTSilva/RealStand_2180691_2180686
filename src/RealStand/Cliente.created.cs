@@ -57,15 +57,6 @@ namespace RealStand
             return true;
         }
 
-        public static bool CheckNIF(string nif)
-        {
-            if (nif.Length != 9)
-            {
-                return false;
-            }
-            return true;
-        }
-
         public static bool CheckMorada(string morada)
         {
             if (morada == "")
@@ -75,13 +66,26 @@ namespace RealStand
             return true;
         }
 
-        public static bool CheckContacto(string contacto)
+        public static bool CheckDuplicateNIF(StandContainer standContainer, string NIF)
         {
-            if (contacto.Length != 9)
+            if ((from Cliente in standContainer.Clientes
+                        where Cliente.NIF.Equals(NIF)
+                        select Cliente).Count() >= 1 || NIF.Length != 9)
             {
-                return false;
+                return true;
             }
-            return true;
+            return false;
+        }
+
+        public static bool CheckDuplicatePhoneNumber(StandContainer standContainer, string phoneNumber)
+        {
+            if ((from Cliente in standContainer.Clientes
+                 where Cliente.Contacto.Equals(phoneNumber)
+                 select Cliente).Count() >= 1 || phoneNumber.Length != 9)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
