@@ -124,7 +124,6 @@
             this.labelValorVendas = new System.Windows.Forms.Label();
             this.dateTimePickerDataVenda = new System.Windows.Forms.DateTimePicker();
             this.labelDataVendaVendas = new System.Windows.Forms.Label();
-            this.buttonVenderCarro = new System.Windows.Forms.Button();
             this.groupBoxAdicionarNovoCarroVendas = new System.Windows.Forms.GroupBox();
             this.textBoxExtrasVendas = new System.Windows.Forms.TextBox();
             this.labelExtrasVendas = new System.Windows.Forms.Label();
@@ -140,12 +139,6 @@
             this.groupBoxCarrosVenda = new System.Windows.Forms.GroupBox();
             this.buttonRemoverCarrosVendas = new System.Windows.Forms.Button();
             this.listBoxCarrosVendas = new System.Windows.Forms.ListBox();
-            this.groupBoxListaClientesVendas = new System.Windows.Forms.GroupBox();
-            this.labelCampoVendas = new System.Windows.Forms.Label();
-            this.labelProcurarPorVendas = new System.Windows.Forms.Label();
-            this.comboBoxCampoVendas = new System.Windows.Forms.ComboBox();
-            this.textBoxProcurarPorVendas = new System.Windows.Forms.TextBox();
-            this.listBoxClientesVendas = new System.Windows.Forms.ListBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBoxFichaClienteVendas = new System.Windows.Forms.GroupBox();
             this.labelNifClienteSelecionadoVendas = new System.Windows.Forms.Label();
@@ -195,6 +188,27 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.clientesTableAdapter = new RealStand.realstandDataSetTableAdapters.ClientesTableAdapter();
             this.tableAdapterManager = new RealStand.realstandDataSetTableAdapters.TableAdapterManager();
+            this.groupBoxClientesVendas = new System.Windows.Forms.GroupBox();
+            this.labelProcurarPorVendas = new System.Windows.Forms.Label();
+            this.labelCampoVendas = new System.Windows.Forms.Label();
+            this.comboBoxCampoVendas = new System.Windows.Forms.ComboBox();
+            this.textBoxProcurarPorVendas = new System.Windows.Forms.TextBox();
+            this.listBoxClientesVendas = new System.Windows.Forms.ListBox();
+            this.buttonFiltarVendas = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -221,7 +235,6 @@
             this.groupBox1.SuspendLayout();
             this.groupBoxAdicionarNovoCarroVendas.SuspendLayout();
             this.groupBoxCarrosVenda.SuspendLayout();
-            this.groupBoxListaClientesVendas.SuspendLayout();
             this.groupBoxFichaClienteVendas.SuspendLayout();
             this.tabPageAluguer.SuspendLayout();
             this.groupBoxAluguerCarro.SuspendLayout();
@@ -229,6 +242,9 @@
             this.groupBoxCarrosAluguer.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBoxFichaClienteVenda.SuspendLayout();
+            this.groupBoxClientesVendas.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomeLabel
@@ -1180,10 +1196,10 @@
             // tabPageVendas
             // 
             this.tabPageVendas.BackColor = System.Drawing.Color.Silver;
-            this.tabPageVendas.Controls.Add(this.groupBox1);
-            this.tabPageVendas.Controls.Add(this.groupBoxAdicionarNovoCarroVendas);
+            this.tabPageVendas.Controls.Add(this.groupBox4);
+            this.tabPageVendas.Controls.Add(this.groupBox3);
+            this.tabPageVendas.Controls.Add(this.groupBoxClientesVendas);
             this.tabPageVendas.Controls.Add(this.groupBoxCarrosVenda);
-            this.tabPageVendas.Controls.Add(this.groupBoxListaClientesVendas);
             this.tabPageVendas.Controls.Add(this.label14);
             this.tabPageVendas.Controls.Add(this.groupBoxFichaClienteVendas);
             this.tabPageVendas.Location = new System.Drawing.Point(166, 4);
@@ -1194,39 +1210,41 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button8);
+            this.groupBox1.Controls.Add(this.button7);
+            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.maskedTextBoxValorVenda);
             this.groupBox1.Controls.Add(this.textBoxEstadoVendas);
             this.groupBox1.Controls.Add(this.labelEstadoVendas);
             this.groupBox1.Controls.Add(this.labelValorVendas);
             this.groupBox1.Controls.Add(this.dateTimePickerDataVenda);
             this.groupBox1.Controls.Add(this.labelDataVendaVendas);
-            this.groupBox1.Controls.Add(this.buttonVenderCarro);
-            this.groupBox1.Location = new System.Drawing.Point(705, 378);
+            this.groupBox1.Location = new System.Drawing.Point(9, 263);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(195, 192);
+            this.groupBox1.Size = new System.Drawing.Size(177, 187);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vender Carro";
             // 
             // maskedTextBoxValorVenda
             // 
-            this.maskedTextBoxValorVenda.Location = new System.Drawing.Point(95, 78);
+            this.maskedTextBoxValorVenda.Location = new System.Drawing.Point(95, 133);
             this.maskedTextBoxValorVenda.Mask = "€00000.00";
             this.maskedTextBoxValorVenda.Name = "maskedTextBoxValorVenda";
-            this.maskedTextBoxValorVenda.Size = new System.Drawing.Size(63, 20);
+            this.maskedTextBoxValorVenda.Size = new System.Drawing.Size(75, 20);
             this.maskedTextBoxValorVenda.TabIndex = 28;
             // 
             // textBoxEstadoVendas
             // 
-            this.textBoxEstadoVendas.Location = new System.Drawing.Point(52, 50);
+            this.textBoxEstadoVendas.Location = new System.Drawing.Point(52, 108);
             this.textBoxEstadoVendas.Name = "textBoxEstadoVendas";
-            this.textBoxEstadoVendas.Size = new System.Drawing.Size(136, 20);
+            this.textBoxEstadoVendas.Size = new System.Drawing.Size(118, 20);
             this.textBoxEstadoVendas.TabIndex = 27;
             // 
             // labelEstadoVendas
             // 
             this.labelEstadoVendas.AutoSize = true;
-            this.labelEstadoVendas.Location = new System.Drawing.Point(6, 53);
+            this.labelEstadoVendas.Location = new System.Drawing.Point(5, 111);
             this.labelEstadoVendas.Name = "labelEstadoVendas";
             this.labelEstadoVendas.Size = new System.Drawing.Size(46, 13);
             this.labelEstadoVendas.TabIndex = 26;
@@ -1235,7 +1253,7 @@
             // labelValorVendas
             // 
             this.labelValorVendas.AutoSize = true;
-            this.labelValorVendas.Location = new System.Drawing.Point(6, 81);
+            this.labelValorVendas.Location = new System.Drawing.Point(5, 136);
             this.labelValorVendas.Name = "labelValorVendas";
             this.labelValorVendas.Size = new System.Drawing.Size(83, 13);
             this.labelValorVendas.TabIndex = 25;
@@ -1243,31 +1261,24 @@
             // 
             // dateTimePickerDataVenda
             // 
-            this.dateTimePickerDataVenda.Location = new System.Drawing.Point(91, 20);
+            this.dateTimePickerDataVenda.Location = new System.Drawing.Point(91, 83);
             this.dateTimePickerDataVenda.Name = "dateTimePickerDataVenda";
-            this.dateTimePickerDataVenda.Size = new System.Drawing.Size(98, 20);
+            this.dateTimePickerDataVenda.Size = new System.Drawing.Size(80, 20);
             this.dateTimePickerDataVenda.TabIndex = 23;
             // 
             // labelDataVendaVendas
             // 
             this.labelDataVendaVendas.AutoSize = true;
-            this.labelDataVendaVendas.Location = new System.Drawing.Point(7, 26);
+            this.labelDataVendaVendas.Location = new System.Drawing.Point(5, 89);
             this.labelDataVendaVendas.Name = "labelDataVendaVendas";
             this.labelDataVendaVendas.Size = new System.Drawing.Size(82, 13);
             this.labelDataVendaVendas.TabIndex = 20;
             this.labelDataVendaVendas.Text = "Data de Venda:";
             // 
-            // buttonVenderCarro
-            // 
-            this.buttonVenderCarro.Location = new System.Drawing.Point(6, 143);
-            this.buttonVenderCarro.Name = "buttonVenderCarro";
-            this.buttonVenderCarro.Size = new System.Drawing.Size(183, 43);
-            this.buttonVenderCarro.TabIndex = 1;
-            this.buttonVenderCarro.Text = "Vender Carro";
-            this.buttonVenderCarro.UseVisualStyleBackColor = true;
-            // 
             // groupBoxAdicionarNovoCarroVendas
             // 
+            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.button9);
+            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.button2);
             this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.textBoxExtrasVendas);
             this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.labelExtrasVendas);
             this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.textBoxModeloVendas);
@@ -1279,25 +1290,25 @@
             this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.labelMarcaVendas);
             this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.labelNChassis);
             this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.buttonAdicionarCarroVendas);
-            this.groupBoxAdicionarNovoCarroVendas.Location = new System.Drawing.Point(705, 114);
+            this.groupBoxAdicionarNovoCarroVendas.Location = new System.Drawing.Point(9, 17);
             this.groupBoxAdicionarNovoCarroVendas.Name = "groupBoxAdicionarNovoCarroVendas";
-            this.groupBoxAdicionarNovoCarroVendas.Size = new System.Drawing.Size(195, 242);
+            this.groupBoxAdicionarNovoCarroVendas.Size = new System.Drawing.Size(177, 246);
             this.groupBoxAdicionarNovoCarroVendas.TabIndex = 16;
             this.groupBoxAdicionarNovoCarroVendas.TabStop = false;
-            this.groupBoxAdicionarNovoCarroVendas.Text = "Adicionar Novo Carro de Venda";
+            this.groupBoxAdicionarNovoCarroVendas.Text = "Adicionar Carro de Venda";
             // 
             // textBoxExtrasVendas
             // 
-            this.textBoxExtrasVendas.Location = new System.Drawing.Point(48, 138);
+            this.textBoxExtrasVendas.Location = new System.Drawing.Point(48, 188);
             this.textBoxExtrasVendas.Multiline = true;
             this.textBoxExtrasVendas.Name = "textBoxExtrasVendas";
-            this.textBoxExtrasVendas.Size = new System.Drawing.Size(140, 20);
+            this.textBoxExtrasVendas.Size = new System.Drawing.Size(122, 20);
             this.textBoxExtrasVendas.TabIndex = 15;
             // 
             // labelExtrasVendas
             // 
             this.labelExtrasVendas.AutoSize = true;
-            this.labelExtrasVendas.Location = new System.Drawing.Point(6, 141);
+            this.labelExtrasVendas.Location = new System.Drawing.Point(6, 191);
             this.labelExtrasVendas.Name = "labelExtrasVendas";
             this.labelExtrasVendas.Size = new System.Drawing.Size(36, 13);
             this.labelExtrasVendas.TabIndex = 14;
@@ -1305,27 +1316,28 @@
             // 
             // textBoxModeloVendas
             // 
-            this.textBoxModeloVendas.Location = new System.Drawing.Point(57, 82);
+            this.textBoxModeloVendas.Location = new System.Drawing.Point(57, 134);
             this.textBoxModeloVendas.Name = "textBoxModeloVendas";
-            this.textBoxModeloVendas.Size = new System.Drawing.Size(131, 20);
+            this.textBoxModeloVendas.Size = new System.Drawing.Size(113, 20);
             this.textBoxModeloVendas.TabIndex = 13;
             // 
             // textBoxMarcaVendas
             // 
-            this.textBoxMarcaVendas.Location = new System.Drawing.Point(52, 55);
+            this.textBoxMarcaVendas.Location = new System.Drawing.Point(52, 108);
             this.textBoxMarcaVendas.Name = "textBoxMarcaVendas";
-            this.textBoxMarcaVendas.Size = new System.Drawing.Size(136, 20);
+            this.textBoxMarcaVendas.Size = new System.Drawing.Size(118, 20);
             this.textBoxMarcaVendas.TabIndex = 12;
             // 
             // textBoxChassiVendas
             // 
-            this.textBoxChassiVendas.Location = new System.Drawing.Point(72, 25);
+            this.textBoxChassiVendas.Location = new System.Drawing.Point(72, 82);
             this.textBoxChassiVendas.Name = "textBoxChassiVendas";
-            this.textBoxChassiVendas.Size = new System.Drawing.Size(116, 20);
+            this.textBoxChassiVendas.Size = new System.Drawing.Size(98, 20);
             this.textBoxChassiVendas.TabIndex = 11;
             // 
             // comboBoxCombustivelVendas
             // 
+            this.comboBoxCombustivelVendas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCombustivelVendas.FormattingEnabled = true;
             this.comboBoxCombustivelVendas.Items.AddRange(new object[] {
             "Gasóleo",
@@ -1333,15 +1345,15 @@
             "Diesel",
             "Gás",
             "Híbrido"});
-            this.comboBoxCombustivelVendas.Location = new System.Drawing.Point(81, 111);
+            this.comboBoxCombustivelVendas.Location = new System.Drawing.Point(81, 161);
             this.comboBoxCombustivelVendas.Name = "comboBoxCombustivelVendas";
-            this.comboBoxCombustivelVendas.Size = new System.Drawing.Size(107, 21);
+            this.comboBoxCombustivelVendas.Size = new System.Drawing.Size(89, 21);
             this.comboBoxCombustivelVendas.TabIndex = 10;
             // 
             // labelCombustivelVendas
             // 
             this.labelCombustivelVendas.AutoSize = true;
-            this.labelCombustivelVendas.Location = new System.Drawing.Point(6, 114);
+            this.labelCombustivelVendas.Location = new System.Drawing.Point(6, 164);
             this.labelCombustivelVendas.Name = "labelCombustivelVendas";
             this.labelCombustivelVendas.Size = new System.Drawing.Size(69, 13);
             this.labelCombustivelVendas.TabIndex = 9;
@@ -1350,7 +1362,7 @@
             // labelModeloVendas
             // 
             this.labelModeloVendas.AutoSize = true;
-            this.labelModeloVendas.Location = new System.Drawing.Point(6, 85);
+            this.labelModeloVendas.Location = new System.Drawing.Point(5, 137);
             this.labelModeloVendas.Name = "labelModeloVendas";
             this.labelModeloVendas.Size = new System.Drawing.Size(45, 13);
             this.labelModeloVendas.TabIndex = 8;
@@ -1359,7 +1371,7 @@
             // labelMarcaVendas
             // 
             this.labelMarcaVendas.AutoSize = true;
-            this.labelMarcaVendas.Location = new System.Drawing.Point(6, 58);
+            this.labelMarcaVendas.Location = new System.Drawing.Point(6, 111);
             this.labelMarcaVendas.Name = "labelMarcaVendas";
             this.labelMarcaVendas.Size = new System.Drawing.Size(40, 13);
             this.labelMarcaVendas.TabIndex = 7;
@@ -1368,7 +1380,7 @@
             // labelNChassis
             // 
             this.labelNChassis.AutoSize = true;
-            this.labelNChassis.Location = new System.Drawing.Point(6, 28);
+            this.labelNChassis.Location = new System.Drawing.Point(6, 85);
             this.labelNChassis.Name = "labelNChassis";
             this.labelNChassis.Size = new System.Drawing.Size(61, 13);
             this.labelNChassis.TabIndex = 6;
@@ -1376,100 +1388,51 @@
             // 
             // buttonAdicionarCarroVendas
             // 
-            this.buttonAdicionarCarroVendas.Location = new System.Drawing.Point(6, 195);
+            this.buttonAdicionarCarroVendas.Image = ((System.Drawing.Image)(resources.GetObject("buttonAdicionarCarroVendas.Image")));
+            this.buttonAdicionarCarroVendas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdicionarCarroVendas.Location = new System.Drawing.Point(6, 19);
             this.buttonAdicionarCarroVendas.Name = "buttonAdicionarCarroVendas";
-            this.buttonAdicionarCarroVendas.Size = new System.Drawing.Size(183, 41);
+            this.buttonAdicionarCarroVendas.Size = new System.Drawing.Size(165, 26);
             this.buttonAdicionarCarroVendas.TabIndex = 1;
-            this.buttonAdicionarCarroVendas.Text = "Adicionar Carro";
+            this.buttonAdicionarCarroVendas.Text = "Adicionar novo carro";
             this.buttonAdicionarCarroVendas.UseVisualStyleBackColor = true;
             // 
             // groupBoxCarrosVenda
             // 
+            this.groupBoxCarrosVenda.Controls.Add(this.button5);
+            this.groupBoxCarrosVenda.Controls.Add(this.label5);
+            this.groupBoxCarrosVenda.Controls.Add(this.label6);
             this.groupBoxCarrosVenda.Controls.Add(this.buttonRemoverCarrosVendas);
+            this.groupBoxCarrosVenda.Controls.Add(this.comboBox1);
             this.groupBoxCarrosVenda.Controls.Add(this.listBoxCarrosVendas);
-            this.groupBoxCarrosVenda.Location = new System.Drawing.Point(340, 114);
+            this.groupBoxCarrosVenda.Controls.Add(this.textBox1);
+            this.groupBoxCarrosVenda.Location = new System.Drawing.Point(489, 114);
             this.groupBoxCarrosVenda.Name = "groupBoxCarrosVenda";
-            this.groupBoxCarrosVenda.Size = new System.Drawing.Size(359, 456);
+            this.groupBoxCarrosVenda.Size = new System.Drawing.Size(210, 456);
             this.groupBoxCarrosVenda.TabIndex = 20;
             this.groupBoxCarrosVenda.TabStop = false;
-            this.groupBoxCarrosVenda.Text = "Carros para Vender";
+            this.groupBoxCarrosVenda.Text = "Carros para venda";
             // 
             // buttonRemoverCarrosVendas
             // 
+            this.buttonRemoverCarrosVendas.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoverCarrosVendas.Image")));
+            this.buttonRemoverCarrosVendas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonRemoverCarrosVendas.Location = new System.Drawing.Point(6, 19);
             this.buttonRemoverCarrosVendas.Name = "buttonRemoverCarrosVendas";
-            this.buttonRemoverCarrosVendas.Size = new System.Drawing.Size(347, 30);
+            this.buttonRemoverCarrosVendas.Size = new System.Drawing.Size(198, 26);
             this.buttonRemoverCarrosVendas.TabIndex = 2;
-            this.buttonRemoverCarrosVendas.Text = "Remover Carro da Lista de Venda";
+            this.buttonRemoverCarrosVendas.Text = "Remover carro da lista para venda";
+            this.buttonRemoverCarrosVendas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRemoverCarrosVendas.UseVisualStyleBackColor = true;
             // 
             // listBoxCarrosVendas
             // 
             this.listBoxCarrosVendas.FormattingEnabled = true;
-            this.listBoxCarrosVendas.Location = new System.Drawing.Point(6, 55);
+            this.listBoxCarrosVendas.Location = new System.Drawing.Point(6, 94);
             this.listBoxCarrosVendas.Name = "listBoxCarrosVendas";
             this.listBoxCarrosVendas.ScrollAlwaysVisible = true;
-            this.listBoxCarrosVendas.Size = new System.Drawing.Size(347, 394);
+            this.listBoxCarrosVendas.Size = new System.Drawing.Size(198, 355);
             this.listBoxCarrosVendas.TabIndex = 0;
-            // 
-            // groupBoxListaClientesVendas
-            // 
-            this.groupBoxListaClientesVendas.Controls.Add(this.labelCampoVendas);
-            this.groupBoxListaClientesVendas.Controls.Add(this.labelProcurarPorVendas);
-            this.groupBoxListaClientesVendas.Controls.Add(this.comboBoxCampoVendas);
-            this.groupBoxListaClientesVendas.Controls.Add(this.textBoxProcurarPorVendas);
-            this.groupBoxListaClientesVendas.Controls.Add(this.listBoxClientesVendas);
-            this.groupBoxListaClientesVendas.Location = new System.Drawing.Point(9, 48);
-            this.groupBoxListaClientesVendas.Name = "groupBoxListaClientesVendas";
-            this.groupBoxListaClientesVendas.Size = new System.Drawing.Size(325, 522);
-            this.groupBoxListaClientesVendas.TabIndex = 19;
-            this.groupBoxListaClientesVendas.TabStop = false;
-            this.groupBoxListaClientesVendas.Text = "Lista de Clientes";
-            // 
-            // labelCampoVendas
-            // 
-            this.labelCampoVendas.AutoSize = true;
-            this.labelCampoVendas.Location = new System.Drawing.Point(242, 21);
-            this.labelCampoVendas.Name = "labelCampoVendas";
-            this.labelCampoVendas.Size = new System.Drawing.Size(43, 13);
-            this.labelCampoVendas.TabIndex = 4;
-            this.labelCampoVendas.Text = "Campo:";
-            // 
-            // labelProcurarPorVendas
-            // 
-            this.labelProcurarPorVendas.AutoSize = true;
-            this.labelProcurarPorVendas.Location = new System.Drawing.Point(4, 21);
-            this.labelProcurarPorVendas.Name = "labelProcurarPorVendas";
-            this.labelProcurarPorVendas.Size = new System.Drawing.Size(68, 13);
-            this.labelProcurarPorVendas.TabIndex = 3;
-            this.labelProcurarPorVendas.Text = "Procurar por:";
-            // 
-            // comboBoxCampoVendas
-            // 
-            this.comboBoxCampoVendas.FormattingEnabled = true;
-            this.comboBoxCampoVendas.Items.AddRange(new object[] {
-            "Nome",
-            "NIF"});
-            this.comboBoxCampoVendas.Location = new System.Drawing.Point(244, 39);
-            this.comboBoxCampoVendas.Name = "comboBoxCampoVendas";
-            this.comboBoxCampoVendas.Size = new System.Drawing.Size(75, 21);
-            this.comboBoxCampoVendas.TabIndex = 2;
-            // 
-            // textBoxProcurarPorVendas
-            // 
-            this.textBoxProcurarPorVendas.Location = new System.Drawing.Point(7, 40);
-            this.textBoxProcurarPorVendas.Name = "textBoxProcurarPorVendas";
-            this.textBoxProcurarPorVendas.Size = new System.Drawing.Size(231, 20);
-            this.textBoxProcurarPorVendas.TabIndex = 1;
-            // 
-            // listBoxClientesVendas
-            // 
-            this.listBoxClientesVendas.FormattingEnabled = true;
-            this.listBoxClientesVendas.Location = new System.Drawing.Point(7, 69);
-            this.listBoxClientesVendas.Name = "listBoxClientesVendas";
-            this.listBoxClientesVendas.ScrollAlwaysVisible = true;
-            this.listBoxClientesVendas.Size = new System.Drawing.Size(312, 446);
-            this.listBoxClientesVendas.TabIndex = 0;
             // 
             // label14
             // 
@@ -1488,9 +1451,9 @@
             this.groupBoxFichaClienteVendas.Controls.Add(this.labelNomeClienteSelecionadoVendas);
             this.groupBoxFichaClienteVendas.Controls.Add(this.labelNifVendas);
             this.groupBoxFichaClienteVendas.Controls.Add(this.labelNomeVendas);
-            this.groupBoxFichaClienteVendas.Location = new System.Drawing.Point(340, 8);
+            this.groupBoxFichaClienteVendas.Location = new System.Drawing.Point(282, 8);
             this.groupBoxFichaClienteVendas.Name = "groupBoxFichaClienteVendas";
-            this.groupBoxFichaClienteVendas.Size = new System.Drawing.Size(560, 100);
+            this.groupBoxFichaClienteVendas.Size = new System.Drawing.Size(618, 100);
             this.groupBoxFichaClienteVendas.TabIndex = 17;
             this.groupBoxFichaClienteVendas.TabStop = false;
             this.groupBoxFichaClienteVendas.Text = "Ficha do Cliente";
@@ -1957,6 +1920,225 @@
             this.tableAdapterManager.UpdateOrder = RealStand.realstandDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VendasTableAdapter = null;
             // 
+            // groupBoxClientesVendas
+            // 
+            this.groupBoxClientesVendas.Controls.Add(this.buttonFiltarVendas);
+            this.groupBoxClientesVendas.Controls.Add(this.labelProcurarPorVendas);
+            this.groupBoxClientesVendas.Controls.Add(this.labelCampoVendas);
+            this.groupBoxClientesVendas.Controls.Add(this.comboBoxCampoVendas);
+            this.groupBoxClientesVendas.Controls.Add(this.textBoxProcurarPorVendas);
+            this.groupBoxClientesVendas.Controls.Add(this.listBoxClientesVendas);
+            this.groupBoxClientesVendas.Location = new System.Drawing.Point(9, 48);
+            this.groupBoxClientesVendas.Name = "groupBoxClientesVendas";
+            this.groupBoxClientesVendas.Size = new System.Drawing.Size(267, 522);
+            this.groupBoxClientesVendas.TabIndex = 29;
+            this.groupBoxClientesVendas.TabStop = false;
+            this.groupBoxClientesVendas.Text = "Lista de Clientes";
+            // 
+            // labelProcurarPorVendas
+            // 
+            this.labelProcurarPorVendas.AutoSize = true;
+            this.labelProcurarPorVendas.Location = new System.Drawing.Point(6, 24);
+            this.labelProcurarPorVendas.Name = "labelProcurarPorVendas";
+            this.labelProcurarPorVendas.Size = new System.Drawing.Size(68, 13);
+            this.labelProcurarPorVendas.TabIndex = 4;
+            this.labelProcurarPorVendas.Text = "Procurar por:";
+            // 
+            // labelCampoVendas
+            // 
+            this.labelCampoVendas.AutoSize = true;
+            this.labelCampoVendas.Location = new System.Drawing.Point(121, 23);
+            this.labelCampoVendas.Name = "labelCampoVendas";
+            this.labelCampoVendas.Size = new System.Drawing.Size(43, 13);
+            this.labelCampoVendas.TabIndex = 3;
+            this.labelCampoVendas.Text = "Campo:";
+            // 
+            // comboBoxCampoVendas
+            // 
+            this.comboBoxCampoVendas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCampoVendas.FormattingEnabled = true;
+            this.comboBoxCampoVendas.Items.AddRange(new object[] {
+            "Nome",
+            "NIF"});
+            this.comboBoxCampoVendas.Location = new System.Drawing.Point(123, 39);
+            this.comboBoxCampoVendas.Name = "comboBoxCampoVendas";
+            this.comboBoxCampoVendas.Size = new System.Drawing.Size(75, 21);
+            this.comboBoxCampoVendas.TabIndex = 2;
+            // 
+            // textBoxProcurarPorVendas
+            // 
+            this.textBoxProcurarPorVendas.Location = new System.Drawing.Point(7, 40);
+            this.textBoxProcurarPorVendas.Name = "textBoxProcurarPorVendas";
+            this.textBoxProcurarPorVendas.Size = new System.Drawing.Size(108, 20);
+            this.textBoxProcurarPorVendas.TabIndex = 1;
+            // 
+            // listBoxClientesVendas
+            // 
+            this.listBoxClientesVendas.FormattingEnabled = true;
+            this.listBoxClientesVendas.Location = new System.Drawing.Point(7, 69);
+            this.listBoxClientesVendas.Name = "listBoxClientesVendas";
+            this.listBoxClientesVendas.ScrollAlwaysVisible = true;
+            this.listBoxClientesVendas.Size = new System.Drawing.Size(254, 446);
+            this.listBoxClientesVendas.TabIndex = 3;
+            // 
+            // buttonFiltarVendas
+            // 
+            this.buttonFiltarVendas.Image = ((System.Drawing.Image)(resources.GetObject("buttonFiltarVendas.Image")));
+            this.buttonFiltarVendas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFiltarVendas.Location = new System.Drawing.Point(205, 38);
+            this.buttonFiltarVendas.Name = "buttonFiltarVendas";
+            this.buttonFiltarVendas.Size = new System.Drawing.Size(56, 23);
+            this.buttonFiltarVendas.TabIndex = 5;
+            this.buttonFiltarVendas.Text = "Filtrar";
+            this.buttonFiltarVendas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonFiltarVendas.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.listBox1);
+            this.groupBox3.Location = new System.Drawing.Point(282, 114);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(201, 456);
+            this.groupBox3.TabIndex = 30;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Vendas do cliente";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(6, 55);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.ScrollAlwaysVisible = true;
+            this.listBox1.Size = new System.Drawing.Size(188, 394);
+            this.listBox1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(6, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(188, 26);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Anular venda";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.groupBoxAdicionarNovoCarroVendas);
+            this.groupBox4.Controls.Add(this.groupBox1);
+            this.groupBox4.Location = new System.Drawing.Point(705, 114);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(195, 456);
+            this.groupBox4.TabIndex = 31;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Detalhes";
+            // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(5, 214);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(165, 26);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Guardar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(153, 63);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(51, 23);
+            this.button5.TabIndex = 10;
+            this.button5.Text = "Filtrar";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Procurar por:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(92, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Campo:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Marca",
+            "Modelo"});
+            this.comboBox1.Location = new System.Drawing.Point(95, 65);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(52, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(7, 65);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(82, 20);
+            this.textBox1.TabIndex = 6;
+            // 
+            // button6
+            // 
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(6, 19);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(165, 26);
+            this.button6.TabIndex = 17;
+            this.button6.Text = "Criar nova venda";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(6, 155);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(165, 26);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "Guardar";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(6, 51);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(165, 26);
+            this.button8.TabIndex = 29;
+            this.button8.Text = "Editar venda";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.Location = new System.Drawing.Point(6, 51);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(165, 26);
+            this.button9.TabIndex = 30;
+            this.button9.Text = "Editar carro";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
             // window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2003,8 +2185,7 @@
             this.groupBoxAdicionarNovoCarroVendas.ResumeLayout(false);
             this.groupBoxAdicionarNovoCarroVendas.PerformLayout();
             this.groupBoxCarrosVenda.ResumeLayout(false);
-            this.groupBoxListaClientesVendas.ResumeLayout(false);
-            this.groupBoxListaClientesVendas.PerformLayout();
+            this.groupBoxCarrosVenda.PerformLayout();
             this.groupBoxFichaClienteVendas.ResumeLayout(false);
             this.groupBoxFichaClienteVendas.PerformLayout();
             this.tabPageAluguer.ResumeLayout(false);
@@ -2018,6 +2199,10 @@
             this.groupBox2.PerformLayout();
             this.groupBoxFichaClienteVenda.ResumeLayout(false);
             this.groupBoxFichaClienteVenda.PerformLayout();
+            this.groupBoxClientesVendas.ResumeLayout(false);
+            this.groupBoxClientesVendas.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2141,7 +2326,6 @@
         private System.Windows.Forms.Label labelValorVendas;
         private System.Windows.Forms.DateTimePicker dateTimePickerDataVenda;
         private System.Windows.Forms.Label labelDataVendaVendas;
-        private System.Windows.Forms.Button buttonVenderCarro;
         private System.Windows.Forms.GroupBox groupBoxAdicionarNovoCarroVendas;
         private System.Windows.Forms.TextBox textBoxModeloVendas;
         private System.Windows.Forms.TextBox textBoxMarcaVendas;
@@ -2155,12 +2339,6 @@
         private System.Windows.Forms.GroupBox groupBoxCarrosVenda;
         private System.Windows.Forms.Button buttonRemoverCarrosVendas;
         private System.Windows.Forms.ListBox listBoxCarrosVendas;
-        private System.Windows.Forms.GroupBox groupBoxListaClientesVendas;
-        private System.Windows.Forms.Label labelCampoVendas;
-        private System.Windows.Forms.Label labelProcurarPorVendas;
-        private System.Windows.Forms.ComboBox comboBoxCampoVendas;
-        private System.Windows.Forms.TextBox textBoxProcurarPorVendas;
-        private System.Windows.Forms.ListBox listBoxClientesVendas;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBoxFichaClienteVendas;
         private System.Windows.Forms.Label labelNifClienteSelecionadoVendas;
@@ -2186,6 +2364,27 @@
         private System.Windows.Forms.Button buttonCriarServicoOficina;
         private System.Windows.Forms.Button buttonEditarServicoOficina;
         private System.Windows.Forms.Button buttonGuardarServicoOficina;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.GroupBox groupBoxClientesVendas;
+        private System.Windows.Forms.Button buttonFiltarVendas;
+        private System.Windows.Forms.Label labelProcurarPorVendas;
+        private System.Windows.Forms.Label labelCampoVendas;
+        private System.Windows.Forms.ComboBox comboBoxCampoVendas;
+        private System.Windows.Forms.TextBox textBoxProcurarPorVendas;
+        private System.Windows.Forms.ListBox listBoxClientesVendas;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
     }
 }
 
