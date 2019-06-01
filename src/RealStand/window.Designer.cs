@@ -117,14 +117,14 @@
             this.listBoxClientesOficina = new System.Windows.Forms.ListBox();
             this.labelTituloOficina = new System.Windows.Forms.Label();
             this.tabPageVendas = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxVenderCarro = new System.Windows.Forms.GroupBox();
             this.maskedTextBoxValorVenda = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEstadoVendas = new System.Windows.Forms.TextBox();
             this.labelEstadoVendas = new System.Windows.Forms.Label();
             this.labelValorVendas = new System.Windows.Forms.Label();
             this.dateTimePickerDataVenda = new System.Windows.Forms.DateTimePicker();
             this.labelDataVendaVendas = new System.Windows.Forms.Label();
-            this.groupBoxAdicionarNovoCarroVendas = new System.Windows.Forms.GroupBox();
+            this.groupBoxAdicionarCarroVendas = new System.Windows.Forms.GroupBox();
             this.textBoxExtrasVendas = new System.Windows.Forms.TextBox();
             this.labelExtrasVendas = new System.Windows.Forms.Label();
             this.textBoxModeloVendas = new System.Windows.Forms.TextBox();
@@ -139,7 +139,7 @@
             this.groupBoxCarrosVenda = new System.Windows.Forms.GroupBox();
             this.buttonRemoverCarrosVendas = new System.Windows.Forms.Button();
             this.listBoxCarrosVendas = new System.Windows.Forms.ListBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.labelTituloVendas = new System.Windows.Forms.Label();
             this.groupBoxFichaClienteVendas = new System.Windows.Forms.GroupBox();
             this.labelNifClienteSelecionadoVendas = new System.Windows.Forms.Label();
             this.labelNomeClienteSelecionadoVendas = new System.Windows.Forms.Label();
@@ -195,20 +195,20 @@
             this.textBoxProcurarPorVendas = new System.Windows.Forms.TextBox();
             this.listBoxClientesVendas = new System.Windows.Forms.ListBox();
             this.buttonFiltarVendas = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.groupBoxClienteVendas = new System.Windows.Forms.GroupBox();
+            this.listBoxClienteVendas = new System.Windows.Forms.ListBox();
+            this.buttonAnularVenda = new System.Windows.Forms.Button();
+            this.groupBoxDetalhesVendas = new System.Windows.Forms.GroupBox();
+            this.buttonGuardarCarroVendas = new System.Windows.Forms.Button();
+            this.buttonFiltarCarrosVenda = new System.Windows.Forms.Button();
+            this.labelProcurarPorCarrosVendas = new System.Windows.Forms.Label();
+            this.labelCampoCarrosVendas = new System.Windows.Forms.Label();
+            this.comboBoxCampoCarrosVendas = new System.Windows.Forms.ComboBox();
+            this.textProcurarPorCarrosVendas = new System.Windows.Forms.TextBox();
+            this.buttonCriarVendas = new System.Windows.Forms.Button();
+            this.buttonGuardarVendas = new System.Windows.Forms.Button();
+            this.buttonEditarVendas = new System.Windows.Forms.Button();
+            this.buttonEditarCarroVendas = new System.Windows.Forms.Button();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -232,8 +232,8 @@
             this.groupBoxFichaClienteOficina.SuspendLayout();
             this.groupBoxClientesOficina.SuspendLayout();
             this.tabPageVendas.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBoxAdicionarNovoCarroVendas.SuspendLayout();
+            this.groupBoxVenderCarro.SuspendLayout();
+            this.groupBoxAdicionarCarroVendas.SuspendLayout();
             this.groupBoxCarrosVenda.SuspendLayout();
             this.groupBoxFichaClienteVendas.SuspendLayout();
             this.tabPageAluguer.SuspendLayout();
@@ -243,8 +243,8 @@
             this.groupBox2.SuspendLayout();
             this.groupBoxFichaClienteVenda.SuspendLayout();
             this.groupBoxClientesVendas.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.groupBoxClienteVendas.SuspendLayout();
+            this.groupBoxDetalhesVendas.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomeLabel
@@ -1196,11 +1196,11 @@
             // tabPageVendas
             // 
             this.tabPageVendas.BackColor = System.Drawing.Color.Silver;
-            this.tabPageVendas.Controls.Add(this.groupBox4);
-            this.tabPageVendas.Controls.Add(this.groupBox3);
+            this.tabPageVendas.Controls.Add(this.groupBoxDetalhesVendas);
+            this.tabPageVendas.Controls.Add(this.groupBoxClienteVendas);
             this.tabPageVendas.Controls.Add(this.groupBoxClientesVendas);
             this.tabPageVendas.Controls.Add(this.groupBoxCarrosVenda);
-            this.tabPageVendas.Controls.Add(this.label14);
+            this.tabPageVendas.Controls.Add(this.labelTituloVendas);
             this.tabPageVendas.Controls.Add(this.groupBoxFichaClienteVendas);
             this.tabPageVendas.Location = new System.Drawing.Point(166, 4);
             this.tabPageVendas.Name = "tabPageVendas";
@@ -1208,23 +1208,23 @@
             this.tabPageVendas.TabIndex = 3;
             this.tabPageVendas.Text = "Vendas";
             // 
-            // groupBox1
+            // groupBoxVenderCarro
             // 
-            this.groupBox1.Controls.Add(this.button8);
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.maskedTextBoxValorVenda);
-            this.groupBox1.Controls.Add(this.textBoxEstadoVendas);
-            this.groupBox1.Controls.Add(this.labelEstadoVendas);
-            this.groupBox1.Controls.Add(this.labelValorVendas);
-            this.groupBox1.Controls.Add(this.dateTimePickerDataVenda);
-            this.groupBox1.Controls.Add(this.labelDataVendaVendas);
-            this.groupBox1.Location = new System.Drawing.Point(9, 263);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(177, 187);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Vender Carro";
+            this.groupBoxVenderCarro.Controls.Add(this.buttonEditarVendas);
+            this.groupBoxVenderCarro.Controls.Add(this.buttonGuardarVendas);
+            this.groupBoxVenderCarro.Controls.Add(this.buttonCriarVendas);
+            this.groupBoxVenderCarro.Controls.Add(this.maskedTextBoxValorVenda);
+            this.groupBoxVenderCarro.Controls.Add(this.textBoxEstadoVendas);
+            this.groupBoxVenderCarro.Controls.Add(this.labelEstadoVendas);
+            this.groupBoxVenderCarro.Controls.Add(this.labelValorVendas);
+            this.groupBoxVenderCarro.Controls.Add(this.dateTimePickerDataVenda);
+            this.groupBoxVenderCarro.Controls.Add(this.labelDataVendaVendas);
+            this.groupBoxVenderCarro.Location = new System.Drawing.Point(9, 263);
+            this.groupBoxVenderCarro.Name = "groupBoxVenderCarro";
+            this.groupBoxVenderCarro.Size = new System.Drawing.Size(177, 187);
+            this.groupBoxVenderCarro.TabIndex = 21;
+            this.groupBoxVenderCarro.TabStop = false;
+            this.groupBoxVenderCarro.Text = "Vender Carro";
             // 
             // maskedTextBoxValorVenda
             // 
@@ -1275,27 +1275,27 @@
             this.labelDataVendaVendas.TabIndex = 20;
             this.labelDataVendaVendas.Text = "Data de Venda:";
             // 
-            // groupBoxAdicionarNovoCarroVendas
+            // groupBoxAdicionarCarroVendas
             // 
-            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.button9);
-            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.button2);
-            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.textBoxExtrasVendas);
-            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.labelExtrasVendas);
-            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.textBoxModeloVendas);
-            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.textBoxMarcaVendas);
-            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.textBoxChassiVendas);
-            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.comboBoxCombustivelVendas);
-            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.labelCombustivelVendas);
-            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.labelModeloVendas);
-            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.labelMarcaVendas);
-            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.labelNChassis);
-            this.groupBoxAdicionarNovoCarroVendas.Controls.Add(this.buttonAdicionarCarroVendas);
-            this.groupBoxAdicionarNovoCarroVendas.Location = new System.Drawing.Point(9, 17);
-            this.groupBoxAdicionarNovoCarroVendas.Name = "groupBoxAdicionarNovoCarroVendas";
-            this.groupBoxAdicionarNovoCarroVendas.Size = new System.Drawing.Size(177, 246);
-            this.groupBoxAdicionarNovoCarroVendas.TabIndex = 16;
-            this.groupBoxAdicionarNovoCarroVendas.TabStop = false;
-            this.groupBoxAdicionarNovoCarroVendas.Text = "Adicionar Carro de Venda";
+            this.groupBoxAdicionarCarroVendas.Controls.Add(this.buttonEditarCarroVendas);
+            this.groupBoxAdicionarCarroVendas.Controls.Add(this.buttonGuardarCarroVendas);
+            this.groupBoxAdicionarCarroVendas.Controls.Add(this.textBoxExtrasVendas);
+            this.groupBoxAdicionarCarroVendas.Controls.Add(this.labelExtrasVendas);
+            this.groupBoxAdicionarCarroVendas.Controls.Add(this.textBoxModeloVendas);
+            this.groupBoxAdicionarCarroVendas.Controls.Add(this.textBoxMarcaVendas);
+            this.groupBoxAdicionarCarroVendas.Controls.Add(this.textBoxChassiVendas);
+            this.groupBoxAdicionarCarroVendas.Controls.Add(this.comboBoxCombustivelVendas);
+            this.groupBoxAdicionarCarroVendas.Controls.Add(this.labelCombustivelVendas);
+            this.groupBoxAdicionarCarroVendas.Controls.Add(this.labelModeloVendas);
+            this.groupBoxAdicionarCarroVendas.Controls.Add(this.labelMarcaVendas);
+            this.groupBoxAdicionarCarroVendas.Controls.Add(this.labelNChassis);
+            this.groupBoxAdicionarCarroVendas.Controls.Add(this.buttonAdicionarCarroVendas);
+            this.groupBoxAdicionarCarroVendas.Location = new System.Drawing.Point(9, 17);
+            this.groupBoxAdicionarCarroVendas.Name = "groupBoxAdicionarCarroVendas";
+            this.groupBoxAdicionarCarroVendas.Size = new System.Drawing.Size(177, 246);
+            this.groupBoxAdicionarCarroVendas.TabIndex = 16;
+            this.groupBoxAdicionarCarroVendas.TabStop = false;
+            this.groupBoxAdicionarCarroVendas.Text = "Adicionar Carro de Venda";
             // 
             // textBoxExtrasVendas
             // 
@@ -1399,13 +1399,13 @@
             // 
             // groupBoxCarrosVenda
             // 
-            this.groupBoxCarrosVenda.Controls.Add(this.button5);
-            this.groupBoxCarrosVenda.Controls.Add(this.label5);
-            this.groupBoxCarrosVenda.Controls.Add(this.label6);
+            this.groupBoxCarrosVenda.Controls.Add(this.buttonFiltarCarrosVenda);
+            this.groupBoxCarrosVenda.Controls.Add(this.labelProcurarPorCarrosVendas);
+            this.groupBoxCarrosVenda.Controls.Add(this.labelCampoCarrosVendas);
             this.groupBoxCarrosVenda.Controls.Add(this.buttonRemoverCarrosVendas);
-            this.groupBoxCarrosVenda.Controls.Add(this.comboBox1);
+            this.groupBoxCarrosVenda.Controls.Add(this.comboBoxCampoCarrosVendas);
             this.groupBoxCarrosVenda.Controls.Add(this.listBoxCarrosVendas);
-            this.groupBoxCarrosVenda.Controls.Add(this.textBox1);
+            this.groupBoxCarrosVenda.Controls.Add(this.textProcurarPorCarrosVendas);
             this.groupBoxCarrosVenda.Location = new System.Drawing.Point(489, 114);
             this.groupBoxCarrosVenda.Name = "groupBoxCarrosVenda";
             this.groupBoxCarrosVenda.Size = new System.Drawing.Size(210, 456);
@@ -1434,16 +1434,16 @@
             this.listBoxCarrosVendas.Size = new System.Drawing.Size(198, 355);
             this.listBoxCarrosVendas.TabIndex = 0;
             // 
-            // label14
+            // labelTituloVendas
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Brown;
-            this.label14.Location = new System.Drawing.Point(10, 8);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(114, 32);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "Vendas";
+            this.labelTituloVendas.AutoSize = true;
+            this.labelTituloVendas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTituloVendas.ForeColor = System.Drawing.Color.Chocolate;
+            this.labelTituloVendas.Location = new System.Drawing.Point(10, 8);
+            this.labelTituloVendas.Name = "labelTituloVendas";
+            this.labelTituloVendas.Size = new System.Drawing.Size(114, 32);
+            this.labelTituloVendas.TabIndex = 18;
+            this.labelTituloVendas.Text = "Vendas";
             // 
             // groupBoxFichaClienteVendas
             // 
@@ -1993,151 +1993,151 @@
             this.buttonFiltarVendas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonFiltarVendas.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // groupBoxClienteVendas
             // 
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.listBox1);
-            this.groupBox3.Location = new System.Drawing.Point(282, 114);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(201, 456);
-            this.groupBox3.TabIndex = 30;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Vendas do cliente";
+            this.groupBoxClienteVendas.Controls.Add(this.buttonAnularVenda);
+            this.groupBoxClienteVendas.Controls.Add(this.listBoxClienteVendas);
+            this.groupBoxClienteVendas.Location = new System.Drawing.Point(282, 114);
+            this.groupBoxClienteVendas.Name = "groupBoxClienteVendas";
+            this.groupBoxClienteVendas.Size = new System.Drawing.Size(201, 456);
+            this.groupBoxClienteVendas.TabIndex = 30;
+            this.groupBoxClienteVendas.TabStop = false;
+            this.groupBoxClienteVendas.Text = "Vendas do cliente";
             // 
-            // listBox1
+            // listBoxClienteVendas
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 55);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(188, 394);
-            this.listBox1.TabIndex = 0;
+            this.listBoxClienteVendas.FormattingEnabled = true;
+            this.listBoxClienteVendas.Location = new System.Drawing.Point(6, 55);
+            this.listBoxClienteVendas.Name = "listBoxClienteVendas";
+            this.listBoxClienteVendas.ScrollAlwaysVisible = true;
+            this.listBoxClienteVendas.Size = new System.Drawing.Size(188, 394);
+            this.listBoxClienteVendas.TabIndex = 0;
             // 
-            // button1
+            // buttonAnularVenda
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(6, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 26);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Anular venda";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAnularVenda.Image = ((System.Drawing.Image)(resources.GetObject("buttonAnularVenda.Image")));
+            this.buttonAnularVenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAnularVenda.Location = new System.Drawing.Point(6, 19);
+            this.buttonAnularVenda.Name = "buttonAnularVenda";
+            this.buttonAnularVenda.Size = new System.Drawing.Size(188, 26);
+            this.buttonAnularVenda.TabIndex = 1;
+            this.buttonAnularVenda.Text = "Anular venda";
+            this.buttonAnularVenda.UseVisualStyleBackColor = true;
             // 
-            // groupBox4
+            // groupBoxDetalhesVendas
             // 
-            this.groupBox4.Controls.Add(this.groupBoxAdicionarNovoCarroVendas);
-            this.groupBox4.Controls.Add(this.groupBox1);
-            this.groupBox4.Location = new System.Drawing.Point(705, 114);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(195, 456);
-            this.groupBox4.TabIndex = 31;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Detalhes";
+            this.groupBoxDetalhesVendas.Controls.Add(this.groupBoxAdicionarCarroVendas);
+            this.groupBoxDetalhesVendas.Controls.Add(this.groupBoxVenderCarro);
+            this.groupBoxDetalhesVendas.Location = new System.Drawing.Point(705, 114);
+            this.groupBoxDetalhesVendas.Name = "groupBoxDetalhesVendas";
+            this.groupBoxDetalhesVendas.Size = new System.Drawing.Size(195, 456);
+            this.groupBoxDetalhesVendas.TabIndex = 31;
+            this.groupBoxDetalhesVendas.TabStop = false;
+            this.groupBoxDetalhesVendas.Text = "Detalhes";
             // 
-            // button2
+            // buttonGuardarCarroVendas
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(5, 214);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 26);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Guardar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonGuardarCarroVendas.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardarCarroVendas.Image")));
+            this.buttonGuardarCarroVendas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGuardarCarroVendas.Location = new System.Drawing.Point(5, 214);
+            this.buttonGuardarCarroVendas.Name = "buttonGuardarCarroVendas";
+            this.buttonGuardarCarroVendas.Size = new System.Drawing.Size(165, 26);
+            this.buttonGuardarCarroVendas.TabIndex = 16;
+            this.buttonGuardarCarroVendas.Text = "Guardar";
+            this.buttonGuardarCarroVendas.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // buttonFiltarCarrosVenda
             // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(153, 63);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(51, 23);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Filtrar";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonFiltarCarrosVenda.Image = ((System.Drawing.Image)(resources.GetObject("buttonFiltarCarrosVenda.Image")));
+            this.buttonFiltarCarrosVenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFiltarCarrosVenda.Location = new System.Drawing.Point(153, 63);
+            this.buttonFiltarCarrosVenda.Name = "buttonFiltarCarrosVenda";
+            this.buttonFiltarCarrosVenda.Size = new System.Drawing.Size(51, 23);
+            this.buttonFiltarCarrosVenda.TabIndex = 10;
+            this.buttonFiltarCarrosVenda.Text = "Filtrar";
+            this.buttonFiltarCarrosVenda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonFiltarCarrosVenda.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // labelProcurarPorCarrosVendas
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 49);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Procurar por:";
+            this.labelProcurarPorCarrosVendas.AutoSize = true;
+            this.labelProcurarPorCarrosVendas.Location = new System.Drawing.Point(6, 49);
+            this.labelProcurarPorCarrosVendas.Name = "labelProcurarPorCarrosVendas";
+            this.labelProcurarPorCarrosVendas.Size = new System.Drawing.Size(68, 13);
+            this.labelProcurarPorCarrosVendas.TabIndex = 9;
+            this.labelProcurarPorCarrosVendas.Text = "Procurar por:";
             // 
-            // label6
+            // labelCampoCarrosVendas
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(92, 49);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Campo:";
+            this.labelCampoCarrosVendas.AutoSize = true;
+            this.labelCampoCarrosVendas.Location = new System.Drawing.Point(92, 49);
+            this.labelCampoCarrosVendas.Name = "labelCampoCarrosVendas";
+            this.labelCampoCarrosVendas.Size = new System.Drawing.Size(43, 13);
+            this.labelCampoCarrosVendas.TabIndex = 8;
+            this.labelCampoCarrosVendas.Text = "Campo:";
             // 
-            // comboBox1
+            // comboBoxCampoCarrosVendas
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxCampoCarrosVendas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCampoCarrosVendas.FormattingEnabled = true;
+            this.comboBoxCampoCarrosVendas.Items.AddRange(new object[] {
             "Marca",
             "Modelo"});
-            this.comboBox1.Location = new System.Drawing.Point(95, 65);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(52, 21);
-            this.comboBox1.TabIndex = 7;
+            this.comboBoxCampoCarrosVendas.Location = new System.Drawing.Point(95, 65);
+            this.comboBoxCampoCarrosVendas.Name = "comboBoxCampoCarrosVendas";
+            this.comboBoxCampoCarrosVendas.Size = new System.Drawing.Size(52, 21);
+            this.comboBoxCampoCarrosVendas.TabIndex = 7;
             // 
-            // textBox1
+            // textProcurarPorCarrosVendas
             // 
-            this.textBox1.Location = new System.Drawing.Point(7, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(82, 20);
-            this.textBox1.TabIndex = 6;
+            this.textProcurarPorCarrosVendas.Location = new System.Drawing.Point(7, 65);
+            this.textProcurarPorCarrosVendas.Name = "textProcurarPorCarrosVendas";
+            this.textProcurarPorCarrosVendas.Size = new System.Drawing.Size(82, 20);
+            this.textProcurarPorCarrosVendas.TabIndex = 6;
             // 
-            // button6
+            // buttonCriarVendas
             // 
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(6, 19);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(165, 26);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "Criar nova venda";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonCriarVendas.Image = ((System.Drawing.Image)(resources.GetObject("buttonCriarVendas.Image")));
+            this.buttonCriarVendas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCriarVendas.Location = new System.Drawing.Point(6, 19);
+            this.buttonCriarVendas.Name = "buttonCriarVendas";
+            this.buttonCriarVendas.Size = new System.Drawing.Size(165, 26);
+            this.buttonCriarVendas.TabIndex = 17;
+            this.buttonCriarVendas.Text = "Criar nova venda";
+            this.buttonCriarVendas.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // buttonGuardarVendas
             // 
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(6, 155);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(165, 26);
-            this.button7.TabIndex = 17;
-            this.button7.Text = "Guardar";
-            this.button7.UseVisualStyleBackColor = true;
+            this.buttonGuardarVendas.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardarVendas.Image")));
+            this.buttonGuardarVendas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGuardarVendas.Location = new System.Drawing.Point(6, 155);
+            this.buttonGuardarVendas.Name = "buttonGuardarVendas";
+            this.buttonGuardarVendas.Size = new System.Drawing.Size(165, 26);
+            this.buttonGuardarVendas.TabIndex = 17;
+            this.buttonGuardarVendas.Text = "Guardar";
+            this.buttonGuardarVendas.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // buttonEditarVendas
             // 
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(6, 51);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(165, 26);
-            this.button8.TabIndex = 29;
-            this.button8.Text = "Editar venda";
-            this.button8.UseVisualStyleBackColor = true;
+            this.buttonEditarVendas.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditarVendas.Image")));
+            this.buttonEditarVendas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEditarVendas.Location = new System.Drawing.Point(6, 51);
+            this.buttonEditarVendas.Name = "buttonEditarVendas";
+            this.buttonEditarVendas.Size = new System.Drawing.Size(165, 26);
+            this.buttonEditarVendas.TabIndex = 29;
+            this.buttonEditarVendas.Text = "Editar venda";
+            this.buttonEditarVendas.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // buttonEditarCarroVendas
             // 
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(6, 51);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(165, 26);
-            this.button9.TabIndex = 30;
-            this.button9.Text = "Editar carro";
-            this.button9.UseVisualStyleBackColor = true;
+            this.buttonEditarCarroVendas.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditarCarroVendas.Image")));
+            this.buttonEditarCarroVendas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEditarCarroVendas.Location = new System.Drawing.Point(6, 51);
+            this.buttonEditarCarroVendas.Name = "buttonEditarCarroVendas";
+            this.buttonEditarCarroVendas.Size = new System.Drawing.Size(165, 26);
+            this.buttonEditarCarroVendas.TabIndex = 30;
+            this.buttonEditarCarroVendas.Text = "Editar carro";
+            this.buttonEditarCarroVendas.UseVisualStyleBackColor = true;
             // 
             // window
             // 
@@ -2180,10 +2180,10 @@
             this.groupBoxClientesOficina.PerformLayout();
             this.tabPageVendas.ResumeLayout(false);
             this.tabPageVendas.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBoxAdicionarNovoCarroVendas.ResumeLayout(false);
-            this.groupBoxAdicionarNovoCarroVendas.PerformLayout();
+            this.groupBoxVenderCarro.ResumeLayout(false);
+            this.groupBoxVenderCarro.PerformLayout();
+            this.groupBoxAdicionarCarroVendas.ResumeLayout(false);
+            this.groupBoxAdicionarCarroVendas.PerformLayout();
             this.groupBoxCarrosVenda.ResumeLayout(false);
             this.groupBoxCarrosVenda.PerformLayout();
             this.groupBoxFichaClienteVendas.ResumeLayout(false);
@@ -2201,8 +2201,8 @@
             this.groupBoxFichaClienteVenda.PerformLayout();
             this.groupBoxClientesVendas.ResumeLayout(false);
             this.groupBoxClientesVendas.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
+            this.groupBoxClienteVendas.ResumeLayout(false);
+            this.groupBoxDetalhesVendas.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2319,14 +2319,14 @@
         private System.Windows.Forms.Label labelQuilometragemAluguer;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxValorAluguer;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxVenderCarro;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxValorVenda;
         private System.Windows.Forms.TextBox textBoxEstadoVendas;
         private System.Windows.Forms.Label labelEstadoVendas;
         private System.Windows.Forms.Label labelValorVendas;
         private System.Windows.Forms.DateTimePicker dateTimePickerDataVenda;
         private System.Windows.Forms.Label labelDataVendaVendas;
-        private System.Windows.Forms.GroupBox groupBoxAdicionarNovoCarroVendas;
+        private System.Windows.Forms.GroupBox groupBoxAdicionarCarroVendas;
         private System.Windows.Forms.TextBox textBoxModeloVendas;
         private System.Windows.Forms.TextBox textBoxMarcaVendas;
         private System.Windows.Forms.TextBox textBoxChassiVendas;
@@ -2339,7 +2339,7 @@
         private System.Windows.Forms.GroupBox groupBoxCarrosVenda;
         private System.Windows.Forms.Button buttonRemoverCarrosVendas;
         private System.Windows.Forms.ListBox listBoxCarrosVendas;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label labelTituloVendas;
         private System.Windows.Forms.GroupBox groupBoxFichaClienteVendas;
         private System.Windows.Forms.Label labelNifClienteSelecionadoVendas;
         private System.Windows.Forms.Label labelNomeClienteSelecionadoVendas;
@@ -2364,11 +2364,11 @@
         private System.Windows.Forms.Button buttonCriarServicoOficina;
         private System.Windows.Forms.Button buttonEditarServicoOficina;
         private System.Windows.Forms.Button buttonGuardarServicoOficina;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.GroupBox groupBoxDetalhesVendas;
+        private System.Windows.Forms.Button buttonGuardarCarroVendas;
+        private System.Windows.Forms.GroupBox groupBoxClienteVendas;
+        private System.Windows.Forms.Button buttonAnularVenda;
+        private System.Windows.Forms.ListBox listBoxClienteVendas;
         private System.Windows.Forms.GroupBox groupBoxClientesVendas;
         private System.Windows.Forms.Button buttonFiltarVendas;
         private System.Windows.Forms.Label labelProcurarPorVendas;
@@ -2376,15 +2376,15 @@
         private System.Windows.Forms.ComboBox comboBoxCampoVendas;
         private System.Windows.Forms.TextBox textBoxProcurarPorVendas;
         private System.Windows.Forms.ListBox listBoxClientesVendas;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonFiltarCarrosVenda;
+        private System.Windows.Forms.Label labelProcurarPorCarrosVendas;
+        private System.Windows.Forms.Label labelCampoCarrosVendas;
+        private System.Windows.Forms.ComboBox comboBoxCampoCarrosVendas;
+        private System.Windows.Forms.TextBox textProcurarPorCarrosVendas;
+        private System.Windows.Forms.Button buttonEditarCarroVendas;
+        private System.Windows.Forms.Button buttonEditarVendas;
+        private System.Windows.Forms.Button buttonGuardarVendas;
+        private System.Windows.Forms.Button buttonCriarVendas;
     }
 }
 
