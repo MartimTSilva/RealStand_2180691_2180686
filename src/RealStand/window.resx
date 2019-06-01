@@ -387,18 +387,17 @@
   <data name="buttonRemoverParcelaOficina.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAACnSURBVDhPY4CBb9++tQAxG5SLE4DUgNRCuRAAFNjx+f37
-        /0D6Pj5DoJrvf/n4EaR2B0ywBaR5jYPW/zvb1uM0BCQGkgOpWedm+B9qSAuKxFJ9cayGEFSDTwE+ObBm
-        GMCjkLBmGABJoGsgWjMMoBtCkmYQoMgAdM0gGpmN1xBsmqEasImhGgISwKUQnxxBzWAFQIBXDZCgLClD
-        JcnPTDAAFCAjOzMwAAAkRgNteLUWUgAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAB0SURBVDhPpY/RDYAwCETpDg7tBk7oHAgNNXDwIZbkJfJy
+        Ryox8xal7FDKDqXskMR90ClcwiA3y2M+LIoFWcPCPOId5sMyBRTge6R8EjauGF6T8knYbB1w5f4vYAEP
+        Yj4sioXf8prlMR+WP5SyQyk7lPI7TA/jgog9aVyEfAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="buttonAdicionarParcelaOficina.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAB8SURBVDhPY/j27VsDEP8nEzcwPH/z4T9/7KL/DMFzSMIg
-        PSBDwAaABD68/win8WFktWADwMSoASiCxGCcBpCCaWcAiI0LE20AskJc4hgGPHz6BkUhNg3ofLgBekVr
-        /+sWrAEbQo4BCaD8ADIEJEgKBhsAAiBDQBzS8bf/ACrjKp9lIwSxAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAHxJREFUOE9j+PbtWwMQ/ycTNzA8f/PhP3/sov8MwXNIwiA9IEPABoAEPrz/CKfx
+        YWS1YAPAxKgBKILEYJwGkIJpZwCIjQsTbQCyQlziGAY8fPoGRSE2Deh8uAF6RWv/6xasARtCjgEJoPwA
+        MgQkSAoGGwACIENAHNLxt/8AKuMqn2UjBLEAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="buttonRemoverServicoOficina.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
