@@ -8,14 +8,11 @@ namespace RealStand
 {
     public partial class CarroOficina
     {
-        public CarroOficina(string matricula, int kms, string numeroChassis, string marca, string modelo, string combustivel)
+        public CarroOficina(string matricula, int kms, string numeroChassis, string marca, string modelo, string combustivel) :
+            base(numeroChassis, marca, modelo, combustivel)
         {
             Matricula = matricula;
             Kms = kms;
-            NumeroChassis = numeroChassis;
-            Marca = marca;
-            Modelo = modelo;
-            Combustivel = combustivel;
             Servico = new HashSet<Servico>();
         }
 

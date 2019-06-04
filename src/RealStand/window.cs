@@ -14,7 +14,7 @@ namespace RealStand
     {
         //Criação do Container
         private StandContainer standContainer;
-        
+
         public window()
         {
             InitializeComponent();
@@ -60,7 +60,7 @@ namespace RealStand
             //this.clientesTableAdapter.Fill(this.realStandDataSet.Clientes);
 
             standContainer = new StandContainer();
-        }  
+        }
 
         /// <summary>
         /// Atualiza os dados quando muda de tab
@@ -79,9 +79,14 @@ namespace RealStand
                     listBoxClientesOficina.DataSource = standContainer.Clientes.ToList<Cliente>();
                     IniciaOficina();
                     break;
+                case 3:
+                    IniciaFormVendas();
+                    listBoxClientesVendas.DataSource = standContainer.Clientes.ToList<Cliente>();
+                    listBoxClientesVendas.SelectedIndex = -1;
+                    break;
                 default:
                     break;
             }
         }
-    }
+    }  
 }
