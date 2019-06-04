@@ -54,7 +54,6 @@ namespace RealStand
             g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
         }
 
-
         private void window_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'realStandDataSet.Clientes' table. You can move, or remove it, as needed.
