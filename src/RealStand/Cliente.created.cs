@@ -19,14 +19,14 @@ namespace RealStand
             Aluguer = new HashSet<Aluguer>();
         }
 
-        public float GetTotal()
+        public string GetTotal()
         {
             float total = 0;
             foreach (CarroOficina carro in this.CarroOficina.ToList())
             {
                 total += carro.GetTotal();
             }
-            return total;
+            return total.ToString("0.00€");
         }
 
         public override string ToString()

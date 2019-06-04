@@ -58,6 +58,7 @@
     <Compile Include="Aluguer.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
+    <Compile Include="Carro.created.cs" />
     <Compile Include="Carro.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
@@ -82,6 +83,9 @@
       <DependentUpon>RealStandDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Servico.created.cs" />
+    <Compile Include="window.cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="window.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +117,9 @@
     </Compile>
     <Compile Include="Venda.cs">
       <DependentUpon>Stand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="window.oficina.cs">
+      <SubType>Form</SubType>
     </Compile>
     <EmbeddedResource Include="window.resx">
       <DependentUpon>window.cs</DependentUpon>
