@@ -341,8 +341,8 @@ namespace RealStand
             string combustivel = comboBoxCombustivelOficina.Text;
 
             if (CarroOficina.VerificaMatricula(matricula) && CarroOficina.VerificaKMs(kms)
-                && CarroOficina.VerificaNumeroChassis(numeroChassis) && CarroOficina.VerificaMarca(marca)
-                && CarroOficina.VerificaModelo(modelo) & CarroOficina.VerificaCombustivel(comboBoxCombustivelOficina.SelectedIndex))
+                && Carro.VerificaNumeroChassis(numeroChassis) && Carro.VerificaMarca(marca)
+                && Carro.VerificaModelo(modelo) & Carro.VerificaCombustivel(comboBoxCombustivelOficina.SelectedIndex))
             {
                 if (novoCarroOficina) //Criar novo
                 {
@@ -383,19 +383,19 @@ namespace RealStand
             {
                 MessageBox.Show("Quilometragem inválida");
             }
-            else if (!CarroOficina.VerificaNumeroChassis(numeroChassis))
+            else if (!Carro.VerificaNumeroChassis(numeroChassis))
             {
                 MessageBox.Show("Número de Chassi incompleto. São 17 caracteres");
             }
-            else if (!CarroOficina.VerificaMarca(marca))
+            else if (!Carro.VerificaMarca(marca))
             {
                 MessageBox.Show("Marca não inserida");
             }
-            else if (!CarroOficina.VerificaModelo(modelo))
+            else if (!Carro.VerificaModelo(modelo))
             {
                 MessageBox.Show("Modelo não inserido");
             }
-            else if (!CarroOficina.VerificaCombustivel(comboBoxCombustivelOficina.SelectedIndex))
+            else if (!Carro.VerificaCombustivel(comboBoxCombustivelOficina.SelectedIndex))
             {
                 MessageBox.Show("Combustível não selecionado");
             }

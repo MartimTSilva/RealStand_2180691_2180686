@@ -111,7 +111,7 @@ namespace RealStand
             string estado = textBoxEstadoVendas.Text;
             double valorVenda = double.Parse(maskedTextBoxValorVenda.Text.Replace('€', ' '));
 
-            if (CarroOficina.VerificaNumeroChassis(numeroChassis) && CarroOficina.VerificaMarca(marca) && CarroOficina.VerificaModelo(modelo))
+            if (Carro.VerificaNumeroChassis(numeroChassis) && Carro.VerificaMarca(marca) && Carro.VerificaModelo(modelo))
             {
                 if (novoCarroVenda)
                 {
@@ -149,19 +149,19 @@ namespace RealStand
                 buttonAnularVenda.Enabled = false;
                 buttonEditarVenda.Enabled = false;
             }
-            else if (!CarroOficina.VerificaNumeroChassis(numeroChassis))
+            else if (!Carro.VerificaNumeroChassis(numeroChassis))
             {
                 MessageBox.Show("Número de Chassi incompleto. São 17 caracteres");
             }
-            else if (!CarroOficina.VerificaMarca(marca))
+            else if (!Carro.VerificaMarca(marca))
             {
                 MessageBox.Show("Marca não inserida");
             }
-            else if (!CarroOficina.VerificaModelo(modelo))
+            else if (!Carro.VerificaModelo(modelo))
             {
                 MessageBox.Show("Modelo não inserido");
             }
-            else if (!CarroOficina.VerificaCombustivel(comboBoxCombustivelVendas.SelectedIndex))
+            else if (!Carro.VerificaCombustivel(comboBoxCombustivelVendas.SelectedIndex))
             {
                 MessageBox.Show("Combustível não selecionado");
             }

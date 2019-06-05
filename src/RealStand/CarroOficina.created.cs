@@ -48,32 +48,5 @@ namespace RealStand
             }
             return true;
         }
-
-        public static bool VerificaNumeroChassis(string numeroChassis)
-        {
-            if (numeroChassis.Length < 17 || numeroChassis == "")
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public static bool VerificaMarca(string marca)
-        {
-            if (marca == "")
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public static bool VerificaModelo(string modelo)
-        {
-            if (modelo == "")
-            {
-                return false;
-            }
-            return true;
-        }
     }
 }
