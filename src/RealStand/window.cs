@@ -84,6 +84,7 @@ namespace RealStand
                 case 4:
                     listBoxClientesAluguer.DataSource = standContainer.Clientes.ToList();
                     listBoxCarrosAluguer.DataSource = standContainer.Carros.OfType<CarroAluguer>().ToList();
+                    listBoxAluguer.DataSource = standContainer.Aluguers.ToList();
                     break;
                 default:
                     break;

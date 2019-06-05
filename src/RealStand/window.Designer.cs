@@ -1687,6 +1687,7 @@
             // 
             // buttonEditarAluguer
             // 
+            this.buttonEditarAluguer.Enabled = false;
             this.buttonEditarAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditarAluguer.Image")));
             this.buttonEditarAluguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonEditarAluguer.Location = new System.Drawing.Point(6, 48);
@@ -1707,6 +1708,7 @@
             this.groupBoxAluguerCarro.Controls.Add(this.dateTimePickerDataInicioAluguer);
             this.groupBoxAluguerCarro.Controls.Add(this.labelDataFimAluguer);
             this.groupBoxAluguerCarro.Controls.Add(this.labelDataInicioAluguer);
+            this.groupBoxAluguerCarro.Enabled = false;
             this.groupBoxAluguerCarro.Location = new System.Drawing.Point(6, 286);
             this.groupBoxAluguerCarro.Name = "groupBoxAluguerCarro";
             this.groupBoxAluguerCarro.Size = new System.Drawing.Size(228, 161);
@@ -1724,6 +1726,8 @@
             this.buttonGuardarAluguer.TabIndex = 29;
             this.buttonGuardarAluguer.Text = "Guardar";
             this.buttonGuardarAluguer.UseVisualStyleBackColor = true;
+            this.buttonGuardarAluguer.Visible = false;
+            this.buttonGuardarAluguer.Click += new System.EventHandler(this.buttonGuardarAluguer_Click);
             // 
             // maskedTextBoxValorAluguer
             // 
@@ -1792,6 +1796,7 @@
             // 
             // buttonEliminarAluguer
             // 
+            this.buttonEliminarAluguer.Enabled = false;
             this.buttonEliminarAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonEliminarAluguer.Image")));
             this.buttonEliminarAluguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonEliminarAluguer.Location = new System.Drawing.Point(6, 80);
@@ -1811,6 +1816,7 @@
             this.buttonCriarAlguer.TabIndex = 32;
             this.buttonCriarAlguer.Text = "Criar Aluguer";
             this.buttonCriarAlguer.UseVisualStyleBackColor = true;
+            this.buttonCriarAlguer.Click += new System.EventHandler(this.buttonCriarAlguer_Click);
             // 
             // listBoxAluguer
             // 

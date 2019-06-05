@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aluguer.created.cs" />
     <Compile Include="Aluguer.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
