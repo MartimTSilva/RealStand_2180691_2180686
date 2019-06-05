@@ -17,7 +17,7 @@ namespace RealStand
             //Limpa textboxes
             maskedTextBoxMatriculaOficina.Text = "";
             numericUpDownKMsOficina.Text = "0";
-            textBoxChassiOficina.Text = "";
+            maskedTextBoxChassiOficina.Text = "";
             textBoxMarcaOficina.Text = "";
             textBoxModeloOficina.Text = "";
             comboBoxCombustivelOficina.SelectedItem = null;
@@ -88,6 +88,7 @@ namespace RealStand
             buttonEditarCarroOficina.Enabled = false;
             buttonGuardarCarroOficina.Enabled = false;
         }
+
         /// <summary>
         /// Mostra todos os carros do cliente selecionado na listbox dos carros da oficina
         /// </summary>
@@ -171,7 +172,7 @@ namespace RealStand
             //Preenche textboxes com as informações do carro
             maskedTextBoxMatriculaOficina.Text = selectedCarroOficina.Matricula;
             numericUpDownKMsOficina.Text = selectedCarroOficina.Kms.ToString();
-            textBoxChassiOficina.Text = selectedCarroOficina.NumeroChassis;
+            maskedTextBoxChassiOficina.Text = selectedCarroOficina.NumeroChassis;
             textBoxMarcaOficina.Text = selectedCarroOficina.Marca;
             textBoxModeloOficina.Text = selectedCarroOficina.Modelo;
 
@@ -318,7 +319,6 @@ namespace RealStand
             {
                 MessageBox.Show("Não é possivel apagar um carro com serviços ativos");
             }
-
         }
 
         private void listBoxParcelasOficina_Click(object sender, EventArgs e)
@@ -335,7 +335,7 @@ namespace RealStand
 
             string matricula = maskedTextBoxMatriculaOficina.Text;
             int kms = int.Parse(numericUpDownKMsOficina.Text);
-            string numeroChassis = textBoxChassiOficina.Text;
+            string numeroChassis = maskedTextBoxChassiOficina.Text;
             string marca = textBoxMarcaOficina.Text;
             string modelo = textBoxModeloOficina.Text;
             string combustivel = comboBoxCombustivelOficina.Text;
@@ -344,7 +344,7 @@ namespace RealStand
                 && CarroOficina.VerificaNumeroChassis(numeroChassis) && CarroOficina.VerificaMarca(marca)
                 && CarroOficina.VerificaModelo(modelo) & CarroOficina.VerificaCombustivel(comboBoxCombustivelOficina.SelectedIndex))
             {
-                if (novoCarroOficina)
+                if (novoCarroOficina) //Criar novo
                 {
                     CarroOficina novoCarroOficina = new CarroOficina(matricula, kms, numeroChassis, marca, modelo, combustivel);
                     try
@@ -356,12 +356,12 @@ namespace RealStand
                         return;
                     }
                 }
-                else
+                else //Editar Carro
                 {
                     CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
                     selectedCarroOficina.Matricula = maskedTextBoxMatriculaOficina.Text;
                     selectedCarroOficina.Kms = int.Parse(numericUpDownKMsOficina.Text);
-                    selectedCarroOficina.NumeroChassis = textBoxChassiOficina.Text;
+                    selectedCarroOficina.NumeroChassis = maskedTextBoxChassiOficina.Text;
                     selectedCarroOficina.Marca = textBoxMarcaOficina.Text;
                     selectedCarroOficina.Modelo = textBoxModeloOficina.Text;
                     selectedCarroOficina.Combustivel = comboBoxCombustivelOficina.Text;

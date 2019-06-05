@@ -85,11 +85,11 @@
             this.groupBoxCarrosOficina = new System.Windows.Forms.GroupBox();
             this.buttonEditarCarroOficina = new System.Windows.Forms.Button();
             this.groupBoxCriarCarroOficina = new System.Windows.Forms.GroupBox();
+            this.maskedTextBoxChassiOficina = new System.Windows.Forms.MaskedTextBox();
             this.buttonGuardarCarroOficina = new System.Windows.Forms.Button();
             this.numericUpDownKMsOficina = new System.Windows.Forms.NumericUpDown();
             this.textBoxModeloOficina = new System.Windows.Forms.TextBox();
             this.textBoxMarcaOficina = new System.Windows.Forms.TextBox();
-            this.textBoxChassiOficina = new System.Windows.Forms.TextBox();
             this.comboBoxCombustivelOficina = new System.Windows.Forms.ComboBox();
             this.labelCombustivelOficina = new System.Windows.Forms.Label();
             this.labelModeloOficina = new System.Windows.Forms.Label();
@@ -116,19 +116,19 @@
             this.listBoxClientesOficina = new System.Windows.Forms.ListBox();
             this.labelTituloOficina = new System.Windows.Forms.Label();
             this.tabPageVendas = new System.Windows.Forms.TabPage();
-            this.groupBoxDetalhesVendas = new System.Windows.Forms.GroupBox();
+            this.groupBoxDetalhesVendaECarroVendas = new System.Windows.Forms.GroupBox();
             this.groupBoxDetalhesCarroVenda = new System.Windows.Forms.GroupBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.labelNChassis = new System.Windows.Forms.Label();
             this.labelCombustivelVendas = new System.Windows.Forms.Label();
             this.textBoxExtrasVendas = new System.Windows.Forms.TextBox();
             this.comboBoxCombustivelVendas = new System.Windows.Forms.ComboBox();
             this.labelModeloVendas = new System.Windows.Forms.Label();
             this.labelExtrasVendas = new System.Windows.Forms.Label();
-            this.textBoxChassiVendas = new System.Windows.Forms.TextBox();
             this.textBoxModeloVendas = new System.Windows.Forms.TextBox();
             this.labelMarcaVendas = new System.Windows.Forms.Label();
             this.textBoxMarcaVendas = new System.Windows.Forms.TextBox();
-            this.groupBoxDetalhesVenda = new System.Windows.Forms.GroupBox();
+            this.groupBoxDetalhesDaVenda = new System.Windows.Forms.GroupBox();
             this.labelDataVendaVendas = new System.Windows.Forms.Label();
             this.maskedTextBoxValorVenda = new System.Windows.Forms.MaskedTextBox();
             this.labelValorVendas = new System.Windows.Forms.Label();
@@ -136,12 +136,12 @@
             this.dateTimePickerDataVenda = new System.Windows.Forms.DateTimePicker();
             this.textBoxEstadoVendas = new System.Windows.Forms.TextBox();
             this.buttonGuardarVendas = new System.Windows.Forms.Button();
-            this.groupBoxClienteVendas = new System.Windows.Forms.GroupBox();
+            this.groupBoxVendasCliente = new System.Windows.Forms.GroupBox();
             this.buttonEditarVenda = new System.Windows.Forms.Button();
             this.buttonAnularVenda = new System.Windows.Forms.Button();
             this.buttonCriarVenda = new System.Windows.Forms.Button();
             this.listBoxVendasDoCliente = new System.Windows.Forms.ListBox();
-            this.groupBoxClientesVendas = new System.Windows.Forms.GroupBox();
+            this.groupBoxListaClientesVendas = new System.Windows.Forms.GroupBox();
             this.buttonFiltarVendas = new System.Windows.Forms.Button();
             this.labelProcurarPorVendas = new System.Windows.Forms.Label();
             this.labelCampoVendas = new System.Windows.Forms.Label();
@@ -220,11 +220,11 @@
             this.groupBoxFichaClienteOficina.SuspendLayout();
             this.groupBoxClientesOficina.SuspendLayout();
             this.tabPageVendas.SuspendLayout();
-            this.groupBoxDetalhesVendas.SuspendLayout();
+            this.groupBoxDetalhesVendaECarroVendas.SuspendLayout();
             this.groupBoxDetalhesCarroVenda.SuspendLayout();
-            this.groupBoxDetalhesVenda.SuspendLayout();
-            this.groupBoxClienteVendas.SuspendLayout();
-            this.groupBoxClientesVendas.SuspendLayout();
+            this.groupBoxDetalhesDaVenda.SuspendLayout();
+            this.groupBoxVendasCliente.SuspendLayout();
+            this.groupBoxListaClientesVendas.SuspendLayout();
             this.groupBoxFichaClienteVendas.SuspendLayout();
             this.tabPageAluguer.SuspendLayout();
             this.groupBoxAluguerCarro.SuspendLayout();
@@ -683,10 +683,11 @@
             // 
             this.maskedTextBoxValorParcelaOficina.Location = new System.Drawing.Point(61, 62);
             this.maskedTextBoxValorParcelaOficina.Margin = new System.Windows.Forms.Padding(4);
-            this.maskedTextBoxValorParcelaOficina.Mask = "€00000.00";
+            this.maskedTextBoxValorParcelaOficina.Mask = "€000000.00";
             this.maskedTextBoxValorParcelaOficina.Name = "maskedTextBoxValorParcelaOficina";
             this.maskedTextBoxValorParcelaOficina.Size = new System.Drawing.Size(83, 22);
             this.maskedTextBoxValorParcelaOficina.TabIndex = 21;
+            this.maskedTextBoxValorParcelaOficina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxDescricaoParcelaOficina
             // 
@@ -897,11 +898,11 @@
             // 
             // groupBoxCriarCarroOficina
             // 
+            this.groupBoxCriarCarroOficina.Controls.Add(this.maskedTextBoxChassiOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.buttonGuardarCarroOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.numericUpDownKMsOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.textBoxModeloOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.textBoxMarcaOficina);
-            this.groupBoxCriarCarroOficina.Controls.Add(this.textBoxChassiOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.comboBoxCombustivelOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.labelCombustivelOficina);
             this.groupBoxCriarCarroOficina.Controls.Add(this.labelModeloOficina);
@@ -918,6 +919,15 @@
             this.groupBoxCriarCarroOficina.TabIndex = 3;
             this.groupBoxCriarCarroOficina.TabStop = false;
             this.groupBoxCriarCarroOficina.Text = "Criar / Editar Carro";
+            // 
+            // maskedTextBoxChassiOficina
+            // 
+            this.maskedTextBoxChassiOficina.Location = new System.Drawing.Point(88, 87);
+            this.maskedTextBoxChassiOficina.Mask = "00000000000000000";
+            this.maskedTextBoxChassiOficina.Name = "maskedTextBoxChassiOficina";
+            this.maskedTextBoxChassiOficina.Size = new System.Drawing.Size(162, 22);
+            this.maskedTextBoxChassiOficina.TabIndex = 15;
+            this.maskedTextBoxChassiOficina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // buttonGuardarCarroOficina
             // 
@@ -960,15 +970,6 @@
             this.textBoxMarcaOficina.Name = "textBoxMarcaOficina";
             this.textBoxMarcaOficina.Size = new System.Drawing.Size(181, 22);
             this.textBoxMarcaOficina.TabIndex = 8;
-            // 
-            // textBoxChassiOficina
-            // 
-            this.textBoxChassiOficina.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxChassiOficina.Location = new System.Drawing.Point(80, 86);
-            this.textBoxChassiOficina.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxChassiOficina.Name = "textBoxChassiOficina";
-            this.textBoxChassiOficina.Size = new System.Drawing.Size(169, 25);
-            this.textBoxChassiOficina.TabIndex = 7;
             // 
             // comboBoxCombustivelOficina
             // 
@@ -1261,9 +1262,9 @@
             // tabPageVendas
             // 
             this.tabPageVendas.BackColor = System.Drawing.Color.Silver;
-            this.tabPageVendas.Controls.Add(this.groupBoxDetalhesVendas);
-            this.tabPageVendas.Controls.Add(this.groupBoxClienteVendas);
-            this.tabPageVendas.Controls.Add(this.groupBoxClientesVendas);
+            this.tabPageVendas.Controls.Add(this.groupBoxDetalhesVendaECarroVendas);
+            this.tabPageVendas.Controls.Add(this.groupBoxVendasCliente);
+            this.tabPageVendas.Controls.Add(this.groupBoxListaClientesVendas);
             this.tabPageVendas.Controls.Add(this.labelTituloVendas);
             this.tabPageVendas.Controls.Add(this.groupBoxFichaClienteVendas);
             this.tabPageVendas.Location = new System.Drawing.Point(166, 4);
@@ -1273,29 +1274,29 @@
             this.tabPageVendas.TabIndex = 3;
             this.tabPageVendas.Text = "Vendas";
             // 
-            // groupBoxDetalhesVendas
+            // groupBoxDetalhesVendaECarroVendas
             // 
-            this.groupBoxDetalhesVendas.Controls.Add(this.groupBoxDetalhesCarroVenda);
-            this.groupBoxDetalhesVendas.Controls.Add(this.groupBoxDetalhesVenda);
-            this.groupBoxDetalhesVendas.Controls.Add(this.buttonGuardarVendas);
-            this.groupBoxDetalhesVendas.Location = new System.Drawing.Point(896, 140);
-            this.groupBoxDetalhesVendas.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBoxDetalhesVendas.Name = "groupBoxDetalhesVendas";
-            this.groupBoxDetalhesVendas.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxDetalhesVendas.Size = new System.Drawing.Size(304, 561);
-            this.groupBoxDetalhesVendas.TabIndex = 36;
-            this.groupBoxDetalhesVendas.TabStop = false;
-            this.groupBoxDetalhesVendas.Text = "Detalhes";
+            this.groupBoxDetalhesVendaECarroVendas.Controls.Add(this.groupBoxDetalhesCarroVenda);
+            this.groupBoxDetalhesVendaECarroVendas.Controls.Add(this.groupBoxDetalhesDaVenda);
+            this.groupBoxDetalhesVendaECarroVendas.Controls.Add(this.buttonGuardarVendas);
+            this.groupBoxDetalhesVendaECarroVendas.Location = new System.Drawing.Point(896, 140);
+            this.groupBoxDetalhesVendaECarroVendas.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxDetalhesVendaECarroVendas.Name = "groupBoxDetalhesVendaECarroVendas";
+            this.groupBoxDetalhesVendaECarroVendas.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxDetalhesVendaECarroVendas.Size = new System.Drawing.Size(304, 561);
+            this.groupBoxDetalhesVendaECarroVendas.TabIndex = 36;
+            this.groupBoxDetalhesVendaECarroVendas.TabStop = false;
+            this.groupBoxDetalhesVendaECarroVendas.Text = "Detalhes";
             // 
             // groupBoxDetalhesCarroVenda
             // 
+            this.groupBoxDetalhesCarroVenda.Controls.Add(this.maskedTextBox1);
             this.groupBoxDetalhesCarroVenda.Controls.Add(this.labelNChassis);
             this.groupBoxDetalhesCarroVenda.Controls.Add(this.labelCombustivelVendas);
             this.groupBoxDetalhesCarroVenda.Controls.Add(this.textBoxExtrasVendas);
             this.groupBoxDetalhesCarroVenda.Controls.Add(this.comboBoxCombustivelVendas);
             this.groupBoxDetalhesCarroVenda.Controls.Add(this.labelModeloVendas);
             this.groupBoxDetalhesCarroVenda.Controls.Add(this.labelExtrasVendas);
-            this.groupBoxDetalhesCarroVenda.Controls.Add(this.textBoxChassiVendas);
             this.groupBoxDetalhesCarroVenda.Controls.Add(this.textBoxModeloVendas);
             this.groupBoxDetalhesCarroVenda.Controls.Add(this.labelMarcaVendas);
             this.groupBoxDetalhesCarroVenda.Controls.Add(this.textBoxMarcaVendas);
@@ -1307,6 +1308,15 @@
             this.groupBoxDetalhesCarroVenda.TabIndex = 30;
             this.groupBoxDetalhesCarroVenda.TabStop = false;
             this.groupBoxDetalhesCarroVenda.Text = "Detalhes do carro";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(96, 40);
+            this.maskedTextBox1.Mask = "00000000000000000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(180, 22);
+            this.maskedTextBox1.TabIndex = 16;
+            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelNChassis
             // 
@@ -1373,14 +1383,6 @@
             this.labelExtrasVendas.TabIndex = 14;
             this.labelExtrasVendas.Text = "Extas:";
             // 
-            // textBoxChassiVendas
-            // 
-            this.textBoxChassiVendas.Location = new System.Drawing.Point(91, 39);
-            this.textBoxChassiVendas.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxChassiVendas.Name = "textBoxChassiVendas";
-            this.textBoxChassiVendas.Size = new System.Drawing.Size(188, 22);
-            this.textBoxChassiVendas.TabIndex = 11;
-            // 
             // textBoxModeloVendas
             // 
             this.textBoxModeloVendas.Location = new System.Drawing.Point(77, 133);
@@ -1404,25 +1406,25 @@
             this.textBoxMarcaVendas.Location = new System.Drawing.Point(71, 84);
             this.textBoxMarcaVendas.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxMarcaVendas.Name = "textBoxMarcaVendas";
-            this.textBoxMarcaVendas.Size = new System.Drawing.Size(208, 22);
+            this.textBoxMarcaVendas.Size = new System.Drawing.Size(205, 22);
             this.textBoxMarcaVendas.TabIndex = 12;
             // 
-            // groupBoxDetalhesVenda
+            // groupBoxDetalhesDaVenda
             // 
-            this.groupBoxDetalhesVenda.Controls.Add(this.labelDataVendaVendas);
-            this.groupBoxDetalhesVenda.Controls.Add(this.maskedTextBoxValorVenda);
-            this.groupBoxDetalhesVenda.Controls.Add(this.labelValorVendas);
-            this.groupBoxDetalhesVenda.Controls.Add(this.labelEstadoVendas);
-            this.groupBoxDetalhesVenda.Controls.Add(this.dateTimePickerDataVenda);
-            this.groupBoxDetalhesVenda.Controls.Add(this.textBoxEstadoVendas);
-            this.groupBoxDetalhesVenda.Location = new System.Drawing.Point(8, 308);
-            this.groupBoxDetalhesVenda.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBoxDetalhesVenda.Name = "groupBoxDetalhesVenda";
-            this.groupBoxDetalhesVenda.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxDetalhesVenda.Size = new System.Drawing.Size(288, 170);
-            this.groupBoxDetalhesVenda.TabIndex = 29;
-            this.groupBoxDetalhesVenda.TabStop = false;
-            this.groupBoxDetalhesVenda.Text = "Detalhes de venda";
+            this.groupBoxDetalhesDaVenda.Controls.Add(this.labelDataVendaVendas);
+            this.groupBoxDetalhesDaVenda.Controls.Add(this.maskedTextBoxValorVenda);
+            this.groupBoxDetalhesDaVenda.Controls.Add(this.labelValorVendas);
+            this.groupBoxDetalhesDaVenda.Controls.Add(this.labelEstadoVendas);
+            this.groupBoxDetalhesDaVenda.Controls.Add(this.dateTimePickerDataVenda);
+            this.groupBoxDetalhesDaVenda.Controls.Add(this.textBoxEstadoVendas);
+            this.groupBoxDetalhesDaVenda.Location = new System.Drawing.Point(8, 308);
+            this.groupBoxDetalhesDaVenda.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxDetalhesDaVenda.Name = "groupBoxDetalhesDaVenda";
+            this.groupBoxDetalhesDaVenda.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxDetalhesDaVenda.Size = new System.Drawing.Size(288, 170);
+            this.groupBoxDetalhesDaVenda.TabIndex = 29;
+            this.groupBoxDetalhesDaVenda.TabStop = false;
+            this.groupBoxDetalhesDaVenda.Text = "Detalhes de venda";
             // 
             // labelDataVendaVendas
             // 
@@ -1438,10 +1440,11 @@
             // 
             this.maskedTextBoxValorVenda.Location = new System.Drawing.Point(152, 122);
             this.maskedTextBoxValorVenda.Margin = new System.Windows.Forms.Padding(4);
-            this.maskedTextBoxValorVenda.Mask = "€00000.00";
+            this.maskedTextBoxValorVenda.Mask = "€0000000.00";
             this.maskedTextBoxValorVenda.Name = "maskedTextBoxValorVenda";
             this.maskedTextBoxValorVenda.Size = new System.Drawing.Size(125, 22);
             this.maskedTextBoxValorVenda.TabIndex = 28;
+            this.maskedTextBoxValorVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelValorVendas
             // 
@@ -1492,20 +1495,20 @@
             this.buttonGuardarVendas.UseVisualStyleBackColor = true;
             this.buttonGuardarVendas.Click += new System.EventHandler(this.buttonGuardarVendas_Click);
             // 
-            // groupBoxClienteVendas
+            // groupBoxVendasCliente
             // 
-            this.groupBoxClienteVendas.Controls.Add(this.buttonEditarVenda);
-            this.groupBoxClienteVendas.Controls.Add(this.buttonAnularVenda);
-            this.groupBoxClienteVendas.Controls.Add(this.buttonCriarVenda);
-            this.groupBoxClienteVendas.Controls.Add(this.listBoxVendasDoCliente);
-            this.groupBoxClienteVendas.Location = new System.Drawing.Point(489, 140);
-            this.groupBoxClienteVendas.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBoxClienteVendas.Name = "groupBoxClienteVendas";
-            this.groupBoxClienteVendas.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxClienteVendas.Size = new System.Drawing.Size(352, 561);
-            this.groupBoxClienteVendas.TabIndex = 35;
-            this.groupBoxClienteVendas.TabStop = false;
-            this.groupBoxClienteVendas.Text = "Vendas do cliente";
+            this.groupBoxVendasCliente.Controls.Add(this.buttonEditarVenda);
+            this.groupBoxVendasCliente.Controls.Add(this.buttonAnularVenda);
+            this.groupBoxVendasCliente.Controls.Add(this.buttonCriarVenda);
+            this.groupBoxVendasCliente.Controls.Add(this.listBoxVendasDoCliente);
+            this.groupBoxVendasCliente.Location = new System.Drawing.Point(489, 140);
+            this.groupBoxVendasCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxVendasCliente.Name = "groupBoxVendasCliente";
+            this.groupBoxVendasCliente.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxVendasCliente.Size = new System.Drawing.Size(352, 561);
+            this.groupBoxVendasCliente.TabIndex = 35;
+            this.groupBoxVendasCliente.TabStop = false;
+            this.groupBoxVendasCliente.Text = "Vendas do cliente";
             // 
             // buttonEditarVenda
             // 
@@ -1518,6 +1521,7 @@
             this.buttonEditarVenda.TabIndex = 30;
             this.buttonEditarVenda.Text = "Editar venda";
             this.buttonEditarVenda.UseVisualStyleBackColor = true;
+            this.buttonEditarVenda.Click += new System.EventHandler(this.buttonEditarVenda_Click);
             // 
             // buttonAnularVenda
             // 
@@ -1530,6 +1534,7 @@
             this.buttonAnularVenda.TabIndex = 1;
             this.buttonAnularVenda.Text = "Anular venda";
             this.buttonAnularVenda.UseVisualStyleBackColor = true;
+            this.buttonAnularVenda.Click += new System.EventHandler(this.buttonAnularVenda_Click);
             // 
             // buttonCriarVenda
             // 
@@ -1556,22 +1561,22 @@
             this.listBoxVendasDoCliente.TabIndex = 0;
             this.listBoxVendasDoCliente.Click += new System.EventHandler(this.listBoxVendasDoCliente_Click);
             // 
-            // groupBoxClientesVendas
+            // groupBoxListaClientesVendas
             // 
-            this.groupBoxClientesVendas.Controls.Add(this.buttonFiltarVendas);
-            this.groupBoxClientesVendas.Controls.Add(this.labelProcurarPorVendas);
-            this.groupBoxClientesVendas.Controls.Add(this.labelCampoVendas);
-            this.groupBoxClientesVendas.Controls.Add(this.comboBoxCampoVendas);
-            this.groupBoxClientesVendas.Controls.Add(this.textBoxProcurarPorVendas);
-            this.groupBoxClientesVendas.Controls.Add(this.listBoxClientesVendas);
-            this.groupBoxClientesVendas.Location = new System.Drawing.Point(12, 59);
-            this.groupBoxClientesVendas.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBoxClientesVendas.Name = "groupBoxClientesVendas";
-            this.groupBoxClientesVendas.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxClientesVendas.Size = new System.Drawing.Size(423, 642);
-            this.groupBoxClientesVendas.TabIndex = 34;
-            this.groupBoxClientesVendas.TabStop = false;
-            this.groupBoxClientesVendas.Text = "Lista de Clientes";
+            this.groupBoxListaClientesVendas.Controls.Add(this.buttonFiltarVendas);
+            this.groupBoxListaClientesVendas.Controls.Add(this.labelProcurarPorVendas);
+            this.groupBoxListaClientesVendas.Controls.Add(this.labelCampoVendas);
+            this.groupBoxListaClientesVendas.Controls.Add(this.comboBoxCampoVendas);
+            this.groupBoxListaClientesVendas.Controls.Add(this.textBoxProcurarPorVendas);
+            this.groupBoxListaClientesVendas.Controls.Add(this.listBoxClientesVendas);
+            this.groupBoxListaClientesVendas.Location = new System.Drawing.Point(12, 59);
+            this.groupBoxListaClientesVendas.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxListaClientesVendas.Name = "groupBoxListaClientesVendas";
+            this.groupBoxListaClientesVendas.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxListaClientesVendas.Size = new System.Drawing.Size(423, 642);
+            this.groupBoxListaClientesVendas.TabIndex = 34;
+            this.groupBoxListaClientesVendas.TabStop = false;
+            this.groupBoxListaClientesVendas.Text = "Lista de Clientes";
             // 
             // buttonFiltarVendas
             // 
@@ -2223,14 +2228,14 @@
             this.groupBoxClientesOficina.PerformLayout();
             this.tabPageVendas.ResumeLayout(false);
             this.tabPageVendas.PerformLayout();
-            this.groupBoxDetalhesVendas.ResumeLayout(false);
+            this.groupBoxDetalhesVendaECarroVendas.ResumeLayout(false);
             this.groupBoxDetalhesCarroVenda.ResumeLayout(false);
             this.groupBoxDetalhesCarroVenda.PerformLayout();
-            this.groupBoxDetalhesVenda.ResumeLayout(false);
-            this.groupBoxDetalhesVenda.PerformLayout();
-            this.groupBoxClienteVendas.ResumeLayout(false);
-            this.groupBoxClientesVendas.ResumeLayout(false);
-            this.groupBoxClientesVendas.PerformLayout();
+            this.groupBoxDetalhesDaVenda.ResumeLayout(false);
+            this.groupBoxDetalhesDaVenda.PerformLayout();
+            this.groupBoxVendasCliente.ResumeLayout(false);
+            this.groupBoxListaClientesVendas.ResumeLayout(false);
+            this.groupBoxListaClientesVendas.PerformLayout();
             this.groupBoxFichaClienteVendas.ResumeLayout(false);
             this.groupBoxFichaClienteVendas.PerformLayout();
             this.tabPageAluguer.ResumeLayout(false);
@@ -2312,7 +2317,6 @@
         private System.Windows.Forms.Label labelCombustivelOficina;
         private System.Windows.Forms.TextBox textBoxModeloOficina;
         private System.Windows.Forms.TextBox textBoxMarcaOficina;
-        private System.Windows.Forms.TextBox textBoxChassiOficina;
         private System.Windows.Forms.DateTimePicker dateTimePickerDataSaidaOficina;
         private System.Windows.Forms.DateTimePicker dateTimePickerDataEntregaOficina;
         private System.Windows.Forms.Label labelDataSaidaOficina;
@@ -2376,7 +2380,7 @@
         private System.Windows.Forms.Button buttonCriarServicoOficina;
         private System.Windows.Forms.Button buttonEditarServicoOficina;
         private System.Windows.Forms.Button buttonGuardarServicoOficina;
-        private System.Windows.Forms.GroupBox groupBoxDetalhesVendas;
+        private System.Windows.Forms.GroupBox groupBoxDetalhesVendaECarroVendas;
         private System.Windows.Forms.GroupBox groupBoxDetalhesCarroVenda;
         private System.Windows.Forms.Label labelNChassis;
         private System.Windows.Forms.Label labelCombustivelVendas;
@@ -2384,11 +2388,10 @@
         private System.Windows.Forms.ComboBox comboBoxCombustivelVendas;
         private System.Windows.Forms.Label labelModeloVendas;
         private System.Windows.Forms.Label labelExtrasVendas;
-        private System.Windows.Forms.TextBox textBoxChassiVendas;
         private System.Windows.Forms.TextBox textBoxModeloVendas;
         private System.Windows.Forms.Label labelMarcaVendas;
         private System.Windows.Forms.TextBox textBoxMarcaVendas;
-        private System.Windows.Forms.GroupBox groupBoxDetalhesVenda;
+        private System.Windows.Forms.GroupBox groupBoxDetalhesDaVenda;
         private System.Windows.Forms.Label labelDataVendaVendas;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxValorVenda;
         private System.Windows.Forms.Label labelValorVendas;
@@ -2396,12 +2399,12 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerDataVenda;
         private System.Windows.Forms.TextBox textBoxEstadoVendas;
         private System.Windows.Forms.Button buttonGuardarVendas;
-        private System.Windows.Forms.GroupBox groupBoxClienteVendas;
+        private System.Windows.Forms.GroupBox groupBoxVendasCliente;
         private System.Windows.Forms.Button buttonEditarVenda;
         private System.Windows.Forms.Button buttonAnularVenda;
         private System.Windows.Forms.Button buttonCriarVenda;
         private System.Windows.Forms.ListBox listBoxVendasDoCliente;
-        private System.Windows.Forms.GroupBox groupBoxClientesVendas;
+        private System.Windows.Forms.GroupBox groupBoxListaClientesVendas;
         private System.Windows.Forms.Button buttonFiltarVendas;
         private System.Windows.Forms.Label labelProcurarPorVendas;
         private System.Windows.Forms.Label labelCampoVendas;
@@ -2414,6 +2417,8 @@
         private System.Windows.Forms.Label labelNomeClienteSelecionadoVendas;
         private System.Windows.Forms.Label labelNifVendas;
         private System.Windows.Forms.Label labelNomeVendas;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxChassiOficina;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }
 

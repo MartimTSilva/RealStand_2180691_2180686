@@ -10,6 +10,20 @@ namespace RealStand
     partial class window
     {
         private bool novoCarroVenda = false;
+
+        void CleanInputDetalhesVenda()
+        {
+            dateTimePickerDataVenda.Text = null;
+            textBoxEstadoVendas.Text = "";
+            maskedTextBoxValorVenda.Text = "";
+
+            maskedTextBox1.Text = "";
+            textBoxMarcaVendas.Text = "";
+            textBoxModeloVendas.Text = "";
+            comboBoxCombustivelVendas.SelectedItem = null; ;
+            textBoxExtrasVendas.Text = "";
+        }
+
         void IniciaFormVendas()
         {
             //Reseta a Ficha de Cliente
@@ -22,39 +36,39 @@ namespace RealStand
             //Limpa todas as caixas de texto
             textBoxProcurarPorVendas.Text = "";
             comboBoxCampoVendas.SelectedItem = null;
-            CleanInputCarroVenda();
-            dateTimePickerDataVenda.Text = null;
-            textBoxEstadoVendas.Text = "";
-            maskedTextBoxValorVenda.Text = "";
-        }
+            CleanInputDetalhesVenda();
 
-        void CleanInputCarroVenda()
-        {
-            textBoxChassiVendas.Text = "";
-            textBoxMarcaVendas.Text = "";
-            textBoxModeloVendas.Text = "";
-            comboBoxCombustivelVendas.SelectedItem = null; ;
-            textBoxExtrasVendas.Text = "";
+            //Bloqueia groupboxes
+            groupBoxVendasCliente.Enabled = false;
+            groupBoxDetalhesVendaECarroVendas.Enabled = false;
+
         }
 
         private void listBoxClientesVendas_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesVendas.SelectedItem;
-            try
-            {
-                listBoxVendasDoCliente.DataSource = selectedCliente.Venda.ToList();
-            }
-            catch (System.Reflection.TargetInvocationException)
+            if (selectedCliente == null)
             {
                 return;
             }
+
+            listBoxVendasDoCliente.DataSource = selectedCliente.Venda.ToList();
             listBoxVendasDoCliente.SelectedIndex = -1;
+            groupBoxVendasCliente.Enabled = true;
+            buttonEditarVenda.Enabled = false;
+            buttonAnularVenda.Enabled = false;
+
+            //Preenche a ficha do cliente
+            labelNomeClienteSelecionadoVendas.Text = selectedCliente.Nome;
+            labelNifClienteSelecionadoVendas.Text = selectedCliente.NIF;
         }
 
         private void listBoxVendasDoCliente_Click(object sender, EventArgs e)
         {
             Venda selectedVenda = (Venda)listBoxVendasDoCliente.SelectedItem;
-            textBoxChassiVendas.Text = selectedVenda.CarroVenda.NumeroChassis;
+
+            //Insere as informações nas textboxes
+            maskedTextBox1.Text = selectedVenda.CarroVenda.NumeroChassis;
             textBoxMarcaVendas.Text = selectedVenda.CarroVenda.Marca;
             textBoxModeloVendas.Text = selectedVenda.CarroVenda.Modelo;
             textBoxExtrasVendas.Text = selectedVenda.CarroVenda.Extras;
@@ -79,12 +93,16 @@ namespace RealStand
                     comboBoxCombustivelVendas.SelectedIndex = 4;
                     break;
             }
+
+            //Reativa botões para alteração de dados
+            buttonEditarVenda.Enabled = true;
+            buttonAnularVenda.Enabled = true;
         }
 
         private void buttonGuardarVendas_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesVendas.SelectedItem;
-            string numeroChassis = textBoxChassiVendas.Text;
+            string numeroChassis = maskedTextBox1.Text;
             string marca = textBoxMarcaVendas.Text;
             string modelo = textBoxModeloVendas.Text;
             string combustivel = comboBoxCombustivelVendas.Text;
@@ -110,13 +128,26 @@ namespace RealStand
                         return;
                     }
                 }
-                else
+                else //Editar venda
                 {
-                    //Editar
+                    Venda selectedVenda = (Venda)listBoxVendasDoCliente.SelectedItem;
+                    selectedVenda.CarroVenda.NumeroChassis = maskedTextBox1.Text;
+                    selectedVenda.CarroVenda.Marca = textBoxMarcaVendas.Text;
+                    selectedVenda.CarroVenda.Modelo = textBoxModeloVendas.Text;
+                    selectedVenda.CarroVenda.Combustivel = comboBoxCombustivelVendas.Text;
+                    selectedVenda.CarroVenda.Extras = textBoxExtrasVendas.Text;
+                    selectedVenda.Data = dateTimePickerDataVenda.Value;
+                    selectedVenda.Estado = textBoxEstadoVendas.Text;
+                    selectedVenda.Valor = double.Parse(maskedTextBoxValorVenda.Text.Replace('€', ' '));
                 }
 
                 standContainer.SaveChanges();
                 listBoxVendasDoCliente.DataSource = selectedCliente.Venda.ToList();
+                listBoxVendasDoCliente.SelectedIndex = -1;
+                CleanInputDetalhesVenda();
+                groupBoxDetalhesVendaECarroVendas.Enabled = false;
+                buttonAnularVenda.Enabled = false;
+                buttonEditarVenda.Enabled = false;
             }
             else if (!CarroOficina.VerificaNumeroChassis(numeroChassis))
             {
@@ -134,12 +165,32 @@ namespace RealStand
             {
                 MessageBox.Show("Combustível não selecionado");
             }
-
         }
 
         private void buttonCriarVenda_Click(object sender, EventArgs e)
         {
             novoCarroVenda = true;
+            CleanInputDetalhesVenda();
+            groupBoxDetalhesVendaECarroVendas.Enabled = true;
+        }
+
+        private void buttonEditarVenda_Click(object sender, EventArgs e)
+        {
+            novoCarroVenda = false;
+            groupBoxDetalhesVendaECarroVendas.Enabled = true;
+        }
+        private void buttonAnularVenda_Click(object sender, EventArgs e)
+        {
+            Cliente selectedCliente = (Cliente)listBoxClientesVendas.SelectedItem;
+            Venda selectedVenda = (Venda)listBoxVendasDoCliente.SelectedItem;
+
+            standContainer.Vendas.Remove(selectedVenda);
+            standContainer.SaveChanges();
+            listBoxVendasDoCliente.DataSource = selectedCliente.Venda.ToList();
+            buttonAnularVenda.Enabled = false;
+            CleanInputDetalhesVenda();
+            listBoxVendasDoCliente.SelectedIndex = -1;
+            buttonEditarVenda.Enabled = false;
         }
     }
 }
