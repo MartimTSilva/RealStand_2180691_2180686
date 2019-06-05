@@ -181,16 +181,6 @@ namespace RealStand
         }
         private void buttonAnularVenda_Click(object sender, EventArgs e)
         {
-            Cliente selectedCliente = (Cliente)listBoxClientesVendas.SelectedItem;
-            Venda selectedVenda = (Venda)listBoxVendasDoCliente.SelectedItem;
-
-            standContainer.Vendas.Remove(selectedVenda);
-            standContainer.SaveChanges();
-            listBoxVendasDoCliente.DataSource = selectedCliente.Venda.ToList();
-            buttonAnularVenda.Enabled = false;
-            CleanInputDetalhesVenda();
-            listBoxVendasDoCliente.SelectedIndex = -1;
-            buttonEditarVenda.Enabled = false;
         }
     }
 }
