@@ -56,9 +56,6 @@ namespace RealStand
 
         private void window_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'realStandDataSet.Clientes' table. You can move, or remove it, as needed.
-            //this.clientesTableAdapter.Fill(this.realStandDataSet.Clientes);
-
             standContainer = new StandContainer();
         }
 
@@ -83,6 +80,10 @@ namespace RealStand
                     IniciaFormVendas();
                     listBoxClientesVendas.DataSource = standContainer.Clientes.ToList<Cliente>();
                     listBoxClientesVendas.SelectedIndex = -1;
+                    break;
+                case 4:
+                    listBoxClientesAluguer.DataSource = standContainer.Clientes.ToList();
+                    listBoxCarrosAluguer.DataSource = standContainer.Carros.OfType<CarroAluguer>().ToList();
                     break;
                 default:
                     break;

@@ -314,7 +314,7 @@ namespace RealStand
                     standContainer.Carros.Remove(selectedCarroOficina);
                     standContainer.SaveChanges();
                     listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
-                    buttonRemoverCarroAluguer.Enabled = false;
+                    buttonRemoverCarroOficina.Enabled = false;
                     CleanInputCarroOficina();
                     listBoxCarrosOficina.SelectedIndex = -1;
                     buttonRemoverCarroOficina.Enabled = false;

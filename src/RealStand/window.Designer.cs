@@ -33,6 +33,7 @@
             System.Windows.Forms.Label nIFLabel;
             System.Windows.Forms.Label moradaLabel;
             System.Windows.Forms.Label contactoLabel;
+            System.Windows.Forms.Label estadoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(window));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageInicio = new System.Windows.Forms.TabPage();
@@ -159,7 +160,10 @@
             this.labelNifVendas = new System.Windows.Forms.Label();
             this.labelNomeVendas = new System.Windows.Forms.Label();
             this.tabPageAluguer = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonEditarAluguer = new System.Windows.Forms.Button();
             this.groupBoxAluguerCarro = new System.Windows.Forms.GroupBox();
+            this.buttonGuardarAluguer = new System.Windows.Forms.Button();
             this.maskedTextBoxValorAluguer = new System.Windows.Forms.MaskedTextBox();
             this.textBoxQuilometragemAluguer = new System.Windows.Forms.TextBox();
             this.labelQuilometragemAluguer = new System.Windows.Forms.Label();
@@ -168,14 +172,20 @@
             this.dateTimePickerDataInicioAluguer = new System.Windows.Forms.DateTimePicker();
             this.labelDataFimAluguer = new System.Windows.Forms.Label();
             this.labelDataInicioAluguer = new System.Windows.Forms.Label();
+            this.buttonEliminarAluguer = new System.Windows.Forms.Button();
+            this.buttonCriarAlguer = new System.Windows.Forms.Button();
+            this.listBoxAluguer = new System.Windows.Forms.ListBox();
             this.groupBoxCarrosAluguer = new System.Windows.Forms.GroupBox();
             this.buttonEditarCarroAluguer = new System.Windows.Forms.Button();
             this.buttonEliminarCarroAluguer = new System.Windows.Forms.Button();
             this.groupBoxAdicionarCarroAluguer = new System.Windows.Forms.GroupBox();
+            this.numeroChassisMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.carrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.estadoTextBox = new System.Windows.Forms.TextBox();
+            this.carros_CarroAluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonGuardarCarroAluguer = new System.Windows.Forms.Button();
             this.textBoxModeloAluguer = new System.Windows.Forms.TextBox();
             this.textBoxMarcaAluguer = new System.Windows.Forms.TextBox();
-            this.textBoxChassiAluguer = new System.Windows.Forms.TextBox();
             this.comboBoxCombustivelAluguer = new System.Windows.Forms.ComboBox();
             this.labelCombustivelAluguer = new System.Windows.Forms.Label();
             this.labelModeloAluguer = new System.Windows.Forms.Label();
@@ -201,16 +211,13 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.clientesTableAdapter = new RealStand.realstandDataSetTableAdapters.ClientesTableAdapter();
             this.tableAdapterManager = new RealStand.realstandDataSetTableAdapters.TableAdapterManager();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.buttonEditarAluguer = new System.Windows.Forms.Button();
-            this.buttonEliminarAluguer = new System.Windows.Forms.Button();
-            this.buttonCriarAlguer = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.buttonGuardarAluguer = new System.Windows.Forms.Button();
+            this.carros_CarroAluguerTableAdapter = new RealStand.realstandDataSetTableAdapters.Carros_CarroAluguerTableAdapter();
+            this.carrosTableAdapter = new RealStand.realstandDataSetTableAdapters.CarrosTableAdapter();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
             contactoLabel = new System.Windows.Forms.Label();
+            estadoLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPageInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -239,12 +246,14 @@
             this.groupBoxFichaClienteVendas.SuspendLayout();
             this.groupBoxTotalVendas.SuspendLayout();
             this.tabPageAluguer.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBoxAluguerCarro.SuspendLayout();
             this.groupBoxCarrosAluguer.SuspendLayout();
             this.groupBoxAdicionarCarroAluguer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carros_CarroAluguerBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBoxFichaClienteVenda.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomeLabel
@@ -282,6 +291,15 @@
             contactoLabel.Size = new System.Drawing.Size(53, 13);
             contactoLabel.TabIndex = 6;
             contactoLabel.Text = "Contacto:";
+            // 
+            // estadoLabel
+            // 
+            estadoLabel.AutoSize = true;
+            estadoLabel.Location = new System.Drawing.Point(34, 124);
+            estadoLabel.Name = "estadoLabel";
+            estadoLabel.Size = new System.Drawing.Size(43, 13);
+            estadoLabel.TabIndex = 17;
+            estadoLabel.Text = "Estado:";
             // 
             // tabControl1
             // 
@@ -1640,6 +1658,7 @@
             // 
             // tabPageAluguer
             // 
+            this.tabPageAluguer.AutoScroll = true;
             this.tabPageAluguer.BackColor = System.Drawing.Color.Silver;
             this.tabPageAluguer.Controls.Add(this.groupBox3);
             this.tabPageAluguer.Controls.Add(this.groupBoxCarrosAluguer);
@@ -1652,6 +1671,31 @@
             this.tabPageAluguer.TabIndex = 4;
             this.tabPageAluguer.Text = "Aluguer";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.buttonEditarAluguer);
+            this.groupBox3.Controls.Add(this.groupBoxAluguerCarro);
+            this.groupBox3.Controls.Add(this.buttonEliminarAluguer);
+            this.groupBox3.Controls.Add(this.buttonCriarAlguer);
+            this.groupBox3.Controls.Add(this.listBoxAluguer);
+            this.groupBox3.Location = new System.Drawing.Point(658, 117);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(242, 453);
+            this.groupBox3.TabIndex = 34;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Aluguer";
+            // 
+            // buttonEditarAluguer
+            // 
+            this.buttonEditarAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditarAluguer.Image")));
+            this.buttonEditarAluguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEditarAluguer.Location = new System.Drawing.Point(6, 48);
+            this.buttonEditarAluguer.Name = "buttonEditarAluguer";
+            this.buttonEditarAluguer.Size = new System.Drawing.Size(228, 26);
+            this.buttonEditarAluguer.TabIndex = 33;
+            this.buttonEditarAluguer.Text = "Editar Aluguer";
+            this.buttonEditarAluguer.UseVisualStyleBackColor = true;
+            // 
             // groupBoxAluguerCarro
             // 
             this.groupBoxAluguerCarro.Controls.Add(this.buttonGuardarAluguer);
@@ -1663,12 +1707,23 @@
             this.groupBoxAluguerCarro.Controls.Add(this.dateTimePickerDataInicioAluguer);
             this.groupBoxAluguerCarro.Controls.Add(this.labelDataFimAluguer);
             this.groupBoxAluguerCarro.Controls.Add(this.labelDataInicioAluguer);
-            this.groupBoxAluguerCarro.Location = new System.Drawing.Point(6, 265);
+            this.groupBoxAluguerCarro.Location = new System.Drawing.Point(6, 286);
             this.groupBoxAluguerCarro.Name = "groupBoxAluguerCarro";
-            this.groupBoxAluguerCarro.Size = new System.Drawing.Size(228, 182);
+            this.groupBoxAluguerCarro.Size = new System.Drawing.Size(228, 161);
             this.groupBoxAluguerCarro.TabIndex = 15;
             this.groupBoxAluguerCarro.TabStop = false;
             this.groupBoxAluguerCarro.Text = "Detalhes Aluguer";
+            // 
+            // buttonGuardarAluguer
+            // 
+            this.buttonGuardarAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardarAluguer.Image")));
+            this.buttonGuardarAluguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGuardarAluguer.Location = new System.Drawing.Point(6, 130);
+            this.buttonGuardarAluguer.Name = "buttonGuardarAluguer";
+            this.buttonGuardarAluguer.Size = new System.Drawing.Size(216, 26);
+            this.buttonGuardarAluguer.TabIndex = 29;
+            this.buttonGuardarAluguer.Text = "Guardar";
+            this.buttonGuardarAluguer.UseVisualStyleBackColor = true;
             // 
             // maskedTextBoxValorAluguer
             // 
@@ -1735,6 +1790,37 @@
             this.labelDataInicioAluguer.TabIndex = 20;
             this.labelDataInicioAluguer.Text = "Data de Início:";
             // 
+            // buttonEliminarAluguer
+            // 
+            this.buttonEliminarAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonEliminarAluguer.Image")));
+            this.buttonEliminarAluguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEliminarAluguer.Location = new System.Drawing.Point(6, 80);
+            this.buttonEliminarAluguer.Name = "buttonEliminarAluguer";
+            this.buttonEliminarAluguer.Size = new System.Drawing.Size(228, 26);
+            this.buttonEliminarAluguer.TabIndex = 31;
+            this.buttonEliminarAluguer.Text = "Eliminar Aluguer";
+            this.buttonEliminarAluguer.UseVisualStyleBackColor = true;
+            // 
+            // buttonCriarAlguer
+            // 
+            this.buttonCriarAlguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonCriarAlguer.Image")));
+            this.buttonCriarAlguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCriarAlguer.Location = new System.Drawing.Point(6, 16);
+            this.buttonCriarAlguer.Name = "buttonCriarAlguer";
+            this.buttonCriarAlguer.Size = new System.Drawing.Size(228, 26);
+            this.buttonCriarAlguer.TabIndex = 32;
+            this.buttonCriarAlguer.Text = "Criar Aluguer";
+            this.buttonCriarAlguer.UseVisualStyleBackColor = true;
+            // 
+            // listBoxAluguer
+            // 
+            this.listBoxAluguer.FormattingEnabled = true;
+            this.listBoxAluguer.Location = new System.Drawing.Point(6, 112);
+            this.listBoxAluguer.Name = "listBoxAluguer";
+            this.listBoxAluguer.ScrollAlwaysVisible = true;
+            this.listBoxAluguer.Size = new System.Drawing.Size(228, 173);
+            this.listBoxAluguer.TabIndex = 0;
+            // 
             // groupBoxCarrosAluguer
             // 
             this.groupBoxCarrosAluguer.Controls.Add(this.buttonEditarCarroAluguer);
@@ -1742,15 +1828,16 @@
             this.groupBoxCarrosAluguer.Controls.Add(this.groupBoxAdicionarCarroAluguer);
             this.groupBoxCarrosAluguer.Controls.Add(this.buttonCriarAluguer);
             this.groupBoxCarrosAluguer.Controls.Add(this.listBoxCarrosAluguer);
-            this.groupBoxCarrosAluguer.Location = new System.Drawing.Point(374, 114);
+            this.groupBoxCarrosAluguer.Location = new System.Drawing.Point(372, 111);
             this.groupBoxCarrosAluguer.Name = "groupBoxCarrosAluguer";
-            this.groupBoxCarrosAluguer.Size = new System.Drawing.Size(242, 453);
+            this.groupBoxCarrosAluguer.Size = new System.Drawing.Size(240, 460);
             this.groupBoxCarrosAluguer.TabIndex = 8;
             this.groupBoxCarrosAluguer.TabStop = false;
             this.groupBoxCarrosAluguer.Text = "Carros para Aluguer";
             // 
             // buttonEditarCarroAluguer
             // 
+            this.buttonEditarCarroAluguer.Enabled = false;
             this.buttonEditarCarroAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditarCarroAluguer.Image")));
             this.buttonEditarCarroAluguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonEditarCarroAluguer.Location = new System.Drawing.Point(6, 48);
@@ -1762,6 +1849,7 @@
             // 
             // buttonEliminarCarroAluguer
             // 
+            this.buttonEliminarCarroAluguer.Enabled = false;
             this.buttonEliminarCarroAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonEliminarCarroAluguer.Image")));
             this.buttonEliminarCarroAluguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonEliminarCarroAluguer.Location = new System.Drawing.Point(6, 80);
@@ -1773,10 +1861,12 @@
             // 
             // groupBoxAdicionarCarroAluguer
             // 
+            this.groupBoxAdicionarCarroAluguer.Controls.Add(this.numeroChassisMaskedTextBox);
+            this.groupBoxAdicionarCarroAluguer.Controls.Add(estadoLabel);
+            this.groupBoxAdicionarCarroAluguer.Controls.Add(this.estadoTextBox);
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.buttonGuardarCarroAluguer);
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.textBoxModeloAluguer);
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.textBoxMarcaAluguer);
-            this.groupBoxAdicionarCarroAluguer.Controls.Add(this.textBoxChassiAluguer);
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.comboBoxCombustivelAluguer);
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.labelCombustivelAluguer);
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.labelModeloAluguer);
@@ -1784,44 +1874,67 @@
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.labelNChassisAluguer);
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.maskedTextBoxMatriculaAluguer);
             this.groupBoxAdicionarCarroAluguer.Controls.Add(this.labelMatriculaAluguer);
-            this.groupBoxAdicionarCarroAluguer.Location = new System.Drawing.Point(6, 265);
+            this.groupBoxAdicionarCarroAluguer.Enabled = false;
+            this.groupBoxAdicionarCarroAluguer.Location = new System.Drawing.Point(6, 253);
             this.groupBoxAdicionarCarroAluguer.Name = "groupBoxAdicionarCarroAluguer";
-            this.groupBoxAdicionarCarroAluguer.Size = new System.Drawing.Size(228, 182);
+            this.groupBoxAdicionarCarroAluguer.Size = new System.Drawing.Size(228, 201);
             this.groupBoxAdicionarCarroAluguer.TabIndex = 3;
             this.groupBoxAdicionarCarroAluguer.TabStop = false;
             this.groupBoxAdicionarCarroAluguer.Text = "Detalhes Carro de Aluguer";
+            // 
+            // numeroChassisMaskedTextBox
+            // 
+            this.numeroChassisMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carrosBindingSource, "NumeroChassis", true));
+            this.numeroChassisMaskedTextBox.Location = new System.Drawing.Point(83, 19);
+            this.numeroChassisMaskedTextBox.Mask = "00000000000000000";
+            this.numeroChassisMaskedTextBox.Name = "numeroChassisMaskedTextBox";
+            this.numeroChassisMaskedTextBox.Size = new System.Drawing.Size(136, 20);
+            this.numeroChassisMaskedTextBox.TabIndex = 19;
+            // 
+            // carrosBindingSource
+            // 
+            this.carrosBindingSource.DataMember = "Carros";
+            this.carrosBindingSource.DataSource = this.realStandDataSet;
+            // 
+            // estadoTextBox
+            // 
+            this.estadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carros_CarroAluguerBindingSource, "Estado", true));
+            this.estadoTextBox.Location = new System.Drawing.Point(83, 121);
+            this.estadoTextBox.Name = "estadoTextBox";
+            this.estadoTextBox.Size = new System.Drawing.Size(136, 20);
+            this.estadoTextBox.TabIndex = 18;
+            // 
+            // carros_CarroAluguerBindingSource
+            // 
+            this.carros_CarroAluguerBindingSource.DataMember = "Carros_CarroAluguer";
+            this.carros_CarroAluguerBindingSource.DataSource = this.realStandDataSet;
             // 
             // buttonGuardarCarroAluguer
             // 
             this.buttonGuardarCarroAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardarCarroAluguer.Image")));
             this.buttonGuardarCarroAluguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGuardarCarroAluguer.Location = new System.Drawing.Point(6, 150);
+            this.buttonGuardarCarroAluguer.Location = new System.Drawing.Point(6, 171);
             this.buttonGuardarCarroAluguer.Name = "buttonGuardarCarroAluguer";
             this.buttonGuardarCarroAluguer.Size = new System.Drawing.Size(216, 26);
             this.buttonGuardarCarroAluguer.TabIndex = 17;
             this.buttonGuardarCarroAluguer.Text = "Guardar";
             this.buttonGuardarCarroAluguer.UseVisualStyleBackColor = true;
+            this.buttonGuardarCarroAluguer.Visible = false;
+            this.buttonGuardarCarroAluguer.Click += new System.EventHandler(this.buttonGuardarCarroAluguer_Click);
             // 
             // textBoxModeloAluguer
             // 
-            this.textBoxModeloAluguer.Location = new System.Drawing.Point(83, 95);
+            this.textBoxModeloAluguer.Location = new System.Drawing.Point(83, 70);
             this.textBoxModeloAluguer.Name = "textBoxModeloAluguer";
             this.textBoxModeloAluguer.Size = new System.Drawing.Size(136, 20);
             this.textBoxModeloAluguer.TabIndex = 13;
             // 
             // textBoxMarcaAluguer
             // 
-            this.textBoxMarcaAluguer.Location = new System.Drawing.Point(83, 69);
+            this.textBoxMarcaAluguer.Location = new System.Drawing.Point(83, 44);
             this.textBoxMarcaAluguer.Name = "textBoxMarcaAluguer";
             this.textBoxMarcaAluguer.Size = new System.Drawing.Size(136, 20);
             this.textBoxMarcaAluguer.TabIndex = 12;
-            // 
-            // textBoxChassiAluguer
-            // 
-            this.textBoxChassiAluguer.Location = new System.Drawing.Point(83, 44);
-            this.textBoxChassiAluguer.Name = "textBoxChassiAluguer";
-            this.textBoxChassiAluguer.Size = new System.Drawing.Size(136, 20);
-            this.textBoxChassiAluguer.TabIndex = 11;
             // 
             // comboBoxCombustivelAluguer
             // 
@@ -1832,7 +1945,7 @@
             "Diesel",
             "Gás",
             "Híbrido"});
-            this.comboBoxCombustivelAluguer.Location = new System.Drawing.Point(83, 122);
+            this.comboBoxCombustivelAluguer.Location = new System.Drawing.Point(83, 97);
             this.comboBoxCombustivelAluguer.Name = "comboBoxCombustivelAluguer";
             this.comboBoxCombustivelAluguer.Size = new System.Drawing.Size(136, 21);
             this.comboBoxCombustivelAluguer.TabIndex = 10;
@@ -1840,7 +1953,7 @@
             // labelCombustivelAluguer
             // 
             this.labelCombustivelAluguer.AutoSize = true;
-            this.labelCombustivelAluguer.Location = new System.Drawing.Point(8, 125);
+            this.labelCombustivelAluguer.Location = new System.Drawing.Point(8, 100);
             this.labelCombustivelAluguer.Name = "labelCombustivelAluguer";
             this.labelCombustivelAluguer.Size = new System.Drawing.Size(69, 13);
             this.labelCombustivelAluguer.TabIndex = 9;
@@ -1849,7 +1962,7 @@
             // labelModeloAluguer
             // 
             this.labelModeloAluguer.AutoSize = true;
-            this.labelModeloAluguer.Location = new System.Drawing.Point(32, 98);
+            this.labelModeloAluguer.Location = new System.Drawing.Point(32, 73);
             this.labelModeloAluguer.Name = "labelModeloAluguer";
             this.labelModeloAluguer.Size = new System.Drawing.Size(45, 13);
             this.labelModeloAluguer.TabIndex = 8;
@@ -1858,7 +1971,7 @@
             // labelMarcaAluguer
             // 
             this.labelMarcaAluguer.AutoSize = true;
-            this.labelMarcaAluguer.Location = new System.Drawing.Point(37, 72);
+            this.labelMarcaAluguer.Location = new System.Drawing.Point(37, 47);
             this.labelMarcaAluguer.Name = "labelMarcaAluguer";
             this.labelMarcaAluguer.Size = new System.Drawing.Size(40, 13);
             this.labelMarcaAluguer.TabIndex = 7;
@@ -1867,7 +1980,7 @@
             // labelNChassisAluguer
             // 
             this.labelNChassisAluguer.AutoSize = true;
-            this.labelNChassisAluguer.Location = new System.Drawing.Point(16, 47);
+            this.labelNChassisAluguer.Location = new System.Drawing.Point(16, 22);
             this.labelNChassisAluguer.Name = "labelNChassisAluguer";
             this.labelNChassisAluguer.Size = new System.Drawing.Size(61, 13);
             this.labelNChassisAluguer.TabIndex = 6;
@@ -1875,7 +1988,7 @@
             // 
             // maskedTextBoxMatriculaAluguer
             // 
-            this.maskedTextBoxMatriculaAluguer.Location = new System.Drawing.Point(83, 18);
+            this.maskedTextBoxMatriculaAluguer.Location = new System.Drawing.Point(83, 145);
             this.maskedTextBoxMatriculaAluguer.Mask = "AA-AA-AA";
             this.maskedTextBoxMatriculaAluguer.Name = "maskedTextBoxMatriculaAluguer";
             this.maskedTextBoxMatriculaAluguer.Size = new System.Drawing.Size(50, 20);
@@ -1884,7 +1997,7 @@
             // labelMatriculaAluguer
             // 
             this.labelMatriculaAluguer.AutoSize = true;
-            this.labelMatriculaAluguer.Location = new System.Drawing.Point(22, 21);
+            this.labelMatriculaAluguer.Location = new System.Drawing.Point(22, 148);
             this.labelMatriculaAluguer.Name = "labelMatriculaAluguer";
             this.labelMatriculaAluguer.Size = new System.Drawing.Size(55, 13);
             this.labelMatriculaAluguer.TabIndex = 2;
@@ -1900,6 +2013,7 @@
             this.buttonCriarAluguer.TabIndex = 32;
             this.buttonCriarAluguer.Text = "Criar Carro Aluguer";
             this.buttonCriarAluguer.UseVisualStyleBackColor = true;
+            this.buttonCriarAluguer.Click += new System.EventHandler(this.buttonCriarAluguer_Click);
             // 
             // listBoxCarrosAluguer
             // 
@@ -1907,7 +2021,7 @@
             this.listBoxCarrosAluguer.Location = new System.Drawing.Point(6, 112);
             this.listBoxCarrosAluguer.Name = "listBoxCarrosAluguer";
             this.listBoxCarrosAluguer.ScrollAlwaysVisible = true;
-            this.listBoxCarrosAluguer.Size = new System.Drawing.Size(228, 147);
+            this.listBoxCarrosAluguer.Size = new System.Drawing.Size(228, 134);
             this.listBoxCarrosAluguer.TabIndex = 0;
             // 
             // groupBox2
@@ -2074,72 +2188,13 @@
             this.tableAdapterManager.UpdateOrder = RealStand.realstandDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VendasTableAdapter = null;
             // 
-            // groupBox3
+            // carros_CarroAluguerTableAdapter
             // 
-            this.groupBox3.Controls.Add(this.buttonEditarAluguer);
-            this.groupBox3.Controls.Add(this.groupBoxAluguerCarro);
-            this.groupBox3.Controls.Add(this.buttonEliminarAluguer);
-            this.groupBox3.Controls.Add(this.buttonCriarAlguer);
-            this.groupBox3.Controls.Add(this.listBox1);
-            this.groupBox3.Location = new System.Drawing.Point(658, 117);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(242, 453);
-            this.groupBox3.TabIndex = 34;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Carros para Aluguer";
+            this.carros_CarroAluguerTableAdapter.ClearBeforeFill = true;
             // 
-            // buttonEditarAluguer
+            // carrosTableAdapter
             // 
-            this.buttonEditarAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditarAluguer.Image")));
-            this.buttonEditarAluguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEditarAluguer.Location = new System.Drawing.Point(6, 48);
-            this.buttonEditarAluguer.Name = "buttonEditarAluguer";
-            this.buttonEditarAluguer.Size = new System.Drawing.Size(228, 26);
-            this.buttonEditarAluguer.TabIndex = 33;
-            this.buttonEditarAluguer.Text = "Editar Aluguer";
-            this.buttonEditarAluguer.UseVisualStyleBackColor = true;
-            // 
-            // buttonEliminarAluguer
-            // 
-            this.buttonEliminarAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonEliminarAluguer.Image")));
-            this.buttonEliminarAluguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEliminarAluguer.Location = new System.Drawing.Point(6, 80);
-            this.buttonEliminarAluguer.Name = "buttonEliminarAluguer";
-            this.buttonEliminarAluguer.Size = new System.Drawing.Size(228, 26);
-            this.buttonEliminarAluguer.TabIndex = 31;
-            this.buttonEliminarAluguer.Text = "Eliminar Aluguer";
-            this.buttonEliminarAluguer.UseVisualStyleBackColor = true;
-            // 
-            // buttonCriarAlguer
-            // 
-            this.buttonCriarAlguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonCriarAlguer.Image")));
-            this.buttonCriarAlguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCriarAlguer.Location = new System.Drawing.Point(6, 16);
-            this.buttonCriarAlguer.Name = "buttonCriarAlguer";
-            this.buttonCriarAlguer.Size = new System.Drawing.Size(228, 26);
-            this.buttonCriarAlguer.TabIndex = 32;
-            this.buttonCriarAlguer.Text = "Criar Aluguer";
-            this.buttonCriarAlguer.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 112);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(228, 147);
-            this.listBox1.TabIndex = 0;
-            // 
-            // buttonGuardarAluguer
-            // 
-            this.buttonGuardarAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardarAluguer.Image")));
-            this.buttonGuardarAluguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGuardarAluguer.Location = new System.Drawing.Point(6, 150);
-            this.buttonGuardarAluguer.Name = "buttonGuardarAluguer";
-            this.buttonGuardarAluguer.Size = new System.Drawing.Size(216, 26);
-            this.buttonGuardarAluguer.TabIndex = 29;
-            this.buttonGuardarAluguer.Text = "Guardar";
-            this.buttonGuardarAluguer.UseVisualStyleBackColor = true;
+            this.carrosTableAdapter.ClearBeforeFill = true;
             // 
             // window
             // 
@@ -2198,16 +2253,18 @@
             this.groupBoxTotalVendas.PerformLayout();
             this.tabPageAluguer.ResumeLayout(false);
             this.tabPageAluguer.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.groupBoxAluguerCarro.ResumeLayout(false);
             this.groupBoxAluguerCarro.PerformLayout();
             this.groupBoxCarrosAluguer.ResumeLayout(false);
             this.groupBoxAdicionarCarroAluguer.ResumeLayout(false);
             this.groupBoxAdicionarCarroAluguer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carros_CarroAluguerBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBoxFichaClienteVenda.ResumeLayout(false);
             this.groupBoxFichaClienteVenda.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2295,7 +2352,6 @@
         private System.Windows.Forms.GroupBox groupBoxAdicionarCarroAluguer;
         private System.Windows.Forms.TextBox textBoxModeloAluguer;
         private System.Windows.Forms.TextBox textBoxMarcaAluguer;
-        private System.Windows.Forms.TextBox textBoxChassiAluguer;
         private System.Windows.Forms.ComboBox comboBoxCombustivelAluguer;
         private System.Windows.Forms.Label labelCombustivelAluguer;
         private System.Windows.Forms.Label labelModeloAluguer;
@@ -2387,7 +2443,13 @@
         private System.Windows.Forms.Button buttonGuardarAluguer;
         private System.Windows.Forms.Button buttonEliminarAluguer;
         private System.Windows.Forms.Button buttonCriarAlguer;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxAluguer;
+        private System.Windows.Forms.BindingSource carros_CarroAluguerBindingSource;
+        private realstandDataSetTableAdapters.Carros_CarroAluguerTableAdapter carros_CarroAluguerTableAdapter;
+        private System.Windows.Forms.TextBox estadoTextBox;
+        private System.Windows.Forms.BindingSource carrosBindingSource;
+        private realstandDataSetTableAdapters.CarrosTableAdapter carrosTableAdapter;
+        private System.Windows.Forms.MaskedTextBox numeroChassisMaskedTextBox;
     }
 }
 
