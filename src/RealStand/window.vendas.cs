@@ -30,8 +30,9 @@ namespace RealStand
             labelNomeClienteSelecionadoVendas.Text = "Nenhum cliente selecionado";
             labelNifClienteSelecionadoVendas.Text = "*********";
 
-            //Desseleciona todos os itens nas listboxes
+            //Desmarca todos os itens nas listboxes
             listBoxVendasDoCliente.SelectedIndex = -1;
+            listBoxVendasDoCliente.DataSource = null;
 
             //Limpa todas as caixas de texto
             textBoxProcurarPorVendas.Text = "";
@@ -66,6 +67,10 @@ namespace RealStand
         private void listBoxVendasDoCliente_Click(object sender, EventArgs e)
         {
             Venda selectedVenda = (Venda)listBoxVendasDoCliente.SelectedItem;
+            if (selectedVenda == null)
+            {
+                return;
+            }
 
             //Insere as informações nas textboxes
             maskedTextBox1.Text = selectedVenda.CarroVenda.NumeroChassis;
@@ -181,6 +186,17 @@ namespace RealStand
         }
         private void buttonAnularVenda_Click(object sender, EventArgs e)
         {
+            Cliente selectedCliente = (Cliente)listBoxClientesVendas.SelectedItem;
+            Venda selectedVenda = (Venda)listBoxVendasDoCliente.SelectedItem;
+
+            standContainer.Carros.Remove(selectedVenda.CarroVenda);
+            standContainer.Vendas.Remove(selectedVenda);
+            standContainer.SaveChanges();
+            listBoxVendasDoCliente.DataSource = selectedCliente.Venda.ToList();
+            buttonAnularVenda.Enabled = false;
+            CleanInputDetalhesVenda();
+            listBoxVendasDoCliente.SelectedIndex = -1;
+            buttonEditarVenda.Enabled = false;      
         }
     }
 }
