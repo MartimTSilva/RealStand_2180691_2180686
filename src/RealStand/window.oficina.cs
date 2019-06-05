@@ -304,20 +304,28 @@ namespace RealStand
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
             CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
-            if (selectedCarroOficina.Servico.Count == 0)
+
+
+            if (selectedCarroOficina.Servico.Count != 0)
             {
-                standContainer.Carros.Remove(selectedCarroOficina);
-                standContainer.SaveChanges();
-                listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
-                buttonRemoverCarroAluguer.Enabled = false;
-                CleanInputCarroOficina();
-                listBoxCarrosOficina.SelectedIndex = -1;
-                buttonRemoverCarroOficina.Enabled = false;
-                buttonEditarCarroOficina.Enabled = false;
-            }
-            else
-            {
-                MessageBox.Show("Não é possivel apagar um carro com serviços ativos");
+                if (MessageBox.Show("O carro que está a tentar remover tem serviços ativos. \nTem a certeza que quer continuar? " +
+                "Todas as parcelas e serviços serão removidos.", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    standContainer.Carros.Remove(selectedCarroOficina);
+                    standContainer.SaveChanges();
+                    listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
+                    buttonRemoverCarroAluguer.Enabled = false;
+                    CleanInputCarroOficina();
+                    listBoxCarrosOficina.SelectedIndex = -1;
+                    buttonRemoverCarroOficina.Enabled = false;
+                    buttonEditarCarroOficina.Enabled = false;
+                    CleanInputServicosOficina();
+                    listBoxServicosOficina.DataSource = null;
+                    listBoxParcelasOficina.DataSource = null;
+                    labelTotalClienteOficina.Text = selectedCliente.GetTotal();
+                    groupBoxServicosOficina.Enabled = false;
+                    groupBoxParcelasOficina.Enabled = false;
+                }
             }
         }
 
@@ -415,20 +423,24 @@ namespace RealStand
             Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
             CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
 
-            if (selectedServico.Parcela.Count == 0)
+            if (selectedServico.Parcela.Count != 0)
             {
-                standContainer.Servicos.Remove(selectedServico);
-                standContainer.SaveChanges();
-                listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
-                dateTimePickerDataEntregaOficina.Text = null;
-                dateTimePickerDataSaidaOficina.Text = null;
-                comboBoxTipoServicosOficina.SelectedIndex = -1;
-                buttonRemoverServicoOficina.Enabled = false;
-                buttonEditarServicoOficina.Enabled = false;
-            }
-            else
-            {
-                MessageBox.Show("Não é possivel apagar um serviço com parcelas ativas");
+                if (MessageBox.Show("O serviço que está a tentar remover tem parcelas ativas. \nTem a certeza que quer continuar? " +
+                "Todas as parcelas serão eleminadas.", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    standContainer.Servicos.Remove(selectedServico);
+                    standContainer.SaveChanges();
+                    listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+                    dateTimePickerDataEntregaOficina.Text = null;
+                    dateTimePickerDataSaidaOficina.Text = null;
+                    comboBoxTipoServicosOficina.SelectedIndex = -1;
+                    buttonRemoverServicoOficina.Enabled = false;
+                    buttonEditarServicoOficina.Enabled = false;
+                    listBoxParcelasOficina.DataSource = null;
+                    groupBoxCriarParcelaOficina.Enabled = false;
+                    Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
+                    labelTotalClienteOficina.Text = selectedCliente.GetTotal();
+                }
             }
         }
 
