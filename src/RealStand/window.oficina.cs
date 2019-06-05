@@ -37,7 +37,7 @@ namespace RealStand
             //Reseta a Ficha de Cliente
             labelClienteSelecionadoOficina.Text = "Nenhum cliente selecionado";
             labelNifClienteSelecionadoOficina.Text = "*********";
-            labelTotalClienteOficina.Text = "0.00€";
+            labelTotalClienteOficina.Text = "000,00€";
 
             //Esvazia todos os "inputs" da groupbox de Adicionar um carro.
             foreach (Control c in groupBoxCriarCarroOficina.Controls)

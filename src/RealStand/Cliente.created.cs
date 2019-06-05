@@ -21,12 +21,25 @@ namespace RealStand
 
         public string GetTotal()
         {
-            float total = 0;
+            float totalOficina = 0;
+            string total;
             foreach (CarroOficina carro in this.CarroOficina.ToList())
             {
-                total += carro.GetTotal();
+                totalOficina += carro.GetTotal();
             }
-            return total.ToString("0.00€");
+            total = String.Format("{0:n}", totalOficina);
+            return total+"€";
+        }
+        public string GetTotalVendas()
+        {
+            float totalVendas = 0;
+            string total;
+            foreach (Venda venda in this.Venda.ToList())
+            {
+                totalVendas += (float)venda.Valor;
+            }
+            total = String.Format("{0:n}€", totalVendas);
+            return total;
         }
 
         public override string ToString()

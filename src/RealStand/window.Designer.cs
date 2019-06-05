@@ -102,8 +102,9 @@
             this.listBoxCarrosOficina = new System.Windows.Forms.ListBox();
             this.buttonCriarCarroOficina = new System.Windows.Forms.Button();
             this.groupBoxFichaClienteOficina = new System.Windows.Forms.GroupBox();
-            this.labelTotalClienteOficina = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelTotalGastoOficina = new System.Windows.Forms.Label();
+            this.labelTotalClienteOficina = new System.Windows.Forms.Label();
             this.labelNifClienteSelecionadoOficina = new System.Windows.Forms.Label();
             this.labelClienteSelecionadoOficina = new System.Windows.Forms.Label();
             this.labelNifOficina = new System.Windows.Forms.Label();
@@ -150,6 +151,9 @@
             this.listBoxClientesVendas = new System.Windows.Forms.ListBox();
             this.labelTituloVendas = new System.Windows.Forms.Label();
             this.groupBoxFichaClienteVendas = new System.Windows.Forms.GroupBox();
+            this.groupBoxTotalVendas = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelTotalVendas = new System.Windows.Forms.Label();
             this.labelNifClienteSelecionadoVendas = new System.Windows.Forms.Label();
             this.labelNomeClienteSelecionadoVendas = new System.Windows.Forms.Label();
             this.labelNifVendas = new System.Windows.Forms.Label();
@@ -218,6 +222,7 @@
             this.groupBoxCriarCarroOficina.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKMsOficina)).BeginInit();
             this.groupBoxFichaClienteOficina.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBoxClientesOficina.SuspendLayout();
             this.tabPageVendas.SuspendLayout();
             this.groupBoxDetalhesVendaECarroVendas.SuspendLayout();
@@ -226,6 +231,7 @@
             this.groupBoxVendasCliente.SuspendLayout();
             this.groupBoxListaClientesVendas.SuspendLayout();
             this.groupBoxFichaClienteVendas.SuspendLayout();
+            this.groupBoxTotalVendas.SuspendLayout();
             this.tabPageAluguer.SuspendLayout();
             this.groupBoxAluguerCarro.SuspendLayout();
             this.groupBoxAdicionarCarroAluguer.SuspendLayout();
@@ -1098,8 +1104,7 @@
             // 
             // groupBoxFichaClienteOficina
             // 
-            this.groupBoxFichaClienteOficina.Controls.Add(this.labelTotalClienteOficina);
-            this.groupBoxFichaClienteOficina.Controls.Add(this.labelTotalGastoOficina);
+            this.groupBoxFichaClienteOficina.Controls.Add(this.groupBox1);
             this.groupBoxFichaClienteOficina.Controls.Add(this.labelNifClienteSelecionadoOficina);
             this.groupBoxFichaClienteOficina.Controls.Add(this.labelClienteSelecionadoOficina);
             this.groupBoxFichaClienteOficina.Controls.Add(this.labelNifOficina);
@@ -1113,27 +1118,39 @@
             this.groupBoxFichaClienteOficina.TabStop = false;
             this.groupBoxFichaClienteOficina.Text = "Ficha do Cliente";
             // 
-            // labelTotalClienteOficina
+            // groupBox1
             // 
-            this.labelTotalClienteOficina.AutoSize = true;
-            this.labelTotalClienteOficina.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalClienteOficina.Location = new System.Drawing.Point(736, 66);
-            this.labelTotalClienteOficina.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTotalClienteOficina.Name = "labelTotalClienteOficina";
-            this.labelTotalClienteOficina.Size = new System.Drawing.Size(71, 29);
-            this.labelTotalClienteOficina.TabIndex = 5;
-            this.labelTotalClienteOficina.Text = "0.00€";
+            this.groupBox1.Controls.Add(this.labelTotalGastoOficina);
+            this.groupBox1.Controls.Add(this.labelTotalClienteOficina);
+            this.groupBox1.Location = new System.Drawing.Point(737, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(171, 123);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
             // 
             // labelTotalGastoOficina
             // 
             this.labelTotalGastoOficina.AutoSize = true;
-            this.labelTotalGastoOficina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalGastoOficina.Location = new System.Drawing.Point(735, 27);
+            this.labelTotalGastoOficina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalGastoOficina.Location = new System.Drawing.Point(56, 36);
             this.labelTotalGastoOficina.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTotalGastoOficina.Name = "labelTotalGastoOficina";
-            this.labelTotalGastoOficina.Size = new System.Drawing.Size(119, 25);
+            this.labelTotalGastoOficina.Size = new System.Drawing.Size(109, 24);
             this.labelTotalGastoOficina.TabIndex = 4;
             this.labelTotalGastoOficina.Text = "Total Gasto:";
+            // 
+            // labelTotalClienteOficina
+            // 
+            this.labelTotalClienteOficina.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelTotalClienteOficina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.labelTotalClienteOficina.ForeColor = System.Drawing.Color.Brown;
+            this.labelTotalClienteOficina.Location = new System.Drawing.Point(10, 74);
+            this.labelTotalClienteOficina.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotalClienteOficina.Name = "labelTotalClienteOficina";
+            this.labelTotalClienteOficina.Size = new System.Drawing.Size(155, 24);
+            this.labelTotalClienteOficina.TabIndex = 5;
+            this.labelTotalClienteOficina.Text = "000,00€";
+            this.labelTotalClienteOficina.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelNifClienteSelecionadoOficina
             // 
@@ -1658,6 +1675,7 @@
             // 
             // groupBoxFichaClienteVendas
             // 
+            this.groupBoxFichaClienteVendas.Controls.Add(this.groupBoxTotalVendas);
             this.groupBoxFichaClienteVendas.Controls.Add(this.labelNifClienteSelecionadoVendas);
             this.groupBoxFichaClienteVendas.Controls.Add(this.labelNomeClienteSelecionadoVendas);
             this.groupBoxFichaClienteVendas.Controls.Add(this.labelNifVendas);
@@ -1670,6 +1688,38 @@
             this.groupBoxFichaClienteVendas.TabIndex = 32;
             this.groupBoxFichaClienteVendas.TabStop = false;
             this.groupBoxFichaClienteVendas.Text = "Ficha do Cliente";
+            // 
+            // groupBoxTotalVendas
+            // 
+            this.groupBoxTotalVendas.Controls.Add(this.label5);
+            this.groupBoxTotalVendas.Controls.Add(this.labelTotalVendas);
+            this.groupBoxTotalVendas.Location = new System.Drawing.Point(586, 0);
+            this.groupBoxTotalVendas.Name = "groupBoxTotalVendas";
+            this.groupBoxTotalVendas.Size = new System.Drawing.Size(171, 123);
+            this.groupBoxTotalVendas.TabIndex = 7;
+            this.groupBoxTotalVendas.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(7, 36);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(158, 24);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Total em Vendas:";
+            // 
+            // labelTotalVendas
+            // 
+            this.labelTotalVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalVendas.ForeColor = System.Drawing.Color.Chocolate;
+            this.labelTotalVendas.Location = new System.Drawing.Point(6, 74);
+            this.labelTotalVendas.Name = "labelTotalVendas";
+            this.labelTotalVendas.Size = new System.Drawing.Size(159, 25);
+            this.labelTotalVendas.TabIndex = 4;
+            this.labelTotalVendas.Text = "00 000 000,00€";
+            this.labelTotalVendas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelNifClienteSelecionadoVendas
             // 
@@ -2224,6 +2274,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKMsOficina)).EndInit();
             this.groupBoxFichaClienteOficina.ResumeLayout(false);
             this.groupBoxFichaClienteOficina.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBoxClientesOficina.ResumeLayout(false);
             this.groupBoxClientesOficina.PerformLayout();
             this.tabPageVendas.ResumeLayout(false);
@@ -2238,6 +2290,8 @@
             this.groupBoxListaClientesVendas.PerformLayout();
             this.groupBoxFichaClienteVendas.ResumeLayout(false);
             this.groupBoxFichaClienteVendas.PerformLayout();
+            this.groupBoxTotalVendas.ResumeLayout(false);
+            this.groupBoxTotalVendas.PerformLayout();
             this.tabPageAluguer.ResumeLayout(false);
             this.tabPageAluguer.PerformLayout();
             this.groupBoxAluguerCarro.ResumeLayout(false);
@@ -2419,6 +2473,10 @@
         private System.Windows.Forms.Label labelNomeVendas;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxChassiOficina;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label labelTotalVendas;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxTotalVendas;
     }
 }
 

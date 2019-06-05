@@ -43,15 +43,21 @@ namespace RealStand
             groupBoxVendasCliente.Enabled = false;
             groupBoxDetalhesVendaECarroVendas.Enabled = false;
 
+
+            labelTotalVendas.Text = "000,00€";
         }
 
         private void listBoxClientesVendas_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesVendas.SelectedItem;
+
             if (selectedCliente == null)
             {
                 return;
             }
+
+            labelTotalVendas.Text = selectedCliente.GetTotalVendas();
+
 
             listBoxVendasDoCliente.DataSource = selectedCliente.Venda.ToList();
             listBoxVendasDoCliente.SelectedIndex = -1;
@@ -153,6 +159,7 @@ namespace RealStand
                 groupBoxDetalhesVendaECarroVendas.Enabled = false;
                 buttonAnularVenda.Enabled = false;
                 buttonEditarVenda.Enabled = false;
+                labelTotalVendas.Text = selectedCliente.GetTotalVendas();
             }
             else if (!Carro.VerificaNumeroChassis(numeroChassis))
             {
@@ -196,7 +203,10 @@ namespace RealStand
             buttonAnularVenda.Enabled = false;
             CleanInputDetalhesVenda();
             listBoxVendasDoCliente.SelectedIndex = -1;
-            buttonEditarVenda.Enabled = false;      
+            buttonEditarVenda.Enabled = false;
+
+
+            labelTotalVendas.Text = selectedCliente.GetTotalVendas();
         }
     }
 }
