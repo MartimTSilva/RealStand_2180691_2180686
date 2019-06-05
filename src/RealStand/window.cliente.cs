@@ -70,7 +70,7 @@ namespace RealStand
             if (Cliente.CheckName(nomeTextBox.Text) &&
                 !Cliente.CheckDuplicateNIF(standContainer, nIFMaskedTextBox.Text) &&
                 Cliente.CheckMorada(moradaTextBox.Text) &&
-                Cliente.CheckDuplicatePhoneNumber(standContainer, contactoMaskedTextBox.Text))
+                !Cliente.CheckDuplicatePhoneNumber(standContainer, contactoMaskedTextBox.Text))
             {
                 if (newclient)
                 {
