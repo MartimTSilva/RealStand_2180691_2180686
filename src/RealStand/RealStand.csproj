@@ -62,6 +62,7 @@
     <Compile Include="Carro.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
+    <Compile Include="CarroAluguer.created.cs" />
     <Compile Include="CarroAluguer.cs">
       <DependentUpon>Stand.tt</DependentUpon>
     </Compile>
@@ -85,6 +86,9 @@
     </Compile>
     <Compile Include="Servico.created.cs" />
     <Compile Include="Venda.created.cs" />
+    <Compile Include="window.aluguer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="window.cliente.cs">
       <SubType>Form</SubType>
     </Compile>
