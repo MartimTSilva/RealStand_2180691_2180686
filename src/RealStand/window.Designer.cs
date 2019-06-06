@@ -1696,6 +1696,7 @@
             this.buttonEditarAluguer.TabIndex = 33;
             this.buttonEditarAluguer.Text = "Editar Aluguer";
             this.buttonEditarAluguer.UseVisualStyleBackColor = true;
+            this.buttonEditarAluguer.Click += new System.EventHandler(this.buttonEditarAluguer_Click);
             // 
             // groupBoxAluguerCarro
             // 
@@ -1826,6 +1827,7 @@
             this.listBoxAluguer.ScrollAlwaysVisible = true;
             this.listBoxAluguer.Size = new System.Drawing.Size(228, 173);
             this.listBoxAluguer.TabIndex = 0;
+            this.listBoxAluguer.Click += new System.EventHandler(this.listBoxAluguer_Click);
             // 
             // groupBoxCarrosAluguer
             // 

@@ -92,7 +92,11 @@ namespace RealStand
             }
             else
             {
-                // TODO
+                Aluguer selectedAluguer = (Aluguer)listBoxAluguer.SelectedItem;
+                selectedAluguer.DataInicio = dateTimePickerDataInicioAluguer.Value;
+                selectedAluguer.DataFim = dateTimePickerDataFimAluguer.Value;
+                selectedAluguer.Kms = long.Parse(textBoxQuilometragemAluguer.Text);
+                selectedAluguer.Valor = double.Parse(maskedTextBoxValorAluguer.Text.Replace('€', ' '));
             }
             standContainer.SaveChanges();
             listBoxAluguer.DataSource = standContainer.Aluguers.ToList();
@@ -125,6 +129,30 @@ namespace RealStand
         {
             groupBoxAdicionarCarroAluguer.Enabled = true;
             buttonGuardarCarroAluguer.Visible = true;
+        }
+
+        private void listBoxAluguer_Click(object sender, EventArgs e)
+        {
+            Aluguer selectedAluguer = (Aluguer)listBoxAluguer.SelectedItem;
+            if (selectedAluguer == null)
+            {
+                return;
+            }
+
+            dateTimePickerDataInicioAluguer.Value = selectedAluguer.DataInicio;
+            dateTimePickerDataFimAluguer.Value = selectedAluguer.DataFim;
+            textBoxQuilometragemAluguer.Text = selectedAluguer.Kms.ToString();
+            maskedTextBoxValorAluguer.Text = selectedAluguer.Valor.ToString();
+
+            // Ativa os botoes de editar e apagar
+            buttonEditarAluguer.Enabled = true;
+            buttonEliminarAluguer.Enabled = true;
+        }
+
+        private void buttonEditarAluguer_Click(object sender, EventArgs e)
+        {
+            groupBoxAluguerCarro.Enabled = true;
+            buttonGuardarAluguer.Visible = true;
         }
     }
 }
