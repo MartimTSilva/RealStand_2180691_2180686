@@ -19,7 +19,17 @@ namespace RealStand
             maskedTextBoxValorAluguer.ResetText();
         }
 
-        private void buttonCriarAluguer_Click(object sender, EventArgs e)
+        private void ClearVehicleDetails()
+        {
+            numeroChassisMaskedTextBox.ResetText();
+            textBoxMarcaAluguer.ResetText();
+            textBoxModeloAluguer.ResetText();
+            comboBoxCombustivelAluguer.ResetText();
+            estadoTextBox.ResetText();
+            maskedTextBoxMatriculaAluguer.ResetText();
+        }
+
+        private void buttonCriarCarroAluguer_Click(object sender, EventArgs e)
         {
             newCarroAluguer = true;
             groupBoxAdicionarCarroAluguer.Enabled = true;
@@ -42,7 +52,13 @@ namespace RealStand
             }
             else
             {
-
+                CarroAluguer selectedCarroAluguer = (CarroAluguer)listBoxCarrosAluguer.SelectedItem;
+                selectedCarroAluguer.NumeroChassis = numeroChassisMaskedTextBox.Text;
+                selectedCarroAluguer.Marca = textBoxMarcaAluguer.Text;
+                selectedCarroAluguer.Modelo = textBoxModeloAluguer.Text;
+                selectedCarroAluguer.Combustivel = comboBoxCombustivelAluguer.Text;
+                selectedCarroAluguer.Estado = estadoTextBox.Text;
+                selectedCarroAluguer.Matricula = maskedTextBoxMatriculaAluguer.Text;
             }
             standContainer.SaveChanges();
             listBoxCarrosAluguer.DataSource = standContainer.Carros.OfType<CarroAluguer>().ToList();
@@ -51,7 +67,7 @@ namespace RealStand
             buttonGuardarCarroAluguer.Visible = false;
         }
 
-        private void buttonCriarAlguer_Click(object sender, EventArgs e)
+        private void buttonCriarAluguer_Click(object sender, EventArgs e)
         {
             newAluguer = true;
             groupBoxAluguerCarro.Enabled = true;
@@ -84,6 +100,31 @@ namespace RealStand
             groupBoxAluguerCarro.Enabled = false;
             buttonGuardarAluguer.Visible = false;
             ClearAluguerFields();
+        }
+
+        private void listBoxCarrosAluguer_Click(object sender, EventArgs e)
+        {
+            CarroAluguer selectedCarroAluguer = (CarroAluguer)listBoxCarrosAluguer.SelectedItem;
+            if (selectedCarroAluguer == null)
+            {
+                return;
+            }
+            numeroChassisMaskedTextBox.Text = selectedCarroAluguer.NumeroChassis;
+            textBoxMarcaAluguer.Text = selectedCarroAluguer.Marca;
+            textBoxModeloAluguer.Text = selectedCarroAluguer.Modelo;
+            comboBoxCombustivelAluguer.Text = selectedCarroAluguer.Combustivel;
+            estadoTextBox.Text = selectedCarroAluguer.Estado;
+            maskedTextBoxMatriculaAluguer.Text = selectedCarroAluguer.Matricula;
+
+            // Ativa os botoes de editar e apagar
+            buttonEditarCarroAluguer.Enabled = true;
+            buttonEliminarCarroAluguer.Enabled = true;
+        }
+
+        private void buttonEditarCarroAluguer_Click(object sender, EventArgs e)
+        {
+            groupBoxAdicionarCarroAluguer.Enabled = true;
+            buttonGuardarCarroAluguer.Visible = true;
         }
     }
 }
