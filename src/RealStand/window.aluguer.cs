@@ -32,7 +32,7 @@ namespace RealStand
         private void buttonCriarCarroAluguer_Click(object sender, EventArgs e)
         {
             newCarroAluguer = true;
-            groupBoxAdicionarCarroAluguer.Enabled = true;
+            groupBoxCarroAluguer.Enabled = true;
             buttonGuardarCarroAluguer.Visible = true;
         }
 
@@ -63,14 +63,14 @@ namespace RealStand
             standContainer.SaveChanges();
             listBoxCarrosAluguer.DataSource = standContainer.Carros.OfType<CarroAluguer>().ToList();
             newCarroAluguer = false;
-            groupBoxAdicionarCarroAluguer.Enabled = false;
+            groupBoxCarroAluguer.Enabled = false;
             buttonGuardarCarroAluguer.Visible = false;
         }
 
         private void buttonCriarAluguer_Click(object sender, EventArgs e)
         {
             newAluguer = true;
-            groupBoxAluguerCarro.Enabled = true;
+            groupBoxAluguer.Enabled = true;
             buttonGuardarAluguer.Visible = true;
         }
 
@@ -101,7 +101,7 @@ namespace RealStand
             standContainer.SaveChanges();
             listBoxAluguer.DataSource = standContainer.Aluguers.ToList();
             newAluguer = false;
-            groupBoxAluguerCarro.Enabled = false;
+            groupBoxAluguer.Enabled = false;
             buttonGuardarAluguer.Visible = false;
             ClearAluguerFields();
         }
@@ -127,7 +127,7 @@ namespace RealStand
 
         private void buttonEditarCarroAluguer_Click(object sender, EventArgs e)
         {
-            groupBoxAdicionarCarroAluguer.Enabled = true;
+            groupBoxCarroAluguer.Enabled = true;
             buttonGuardarCarroAluguer.Visible = true;
         }
 
@@ -151,7 +151,7 @@ namespace RealStand
 
         private void buttonEditarAluguer_Click(object sender, EventArgs e)
         {
-            groupBoxAluguerCarro.Enabled = true;
+            groupBoxAluguer.Enabled = true;
             buttonGuardarAluguer.Visible = true;
         }
 
@@ -164,14 +164,34 @@ namespace RealStand
             listBoxCarrosAluguer.SelectedIndex = -1;
 
             // Desativa os botoes de editar e eliminar
+            buttonEditarCarroAluguer.Enabled = false;
+            buttonEliminarCarroAluguer.Enabled = false;
+
+            // Desativa a edicao
+            groupBoxCarroAluguer.Enabled = false;
+            buttonGuardarCarroAluguer.Visible = false;
+
+            ClearVehicleDetails();
+        }
+
+        private void buttonEliminarAluguer_Click(object sender, EventArgs e)
+        {
+            Aluguer selectedAluguer = (Aluguer)listBoxAluguer.SelectedItem;
+            standContainer.Aluguers.Remove(selectedAluguer);
+            standContainer.SaveChanges();
+
+            listBoxAluguer.DataSource = standContainer.Aluguers.ToList();
+            listBoxAluguer.SelectedIndex = -1;
+
+            // Desativa os botoes de editar e eliminar
             buttonEditarAluguer.Enabled = false;
             buttonEliminarAluguer.Enabled = false;
 
             // Desativa a edicao
-            groupBoxAluguerCarro.Enabled = false;
+            groupBoxAluguer.Enabled = false;
             buttonGuardarAluguer.Visible = false;
 
-            ClearVehicleDetails();
+            ClearAluguerFields();
         }
     }
 }
