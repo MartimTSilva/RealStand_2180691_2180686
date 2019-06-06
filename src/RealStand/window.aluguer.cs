@@ -154,5 +154,24 @@ namespace RealStand
             groupBoxAluguerCarro.Enabled = true;
             buttonGuardarAluguer.Visible = true;
         }
+
+        private void buttonEliminarCarroAluguer_Click(object sender, EventArgs e)
+        {
+            CarroAluguer selectedCarroAluguer = (CarroAluguer)listBoxCarrosAluguer.SelectedItem;
+            standContainer.Carros.Remove(selectedCarroAluguer);
+            standContainer.SaveChanges();
+            listBoxCarrosAluguer.DataSource = standContainer.Carros.OfType<CarroAluguer>().ToList();
+            listBoxCarrosAluguer.SelectedIndex = -1;
+
+            // Desativa os botoes de editar e eliminar
+            buttonEditarAluguer.Enabled = false;
+            buttonEliminarAluguer.Enabled = false;
+
+            // Desativa a edicao
+            groupBoxAluguerCarro.Enabled = false;
+            buttonGuardarAluguer.Visible = false;
+
+            ClearVehicleDetails();
+        }
     }
 }

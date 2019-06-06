@@ -1867,6 +1867,7 @@
             this.buttonEliminarCarroAluguer.TabIndex = 31;
             this.buttonEliminarCarroAluguer.Text = "Eliminar Carro Aluguer";
             this.buttonEliminarCarroAluguer.UseVisualStyleBackColor = true;
+            this.buttonEliminarCarroAluguer.Click += new System.EventHandler(this.buttonEliminarCarroAluguer_Click);
             // 
             // groupBoxAdicionarCarroAluguer
             // 
