@@ -195,7 +195,6 @@ namespace RealStand
         {
             Cliente selectedCliente = (Cliente)listBoxClientesVendas.SelectedItem;
             Venda selectedVenda = (Venda)listBoxVendasDoCliente.SelectedItem;
-
             standContainer.Carros.Remove(selectedVenda.CarroVenda);
             standContainer.Vendas.Remove(selectedVenda);
             standContainer.SaveChanges();
@@ -204,9 +203,27 @@ namespace RealStand
             CleanInputDetalhesVenda();
             listBoxVendasDoCliente.SelectedIndex = -1;
             buttonEditarVenda.Enabled = false;
-
-
             labelTotalVendas.Text = selectedCliente.GetTotalVendas();
+        }
+
+        private void buttonFiltarVendas_Click(object sender, EventArgs e)
+        {
+            List<Cliente> clientes = new List<Cliente>();
+            switch (comboBoxCampoVendas.SelectedIndex)
+            {
+                case -1:
+                    MessageBox.Show("Têm de escolher um campo de procura!");
+                    break;
+                case 0:
+                    clientes = Cliente.SearchClientByName(standContainer, textBoxProcurarPorVendas.Text);
+                    break;
+                case 1:
+                    clientes = Cliente.SearchClientByNIF(standContainer, textBoxProcurarPorVendas.Text);
+                    break;
+                default:
+                    break;
+            }
+            listBoxClientesVendas.DataSource = clientes;
         }
     }
 }
