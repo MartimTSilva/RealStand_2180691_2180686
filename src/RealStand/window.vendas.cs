@@ -64,6 +64,7 @@ namespace RealStand
             groupBoxVendasCliente.Enabled = true;
             buttonEditarVenda.Enabled = false;
             buttonAnularVenda.Enabled = false;
+            CleanInputDetalhesVenda();
 
             //Preenche a ficha do cliente
             labelNomeClienteSelecionadoVendas.Text = selectedCliente.Nome;
@@ -224,6 +225,10 @@ namespace RealStand
                     break;
             }
             listBoxClientesVendas.DataSource = clientes;
+            //Limpa
+            listBoxClientesVendas.SelectedIndex = -1;
+            CleanInputDetalhesVenda();
+            listBoxVendasDoCliente.DataSource = null;
         }
     }
 }

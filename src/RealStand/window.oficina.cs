@@ -64,6 +64,8 @@ namespace RealStand
             dateTimePickerDataSaidaOficina.Text = null;
             textBoxDescricaoParcelaOficina.Text = "";
             maskedTextBoxValorParcelaOficina.Text = "";
+            textBoxProcurarPorOficina.Text = "";
+            comboBoxCampoOficina.SelectedItem = null;
 
             //Desseleciona todos os itens nas listboxes
             listBoxClientesOficina.SelectedIndex = -1;
@@ -538,6 +540,13 @@ namespace RealStand
                     break;
             }
             listBoxClientesOficina.DataSource = clientes;
+            //Limpa
+            listBoxClientesOficina.SelectedIndex = -1;
+            CleanInputCarroOficina();
+            CleanInputDetalhesVenda();
+            CleanInputServicosOficina();
+            listBoxServicosOficina.DataSource = null;
+            listBoxParcelasOficina.DataSource = null;
         }
 
         private void buttonEmitirFaturaOficina_Click(object sender, EventArgs e)
