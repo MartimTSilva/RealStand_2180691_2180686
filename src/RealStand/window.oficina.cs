@@ -507,8 +507,7 @@ namespace RealStand
             buttonRemoverServicoOficina.Enabled = false;
             buttonGuardarServicoOficina.Enabled = true;
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonFiltrarOficina_Click(object sender, EventArgs e)
         {
             List<Cliente> clientes = new List<Cliente>();
             switch (comboBoxCampoOficina.SelectedIndex)

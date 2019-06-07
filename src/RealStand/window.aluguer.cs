@@ -76,9 +76,9 @@ namespace RealStand
 
         private void buttonGuardarAluguer_Click(object sender, EventArgs e)
         {
+            Cliente selectedcliente = (Cliente)listBoxClientesAluguer.SelectedItem;
             if (newAluguer)
             {
-                Cliente selectedcliente = (Cliente)listBoxClientesAluguer.SelectedItem;
                 CarroAluguer selectedCarroAluguer = (CarroAluguer)listBoxCarrosAluguer.SelectedItem;
                 Aluguer newAluguer = new Aluguer(
                     DateTime.Parse(dateTimePickerDataInicioAluguer.Text),
@@ -100,6 +100,7 @@ namespace RealStand
             }
             standContainer.SaveChanges();
             listBoxAluguer.DataSource = standContainer.Aluguers.ToList();
+            labelTotalGastoAluguer.Text = selectedcliente.GetTotalAluguer();
             newAluguer = false;
             groupBoxAluguer.Enabled = false;
             buttonGuardarAluguer.Visible = false;
@@ -192,6 +193,15 @@ namespace RealStand
             buttonGuardarAluguer.Visible = false;
 
             ClearAluguerFields();
+
+            Cliente selectedcliente = (Cliente)listBoxClientesAluguer.SelectedItem;
+            labelTotalGastoAluguer.Text = selectedcliente.GetTotalAluguer();
+        }
+
+        private void listBoxClientesAluguer_Click(object sender, EventArgs e)
+        {
+            Cliente selectedcliente = (Cliente)listBoxClientesAluguer.SelectedItem;
+            labelTotalGastoAluguer.Text = selectedcliente.GetTotalAluguer();
         }
     }
 }

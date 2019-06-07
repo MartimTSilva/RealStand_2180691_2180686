@@ -111,6 +111,7 @@
             this.labelNifOficina = new System.Windows.Forms.Label();
             this.labelNomeOficina = new System.Windows.Forms.Label();
             this.groupBoxClientesOficina = new System.Windows.Forms.GroupBox();
+            this.buttonFiltrarOficina = new System.Windows.Forms.Button();
             this.labelProcurarPorOficina = new System.Windows.Forms.Label();
             this.labelTextoOficina = new System.Windows.Forms.Label();
             this.comboBoxCampoOficina = new System.Windows.Forms.ComboBox();
@@ -204,6 +205,9 @@
             this.listBoxClientesAluguer = new System.Windows.Forms.ListBox();
             this.labelTituloAluguer = new System.Windows.Forms.Label();
             this.groupBoxFichaClienteVenda = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.labelTotalGastoAluguer = new System.Windows.Forms.Label();
             this.labelNifClienteSelecionadoAluguer = new System.Windows.Forms.Label();
             this.labelClienteSelecionadoAluguer = new System.Windows.Forms.Label();
             this.labelNifAluguer = new System.Windows.Forms.Label();
@@ -213,7 +217,6 @@
             this.tableAdapterManager = new RealStand.realstandDataSetTableAdapters.TableAdapterManager();
             this.carros_CarroAluguerTableAdapter = new RealStand.realstandDataSetTableAdapters.Carros_CarroAluguerTableAdapter();
             this.carrosTableAdapter = new RealStand.realstandDataSetTableAdapters.CarrosTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -255,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.carros_CarroAluguerBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBoxFichaClienteVenda.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomeLabel
@@ -1230,7 +1234,7 @@
             // 
             // groupBoxClientesOficina
             // 
-            this.groupBoxClientesOficina.Controls.Add(this.button1);
+            this.groupBoxClientesOficina.Controls.Add(this.buttonFiltrarOficina);
             this.groupBoxClientesOficina.Controls.Add(this.labelProcurarPorOficina);
             this.groupBoxClientesOficina.Controls.Add(this.labelTextoOficina);
             this.groupBoxClientesOficina.Controls.Add(this.comboBoxCampoOficina);
@@ -1244,6 +1248,20 @@
             this.groupBoxClientesOficina.TabIndex = 1;
             this.groupBoxClientesOficina.TabStop = false;
             this.groupBoxClientesOficina.Text = "Lista de Clientes";
+            // 
+            // buttonFiltrarOficina
+            // 
+            this.buttonFiltrarOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonFiltrarOficina.Image")));
+            this.buttonFiltrarOficina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFiltrarOficina.Location = new System.Drawing.Point(191, 46);
+            this.buttonFiltrarOficina.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFiltrarOficina.Name = "buttonFiltrarOficina";
+            this.buttonFiltrarOficina.Size = new System.Drawing.Size(71, 28);
+            this.buttonFiltrarOficina.TabIndex = 6;
+            this.buttonFiltrarOficina.Text = "Filtrar";
+            this.buttonFiltrarOficina.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonFiltrarOficina.UseVisualStyleBackColor = true;
+            this.buttonFiltrarOficina.Click += new System.EventHandler(this.buttonFiltrarOficina_Click);
             // 
             // labelProcurarPorOficina
             // 
@@ -1825,11 +1843,11 @@
             this.groupBox3.Controls.Add(this.buttonEliminarAluguer);
             this.groupBox3.Controls.Add(this.buttonCriarAlguer);
             this.groupBox3.Controls.Add(this.listBoxAluguer);
-            this.groupBox3.Location = new System.Drawing.Point(877, 144);
+            this.groupBox3.Location = new System.Drawing.Point(877, 137);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(323, 558);
+            this.groupBox3.Size = new System.Drawing.Size(323, 566);
             this.groupBox3.TabIndex = 34;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Aluguer";
@@ -1864,7 +1882,7 @@
             this.groupBoxAluguer.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxAluguer.Name = "groupBoxAluguer";
             this.groupBoxAluguer.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxAluguer.Size = new System.Drawing.Size(304, 198);
+            this.groupBoxAluguer.Size = new System.Drawing.Size(304, 206);
             this.groupBoxAluguer.TabIndex = 15;
             this.groupBoxAluguer.TabStop = false;
             this.groupBoxAluguer.Text = "Detalhes Aluguer";
@@ -1873,7 +1891,7 @@
             // 
             this.buttonGuardarAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardarAluguer.Image")));
             this.buttonGuardarAluguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGuardarAluguer.Location = new System.Drawing.Point(8, 160);
+            this.buttonGuardarAluguer.Location = new System.Drawing.Point(8, 169);
             this.buttonGuardarAluguer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGuardarAluguer.Name = "buttonGuardarAluguer";
             this.buttonGuardarAluguer.Size = new System.Drawing.Size(288, 32);
@@ -2303,6 +2321,7 @@
             this.listBoxClientesAluguer.ScrollAlwaysVisible = true;
             this.listBoxClientesAluguer.Size = new System.Drawing.Size(415, 548);
             this.listBoxClientesAluguer.TabIndex = 0;
+            this.listBoxClientesAluguer.Click += new System.EventHandler(this.listBoxClientesAluguer_Click);
             // 
             // labelTituloAluguer
             // 
@@ -2318,6 +2337,7 @@
             // 
             // groupBoxFichaClienteVenda
             // 
+            this.groupBoxFichaClienteVenda.Controls.Add(this.groupBox4);
             this.groupBoxFichaClienteVenda.Controls.Add(this.labelNifClienteSelecionadoAluguer);
             this.groupBoxFichaClienteVenda.Controls.Add(this.labelClienteSelecionadoAluguer);
             this.groupBoxFichaClienteVenda.Controls.Add(this.labelNifAluguer);
@@ -2330,6 +2350,42 @@
             this.groupBoxFichaClienteVenda.TabIndex = 3;
             this.groupBoxFichaClienteVenda.TabStop = false;
             this.groupBoxFichaClienteVenda.Text = "Ficha do Cliente";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.labelTotalGastoAluguer);
+            this.groupBox4.Location = new System.Drawing.Point(576, 0);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Size = new System.Drawing.Size(171, 123);
+            this.groupBox4.TabIndex = 9;
+            this.groupBox4.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(57, 33);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 24);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Total gasto:";
+            // 
+            // labelTotalGastoAluguer
+            // 
+            this.labelTotalGastoAluguer.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelTotalGastoAluguer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.labelTotalGastoAluguer.ForeColor = System.Drawing.Color.Brown;
+            this.labelTotalGastoAluguer.Location = new System.Drawing.Point(11, 74);
+            this.labelTotalGastoAluguer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotalGastoAluguer.Name = "labelTotalGastoAluguer";
+            this.labelTotalGastoAluguer.Size = new System.Drawing.Size(155, 25);
+            this.labelTotalGastoAluguer.TabIndex = 5;
+            this.labelTotalGastoAluguer.Text = "000,00€";
+            this.labelTotalGastoAluguer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelNifClienteSelecionadoAluguer
             // 
@@ -2411,20 +2467,6 @@
             // 
             this.carrosTableAdapter.ClearBeforeFill = true;
             // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(191, 46);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 28);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Filtrar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2495,6 +2537,8 @@
             this.groupBox2.PerformLayout();
             this.groupBoxFichaClienteVenda.ResumeLayout(false);
             this.groupBoxFichaClienteVenda.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2680,7 +2724,10 @@
         private System.Windows.Forms.BindingSource carrosBindingSource;
         private realstandDataSetTableAdapters.CarrosTableAdapter carrosTableAdapter;
         private System.Windows.Forms.MaskedTextBox numeroChassisMaskedTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonFiltrarOficina;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelTotalGastoAluguer;
     }
 }
 
