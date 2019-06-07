@@ -68,18 +68,24 @@ namespace RealStand
         private void buttonGravarCliente_Click(object sender, EventArgs e)
         {
             if (Cliente.CheckName(nomeTextBox.Text) &&
-                !Cliente.CheckDuplicateNIF(standContainer, nIFMaskedTextBox.Text) &&
-                Cliente.CheckMorada(moradaTextBox.Text) &&
-                !Cliente.CheckDuplicatePhoneNumber(standContainer, contactoMaskedTextBox.Text))
+                Cliente.CheckMorada(moradaTextBox.Text))
             {
                 if (newclient)
                 {
-                    Cliente novoCliente = new Cliente(
-                        nomeTextBox.Text,
-                        nIFMaskedTextBox.Text,
-                        moradaTextBox.Text,
-                        contactoMaskedTextBox.Text);
-                    standContainer.Clientes.Add(novoCliente);
+                    if (!Cliente.CheckDuplicateNIF(standContainer, nIFMaskedTextBox.Text) &&
+                        !Cliente.CheckDuplicatePhoneNumber(standContainer, contactoMaskedTextBox.Text))
+                    {
+                        Cliente novoCliente = new Cliente(
+                            nomeTextBox.Text,
+                            nIFMaskedTextBox.Text,
+                            moradaTextBox.Text,
+                            contactoMaskedTextBox.Text);
+                        standContainer.Clientes.Add(novoCliente);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Já existe um cliente com o mesmo NIF ou o NIF está incorreto!");
+                    }
                 }
                 else
                 {
@@ -94,10 +100,6 @@ namespace RealStand
 
                 DisableDataInsertion();
                 newclient = false;
-            }
-            else if (Cliente.CheckDuplicateNIF(standContainer, nIFMaskedTextBox.Text))
-            {
-                MessageBox.Show("Já existe um cliente com o mesmo NIF ou o NIF está incorreto!");
             }
             else
             {
