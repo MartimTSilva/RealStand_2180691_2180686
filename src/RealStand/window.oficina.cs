@@ -507,6 +507,7 @@ namespace RealStand
             buttonRemoverServicoOficina.Enabled = false;
             buttonGuardarServicoOficina.Enabled = true;
         }
+
         private void buttonFiltrarOficina_Click(object sender, EventArgs e)
         {
             List<Cliente> clientes = new List<Cliente>();

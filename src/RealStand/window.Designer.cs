@@ -2261,14 +2261,15 @@
             // 
             this.buttonAluguerFiltrar.Image = ((System.Drawing.Image)(resources.GetObject("buttonAluguerFiltrar.Image")));
             this.buttonAluguerFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAluguerFiltrar.Location = new System.Drawing.Point(328, 47);
+            this.buttonAluguerFiltrar.Location = new System.Drawing.Point(341, 46);
             this.buttonAluguerFiltrar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAluguerFiltrar.Name = "buttonAluguerFiltrar";
-            this.buttonAluguerFiltrar.Size = new System.Drawing.Size(87, 28);
+            this.buttonAluguerFiltrar.Size = new System.Drawing.Size(83, 28);
             this.buttonAluguerFiltrar.TabIndex = 10;
             this.buttonAluguerFiltrar.Text = "Filtrar";
             this.buttonAluguerFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAluguerFiltrar.UseVisualStyleBackColor = true;
+            this.buttonAluguerFiltrar.Click += new System.EventHandler(this.buttonAluguerFiltrar_Click);
             // 
             // label4
             // 
@@ -2283,7 +2284,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(216, 28);
+            this.label6.Location = new System.Drawing.Point(231, 28);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 17);
@@ -2297,7 +2298,7 @@
             this.comboBoxAluguerFiltrarPorCampo.Items.AddRange(new object[] {
             "Nome",
             "NIF"});
-            this.comboBoxAluguerFiltrarPorCampo.Location = new System.Drawing.Point(220, 48);
+            this.comboBoxAluguerFiltrarPorCampo.Location = new System.Drawing.Point(234, 49);
             this.comboBoxAluguerFiltrarPorCampo.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAluguerFiltrarPorCampo.Name = "comboBoxAluguerFiltrarPorCampo";
             this.comboBoxAluguerFiltrarPorCampo.Size = new System.Drawing.Size(99, 24);
@@ -2308,7 +2309,7 @@
             this.textBoxAluguerFiltrarPor.Location = new System.Drawing.Point(9, 49);
             this.textBoxAluguerFiltrarPor.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAluguerFiltrarPor.Name = "textBoxAluguerFiltrarPor";
-            this.textBoxAluguerFiltrarPor.Size = new System.Drawing.Size(201, 22);
+            this.textBoxAluguerFiltrarPor.Size = new System.Drawing.Size(217, 22);
             this.textBoxAluguerFiltrarPor.TabIndex = 6;
             // 
             // listBoxClientesAluguer
