@@ -83,7 +83,10 @@ namespace RealStand
                     break;
                 case 4:
                     listBoxClientesAluguer.DataSource = standContainer.Clientes.ToList();
-                    listBoxCarrosAluguer.DataSource = standContainer.Carros.OfType<CarroAluguer>().ToList();
+                    //listBoxCarrosAluguer.DataSource = standContainer.Carros.OfType<CarroAluguer>().ToList();
+
+                    listBoxCarrosAluguer.DataSource = standContainer.Carros.OfType<CarroAluguer>().Where(c => c.Aluguer.Last().DataFim > DateTime.Now);
+
                     listBoxAluguer.DataSource = standContainer.Aluguers.ToList();
                     listBoxClientesAluguer.SelectedIndex = -1;
                     listBoxCarrosAluguer.SelectedIndex = -1;
