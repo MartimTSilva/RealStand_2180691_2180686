@@ -507,5 +507,25 @@ namespace RealStand
             buttonRemoverServicoOficina.Enabled = false;
             buttonGuardarServicoOficina.Enabled = true;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<Cliente> clientes = new List<Cliente>();
+            switch (comboBoxCampoOficina.SelectedIndex)
+            {
+                case -1:
+                    MessageBox.Show("Têm de escolher um campo de procura!");
+                    break;
+                case 0:
+                    clientes = Cliente.SearchClientByName(standContainer, textBoxProcurarPorOficina.Text);
+                    break;
+                case 1:
+                    clientes = Cliente.SearchClientByNIF(standContainer, textBoxProcurarPorOficina.Text);
+                    break;
+                default:
+                    break;
+            }
+            listBoxClientesOficina.DataSource = clientes;
+        }
     }
 }
