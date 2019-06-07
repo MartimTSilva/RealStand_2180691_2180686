@@ -42,6 +42,18 @@ namespace RealStand
             return total;
         }
 
+        public string GetTotalAluguer()
+        {
+            float totalAluguer = 0;
+            string total;
+            foreach (Aluguer aluger in this.Aluguer.ToList())
+            {
+                totalAluguer += (float)aluger.Valor;
+            }
+            total = String.Format("{0:n}€", totalAluguer);
+            return total;
+        }
+
         public override string ToString()
         {
             return Nome + " (" + NIF + ")";
