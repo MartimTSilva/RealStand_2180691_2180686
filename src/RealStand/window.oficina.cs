@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -85,6 +86,7 @@ namespace RealStand
             buttonRemoverCarroOficina.Enabled = false;
             buttonRemoverServicoOficina.Enabled = false;
             buttonRemoverParcelaOficina.Enabled = false;
+            buttonEmitirFaturaOficina.Enabled = false;
             buttonEditarCarroOficina.Enabled = false;
             buttonGuardarCarroOficina.Enabled = false;
         }
@@ -120,6 +122,12 @@ namespace RealStand
             labelClienteSelecionadoOficina.Text = selectedCliente.Nome;
             labelNifClienteSelecionadoOficina.Text = selectedCliente.NIF;
             labelTotalClienteOficina.Text = selectedCliente.GetTotal();
+
+            //Bloqueia algumas funcionalidades
+            groupBoxServicosOficina.Enabled = false;
+            groupBoxParcelasOficina.Enabled = false;
+            buttonEditarCarroOficina.Enabled = false;
+            buttonRemoverCarroOficina.Enabled = false;
         }
 
         /// <summary>
@@ -149,15 +157,15 @@ namespace RealStand
             try
             {
                 listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
-                groupBoxCriarServicoOficina.Enabled = true;
                 groupBoxServicosOficina.Enabled = true;
                 buttonRemoverServicoOficina.Enabled = false;
+                buttonEmitirFaturaOficina.Enabled = false;
                 buttonRemoverCarroOficina.Enabled = true;
-                buttonRemoverParcelaOficina.Enabled = false;
                 groupBoxCriarCarroOficina.Enabled = false;
                 buttonEditarServicoOficina.Enabled = false;
                 buttonCriarServicoOficina.Enabled = true;
                 groupBoxCriarServicoOficina.Enabled = false;
+                groupBoxParcelasOficina.Enabled = false;
             }
             catch (System.NullReferenceException)
             {
@@ -258,6 +266,7 @@ namespace RealStand
                 groupBoxCriarParcelaOficina.Enabled = true;
                 groupBoxParcelasOficina.Enabled = true;
                 buttonRemoverServicoOficina.Enabled = true;
+                buttonEmitirFaturaOficina.Enabled = true;
                 buttonRemoverParcelaOficina.Enabled = false;
                 buttonEditarServicoOficina.Enabled = true;
             }
@@ -435,6 +444,7 @@ namespace RealStand
                     dateTimePickerDataSaidaOficina.Text = null;
                     comboBoxTipoServicosOficina.SelectedIndex = -1;
                     buttonRemoverServicoOficina.Enabled = false;
+                    buttonEmitirFaturaOficina.Enabled = false;
                     buttonEditarServicoOficina.Enabled = false;
                     listBoxParcelasOficina.DataSource = null;
                     groupBoxCriarParcelaOficina.Enabled = false;
@@ -496,6 +506,7 @@ namespace RealStand
             buttonGuardarServicoOficina.Enabled = true;
             buttonEditarServicoOficina.Enabled = false;
             buttonRemoverServicoOficina.Enabled = false;
+            buttonEmitirFaturaOficina.Enabled = false;
             CleanInputServicosOficina();
         }
 
@@ -505,6 +516,7 @@ namespace RealStand
             groupBoxCriarServicoOficina.Enabled = true;
             buttonEditarServicoOficina.Enabled = false;
             buttonRemoverServicoOficina.Enabled = false;
+            buttonEmitirFaturaOficina.Enabled = false;
             buttonGuardarServicoOficina.Enabled = true;
         }
 
@@ -526,6 +538,26 @@ namespace RealStand
                     break;
             }
             listBoxClientesOficina.DataSource = clientes;
+        }
+
+        private void buttonEmitirFaturaOficina_Click(object sender, EventArgs e)
+        {
+            Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
+            Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
+            String nomeFicheiro = selectedServico.Tipo + ".txt";
+            using (StreamWriter file = new StreamWriter(nomeFicheiro))
+            {
+                file.WriteLine("\tREALSTAND\n\nNome: " + selectedCliente.Nome + "\n" + "NIF: " + selectedCliente.NIF + "\n" + "Tipo de Serviço: "
+                    + selectedServico.Tipo + "\nEntrada: " + selectedServico.DataEntrega + "\nSaída: " + selectedServico.DataSaida + "\n");
+                foreach (Parcela item in selectedServico.Parcela)
+                {
+                    file.WriteLine("---------------------------------");
+                    file.WriteLine("Descrição: " + item.Descricao);
+                    file.WriteLine("Valor: " + item.Valor + "€");
+                }
+                file.WriteLine("_________________________________");
+                file.WriteLine("TOTAL A PAGAR: " + selectedServico.GetTotal().ToString("0.00") + "€");
+            }
         }
     }
 }

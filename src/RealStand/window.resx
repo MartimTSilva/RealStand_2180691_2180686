@@ -403,6 +403,16 @@
         MgQkSAoGGwACIENAHNLxt/8AKuMqn2UjBLEAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="buttonEmitirFaturaOficina.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAANFJREFUOE/VU0EOgjAQLFdOvoljE9oPyl2eQBTewkG9kAgegGPd2bRqbC1NPLnJ
+        pFl2ZtqSqXC1LEtOqAgrwWwAHHBzK2eDqmkao7U2RVFEAQ640Fg5G6wYnI6tuZyvQUgpeQ6AC40TZ/M8
+        szuI03j3MN6m59wzQFETNQC2rpBk0Pe9odMGf2KSwTAM2HlnZa/6YwNqkMD9LwacQKUUE76hPtS8hgxW
+        iLu2490/gfRh5oIUNQDp/cjoy7LkmUufzUBm5elXCKYPRR9Sn7GfPiHEA6xtppkfRuYTAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
   <data name="buttonRemoverServicoOficina.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
