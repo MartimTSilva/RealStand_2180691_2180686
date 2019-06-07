@@ -217,6 +217,7 @@
             this.tableAdapterManager = new RealStand.realstandDataSetTableAdapters.TableAdapterManager();
             this.carros_CarroAluguerTableAdapter = new RealStand.realstandDataSetTableAdapters.Carros_CarroAluguerTableAdapter();
             this.carrosTableAdapter = new RealStand.realstandDataSetTableAdapters.CarrosTableAdapter();
+            this.buttonFaturaOficina = new System.Windows.Forms.Button();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -750,6 +751,7 @@
             // 
             // groupBoxServicosOficina
             // 
+            this.groupBoxServicosOficina.Controls.Add(this.buttonFaturaOficina);
             this.groupBoxServicosOficina.Controls.Add(this.buttonRemoverServicoOficina);
             this.groupBoxServicosOficina.Controls.Add(this.buttonCriarServicoOficina);
             this.groupBoxServicosOficina.Controls.Add(this.buttonEditarServicoOficina);
@@ -813,7 +815,7 @@
             this.groupBoxCriarServicoOficina.Controls.Add(this.labelTipoServicoOficina);
             this.groupBoxCriarServicoOficina.Controls.Add(this.labelDataEntregaOficina);
             this.groupBoxCriarServicoOficina.Controls.Add(this.comboBoxTipoServicosOficina);
-            this.groupBoxCriarServicoOficina.Location = new System.Drawing.Point(0, 395);
+            this.groupBoxCriarServicoOficina.Location = new System.Drawing.Point(0, 352);
             this.groupBoxCriarServicoOficina.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxCriarServicoOficina.Name = "groupBoxCriarServicoOficina";
             this.groupBoxCriarServicoOficina.Padding = new System.Windows.Forms.Padding(4);
@@ -902,7 +904,7 @@
             this.listBoxServicosOficina.Location = new System.Drawing.Point(12, 127);
             this.listBoxServicosOficina.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxServicosOficina.Name = "listBoxServicosOficina";
-            this.listBoxServicosOficina.Size = new System.Drawing.Size(276, 260);
+            this.listBoxServicosOficina.Size = new System.Drawing.Size(276, 212);
             this.listBoxServicosOficina.TabIndex = 13;
             this.listBoxServicosOficina.Click += new System.EventHandler(this.listBoxServicosOficina_Click);
             // 
@@ -1180,7 +1182,7 @@
             this.labelTotalClienteOficina.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelTotalClienteOficina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.labelTotalClienteOficina.ForeColor = System.Drawing.Color.Brown;
-            this.labelTotalClienteOficina.Location = new System.Drawing.Point(11, 74);
+            this.labelTotalClienteOficina.Location = new System.Drawing.Point(9, 74);
             this.labelTotalClienteOficina.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTotalClienteOficina.Name = "labelTotalClienteOficina";
             this.labelTotalClienteOficina.Size = new System.Drawing.Size(155, 25);
@@ -1285,6 +1287,7 @@
             // 
             // comboBoxCampoOficina
             // 
+            this.comboBoxCampoOficina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCampoOficina.FormattingEnabled = true;
             this.comboBoxCampoOficina.Items.AddRange(new object[] {
             "Nome",
@@ -1381,7 +1384,7 @@
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(96, 39);
             this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.maskedTextBox1.Mask = "00000000000000000";
+            this.maskedTextBox1.Mask = "AAAAAAAAAAAAAAAAA";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(180, 22);
             this.maskedTextBox1.TabIndex = 16;
@@ -2468,6 +2471,18 @@
             // 
             this.carrosTableAdapter.ClearBeforeFill = true;
             // 
+            // buttonFaturaOficina
+            // 
+            this.buttonFaturaOficina.Image = ((System.Drawing.Image)(resources.GetObject("buttonFaturaOficina.Image")));
+            this.buttonFaturaOficina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFaturaOficina.Location = new System.Drawing.Point(8, 524);
+            this.buttonFaturaOficina.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFaturaOficina.Name = "buttonFaturaOficina";
+            this.buttonFaturaOficina.Size = new System.Drawing.Size(280, 28);
+            this.buttonFaturaOficina.TabIndex = 16;
+            this.buttonFaturaOficina.Text = "Fatura do Serviço";
+            this.buttonFaturaOficina.UseVisualStyleBackColor = true;
+            // 
             // window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2729,6 +2744,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labelTotalGastoAluguer;
+        private System.Windows.Forms.Button buttonFaturaOficina;
     }
 }
 
