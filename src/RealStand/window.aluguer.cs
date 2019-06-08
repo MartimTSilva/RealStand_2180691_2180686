@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -223,6 +224,23 @@ namespace RealStand
                     break;
             }
             listBoxClientesAluguer.DataSource = clientes;
+        }
+
+        private void buttonEmitirFaturaAluguer_Click(object sender, EventArgs e)
+        {
+            Cliente selectedCliente = (Cliente)listBoxClientesAluguer.SelectedItem;
+            Aluguer selectedAluguer = (Aluguer)listBoxAluguer.SelectedItem;
+            String nomeFicheiro = "Aluguer - " + selectedCliente.Nome + ".txt";
+            using (StreamWriter file = new StreamWriter(nomeFicheiro))
+            {
+                file.WriteLine("\tREALSTAND\r\n\r\nNome: " + selectedCliente.Nome + "\r\n" + "NIF: " + selectedCliente.NIF 
+                    + "\r\nData de inicio: " + selectedAluguer.DataInicio + "\r\nData de fim: " + selectedAluguer.DataFim + "\r\n");
+                file.WriteLine("---------------------------------");
+                file.WriteLine("Marca: " + selectedAluguer.CarroAluguer.Marca + "\r\nModelo: " + selectedAluguer.CarroAluguer.Modelo
+                   + "\r\nMatrícula: " + selectedAluguer.CarroAluguer.Matricula);
+                file.WriteLine("_________________________________");
+                file.WriteLine("TOTAL A PAGAR: " + selectedAluguer.Valor.ToString("0.00") + "€");
+            }
         }
     }
 }

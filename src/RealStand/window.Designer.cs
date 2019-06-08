@@ -219,6 +219,7 @@
             this.tableAdapterManager = new RealStand.realstandDataSetTableAdapters.TableAdapterManager();
             this.carros_CarroAluguerTableAdapter = new RealStand.realstandDataSetTableAdapters.Carros_CarroAluguerTableAdapter();
             this.carrosTableAdapter = new RealStand.realstandDataSetTableAdapters.CarrosTableAdapter();
+            this.buttonEmitirFaturaAluguer = new System.Windows.Forms.Button();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -1873,6 +1874,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.buttonEmitirFaturaAluguer);
             this.groupBox3.Controls.Add(this.buttonEditarAluguer);
             this.groupBox3.Controls.Add(this.groupBoxAluguer);
             this.groupBox3.Controls.Add(this.buttonEliminarAluguer);
@@ -1913,11 +1915,11 @@
             this.groupBoxAluguer.Controls.Add(this.labelDataFimAluguer);
             this.groupBoxAluguer.Controls.Add(this.labelDataInicioAluguer);
             this.groupBoxAluguer.Enabled = false;
-            this.groupBoxAluguer.Location = new System.Drawing.Point(8, 352);
+            this.groupBoxAluguer.Location = new System.Drawing.Point(8, 368);
             this.groupBoxAluguer.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxAluguer.Name = "groupBoxAluguer";
             this.groupBoxAluguer.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxAluguer.Size = new System.Drawing.Size(304, 206);
+            this.groupBoxAluguer.Size = new System.Drawing.Size(304, 190);
             this.groupBoxAluguer.TabIndex = 15;
             this.groupBoxAluguer.TabStop = false;
             this.groupBoxAluguer.Text = "Detalhes Aluguer";
@@ -1926,7 +1928,7 @@
             // 
             this.buttonGuardarAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardarAluguer.Image")));
             this.buttonGuardarAluguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGuardarAluguer.Location = new System.Drawing.Point(8, 169);
+            this.buttonGuardarAluguer.Location = new System.Drawing.Point(8, 152);
             this.buttonGuardarAluguer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGuardarAluguer.Name = "buttonGuardarAluguer";
             this.buttonGuardarAluguer.Size = new System.Drawing.Size(288, 32);
@@ -2044,7 +2046,7 @@
             this.listBoxAluguer.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxAluguer.Name = "listBoxAluguer";
             this.listBoxAluguer.ScrollAlwaysVisible = true;
-            this.listBoxAluguer.Size = new System.Drawing.Size(303, 212);
+            this.listBoxAluguer.Size = new System.Drawing.Size(303, 180);
             this.listBoxAluguer.TabIndex = 0;
             this.listBoxAluguer.Click += new System.EventHandler(this.listBoxAluguer_Click);
             // 
@@ -2503,6 +2505,21 @@
             // 
             this.carrosTableAdapter.ClearBeforeFill = true;
             // 
+            // buttonEmitirFaturaAluguer
+            // 
+            this.buttonEmitirFaturaAluguer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEmitirFaturaAluguer.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonEmitirFaturaAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonEmitirFaturaAluguer.Image")));
+            this.buttonEmitirFaturaAluguer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEmitirFaturaAluguer.Location = new System.Drawing.Point(8, 327);
+            this.buttonEmitirFaturaAluguer.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonEmitirFaturaAluguer.Name = "buttonEmitirFaturaAluguer";
+            this.buttonEmitirFaturaAluguer.Size = new System.Drawing.Size(304, 37);
+            this.buttonEmitirFaturaAluguer.TabIndex = 34;
+            this.buttonEmitirFaturaAluguer.Text = "Emitir fatura";
+            this.buttonEmitirFaturaAluguer.UseVisualStyleBackColor = true;
+            this.buttonEmitirFaturaAluguer.Click += new System.EventHandler(this.buttonEmitirFaturaAluguer_Click);
+            // 
             // window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2766,6 +2783,7 @@
         private System.Windows.Forms.Label labelTotalGastoAluguer;
         private System.Windows.Forms.Button buttonEmitirFaturaOficina;
         private System.Windows.Forms.Button buttonEmitirFaturaVendas;
+        private System.Windows.Forms.Button buttonEmitirFaturaAluguer;
     }
 }
 
