@@ -556,8 +556,8 @@ namespace RealStand
             String nomeFicheiro = selectedServico.Tipo + ".txt";
             using (StreamWriter file = new StreamWriter(nomeFicheiro))
             {
-                file.WriteLine("\tREALSTAND\n\nNome: " + selectedCliente.Nome + "\n" + "NIF: " + selectedCliente.NIF + "\n" + "Tipo de Serviço: "
-                    + selectedServico.Tipo + "\nEntrada: " + selectedServico.DataEntrega + "\nSaída: " + selectedServico.DataSaida + "\n");
+                file.WriteLine("\tREALSTAND\r\n\r\nNome: " + selectedCliente.Nome + "\r\n" + "NIF: " + selectedCliente.NIF + "\r\n" + "Tipo de Serviço: "
+                    + selectedServico.Tipo + "\r\nEntrada: " + selectedServico.DataEntrega + "\r\nSaída: " + selectedServico.DataSaida + "\r\n");
                 foreach (Parcela item in selectedServico.Parcela)
                 {
                     file.WriteLine("---------------------------------");
