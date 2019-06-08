@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,6 +63,7 @@ namespace RealStand
             listBoxVendasDoCliente.DataSource = selectedCliente.Venda.ToList();
             listBoxVendasDoCliente.SelectedIndex = -1;
             groupBoxVendasCliente.Enabled = true;
+            buttonEmitirFaturaVendas.Enabled = false;
             buttonEditarVenda.Enabled = false;
             buttonAnularVenda.Enabled = false;
             CleanInputDetalhesVenda();
@@ -109,6 +111,7 @@ namespace RealStand
             //Reativa botões para alteração de dados
             buttonEditarVenda.Enabled = true;
             buttonAnularVenda.Enabled = true;
+            buttonEmitirFaturaVendas.Enabled = true;
         }
 
         private void buttonGuardarVendas_Click(object sender, EventArgs e)
@@ -158,6 +161,7 @@ namespace RealStand
                 listBoxVendasDoCliente.SelectedIndex = -1;
                 CleanInputDetalhesVenda();
                 groupBoxDetalhesVendaECarroVendas.Enabled = false;
+                buttonEmitirFaturaVendas.Enabled = false;
                 buttonAnularVenda.Enabled = false;
                 buttonEditarVenda.Enabled = false;
                 labelTotalVendas.Text = selectedCliente.GetTotalVendas();
@@ -204,6 +208,7 @@ namespace RealStand
             CleanInputDetalhesVenda();
             listBoxVendasDoCliente.SelectedIndex = -1;
             buttonEditarVenda.Enabled = false;
+            buttonEmitirFaturaVendas.Enabled = false;
             labelTotalVendas.Text = selectedCliente.GetTotalVendas();
         }
 
@@ -229,6 +234,23 @@ namespace RealStand
             listBoxClientesVendas.SelectedIndex = -1;
             CleanInputDetalhesVenda();
             listBoxVendasDoCliente.DataSource = null;
+        }
+
+        private void buttonEmitirFaturaVendas_Click(object sender, EventArgs e)
+        {
+            Cliente selectedCliente = (Cliente)listBoxClientesVendas.SelectedItem;
+            Venda selectedVenda = (Venda)listBoxVendasDoCliente.SelectedItem;
+            String nomeFicheiro = selectedCliente.Nome + ".txt";
+            using (StreamWriter file = new StreamWriter(nomeFicheiro))
+            {
+                file.WriteLine("\tREALSTAND" + Environment.NewLine + Environment.NewLine + "Nome: " + selectedCliente.Nome + Environment.NewLine
+                    + "NIF: " + selectedCliente.NIF + Environment.NewLine + "Data: " + selectedVenda.Data + Environment.NewLine);
+                file.WriteLine("---------------------------------");
+                file.WriteLine("Marca: " + selectedVenda.CarroVenda.Marca + Environment.NewLine + "Modelo: " + selectedVenda.CarroVenda.Modelo
+                    + Environment.NewLine + "Número de Chassi: " + selectedVenda.CarroVenda.NumeroChassis);
+                file.WriteLine("_________________________________");
+                file.WriteLine("TOTAL A PAGAR: " + selectedVenda.Valor.ToString("0.00") + "€");
+            }
         }
     }
 }
