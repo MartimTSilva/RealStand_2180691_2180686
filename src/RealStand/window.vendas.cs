@@ -240,14 +240,14 @@ namespace RealStand
         {
             Cliente selectedCliente = (Cliente)listBoxClientesVendas.SelectedItem;
             Venda selectedVenda = (Venda)listBoxVendasDoCliente.SelectedItem;
-            String nomeFicheiro = selectedCliente.Nome + ".txt";
+            String nomeFicheiro = "Venda - " +selectedCliente.Nome + ".txt";
             using (StreamWriter file = new StreamWriter(nomeFicheiro))
             {
-                file.WriteLine("\tREALSTAND" + Environment.NewLine + Environment.NewLine + "Nome: " + selectedCliente.Nome + Environment.NewLine
-                    + "NIF: " + selectedCliente.NIF + Environment.NewLine + "Data: " + selectedVenda.Data + Environment.NewLine);
+                file.WriteLine("\tREALSTAND\r\n\r\n" + "Nome: " + selectedCliente.Nome + "\r\nNIF: " + selectedCliente.NIF
+                    + "\r\nData: " + selectedVenda.Data + "\r\n");
                 file.WriteLine("---------------------------------");
-                file.WriteLine("Marca: " + selectedVenda.CarroVenda.Marca + Environment.NewLine + "Modelo: " + selectedVenda.CarroVenda.Modelo
-                    + Environment.NewLine + "Número de Chassi: " + selectedVenda.CarroVenda.NumeroChassis);
+                file.WriteLine("Marca: " + selectedVenda.CarroVenda.Marca + "\r\nModelo: " + selectedVenda.CarroVenda.Modelo
+                    + "\r\nNúmero de Chassi: " + selectedVenda.CarroVenda.NumeroChassis);
                 file.WriteLine("_________________________________");
                 file.WriteLine("TOTAL A PAGAR: " + selectedVenda.Valor.ToString("0.00") + "€");
             }

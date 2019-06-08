@@ -553,7 +553,7 @@ namespace RealStand
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
             Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
-            String nomeFicheiro = selectedServico.Tipo + ".txt";
+            String nomeFicheiro = "Oficina - " + selectedServico.Tipo + ".txt";
             using (StreamWriter file = new StreamWriter(nomeFicheiro))
             {
                 file.WriteLine("\tREALSTAND\r\n\r\nNome: " + selectedCliente.Nome + "\r\n" + "NIF: " + selectedCliente.NIF + "\r\n" + "Tipo de Serviço: "
