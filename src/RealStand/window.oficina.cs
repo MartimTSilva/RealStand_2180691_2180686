@@ -609,6 +609,7 @@ namespace RealStand
                 file.WriteLine("_________________________________");
                 file.WriteLine("TOTAL A PAGAR: " + selectedServico.GetTotal().ToString("0.00") + "€");
             }
+            MessageBox.Show("Fatura Criada.");
         }
     }
 }

@@ -255,6 +255,7 @@ namespace RealStand
                 file.WriteLine("_________________________________");
                 file.WriteLine("TOTAL A PAGAR: " + selectedVenda.Valor.ToString("0.00") + "€");
             }
+            MessageBox.Show("Fatura Criada.");
         }
     }
 }
