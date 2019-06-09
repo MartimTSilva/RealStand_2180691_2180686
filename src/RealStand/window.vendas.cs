@@ -240,18 +240,27 @@ namespace RealStand
         {
             Cliente selectedCliente = (Cliente)listBoxClientesVendas.SelectedItem;
             Venda selectedVenda = (Venda)listBoxVendasDoCliente.SelectedItem;
-            String nomeFicheiro = "Venda - " +selectedCliente.Nome + ".txt";
-            using (StreamWriter file = new StreamWriter(nomeFicheiro))
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            string nomeFicheiro = "";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                file.WriteLine("\tREALSTAND\r\n\r\n" + "Nome: " + selectedCliente.Nome + "\r\nNIF: " + selectedCliente.NIF
-                    + "\r\nData: " + selectedVenda.Data + "\r\n");
-                file.WriteLine("---------------------------------");
-                file.WriteLine("Marca: " + selectedVenda.CarroVenda.Marca + "\r\nModelo: " + selectedVenda.CarroVenda.Modelo
-                    + "\r\nNúmero de Chassi: " + selectedVenda.CarroVenda.NumeroChassis);
-                file.WriteLine("_________________________________");
-                file.WriteLine("TOTAL A PAGAR: " + selectedVenda.Valor.ToString("0.00") + "€");
+                nomeFicheiro = saveFileDialog.FileName;
+
+                using (StreamWriter file = new StreamWriter(nomeFicheiro))
+                {
+                    file.WriteLine("\tREALSTAND\r\n\r\n" + "Nome: " + selectedCliente.Nome + "\r\nNIF: " + selectedCliente.NIF
+                        + "\r\nData: " + selectedVenda.Data + "\r\n");
+                    file.WriteLine("---------------------------------");
+                    file.WriteLine("Marca: " + selectedVenda.CarroVenda.Marca + "\r\nModelo: " + selectedVenda.CarroVenda.Modelo
+                        + "\r\nNúmero de Chassi: " + selectedVenda.CarroVenda.NumeroChassis);
+                    file.WriteLine("_________________________________");
+                    file.WriteLine("TOTAL A PAGAR: " + selectedVenda.Valor.ToString("0.00") + "€");
+                }
+                MessageBox.Show("Fatura Criada.");
             }
-            MessageBox.Show("Fatura Criada.");
         }
     }
 }

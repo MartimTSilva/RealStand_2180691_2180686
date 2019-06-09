@@ -240,18 +240,27 @@ namespace RealStand
         {
             Cliente selectedCliente = (Cliente)listBoxClientesAluguer.SelectedItem;
             Aluguer selectedAluguer = (Aluguer)listBoxAluguer.SelectedItem;
-            String nomeFicheiro = "Aluguer - " + selectedCliente.Nome + ".txt";
-            using (StreamWriter file = new StreamWriter(nomeFicheiro))
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            string nomeFicheiro = "";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                file.WriteLine("\tREALSTAND\r\n\r\nNome: " + selectedCliente.Nome + "\r\n" + "NIF: " + selectedCliente.NIF 
-                    + "\r\nData de inicio: " + selectedAluguer.DataInicio + "\r\nData de fim: " + selectedAluguer.DataFim + "\r\n");
-                file.WriteLine("---------------------------------");
-                file.WriteLine("Marca: " + selectedAluguer.CarroAluguer.Marca + "\r\nModelo: " + selectedAluguer.CarroAluguer.Modelo
-                   + "\r\nMatrícula: " + selectedAluguer.CarroAluguer.Matricula);
-                file.WriteLine("_________________________________");
-                file.WriteLine("TOTAL A PAGAR: " + selectedAluguer.Valor.ToString("0.00") + "€");
+                nomeFicheiro = saveFileDialog.FileName;
+                
+                using (StreamWriter file = new StreamWriter(nomeFicheiro))
+                {
+                    file.WriteLine("\tREALSTAND\r\n\r\nNome: " + selectedCliente.Nome + "\r\n" + "NIF: " + selectedCliente.NIF 
+                        + "\r\nData de inicio: " + selectedAluguer.DataInicio + "\r\nData de fim: " + selectedAluguer.DataFim + "\r\n");
+                    file.WriteLine("---------------------------------");
+                    file.WriteLine("Marca: " + selectedAluguer.CarroAluguer.Marca + "\r\nModelo: " + selectedAluguer.CarroAluguer.Modelo
+                       + "\r\nMatrícula: " + selectedAluguer.CarroAluguer.Matricula);
+                    file.WriteLine("_________________________________");
+                    file.WriteLine("TOTAL A PAGAR: " + selectedAluguer.Valor.ToString("0.00") + "€");
+                }
+                MessageBox.Show("Fatura Criada.");
             }
-            MessageBox.Show("Fatura Criada.");
         }
     }
 }

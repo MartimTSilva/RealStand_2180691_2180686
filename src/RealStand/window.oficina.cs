@@ -595,21 +595,30 @@ namespace RealStand
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
             Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
-            String nomeFicheiro = "Oficina - " + selectedServico.Tipo + ".txt";
-            using (StreamWriter file = new StreamWriter(nomeFicheiro))
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            string nomeFicheiro = "";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                file.WriteLine("\tREALSTAND\r\n\r\nNome: " + selectedCliente.Nome + "\r\n" + "NIF: " + selectedCliente.NIF + "\r\n" + "Tipo de Serviço: "
-                    + selectedServico.Tipo + "\r\nEntrada: " + selectedServico.DataEntrega + "\r\nSaída: " + selectedServico.DataSaida + "\r\n");
-                foreach (Parcela item in selectedServico.Parcela)
+                nomeFicheiro = saveFileDialog.FileName;
+
+                using (StreamWriter file = new StreamWriter(nomeFicheiro))
                 {
-                    file.WriteLine("---------------------------------");
-                    file.WriteLine("Descrição: " + item.Descricao);
-                    file.WriteLine("Valor: " + item.Valor + "€");
+                    file.WriteLine("\tREALSTAND\r\n\r\nNome: " + selectedCliente.Nome + "\r\n" + "NIF: " + selectedCliente.NIF + "\r\n" + "Tipo de Serviço: "
+                        + selectedServico.Tipo + "\r\nEntrada: " + selectedServico.DataEntrega + "\r\nSaída: " + selectedServico.DataSaida + "\r\n");
+                    foreach (Parcela item in selectedServico.Parcela)
+                    {
+                        file.WriteLine("---------------------------------");
+                        file.WriteLine("Descrição: " + item.Descricao);
+                        file.WriteLine("Valor: " + item.Valor + "€");
+                    }
+                    file.WriteLine("_________________________________");
+                    file.WriteLine("TOTAL A PAGAR: " + selectedServico.GetTotal().ToString("0.00") + "€");
                 }
-                file.WriteLine("_________________________________");
-                file.WriteLine("TOTAL A PAGAR: " + selectedServico.GetTotal().ToString("0.00") + "€");
+                MessageBox.Show("Fatura Criada.");
             }
-            MessageBox.Show("Fatura Criada.");
         }
     }
 }
