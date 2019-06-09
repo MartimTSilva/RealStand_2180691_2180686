@@ -220,6 +220,10 @@
             this.tableAdapterManager = new RealStand.realstandDataSetTableAdapters.TableAdapterManager();
             this.carros_CarroAluguerTableAdapter = new RealStand.realstandDataSetTableAdapters.Carros_CarroAluguerTableAdapter();
             this.carrosTableAdapter = new RealStand.realstandDataSetTableAdapters.CarrosTableAdapter();
+            this.toolStripStatusLabelDate = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelClientes = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelVendas = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelAluguer = new System.Windows.Forms.ToolStripStatusLabel();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -262,6 +266,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBoxFichaClienteVenda.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomeLabel
@@ -324,7 +329,7 @@
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl1.ItemSize = new System.Drawing.Size(30, 160);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(20);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -415,7 +420,7 @@
             this.tabPageClientes.Controls.Add(this.clientesListBox);
             this.tabPageClientes.Location = new System.Drawing.Point(166, 4);
             this.tabPageClientes.Name = "tabPageClientes";
-            this.tabPageClientes.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageClientes.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageClientes.Size = new System.Drawing.Size(912, 573);
             this.tabPageClientes.TabIndex = 1;
             this.tabPageClientes.Text = "Clientes";
@@ -919,7 +924,7 @@
             // maskedTextBoxChassiOficina
             // 
             this.maskedTextBoxChassiOficina.Location = new System.Drawing.Point(66, 71);
-            this.maskedTextBoxChassiOficina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBoxChassiOficina.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBoxChassiOficina.Mask = "00000000000000000";
             this.maskedTextBoxChassiOficina.Name = "maskedTextBoxChassiOficina";
             this.maskedTextBoxChassiOficina.Size = new System.Drawing.Size(122, 20);
@@ -1096,9 +1101,9 @@
             this.groupBox1.Controls.Add(this.labelTotalGastoOficina);
             this.groupBox1.Controls.Add(this.labelTotalClienteOficina);
             this.groupBox1.Location = new System.Drawing.Point(553, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(128, 100);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
@@ -1298,7 +1303,7 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(72, 32);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox1.Mask = "00000000000000000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(136, 20);
@@ -1643,9 +1648,9 @@
             this.groupBoxTotalVendas.Controls.Add(this.label5);
             this.groupBoxTotalVendas.Controls.Add(this.labelTotalVendas);
             this.groupBoxTotalVendas.Location = new System.Drawing.Point(440, 0);
-            this.groupBoxTotalVendas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxTotalVendas.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxTotalVendas.Name = "groupBoxTotalVendas";
-            this.groupBoxTotalVendas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxTotalVendas.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxTotalVendas.Size = new System.Drawing.Size(128, 100);
             this.groupBoxTotalVendas.TabIndex = 7;
             this.groupBoxTotalVendas.TabStop = false;
@@ -2212,9 +2217,9 @@
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.labelTotalGastoAluguer);
             this.groupBox4.Location = new System.Drawing.Point(432, 0);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(128, 100);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
@@ -2284,6 +2289,11 @@
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelDate,
+            this.toolStripStatusLabelClientes,
+            this.toolStripStatusLabelVendas,
+            this.toolStripStatusLabelAluguer});
             this.statusStrip1.Location = new System.Drawing.Point(0, 580);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1081, 22);
@@ -2315,6 +2325,30 @@
             // carrosTableAdapter
             // 
             this.carrosTableAdapter.ClearBeforeFill = true;
+            // 
+            // toolStripStatusLabelDate
+            // 
+            this.toolStripStatusLabelDate.Name = "toolStripStatusLabelDate";
+            this.toolStripStatusLabelDate.Size = new System.Drawing.Size(33, 17);
+            this.toolStripStatusLabelDate.Text = "Hora";
+            // 
+            // toolStripStatusLabelClientes
+            // 
+            this.toolStripStatusLabelClientes.Name = "toolStripStatusLabelClientes";
+            this.toolStripStatusLabelClientes.Size = new System.Drawing.Size(61, 17);
+            this.toolStripStatusLabelClientes.Text = "Clientes: 0";
+            // 
+            // toolStripStatusLabelVendas
+            // 
+            this.toolStripStatusLabelVendas.Name = "toolStripStatusLabelVendas";
+            this.toolStripStatusLabelVendas.Size = new System.Drawing.Size(56, 17);
+            this.toolStripStatusLabelVendas.Text = "Vendas: 0";
+            // 
+            // toolStripStatusLabelAluguer
+            // 
+            this.toolStripStatusLabelAluguer.Name = "toolStripStatusLabelAluguer";
+            this.toolStripStatusLabelAluguer.Size = new System.Drawing.Size(66, 17);
+            this.toolStripStatusLabelAluguer.Text = "Aluguers: 0";
             // 
             // window
             // 
@@ -2387,6 +2421,8 @@
             this.groupBoxFichaClienteVenda.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2579,6 +2615,10 @@
         private System.Windows.Forms.Button buttonEmitirFaturaOficina;
         private System.Windows.Forms.Button buttonEmitirFaturaVendas;
         private System.Windows.Forms.Button buttonEmitirFaturaAluguer;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelDate;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelClientes;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelVendas;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelAluguer;
     }
 }
 

@@ -111,6 +111,8 @@ namespace RealStand
             groupBoxAluguer.Enabled = false;
             buttonGuardarAluguer.Visible = false;
             ClearAluguerFields();
+
+            UpdateNumAluguers();
         }
 
         private void listBoxCarrosAluguer_Click(object sender, EventArgs e)
@@ -202,6 +204,8 @@ namespace RealStand
 
             Cliente selectedcliente = (Cliente)listBoxClientesAluguer.SelectedItem;
             labelTotalGastoAluguer.Text = selectedcliente.GetTotalAluguer();
+
+            UpdateNumAluguers();
         }
 
         private void listBoxClientesAluguer_Click(object sender, EventArgs e)
