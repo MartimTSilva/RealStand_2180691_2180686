@@ -36,6 +36,8 @@ namespace RealStand
             newCarroAluguer = true;
             groupBoxCarroAluguer.Enabled = true;
             buttonGuardarCarroAluguer.Visible = true;
+
+            ClearVehicleDetails();
         }
 
         private void buttonGuardarCarroAluguer_Click(object sender, EventArgs e)
@@ -74,6 +76,8 @@ namespace RealStand
             newAluguer = true;
             groupBoxAluguer.Enabled = true;
             buttonGuardarAluguer.Visible = true;
+
+            ClearAluguerFields();
         }
 
         private void buttonGuardarAluguer_Click(object sender, EventArgs e)
