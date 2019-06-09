@@ -83,18 +83,36 @@ namespace RealStand
         private void buttonGuardarAluguer_Click(object sender, EventArgs e)
         {
             Cliente selectedcliente = (Cliente)listBoxClientesAluguer.SelectedItem;
+            if (selectedcliente == null)
+            {
+                MessageBox.Show("Não existe nenhum cliente selecionado!");
+                return;
+            }
             if (newAluguer)
             {
                 CarroAluguer selectedCarroAluguer = (CarroAluguer)listBoxCarrosAluguer.SelectedItem;
-                Aluguer newAluguer = new Aluguer(
-                    DateTime.Parse(dateTimePickerDataInicioAluguer.Text),
-                    DateTime.Parse(dateTimePickerDataFimAluguer.Text),
-                    double.Parse(maskedTextBoxValorAluguer.Text.Replace('€', ' ')),
-                    long.Parse(textBoxQuilometragemAluguer.Text),
-                    selectedcliente,
-                    selectedCarroAluguer
-                );
-                standContainer.Aluguers.Add(newAluguer);
+                if (selectedCarroAluguer == null)
+                {
+                    MessageBox.Show("Não existe nenhum carro selecionado!");
+                    return;
+                }
+                try
+                {
+                    Aluguer newAluguer = new Aluguer(
+                        DateTime.Parse(dateTimePickerDataInicioAluguer.Text),
+                        DateTime.Parse(dateTimePickerDataFimAluguer.Text),
+                        double.Parse(maskedTextBoxValorAluguer.Text.Replace('€', ' ')),
+                        long.Parse(textBoxQuilometragemAluguer.Text),
+                        selectedcliente,
+                        selectedCarroAluguer
+                    );
+                    standContainer.Aluguers.Add(newAluguer);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Existem dados incorretos!");
+                    return;
+                }
             }
             else
             {
