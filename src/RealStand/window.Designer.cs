@@ -216,14 +216,15 @@
             this.labelNifAluguer = new System.Windows.Forms.Label();
             this.labelNomeAluguer = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.clientesTableAdapter = new RealStand.realstandDataSetTableAdapters.ClientesTableAdapter();
-            this.tableAdapterManager = new RealStand.realstandDataSetTableAdapters.TableAdapterManager();
-            this.carros_CarroAluguerTableAdapter = new RealStand.realstandDataSetTableAdapters.Carros_CarroAluguerTableAdapter();
-            this.carrosTableAdapter = new RealStand.realstandDataSetTableAdapters.CarrosTableAdapter();
             this.toolStripStatusLabelDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelClientes = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelVendas = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelAluguer = new System.Windows.Forms.ToolStripStatusLabel();
+            this.clientesTableAdapter = new RealStand.realstandDataSetTableAdapters.ClientesTableAdapter();
+            this.tableAdapterManager = new RealStand.realstandDataSetTableAdapters.TableAdapterManager();
+            this.carros_CarroAluguerTableAdapter = new RealStand.realstandDataSetTableAdapters.Carros_CarroAluguerTableAdapter();
+            this.carrosTableAdapter = new RealStand.realstandDataSetTableAdapters.CarrosTableAdapter();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -2300,6 +2301,30 @@
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // toolStripStatusLabelDate
+            // 
+            this.toolStripStatusLabelDate.Name = "toolStripStatusLabelDate";
+            this.toolStripStatusLabelDate.Size = new System.Drawing.Size(33, 17);
+            this.toolStripStatusLabelDate.Text = "Hora";
+            // 
+            // toolStripStatusLabelClientes
+            // 
+            this.toolStripStatusLabelClientes.Name = "toolStripStatusLabelClientes";
+            this.toolStripStatusLabelClientes.Size = new System.Drawing.Size(61, 17);
+            this.toolStripStatusLabelClientes.Text = "Clientes: 0";
+            // 
+            // toolStripStatusLabelVendas
+            // 
+            this.toolStripStatusLabelVendas.Name = "toolStripStatusLabelVendas";
+            this.toolStripStatusLabelVendas.Size = new System.Drawing.Size(56, 17);
+            this.toolStripStatusLabelVendas.Text = "Vendas: 0";
+            // 
+            // toolStripStatusLabelAluguer
+            // 
+            this.toolStripStatusLabelAluguer.Name = "toolStripStatusLabelAluguer";
+            this.toolStripStatusLabelAluguer.Size = new System.Drawing.Size(66, 17);
+            this.toolStripStatusLabelAluguer.Text = "Aluguers: 0";
+            // 
             // clientesTableAdapter
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
@@ -2326,29 +2351,11 @@
             // 
             this.carrosTableAdapter.ClearBeforeFill = true;
             // 
-            // toolStripStatusLabelDate
+            // timer1
             // 
-            this.toolStripStatusLabelDate.Name = "toolStripStatusLabelDate";
-            this.toolStripStatusLabelDate.Size = new System.Drawing.Size(33, 17);
-            this.toolStripStatusLabelDate.Text = "Hora";
-            // 
-            // toolStripStatusLabelClientes
-            // 
-            this.toolStripStatusLabelClientes.Name = "toolStripStatusLabelClientes";
-            this.toolStripStatusLabelClientes.Size = new System.Drawing.Size(61, 17);
-            this.toolStripStatusLabelClientes.Text = "Clientes: 0";
-            // 
-            // toolStripStatusLabelVendas
-            // 
-            this.toolStripStatusLabelVendas.Name = "toolStripStatusLabelVendas";
-            this.toolStripStatusLabelVendas.Size = new System.Drawing.Size(56, 17);
-            this.toolStripStatusLabelVendas.Text = "Vendas: 0";
-            // 
-            // toolStripStatusLabelAluguer
-            // 
-            this.toolStripStatusLabelAluguer.Name = "toolStripStatusLabelAluguer";
-            this.toolStripStatusLabelAluguer.Size = new System.Drawing.Size(66, 17);
-            this.toolStripStatusLabelAluguer.Text = "Aluguers: 0";
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.UpdateStatusBar);
             // 
             // window
             // 
@@ -2619,6 +2626,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelClientes;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelVendas;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelAluguer;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

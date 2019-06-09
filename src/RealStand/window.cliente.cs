@@ -38,8 +38,6 @@ namespace RealStand
             buttonApagarCliente.Enabled = false;
             buttonEditarCliente.Enabled = false;
             DisableDataInsertion();
-
-            UpdateNumClientes();
         }
 
         private void buttonProcurarCliente_Click(object sender, EventArgs e)
@@ -107,8 +105,6 @@ namespace RealStand
             {
                 MessageBox.Show("Existem campos errados!");
             }
-
-            UpdateNumClientes();
         }
 
         /// <summary>

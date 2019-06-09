@@ -57,25 +57,15 @@ namespace RealStand
         private void window_Load(object sender, EventArgs e)
         {
             standContainer = new StandContainer();
-            toolStripStatusLabelDate.Text = DateTime.Now.ToString();
-            UpdateNumClientes();
-            UpdateNumVendas();
-            UpdateNumAluguers();
+            UpdateStatusBar(sender, e);
         }
 
-        private void UpdateNumAluguers()
+        private void UpdateStatusBar(object sender, EventArgs e)
         {
             toolStripStatusLabelAluguer.Text = "Aluguers: " + standContainer.Aluguers.Count();
-        }
-
-        private void UpdateNumVendas()
-        {
             toolStripStatusLabelVendas.Text = "Vendas: " + standContainer.Vendas.Count();
-        }
-
-        private void UpdateNumClientes()
-        {
             toolStripStatusLabelClientes.Text = "Clientes: " + standContainer.Clientes.Count();
+            toolStripStatusLabelDate.Text = DateTime.Now.ToString();
         }
 
         /// <summary>

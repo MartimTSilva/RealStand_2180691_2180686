@@ -182,8 +182,6 @@ namespace RealStand
             {
                 MessageBox.Show("Combustível não selecionado");
             }
-
-            UpdateNumVendas();
         }
 
         private void buttonCriarVenda_Click(object sender, EventArgs e)
@@ -212,8 +210,6 @@ namespace RealStand
             buttonEditarVenda.Enabled = false;
             buttonEmitirFaturaVendas.Enabled = false;
             labelTotalVendas.Text = selectedCliente.GetTotalVendas();
-
-            UpdateNumVendas();
         }
 
         private void buttonFiltarVendas_Click(object sender, EventArgs e)
