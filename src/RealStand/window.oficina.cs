@@ -142,12 +142,18 @@ namespace RealStand
         {
             novoCarroOficina = true;
             listBoxCarrosOficina.SelectedIndex = -1;
+            CleanInputCarroOficina();
+            PreparaCarro();
+        }
+
+        void PreparaCarro()
+        {
             groupBoxCriarCarroOficina.Enabled = true;
-            buttonGuardarCarroOficina.Enabled = true;
             buttonEditarCarroOficina.Enabled = false;
             buttonRemoverCarroOficina.Enabled = false;
-            CleanInputCarroOficina();
+            buttonGuardarCarroOficina.Enabled = true;
         }
+
 
         /// <summary>
         /// Mostra todos os serviços do carro selecionado da oficina
@@ -402,6 +408,8 @@ namespace RealStand
                 listBoxCarrosOficina.DataSource = selectedCliente.CarroOficina.ToList();
                 listBoxServicosOficina.SelectedIndex = -1;
                 listBoxCarrosOficina.SelectedIndex = -1;
+                listBoxParcelasOficina.SelectedIndex = -1;
+                groupBoxCriarParcelaOficina.Enabled = false;
                 CleanInputCarroOficina();
                 groupBoxCriarCarroOficina.Enabled = false;
                 buttonCriarServicoOficina.Enabled = false;
@@ -440,10 +448,7 @@ namespace RealStand
         private void buttonEditarCarroOficina_Click(object sender, EventArgs e)
         {
             novoCarroOficina = false;
-            groupBoxCriarCarroOficina.Enabled = true;
-            buttonEditarCarroOficina.Enabled = false;
-            buttonRemoverCarroOficina.Enabled = false;
-            buttonGuardarCarroOficina.Enabled = true;
+            PreparaCarro();
         }
 
         /// <summary>
@@ -507,6 +512,8 @@ namespace RealStand
                 listBoxServicosOficina.SelectedIndex = -1;
                 listBoxParcelasOficina.SelectedIndex = -1;
                 groupBoxCriarServicoOficina.Enabled = false;
+                listBoxParcelasOficina.SelectedIndex = -1;
+                groupBoxCriarParcelaOficina.Enabled = false;
                 CleanInputServicosOficina();
             }
             else if (!Servico.VerificaDatasServico(DataEntrega, DataSaida))
