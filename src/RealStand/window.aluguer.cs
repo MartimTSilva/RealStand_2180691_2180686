@@ -203,7 +203,13 @@ namespace RealStand
         private void listBoxClientesAluguer_Click(object sender, EventArgs e)
         {
             Cliente selectedcliente = (Cliente)listBoxClientesAluguer.SelectedItem;
+            if (selectedcliente == null)
+            {
+                return;
+            }
             labelTotalGastoAluguer.Text = selectedcliente.GetTotalAluguer();
+            listBoxAluguer.DataSource = selectedcliente.Aluguer.ToList();
+            listBoxAluguer.SelectedIndex = -1;
         }
 
         private void buttonAluguerFiltrar_Click(object sender, EventArgs e)
