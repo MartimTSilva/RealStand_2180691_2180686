@@ -49,6 +49,9 @@ namespace RealStand
 
             groupBoxAluguer.Enabled = false;
             buttonGuardarAluguer.Visible = false;
+
+            labelClienteSelecionadoAluguer.Text = "Nenhum cliente selecionado";
+            labelNifClienteSelecionadoAluguer.Text = "*********";
         }
 
         private void buttonCriarCarroAluguer_Click(object sender, EventArgs e)
@@ -253,6 +256,10 @@ namespace RealStand
             labelTotalGastoAluguer.Text = selectedcliente.GetTotalAluguer();
             listBoxAluguer.DataSource = selectedcliente.Aluguer.ToList();
             listBoxAluguer.SelectedIndex = -1;
+
+            // Mostra dados do cliente selecionado
+            labelClienteSelecionadoAluguer.Text = selectedcliente.Nome;
+            labelNifClienteSelecionadoAluguer.Text = selectedcliente.NIF;
         }
 
         private void buttonAluguerFiltrar_Click(object sender, EventArgs e)
