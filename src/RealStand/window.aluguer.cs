@@ -31,6 +31,26 @@ namespace RealStand
             maskedTextBoxMatriculaAluguer.ResetText();
         }
 
+        private void ResetFormAluguer()
+        {
+            ClearAluguerFields();
+            ClearVehicleDetails();
+
+            buttonEditarCarroAluguer.Enabled = false;
+            buttonEliminarCarroAluguer.Enabled = false;
+
+            buttonEditarAluguer.Enabled = false;
+            buttonEliminarAluguer.Enabled = false;
+
+            listBoxAluguer.DataSource = null;
+
+            groupBoxCarroAluguer.Enabled = false;
+            buttonGuardarCarroAluguer.Visible = false;
+
+            groupBoxAluguer.Enabled = false;
+            buttonGuardarAluguer.Visible = false;
+        }
+
         private void buttonCriarCarroAluguer_Click(object sender, EventArgs e)
         {
             newCarroAluguer = true;

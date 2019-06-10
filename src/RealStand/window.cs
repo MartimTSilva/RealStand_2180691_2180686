@@ -95,6 +95,7 @@ namespace RealStand
                     listBoxCarrosAluguer.DataSource = standContainer.Carros.OfType<CarroAluguer>().ToList();
                     listBoxClientesAluguer.SelectedIndex = -1;
                     listBoxCarrosAluguer.SelectedIndex = -1;
+                    ResetFormAluguer();
                     break;
                 default:
                     break;
