@@ -123,7 +123,8 @@ namespace RealStand
                 selectedAluguer.Valor = double.Parse(maskedTextBoxValorAluguer.Text.Replace('€', ' '));
             }
             standContainer.SaveChanges();
-            listBoxAluguer.DataSource = standContainer.Aluguers.ToList();
+            listBoxAluguer.DataSource = selectedcliente.Aluguer.ToList();
+            listBoxAluguer.SelectedIndex = -1;
             labelTotalGastoAluguer.Text = selectedcliente.GetTotalAluguer();
             newAluguer = false;
             groupBoxAluguer.Enabled = false;
@@ -202,10 +203,11 @@ namespace RealStand
         private void buttonEliminarAluguer_Click(object sender, EventArgs e)
         {
             Aluguer selectedAluguer = (Aluguer)listBoxAluguer.SelectedItem;
+            Cliente selectedCliente = (Cliente)listBoxClientesAluguer.SelectedItem;
             standContainer.Aluguers.Remove(selectedAluguer);
             standContainer.SaveChanges();
 
-            listBoxAluguer.DataSource = standContainer.Aluguers.ToList();
+            listBoxAluguer.DataSource = selectedCliente.Aluguer.ToList();
             listBoxAluguer.SelectedIndex = -1;
 
             // Desativa os botoes de editar e eliminar
@@ -217,9 +219,8 @@ namespace RealStand
             buttonGuardarAluguer.Visible = false;
 
             ClearAluguerFields();
-
-            Cliente selectedcliente = (Cliente)listBoxClientesAluguer.SelectedItem;
-            labelTotalGastoAluguer.Text = selectedcliente.GetTotalAluguer();
+            
+            labelTotalGastoAluguer.Text = selectedCliente.GetTotalAluguer();
         }
 
         private void listBoxClientesAluguer_Click(object sender, EventArgs e)
