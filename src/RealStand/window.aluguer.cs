@@ -26,7 +26,7 @@ namespace RealStand
             numeroChassisMaskedTextBox.ResetText();
             textBoxMarcaAluguer.ResetText();
             textBoxModeloAluguer.ResetText();
-            comboBoxCombustivelAluguer.ResetText();
+            comboBoxCombustivelAluguer.SelectedItem = null;
             estadoTextBox.ResetText();
             maskedTextBoxMatriculaAluguer.ResetText();
         }
@@ -52,6 +52,14 @@ namespace RealStand
 
             labelClienteSelecionadoAluguer.Text = "Nenhum cliente selecionado";
             labelNifClienteSelecionadoAluguer.Text = "*********";
+
+            buttonEmitirFaturaAluguer.Enabled = false;
+
+            textBoxAluguerFiltrarPor.Text = "";
+            comboBoxAluguerFiltrarPorCampo.SelectedItem = null;
+
+            listBoxClientesAluguer.SelectedIndex = -1;
+            listBoxCarrosAluguer.SelectedIndex = -1;
         }
 
         private void buttonCriarCarroAluguer_Click(object sender, EventArgs e)
@@ -92,6 +100,7 @@ namespace RealStand
             newCarroAluguer = false;
             groupBoxCarroAluguer.Enabled = false;
             buttonGuardarCarroAluguer.Visible = false;
+            listBoxCarrosAluguer.SelectedIndex = -1;
         }
 
         private void buttonCriarAluguer_Click(object sender, EventArgs e)
@@ -196,6 +205,7 @@ namespace RealStand
             // Ativa os botoes de editar e apagar
             buttonEditarAluguer.Enabled = true;
             buttonEliminarAluguer.Enabled = true;
+            buttonEmitirFaturaAluguer.Enabled = true;
         }
 
         private void buttonEditarAluguer_Click(object sender, EventArgs e)
@@ -256,6 +266,9 @@ namespace RealStand
             labelTotalGastoAluguer.Text = selectedcliente.GetTotalAluguer();
             listBoxAluguer.DataSource = selectedcliente.Aluguer.ToList();
             listBoxAluguer.SelectedIndex = -1;
+            buttonEliminarAluguer.Enabled = false;
+            buttonEditarAluguer.Enabled = false;
+            buttonEmitirFaturaAluguer.Enabled = false;
 
             // Mostra dados do cliente selecionado
             labelClienteSelecionadoAluguer.Text = selectedcliente.Nome;

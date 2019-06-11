@@ -2026,6 +2026,7 @@
             // 
             // comboBoxCombustivelAluguer
             // 
+            this.comboBoxCombustivelAluguer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCombustivelAluguer.FormattingEnabled = true;
             this.comboBoxCombustivelAluguer.Items.AddRange(new object[] {
             "Gasóleo",
