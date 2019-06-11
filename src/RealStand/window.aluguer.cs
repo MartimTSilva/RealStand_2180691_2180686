@@ -73,34 +73,45 @@ namespace RealStand
 
         private void buttonGuardarCarroAluguer_Click(object sender, EventArgs e)
         {
-            if (newCarroAluguer)
+            if (CarroOficina.VerificaMatricula(maskedTextBoxMatriculaAluguer.Text)
+                && Carro.VerificaNumeroChassis(numeroChassisMaskedTextBox.Text)
+                && Carro.VerificaMarca(textBoxMarcaAluguer.Text)
+                && Carro.VerificaModelo(textBoxModeloAluguer.Text)
+                && Carro.VerificaCombustivel(comboBoxCombustivelAluguer.SelectedIndex))
             {
-                CarroAluguer carroAluguer = new CarroAluguer(
-                    estadoTextBox.Text, 
-                    maskedTextBoxMatriculaAluguer.Text,
-                    numeroChassisMaskedTextBox.Text,
-                    textBoxMarcaAluguer.Text,
-                    textBoxModeloAluguer.Text,
-                    comboBoxCombustivelAluguer.Text
-                    );
-                standContainer.Carros.Add(carroAluguer);
+                if (newCarroAluguer)
+                {
+                    CarroAluguer carroAluguer = new CarroAluguer(
+                        estadoTextBox.Text, 
+                        maskedTextBoxMatriculaAluguer.Text,
+                        numeroChassisMaskedTextBox.Text,
+                        textBoxMarcaAluguer.Text,
+                        textBoxModeloAluguer.Text,
+                        comboBoxCombustivelAluguer.Text
+                        );
+                    standContainer.Carros.Add(carroAluguer);
+                }
+                else
+                {
+                    CarroAluguer selectedCarroAluguer = (CarroAluguer)listBoxCarrosAluguer.SelectedItem;
+                    selectedCarroAluguer.NumeroChassis = numeroChassisMaskedTextBox.Text;
+                    selectedCarroAluguer.Marca = textBoxMarcaAluguer.Text;
+                    selectedCarroAluguer.Modelo = textBoxModeloAluguer.Text;
+                    selectedCarroAluguer.Combustivel = comboBoxCombustivelAluguer.Text;
+                    selectedCarroAluguer.Estado = estadoTextBox.Text;
+                    selectedCarroAluguer.Matricula = maskedTextBoxMatriculaAluguer.Text;
+                }
+                standContainer.SaveChanges();
+                listBoxCarrosAluguer.DataSource = standContainer.Carros.OfType<CarroAluguer>().ToList();
+                newCarroAluguer = false;
+                groupBoxCarroAluguer.Enabled = false;
+                buttonGuardarCarroAluguer.Visible = false;
+                listBoxCarrosAluguer.SelectedIndex = -1;
             }
             else
             {
-                CarroAluguer selectedCarroAluguer = (CarroAluguer)listBoxCarrosAluguer.SelectedItem;
-                selectedCarroAluguer.NumeroChassis = numeroChassisMaskedTextBox.Text;
-                selectedCarroAluguer.Marca = textBoxMarcaAluguer.Text;
-                selectedCarroAluguer.Modelo = textBoxModeloAluguer.Text;
-                selectedCarroAluguer.Combustivel = comboBoxCombustivelAluguer.Text;
-                selectedCarroAluguer.Estado = estadoTextBox.Text;
-                selectedCarroAluguer.Matricula = maskedTextBoxMatriculaAluguer.Text;
+                MessageBox.Show("Existem campos incompletos.");
             }
-            standContainer.SaveChanges();
-            listBoxCarrosAluguer.DataSource = standContainer.Carros.OfType<CarroAluguer>().ToList();
-            newCarroAluguer = false;
-            groupBoxCarroAluguer.Enabled = false;
-            buttonGuardarCarroAluguer.Visible = false;
-            listBoxCarrosAluguer.SelectedIndex = -1;
         }
 
         private void buttonCriarAluguer_Click(object sender, EventArgs e)

@@ -2080,7 +2080,7 @@
             this.maskedTextBoxMatriculaAluguer.Location = new System.Drawing.Point(83, 145);
             this.maskedTextBoxMatriculaAluguer.Mask = "AA-AA-AA";
             this.maskedTextBoxMatriculaAluguer.Name = "maskedTextBoxMatriculaAluguer";
-            this.maskedTextBoxMatriculaAluguer.Size = new System.Drawing.Size(50, 20);
+            this.maskedTextBoxMatriculaAluguer.Size = new System.Drawing.Size(54, 20);
             this.maskedTextBoxMatriculaAluguer.TabIndex = 3;
             // 
             // labelMatriculaAluguer
