@@ -18,7 +18,7 @@ namespace RealStand
         {
             dateTimePickerDataInicioAluguer.ResetText();
             dateTimePickerDataFimAluguer.ResetText();
-            textBoxQuilometragemAluguer.ResetText();
+            numericUpDownKMsAluguer.ResetText();
             maskedTextBoxValorAluguer.ResetText();
         }
 
@@ -152,7 +152,7 @@ namespace RealStand
                         DateTime.Parse(dateTimePickerDataInicioAluguer.Text),
                         DateTime.Parse(dateTimePickerDataFimAluguer.Text),
                         double.Parse(maskedTextBoxValorAluguer.Text.Replace('€', ' ')),
-                        long.Parse(textBoxQuilometragemAluguer.Text),
+                        long.Parse(numericUpDownKMsAluguer.Text),
                         selectedcliente,
                         selectedCarroAluguer
                     );
@@ -169,7 +169,7 @@ namespace RealStand
                 Aluguer selectedAluguer = (Aluguer)listBoxAluguer.SelectedItem;
                 selectedAluguer.DataInicio = dateTimePickerDataInicioAluguer.Value;
                 selectedAluguer.DataFim = dateTimePickerDataFimAluguer.Value;
-                selectedAluguer.Kms = long.Parse(textBoxQuilometragemAluguer.Text);
+                selectedAluguer.Kms = long.Parse(numericUpDownKMsAluguer.Text);
                 selectedAluguer.Valor = double.Parse(maskedTextBoxValorAluguer.Text.Replace('€', ' '));
             }
             standContainer.SaveChanges();
@@ -220,7 +220,7 @@ namespace RealStand
 
             dateTimePickerDataInicioAluguer.Value = selectedAluguer.DataInicio;
             dateTimePickerDataFimAluguer.Value = selectedAluguer.DataFim;
-            textBoxQuilometragemAluguer.Text = selectedAluguer.Kms.ToString();
+            numericUpDownKMsAluguer.Text = selectedAluguer.Kms.ToString();
             maskedTextBoxValorAluguer.Text = selectedAluguer.Valor.ToString();
 
             // Ativa os botoes de editar e apagar

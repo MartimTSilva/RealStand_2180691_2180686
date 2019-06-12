@@ -169,7 +169,6 @@
             this.groupBoxAluguer = new System.Windows.Forms.GroupBox();
             this.buttonGuardarAluguer = new System.Windows.Forms.Button();
             this.maskedTextBoxValorAluguer = new System.Windows.Forms.MaskedTextBox();
-            this.textBoxQuilometragemAluguer = new System.Windows.Forms.TextBox();
             this.labelQuilometragemAluguer = new System.Windows.Forms.Label();
             this.labelValorAluguer = new System.Windows.Forms.Label();
             this.dateTimePickerDataFimAluguer = new System.Windows.Forms.DateTimePicker();
@@ -225,6 +224,7 @@
             this.carros_CarroAluguerTableAdapter = new RealStand.realstandDataSetTableAdapters.Carros_CarroAluguerTableAdapter();
             this.carrosTableAdapter = new RealStand.realstandDataSetTableAdapters.CarrosTableAdapter();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.numericUpDownKMsAluguer = new System.Windows.Forms.NumericUpDown();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -268,6 +268,7 @@
             this.groupBoxFichaClienteVenda.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKMsAluguer)).BeginInit();
             this.SuspendLayout();
             // 
             // nomeLabel
@@ -1778,9 +1779,9 @@
             // 
             // groupBoxAluguer
             // 
+            this.groupBoxAluguer.Controls.Add(this.numericUpDownKMsAluguer);
             this.groupBoxAluguer.Controls.Add(this.buttonGuardarAluguer);
             this.groupBoxAluguer.Controls.Add(this.maskedTextBoxValorAluguer);
-            this.groupBoxAluguer.Controls.Add(this.textBoxQuilometragemAluguer);
             this.groupBoxAluguer.Controls.Add(this.labelQuilometragemAluguer);
             this.groupBoxAluguer.Controls.Add(this.labelValorAluguer);
             this.groupBoxAluguer.Controls.Add(this.dateTimePickerDataFimAluguer);
@@ -1815,13 +1816,6 @@
             this.maskedTextBoxValorAluguer.Name = "maskedTextBoxValorAluguer";
             this.maskedTextBoxValorAluguer.Size = new System.Drawing.Size(63, 20);
             this.maskedTextBoxValorAluguer.TabIndex = 28;
-            // 
-            // textBoxQuilometragemAluguer
-            // 
-            this.textBoxQuilometragemAluguer.Location = new System.Drawing.Point(100, 73);
-            this.textBoxQuilometragemAluguer.Name = "textBoxQuilometragemAluguer";
-            this.textBoxQuilometragemAluguer.Size = new System.Drawing.Size(122, 20);
-            this.textBoxQuilometragemAluguer.TabIndex = 27;
             // 
             // labelQuilometragemAluguer
             // 
@@ -2359,6 +2353,18 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.UpdateStatusBar);
             // 
+            // numericUpDownKMsAluguer
+            // 
+            this.numericUpDownKMsAluguer.Location = new System.Drawing.Point(100, 72);
+            this.numericUpDownKMsAluguer.Maximum = new decimal(new int[] {
+            5000000,
+            0,
+            0,
+            0});
+            this.numericUpDownKMsAluguer.Name = "numericUpDownKMsAluguer";
+            this.numericUpDownKMsAluguer.Size = new System.Drawing.Size(93, 20);
+            this.numericUpDownKMsAluguer.TabIndex = 30;
+            // 
             // window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2432,6 +2438,7 @@
             this.groupBox4.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKMsAluguer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2533,7 +2540,6 @@
         private System.Windows.Forms.Label labelDataFimAluguer;
         private System.Windows.Forms.Label labelDataInicioAluguer;
         private System.Windows.Forms.Label labelValorAluguer;
-        private System.Windows.Forms.TextBox textBoxQuilometragemAluguer;
         private System.Windows.Forms.Label labelQuilometragemAluguer;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxValorAluguer;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -2629,6 +2635,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelVendas;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelAluguer;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.NumericUpDown numericUpDownKMsAluguer;
     }
 }
 
