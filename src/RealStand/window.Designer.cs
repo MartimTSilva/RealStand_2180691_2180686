@@ -167,6 +167,7 @@
             this.buttonEmitirFaturaAluguer = new System.Windows.Forms.Button();
             this.buttonEditarAluguer = new System.Windows.Forms.Button();
             this.groupBoxAluguer = new System.Windows.Forms.GroupBox();
+            this.numericUpDownKMsAluguer = new System.Windows.Forms.NumericUpDown();
             this.buttonGuardarAluguer = new System.Windows.Forms.Button();
             this.maskedTextBoxValorAluguer = new System.Windows.Forms.MaskedTextBox();
             this.labelQuilometragemAluguer = new System.Windows.Forms.Label();
@@ -224,7 +225,6 @@
             this.carros_CarroAluguerTableAdapter = new RealStand.realstandDataSetTableAdapters.Carros_CarroAluguerTableAdapter();
             this.carrosTableAdapter = new RealStand.realstandDataSetTableAdapters.CarrosTableAdapter();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.numericUpDownKMsAluguer = new System.Windows.Forms.NumericUpDown();
             nomeLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -260,6 +260,7 @@
             this.tabPageAluguer.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBoxAluguer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKMsAluguer)).BeginInit();
             this.groupBoxCarrosAluguer.SuspendLayout();
             this.groupBoxCarroAluguer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).BeginInit();
@@ -268,7 +269,6 @@
             this.groupBoxFichaClienteVenda.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKMsAluguer)).BeginInit();
             this.SuspendLayout();
             // 
             // nomeLabel
@@ -1124,7 +1124,7 @@
             // 
             this.labelTotalClienteOficina.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelTotalClienteOficina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.labelTotalClienteOficina.ForeColor = System.Drawing.Color.Brown;
+            this.labelTotalClienteOficina.ForeColor = System.Drawing.Color.Chocolate;
             this.labelTotalClienteOficina.Location = new System.Drawing.Point(15, 60);
             this.labelTotalClienteOficina.Name = "labelTotalClienteOficina";
             this.labelTotalClienteOficina.Size = new System.Drawing.Size(100, 20);
@@ -1251,7 +1251,7 @@
             // 
             this.labelTituloOficina.AutoSize = true;
             this.labelTituloOficina.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTituloOficina.ForeColor = System.Drawing.Color.Brown;
+            this.labelTituloOficina.ForeColor = System.Drawing.Color.Chocolate;
             this.labelTituloOficina.Location = new System.Drawing.Point(10, 8);
             this.labelTituloOficina.Name = "labelTituloOficina";
             this.labelTituloOficina.Size = new System.Drawing.Size(107, 32);
@@ -1796,6 +1796,18 @@
             this.groupBoxAluguer.TabStop = false;
             this.groupBoxAluguer.Text = "Detalhes Aluguer";
             // 
+            // numericUpDownKMsAluguer
+            // 
+            this.numericUpDownKMsAluguer.Location = new System.Drawing.Point(100, 72);
+            this.numericUpDownKMsAluguer.Maximum = new decimal(new int[] {
+            5000000,
+            0,
+            0,
+            0});
+            this.numericUpDownKMsAluguer.Name = "numericUpDownKMsAluguer";
+            this.numericUpDownKMsAluguer.Size = new System.Drawing.Size(93, 20);
+            this.numericUpDownKMsAluguer.TabIndex = 30;
+            // 
             // buttonGuardarAluguer
             // 
             this.buttonGuardarAluguer.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardarAluguer.Image")));
@@ -1973,6 +1985,7 @@
             this.numeroChassisMaskedTextBox.Name = "numeroChassisMaskedTextBox";
             this.numeroChassisMaskedTextBox.Size = new System.Drawing.Size(136, 20);
             this.numeroChassisMaskedTextBox.TabIndex = 19;
+            this.numeroChassisMaskedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // carrosBindingSource
             // 
@@ -2188,7 +2201,7 @@
             // 
             this.labelTituloAluguer.AutoSize = true;
             this.labelTituloAluguer.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTituloAluguer.ForeColor = System.Drawing.Color.Brown;
+            this.labelTituloAluguer.ForeColor = System.Drawing.Color.Chocolate;
             this.labelTituloAluguer.Location = new System.Drawing.Point(10, 8);
             this.labelTituloAluguer.Name = "labelTituloAluguer";
             this.labelTituloAluguer.Size = new System.Drawing.Size(118, 32);
@@ -2235,7 +2248,7 @@
             // 
             this.labelTotalGastoAluguer.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelTotalGastoAluguer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.labelTotalGastoAluguer.ForeColor = System.Drawing.Color.Brown;
+            this.labelTotalGastoAluguer.ForeColor = System.Drawing.Color.Chocolate;
             this.labelTotalGastoAluguer.Location = new System.Drawing.Point(20, 60);
             this.labelTotalGastoAluguer.Name = "labelTotalGastoAluguer";
             this.labelTotalGastoAluguer.Size = new System.Drawing.Size(95, 20);
@@ -2353,18 +2366,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.UpdateStatusBar);
             // 
-            // numericUpDownKMsAluguer
-            // 
-            this.numericUpDownKMsAluguer.Location = new System.Drawing.Point(100, 72);
-            this.numericUpDownKMsAluguer.Maximum = new decimal(new int[] {
-            5000000,
-            0,
-            0,
-            0});
-            this.numericUpDownKMsAluguer.Name = "numericUpDownKMsAluguer";
-            this.numericUpDownKMsAluguer.Size = new System.Drawing.Size(93, 20);
-            this.numericUpDownKMsAluguer.TabIndex = 30;
-            // 
             // window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2373,6 +2374,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "window";
             this.Text = "RealStand";
@@ -2425,6 +2427,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBoxAluguer.ResumeLayout(false);
             this.groupBoxAluguer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKMsAluguer)).EndInit();
             this.groupBoxCarrosAluguer.ResumeLayout(false);
             this.groupBoxCarroAluguer.ResumeLayout(false);
             this.groupBoxCarroAluguer.PerformLayout();
@@ -2438,7 +2441,6 @@
             this.groupBox4.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKMsAluguer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
