@@ -112,6 +112,7 @@ namespace RealStand
             {
                 MessageBox.Show("Existem campos incompletos.");
             }
+            ClearVehicleDetails();
         }
 
         private void buttonCriarAluguer_Click(object sender, EventArgs e)
