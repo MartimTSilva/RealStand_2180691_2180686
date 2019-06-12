@@ -19,7 +19,9 @@ namespace RealStand
         {
             InitializeComponent();
         }
-
+        // Mostra o texto das tabs na horizontal
+        // Baseado no exemplo
+        // https://docs.microsoft.com/en-us/dotnet/framework/winforms/controls/how-to-display-side-aligned-tabs-with-tabcontrol
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
             Graphics g = e.Graphics;
