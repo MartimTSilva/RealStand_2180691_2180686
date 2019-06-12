@@ -115,7 +115,7 @@ namespace RealStand
             }
             else
             {
-                MessageBox.Show("Existem campos incompletos.");
+                MessageBox.Show("Existem campos incompletos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -135,7 +135,7 @@ namespace RealStand
             Cliente selectedcliente = (Cliente)listBoxClientesAluguer.SelectedItem;
             if (selectedcliente == null)
             {
-                MessageBox.Show("Não existe nenhum cliente selecionado!");
+                MessageBox.Show("Nenhum cliente selecionado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             if (newAluguer)
@@ -143,7 +143,7 @@ namespace RealStand
                 CarroAluguer selectedCarroAluguer = (CarroAluguer)listBoxCarrosAluguer.SelectedItem;
                 if (selectedCarroAluguer == null)
                 {
-                    MessageBox.Show("Não existe nenhum carro selecionado!");
+                    MessageBox.Show("Nenhum carro selecionado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 try
@@ -160,7 +160,7 @@ namespace RealStand
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("Existem dados incorretos!");
+                    MessageBox.Show("Existem dados incorretos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
             }
@@ -313,7 +313,7 @@ namespace RealStand
                     clientes = Cliente.SearchClientByNIF(standContainer, textBoxAluguerFiltrarPor.Text);
                     break;
                 default:
-                    MessageBox.Show("Têm de escolher um campo de procura!");
+                    MessageBox.Show("Têm de escolher um campo de procura!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
             }
             listBoxClientesAluguer.DataSource = clientes;
@@ -337,14 +337,15 @@ namespace RealStand
                 using (StreamWriter file = new StreamWriter(nomeFicheiro))
                 {
                     file.WriteLine("\tREALSTAND\r\n\r\nNome: " + selectedCliente.Nome + "\r\n" + "NIF: " + selectedCliente.NIF 
-                        + "\r\nData de inicio: " + selectedAluguer.DataInicio.ToShortDateString() + "\r\nData de fim: " + selectedAluguer.DataFim.ToShortDateString() + "\r\n");
+                        + "\r\nData de inicio: " + selectedAluguer.DataInicio.ToShortDateString() + "\r\nData de fim: " + 
+                        selectedAluguer.DataFim.ToShortDateString() + "\r\n");
                     file.WriteLine("---------------------------------");
                     file.WriteLine("Marca: " + selectedAluguer.CarroAluguer.Marca + "\r\nModelo: " + selectedAluguer.CarroAluguer.Modelo
                        + "\r\nMatrícula: " + selectedAluguer.CarroAluguer.Matricula);
                     file.WriteLine("_________________________________");
                     file.WriteLine("TOTAL A PAGAR: " + selectedAluguer.Valor.ToString("0.00") + "€");
                 }
-                MessageBox.Show("Fatura Criada.");
+                MessageBox.Show("Fatura Criada.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

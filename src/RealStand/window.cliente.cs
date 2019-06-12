@@ -53,19 +53,20 @@ namespace RealStand
         ///Apaga um cliente que esteja selecionado
         private void buttonApagarCliente_Click(object sender, EventArgs e)
         {
-                if (MessageBox.Show("Tem a certeza que pretende apagar?" +
-                    "\nTodos os dados do cliente serão apagados.", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    Cliente selectedCliente = (Cliente)clientesListBox.SelectedItem;
-                    standContainer.Clientes.Remove(selectedCliente);
-                    standContainer.SaveChanges();
-                    clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
-                    clientesListBox.SelectedIndex = -1;
-                    buttonApagarCliente.Enabled = false;
-                    buttonEditarCliente.Enabled = false;
-                    DisableDataInsertion();
-                    ClearDadosCliente();
-                }
+            if (MessageBox.Show("Tem a certeza que pretende apagar?" +
+                "\nTodos os dados do cliente serão apagados.", "Confirmação", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Cliente selectedCliente = (Cliente)clientesListBox.SelectedItem;
+                standContainer.Clientes.Remove(selectedCliente);
+                standContainer.SaveChanges();
+                clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
+                clientesListBox.SelectedIndex = -1;
+                buttonApagarCliente.Enabled = false;
+                buttonEditarCliente.Enabled = false;
+                DisableDataInsertion();
+                ClearDadosCliente();
+            }
         }
 
         ///Procura um cliente pelo campo selecionado
@@ -81,7 +82,7 @@ namespace RealStand
                     clientes = Cliente.SearchClientByNIF(standContainer, textBoxClienteProcurarPor.Text);
                     break;
                 default:
-                    MessageBox.Show("Têm de escolher um campo de procura!");
+                    MessageBox.Show("Têm de escolher um campo de procura!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
             }
             clientesListBox.DataSource = clientes;
@@ -109,7 +110,7 @@ namespace RealStand
                     }
                     else
                     {
-                        MessageBox.Show("Já existe um cliente com o mesmo NIF ou o NIF está incorreto!");
+                        MessageBox.Show("Campos incompletos ou repetidos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                 }
@@ -132,7 +133,7 @@ namespace RealStand
             }
             else
             {
-                MessageBox.Show("Existem campos errados!");
+                MessageBox.Show("Campos incompletos ou repetidos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
