@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/31/2019 13:17:49
--- Generated from EDMX file: C:\Users\Micael Rodrigues\Documents\Github\RealStand_2180691_2180686\src\RealStand\Stand.edmx
+-- Date Created: 06/12/2019 15:14:55
+-- Generated from EDMX file: C:\Users\marti\OneDrive\Documentos\GitHub\RealStand_2180691_2180686\src\RealStand\Stand.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -109,8 +109,7 @@ CREATE TABLE [dbo].[Vendas] (
     [Valor] float  NOT NULL,
     [Estado] nvarchar(max)  NOT NULL,
     [Data] datetime  NOT NULL,
-    [ClienteId] int  NOT NULL,
-    [CarroVenda_Id] int  NOT NULL
+    [ClienteId] int  NOT NULL
 );
 GO
 
@@ -158,7 +157,8 @@ GO
 -- Creating table 'Carros_CarroVenda'
 CREATE TABLE [dbo].[Carros_CarroVenda] (
     [Extras] nvarchar(max)  NOT NULL,
-    [Id] int  NOT NULL
+    [Id] int  NOT NULL,
+    [Venda_Id] int  NOT NULL
 );
 GO
 
@@ -277,19 +277,19 @@ ON [dbo].[Vendas]
     ([ClienteId]);
 GO
 
--- Creating foreign key on [CarroVenda_Id] in table 'Vendas'
-ALTER TABLE [dbo].[Vendas]
+-- Creating foreign key on [Venda_Id] in table 'Carros_CarroVenda'
+ALTER TABLE [dbo].[Carros_CarroVenda]
 ADD CONSTRAINT [FK_VendaCarroVenda]
-    FOREIGN KEY ([CarroVenda_Id])
-    REFERENCES [dbo].[Carros_CarroVenda]
+    FOREIGN KEY ([Venda_Id])
+    REFERENCES [dbo].[Vendas]
         ([Id])
     ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_VendaCarroVenda'
 CREATE INDEX [IX_FK_VendaCarroVenda]
-ON [dbo].[Vendas]
-    ([CarroVenda_Id]);
+ON [dbo].[Carros_CarroVenda]
+    ([Venda_Id]);
 GO
 
 -- Creating foreign key on [ClienteId] in table 'Aluguers'

@@ -11,33 +11,61 @@ namespace RealStand
     {
         private bool newclient = false;
 
-        private void buttonCriarCliente_Click(object sender, EventArgs e)
+        ///Limpa todos os inputs do cliente
+        private void ClearDadosCliente()
         {
-            newclient = true;
-
             nomeTextBox.Text = "";
             nIFMaskedTextBox.Text = "";
             moradaTextBox.Text = "";
             contactoMaskedTextBox.Text = "";
-
-            EnableDataInsertion();
         }
 
+        ///Método para dar reset ao form/tab
+        private void IniciaFormClientes()
+        {
+            ClearDadosCliente();
+            DisableDataInsertion();
+            textBoxClienteProcurarPor.Text = "";
+            comboBoxCampoProcura.SelectedItem = null;
+            buttonEditarCliente.Enabled = false;
+            buttonApagarCliente.Enabled = false;
+        }
+
+        ///Altera a variavel booleana para que quando seja guardado um cliente, seja possivel saber se é um novo ou uma edição
+        private void buttonCriarCliente_Click(object sender, EventArgs e)
+        {
+            newclient = true;
+            ClearDadosCliente();
+            EnableDataInsertion();
+            clientesListBox.SelectedIndex = -1;
+            buttonEditarCliente.Enabled = false;
+            buttonApagarCliente.Enabled = false;
+        }
+
+        ///Altera a variavel booleana para que quando seja guardado um servico, seja possivel saber se é um novo ou uma edição
         private void buttonEditarCliente_Click(object sender, EventArgs e)
         {
             EnableDataInsertion();
+            buttonEditarCliente.Enabled = false;
+            buttonApagarCliente.Enabled = false;
         }
 
+        ///Apaga um cliente que esteja selecionado
         private void buttonApagarCliente_Click(object sender, EventArgs e)
         {
-            Cliente selectedCliente = (Cliente)clientesListBox.SelectedItem;
-            standContainer.Clientes.Remove(selectedCliente);
-            standContainer.SaveChanges();
-            clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
-            clientesListBox.SelectedIndex = -1;
-            buttonApagarCliente.Enabled = false;
-            buttonEditarCliente.Enabled = false;
-            DisableDataInsertion();
+                if (MessageBox.Show("Tem a certeza que pretende apagar?" +
+                    "\nTodos os dados do cliente serão apagados.", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Cliente selectedCliente = (Cliente)clientesListBox.SelectedItem;
+                    standContainer.Clientes.Remove(selectedCliente);
+                    standContainer.SaveChanges();
+                    clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
+                    clientesListBox.SelectedIndex = -1;
+                    buttonApagarCliente.Enabled = false;
+                    buttonEditarCliente.Enabled = false;
+                    DisableDataInsertion();
+                    ClearDadosCliente();
+                }
         }
 
         private void buttonProcurarCliente_Click(object sender, EventArgs e)
@@ -45,9 +73,6 @@ namespace RealStand
             List<Cliente> clientes = new List<Cliente>();
             switch (comboBoxCampoProcura.SelectedIndex)
             {
-                case -1:
-                    MessageBox.Show("Têm de escolher um campo de procura!");
-                    break;
                 case 0:
                     clientes = Cliente.SearchClientByName(standContainer, textBoxClienteProcurarPor.Text);
                     break;
@@ -55,16 +80,15 @@ namespace RealStand
                     clientes = Cliente.SearchClientByNIF(standContainer, textBoxClienteProcurarPor.Text);
                     break;
                 default:
-                    break;
+                    MessageBox.Show("Têm de escolher um campo de procura!");
+                    return;
             }
             clientesListBox.DataSource = clientes;
+            clientesListBox.SelectedIndex = -1;
+            ClearDadosCliente();
         }
 
-        /// <summary>
-        /// Grava dos dados do cliente na base de dados
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        ///Grava dos dados do cliente na base de dados
         private void buttonGravarCliente_Click(object sender, EventArgs e)
         {
             if (Cliente.CheckName(nomeTextBox.Text) &&
@@ -85,6 +109,7 @@ namespace RealStand
                     else
                     {
                         MessageBox.Show("Já existe um cliente com o mesmo NIF ou o NIF está incorreto!");
+                        return;
                     }
                 }
                 else
@@ -97,8 +122,11 @@ namespace RealStand
                 }
                 standContainer.SaveChanges();
                 clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
-
+                clientesListBox.SelectedIndex = -1;
+                buttonEditarCliente.Enabled = false;
+                buttonApagarCliente.Enabled = false;
                 DisableDataInsertion();
+                ClearDadosCliente();
                 newclient = false;
             }
             else
@@ -107,11 +135,7 @@ namespace RealStand
             }
         }
 
-        /// <summary>
-        /// Mostra os dados do cliente selecionado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        ///Mostra os dados do cliente selecionado
         private void clientesListBox_Click(object sender, EventArgs e)
         {
             Cliente selectedClient = (Cliente)clientesListBox.SelectedItem;
@@ -125,13 +149,11 @@ namespace RealStand
             contactoMaskedTextBox.Text = selectedClient.Contacto;
             buttonApagarCliente.Enabled = true;
             buttonEditarCliente.Enabled = true;
+            buttonGravarCliente.Visible = false;
+            DisableDataInsertion();
         }
 
-        /// <summary>
-        /// Ativa as caixas de texto para poder adicionar um novo cliente
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        ///Ativa as caixas de texto para poder adicionar um novo cliente
         private void EnableDataInsertion()
         {
             nomeTextBox.Enabled = true;
@@ -141,13 +163,9 @@ namespace RealStand
             buttonGravarCliente.Visible = true;
         }
 
+        ///Bloqueia todos os inputs dos dados do cliente
         private void DisableDataInsertion()
         {
-            nomeTextBox.Text = "";
-            nIFMaskedTextBox.Text = "";
-            moradaTextBox.Text = "";
-            contactoMaskedTextBox.Text = "";
-
             nomeTextBox.Enabled = false;
             nIFMaskedTextBox.Enabled = false;
             moradaTextBox.Enabled = false;

@@ -576,7 +576,7 @@
             this.nIFMaskedTextBox.Location = new System.Drawing.Point(65, 39);
             this.nIFMaskedTextBox.Mask = "000000000";
             this.nIFMaskedTextBox.Name = "nIFMaskedTextBox";
-            this.nIFMaskedTextBox.Size = new System.Drawing.Size(70, 20);
+            this.nIFMaskedTextBox.Size = new System.Drawing.Size(60, 20);
             this.nIFMaskedTextBox.TabIndex = 3;
             // 
             // moradaTextBox
@@ -595,7 +595,7 @@
             this.contactoMaskedTextBox.Location = new System.Drawing.Point(65, 91);
             this.contactoMaskedTextBox.Mask = "000000000";
             this.contactoMaskedTextBox.Name = "contactoMaskedTextBox";
-            this.contactoMaskedTextBox.Size = new System.Drawing.Size(70, 20);
+            this.contactoMaskedTextBox.Size = new System.Drawing.Size(60, 20);
             this.contactoMaskedTextBox.TabIndex = 7;
             // 
             // clientesListBox
@@ -1219,6 +1219,7 @@
             // 
             // comboBoxCampoOficina
             // 
+            this.comboBoxCampoOficina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCampoOficina.FormattingEnabled = true;
             this.comboBoxCampoOficina.Items.AddRange(new object[] {
             "Nome",
@@ -2241,9 +2242,9 @@
             this.labelTotalGastoAluguer.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelTotalGastoAluguer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.labelTotalGastoAluguer.ForeColor = System.Drawing.Color.Brown;
-            this.labelTotalGastoAluguer.Location = new System.Drawing.Point(7, 60);
+            this.labelTotalGastoAluguer.Location = new System.Drawing.Point(20, 60);
             this.labelTotalGastoAluguer.Name = "labelTotalGastoAluguer";
-            this.labelTotalGastoAluguer.Size = new System.Drawing.Size(116, 20);
+            this.labelTotalGastoAluguer.Size = new System.Drawing.Size(95, 20);
             this.labelTotalGastoAluguer.TabIndex = 5;
             this.labelTotalGastoAluguer.Text = "000,00€";
             this.labelTotalGastoAluguer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

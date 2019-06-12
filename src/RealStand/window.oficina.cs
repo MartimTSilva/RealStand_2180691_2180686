@@ -507,9 +507,6 @@ namespace RealStand
             List<Cliente> clientes = new List<Cliente>();
             switch (comboBoxCampoOficina.SelectedIndex)
             {
-                case -1:
-                    MessageBox.Show("Têm de escolher um campo de procura!");
-                    break;
                 case 0:
                     clientes = Cliente.SearchClientByName(standContainer, textBoxProcurarPorOficina.Text);
                     break;
@@ -517,7 +514,8 @@ namespace RealStand
                     clientes = Cliente.SearchClientByNIF(standContainer, textBoxProcurarPorOficina.Text);
                     break;
                 default:
-                    break;
+                    MessageBox.Show("Têm de escolher um campo de procura!");
+                    return;
             }
             listBoxClientesOficina.DataSource = clientes;
             //Limpa
@@ -546,7 +544,7 @@ namespace RealStand
                 using (StreamWriter file = new StreamWriter(nomeFicheiro))
                 {
                     file.WriteLine("\tREALSTAND\r\n\r\nNome: " + selectedCliente.Nome + "\r\n" + "NIF: " + selectedCliente.NIF + "\r\n" + "Tipo de Serviço: "
-                        + selectedServico.Tipo + "\r\nEntrada: " + selectedServico.DataEntrega + "\r\nSaída: " + selectedServico.DataSaida + "\r\n");
+                        + selectedServico.Tipo + "\r\nEntrada: " + selectedServico.DataEntrega.ToShortDateString() + "\r\nSaída: " + selectedServico.DataSaida.ToShortDateString() + "\r\n");
                     foreach (Parcela item in selectedServico.Parcela)
                     {
                         file.WriteLine("---------------------------------");
