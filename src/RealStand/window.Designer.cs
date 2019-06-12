@@ -1124,7 +1124,7 @@
             // 
             this.labelTotalClienteOficina.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelTotalClienteOficina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.labelTotalClienteOficina.ForeColor = System.Drawing.Color.Brown;
+            this.labelTotalClienteOficina.ForeColor = System.Drawing.Color.Chocolate;
             this.labelTotalClienteOficina.Location = new System.Drawing.Point(15, 60);
             this.labelTotalClienteOficina.Name = "labelTotalClienteOficina";
             this.labelTotalClienteOficina.Size = new System.Drawing.Size(100, 20);
@@ -1251,7 +1251,7 @@
             // 
             this.labelTituloOficina.AutoSize = true;
             this.labelTituloOficina.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTituloOficina.ForeColor = System.Drawing.Color.Brown;
+            this.labelTituloOficina.ForeColor = System.Drawing.Color.Chocolate;
             this.labelTituloOficina.Location = new System.Drawing.Point(10, 8);
             this.labelTituloOficina.Name = "labelTituloOficina";
             this.labelTituloOficina.Size = new System.Drawing.Size(107, 32);
@@ -2201,7 +2201,7 @@
             // 
             this.labelTituloAluguer.AutoSize = true;
             this.labelTituloAluguer.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTituloAluguer.ForeColor = System.Drawing.Color.Brown;
+            this.labelTituloAluguer.ForeColor = System.Drawing.Color.Chocolate;
             this.labelTituloAluguer.Location = new System.Drawing.Point(10, 8);
             this.labelTituloAluguer.Name = "labelTituloAluguer";
             this.labelTituloAluguer.Size = new System.Drawing.Size(118, 32);
@@ -2248,7 +2248,7 @@
             // 
             this.labelTotalGastoAluguer.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelTotalGastoAluguer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.labelTotalGastoAluguer.ForeColor = System.Drawing.Color.Brown;
+            this.labelTotalGastoAluguer.ForeColor = System.Drawing.Color.Chocolate;
             this.labelTotalGastoAluguer.Location = new System.Drawing.Point(20, 60);
             this.labelTotalGastoAluguer.Name = "labelTotalGastoAluguer";
             this.labelTotalGastoAluguer.Size = new System.Drawing.Size(95, 20);
