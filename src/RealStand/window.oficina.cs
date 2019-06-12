@@ -299,8 +299,8 @@ namespace RealStand
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
             CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
             
-                if (MessageBox.Show("O carro que está a tentar remover tem serviços ativos. \nTem a certeza que quer continuar? " +
-                "Todas as parcelas e serviços serão removidos.", "Confirmação", 
+                if (MessageBox.Show("Ao remover o carro da oficina todas as sua informações, serviços e parcelas serão eliminadas." +
+                    " \nTem a certeza que quer continuar? ", "Confirmação", 
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     standContainer.Carros.Remove(selectedCarroOficina);
@@ -414,25 +414,22 @@ namespace RealStand
         {
             Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
             CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
-            if (selectedServico.Parcela.Count != 0)
+            if (MessageBox.Show("Ao remover o serviço todas as suas informações e parcelas serão eleminadas. \nTem a certeza que quer continuar? "
+                , "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                if (MessageBox.Show("O serviço que está a tentar remover tem parcelas ativas. \nTem a certeza que quer continuar? " +
-                "Todas as parcelas serão eleminadas.", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                {
-                    standContainer.Servicos.Remove(selectedServico);
-                    standContainer.SaveChanges();
-                    listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
-                    dateTimePickerDataEntregaOficina.Text = null;
-                    dateTimePickerDataSaidaOficina.Text = null;
-                    comboBoxTipoServicosOficina.SelectedIndex = -1;
-                    buttonRemoverServicoOficina.Enabled = false;
-                    buttonEmitirFaturaOficina.Enabled = false;
-                    buttonEditarServicoOficina.Enabled = false;
-                    listBoxParcelasOficina.DataSource = null;
-                    groupBoxCriarParcelaOficina.Enabled = false;
-                    Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
-                    labelTotalClienteOficina.Text = selectedCliente.GetTotal();
-                }
+                standContainer.Servicos.Remove(selectedServico);
+                standContainer.SaveChanges();
+                listBoxServicosOficina.DataSource = selectedCarroOficina.Servico.ToList();
+                dateTimePickerDataEntregaOficina.Text = null;
+                dateTimePickerDataSaidaOficina.Text = null;
+                comboBoxTipoServicosOficina.SelectedIndex = -1;
+                buttonRemoverServicoOficina.Enabled = false;
+                buttonEmitirFaturaOficina.Enabled = false;
+                buttonEditarServicoOficina.Enabled = false;
+                listBoxParcelasOficina.DataSource = null;
+                groupBoxCriarParcelaOficina.Enabled = false;
+                Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
+                labelTotalClienteOficina.Text = selectedCliente.GetTotal();
             }
         }
 
