@@ -28,7 +28,7 @@ namespace RealStand
 
         public override string ToString()
         {
-            return Marca + " - " + Modelo + "(" + Matricula + ")";
+            return Marca + " - " + Modelo + " (" + Matricula + ")";
         }
 
         public static bool VerificaMatricula(string matricula)
