@@ -122,7 +122,7 @@
             this.tabPageVendas = new System.Windows.Forms.TabPage();
             this.groupBoxDetalhesVendaECarroVendas = new System.Windows.Forms.GroupBox();
             this.groupBoxDetalhesCarroVenda = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxNChassiVendas = new System.Windows.Forms.MaskedTextBox();
             this.labelNChassis = new System.Windows.Forms.Label();
             this.labelCombustivelVendas = new System.Windows.Forms.Label();
             this.textBoxExtrasVendas = new System.Windows.Forms.TextBox();
@@ -926,7 +926,7 @@
             // 
             this.maskedTextBoxChassiOficina.Location = new System.Drawing.Point(66, 71);
             this.maskedTextBoxChassiOficina.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBoxChassiOficina.Mask = "00000000000000000";
+            this.maskedTextBoxChassiOficina.Mask = "AAAAAAAAAAAAAAAAA";
             this.maskedTextBoxChassiOficina.Name = "maskedTextBoxChassiOficina";
             this.maskedTextBoxChassiOficina.Size = new System.Drawing.Size(122, 20);
             this.maskedTextBoxChassiOficina.TabIndex = 15;
@@ -1284,7 +1284,7 @@
             // 
             // groupBoxDetalhesCarroVenda
             // 
-            this.groupBoxDetalhesCarroVenda.Controls.Add(this.maskedTextBox1);
+            this.groupBoxDetalhesCarroVenda.Controls.Add(this.maskedTextBoxNChassiVendas);
             this.groupBoxDetalhesCarroVenda.Controls.Add(this.labelNChassis);
             this.groupBoxDetalhesCarroVenda.Controls.Add(this.labelCombustivelVendas);
             this.groupBoxDetalhesCarroVenda.Controls.Add(this.textBoxExtrasVendas);
@@ -1301,15 +1301,15 @@
             this.groupBoxDetalhesCarroVenda.TabStop = false;
             this.groupBoxDetalhesCarroVenda.Text = "Detalhes do carro";
             // 
-            // maskedTextBox1
+            // maskedTextBoxNChassiVendas
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(72, 32);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox1.Mask = "00000000000000000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(136, 20);
-            this.maskedTextBox1.TabIndex = 16;
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.maskedTextBoxNChassiVendas.Location = new System.Drawing.Point(72, 32);
+            this.maskedTextBoxNChassiVendas.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBoxNChassiVendas.Mask = "AAAAAAAAAAAAAAAAA";
+            this.maskedTextBoxNChassiVendas.Name = "maskedTextBoxNChassiVendas";
+            this.maskedTextBoxNChassiVendas.Size = new System.Drawing.Size(136, 20);
+            this.maskedTextBoxNChassiVendas.TabIndex = 16;
+            this.maskedTextBoxNChassiVendas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelNChassis
             // 
@@ -1974,7 +1974,7 @@
             // 
             this.numeroChassisMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carrosBindingSource, "NumeroChassis", true));
             this.numeroChassisMaskedTextBox.Location = new System.Drawing.Point(83, 19);
-            this.numeroChassisMaskedTextBox.Mask = "00000000000000000";
+            this.numeroChassisMaskedTextBox.Mask = "AAAAAAAAAAAAAAAAA";
             this.numeroChassisMaskedTextBox.Name = "numeroChassisMaskedTextBox";
             this.numeroChassisMaskedTextBox.Size = new System.Drawing.Size(136, 20);
             this.numeroChassisMaskedTextBox.TabIndex = 19;
@@ -2590,7 +2590,7 @@
         private System.Windows.Forms.Label labelNifVendas;
         private System.Windows.Forms.Label labelNomeVendas;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxChassiOficina;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxNChassiVendas;
         private System.Windows.Forms.Label labelTotalVendas;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;

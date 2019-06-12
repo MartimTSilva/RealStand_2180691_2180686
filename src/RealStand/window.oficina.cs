@@ -13,9 +13,9 @@ namespace RealStand
         private bool novoCarroOficina = false;
         private bool novoServicoOficina = false;
 
+        ///Limpa os inputs do carro
         void CleanInputCarroOficina()
         {
-            //Limpa os inputs do carro
             maskedTextBoxMatriculaOficina.Text = "";
             numericUpDownKMsOficina.Text = "0";
             maskedTextBoxChassiOficina.Text = "";
@@ -23,17 +23,16 @@ namespace RealStand
             textBoxModeloOficina.Text = "";
             comboBoxCombustivelOficina.SelectedItem = null;
         }
+
+        ///Limpa os inputs dos servicos
         void CleanInputServicosOficina()
         {
-            //Limpa os inputs dos servicos
             dateTimePickerDataEntregaOficina.Text = null;
             dateTimePickerDataSaidaOficina.Text = null;
             comboBoxTipoServicosOficina.SelectedIndex = -1;
         }
 
-        /// <summary>
         /// Método para colocar tudo do Form da Oficina a null
-        /// </summary>
         private void IniciaOficina()
         {
             //Reseta a Ficha de Cliente
@@ -94,11 +93,7 @@ namespace RealStand
             buttonGuardarCarroOficina.Enabled = false;
         }
 
-        /// <summary>
         /// Mostra todos os carros do cliente selecionado na listbox dos carros da oficina
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void listBoxClientesOficina_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
@@ -133,11 +128,7 @@ namespace RealStand
             buttonRemoverCarroOficina.Enabled = false;
         }
 
-        /// <summary>
         /// Adiciona um carro da oficina ao cliente que esteja selecionado na listbox
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonAdicionarCarroOficina_Click(object sender, EventArgs e)
         {
             novoCarroOficina = true;
@@ -154,12 +145,7 @@ namespace RealStand
             buttonGuardarCarroOficina.Enabled = true;
         }
 
-
-        /// <summary>
         /// Mostra todos os serviços do carro selecionado da oficina
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void listBoxCarrosOficina_Click(object sender, EventArgs e)
         {
             CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
@@ -213,11 +199,7 @@ namespace RealStand
             CleanInputServicosOficina();
         }
 
-        /// <summary>
         /// Adiciona uma parcela a um serviço na oficina
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonAdicionarParcelaOficina_Click(object sender, EventArgs e)
         {
             double ValorParcela;
@@ -257,11 +239,7 @@ namespace RealStand
             }
         }
 
-        /// <summary>
         /// Mostra todos as parcelas do serviço selecionado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void listBoxServicosOficina_Click(object sender, EventArgs e)
         {
             Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
@@ -301,11 +279,7 @@ namespace RealStand
             listBoxParcelasOficina.SelectedIndex = -1;
         }
 
-        /// <summary>
         /// Remove uma parcela que esteja selecionada 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonRemoverParcelaOficina_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
@@ -319,11 +293,7 @@ namespace RealStand
             labelTotalClienteOficina.Text = selectedCliente.GetTotal();
         }
 
-        /// <summary>
         /// Remove um carro que esteja selecionado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonRemoverCarroOficina_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
@@ -351,11 +321,7 @@ namespace RealStand
             }
         }
 
-        /// <summary>
         /// Ativa o botao de remover parcela sempre que uma parcela seja selecionada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void listBoxParcelasOficina_Click(object sender, EventArgs e)
         {
             if (listBoxParcelasOficina.SelectedItem != null)
@@ -364,11 +330,7 @@ namespace RealStand
             }
         }
 
-        /// <summary>
         /// Cria ou edita um carro do cliente que esteja selecionado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonGuardarCarroOficina_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
@@ -440,22 +402,14 @@ namespace RealStand
             }
         }
 
-        /// <summary>
         /// Desbloqueia as textboxes para que nestas sejam possivel alterar dados
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonEditarCarroOficina_Click(object sender, EventArgs e)
         {
             novoCarroOficina = false;
             PreparaCarro();
         }
 
-        /// <summary>
         /// Remove um servico que esteja selecionado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonRemoverServicoOficina_Click(object sender, EventArgs e)
         {
             Servico selectedServico = (Servico)listBoxServicosOficina.SelectedItem;
@@ -482,11 +436,7 @@ namespace RealStand
             }
         }
 
-        /// <summary>
         /// Cria ou edita um servico do carro selecionado 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonGuardarServicoOficina_Click(object sender, EventArgs e)
         {
             DateTime DataEntrega = dateTimePickerDataEntregaOficina.Value;
@@ -535,11 +485,7 @@ namespace RealStand
             buttonEmitirFaturaOficina.Enabled = false;
         }
 
-        /// <summary>
-        /// Desbloqueia as textboxes do servico para que este possa ser criado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        ///Altera a variavel booleana para que quando seja guardado um servico, seja possivel saber se é um novo ou uma edição
         private void buttonCriarServicoOficina_Click(object sender, EventArgs e)
         {
             novoServicoOficina = true;
@@ -548,17 +494,14 @@ namespace RealStand
             PreparaServico();
         }
 
+        ///Altera a variavel booleana para que quando seja guardado um servico, seja possivel saber se é um novo ou uma edição
         private void buttonEditarServicoOficina_Click(object sender, EventArgs e)
         {
             novoServicoOficina = false;
             PreparaServico();
         }
 
-        /// <summary>
         /// Procura um cliente por um campo escolhido
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonFiltrarOficina_Click(object sender, EventArgs e)
         {
             List<Cliente> clientes = new List<Cliente>();
@@ -586,11 +529,7 @@ namespace RealStand
             listBoxParcelasOficina.DataSource = null;
         }
 
-        /// <summary>
         /// Emite a fatura de um servico selecionado
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonEmitirFaturaOficina_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;

@@ -12,24 +12,27 @@ namespace RealStand
     {
         private bool novoCarroVenda = false;
 
+        ///Limpa todos os inputs dentro da groupbox "Detalhes"
         void CleanInputDetalhesVenda()
         {
             dateTimePickerDataVenda.Text = null;
             textBoxEstadoVendas.Text = "";
             maskedTextBoxValorVenda.Text = "";
 
-            maskedTextBox1.Text = "";
+            maskedTextBoxNChassiVendas.Text = "";
             textBoxMarcaVendas.Text = "";
             textBoxModeloVendas.Text = "";
             comboBoxCombustivelVendas.SelectedItem = null; ;
             textBoxExtrasVendas.Text = "";
         }
 
+        ///Faz um reset ao form/tab das Vendas
         void IniciaFormVendas()
         {
             //Reseta a Ficha de Cliente
             labelNomeClienteSelecionadoVendas.Text = "Nenhum cliente selecionado";
             labelNifClienteSelecionadoVendas.Text = "*********";
+            labelTotalVendas.Text = "000,00€";
 
             //Desmarca todos os itens nas listboxes
             listBoxVendasDoCliente.SelectedIndex = -1;
@@ -43,11 +46,9 @@ namespace RealStand
             //Bloqueia groupboxes
             groupBoxVendasCliente.Enabled = false;
             groupBoxDetalhesVendaECarroVendas.Enabled = false;
-
-
-            labelTotalVendas.Text = "000,00€";
         }
 
+        ///Mostra todas as vendas do cliente selecionado na listbox "Vendas do cliente"
         private void listBoxClientesVendas_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesVendas.SelectedItem;
@@ -58,7 +59,6 @@ namespace RealStand
             }
 
             labelTotalVendas.Text = selectedCliente.GetTotalVendas();
-
 
             listBoxVendasDoCliente.DataSource = selectedCliente.Venda.ToList();
             listBoxVendasDoCliente.SelectedIndex = -1;
@@ -73,6 +73,7 @@ namespace RealStand
             labelNifClienteSelecionadoVendas.Text = selectedCliente.NIF;
         }
 
+        ///Mostra todos os dados da venda ao selecionar uma venda na listbox
         private void listBoxVendasDoCliente_Click(object sender, EventArgs e)
         {
             Venda selectedVenda = (Venda)listBoxVendasDoCliente.SelectedItem;
@@ -82,7 +83,7 @@ namespace RealStand
             }
 
             //Insere as informações nas textboxes
-            maskedTextBox1.Text = selectedVenda.CarroVenda.NumeroChassis;
+            maskedTextBoxNChassiVendas.Text = selectedVenda.CarroVenda.NumeroChassis;
             textBoxMarcaVendas.Text = selectedVenda.CarroVenda.Marca;
             textBoxModeloVendas.Text = selectedVenda.CarroVenda.Modelo;
             textBoxExtrasVendas.Text = selectedVenda.CarroVenda.Extras;
@@ -114,10 +115,11 @@ namespace RealStand
             buttonEmitirFaturaVendas.Enabled = true;
         }
 
+        ///Cria ou altera uma venda dependentemente do botão pressionado anteriormente (criar venda ou editar venda)
         private void buttonGuardarVendas_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesVendas.SelectedItem;
-            string numeroChassis = maskedTextBox1.Text;
+            string numeroChassis = maskedTextBoxNChassiVendas.Text;
             string marca = textBoxMarcaVendas.Text;
             string modelo = textBoxModeloVendas.Text;
             string combustivel = comboBoxCombustivelVendas.Text;
@@ -146,7 +148,7 @@ namespace RealStand
                 else //Editar venda
                 {
                     Venda selectedVenda = (Venda)listBoxVendasDoCliente.SelectedItem;
-                    selectedVenda.CarroVenda.NumeroChassis = maskedTextBox1.Text;
+                    selectedVenda.CarroVenda.NumeroChassis = maskedTextBoxNChassiVendas.Text;
                     selectedVenda.CarroVenda.Marca = textBoxMarcaVendas.Text;
                     selectedVenda.CarroVenda.Modelo = textBoxModeloVendas.Text;
                     selectedVenda.CarroVenda.Combustivel = comboBoxCombustivelVendas.Text;
@@ -155,7 +157,6 @@ namespace RealStand
                     selectedVenda.Estado = textBoxEstadoVendas.Text;
                     selectedVenda.Valor = double.Parse(maskedTextBoxValorVenda.Text.Replace('€', ' '));
                 }
-
                 standContainer.SaveChanges();
                 listBoxVendasDoCliente.DataSource = selectedCliente.Venda.ToList();
                 listBoxVendasDoCliente.SelectedIndex = -1;
@@ -184,6 +185,7 @@ namespace RealStand
             }
         }
 
+        ///Altera a variavel booleana para que quando seja guardado um servico, seja possivel saber se é um novo ou uma edição
         private void buttonCriarVenda_Click(object sender, EventArgs e)
         {
             novoCarroVenda = true;
@@ -191,11 +193,14 @@ namespace RealStand
             groupBoxDetalhesVendaECarroVendas.Enabled = true;
         }
 
+        ///Altera a variavel booleana para que quando seja guardado um servico, seja possivel saber se é um novo ou uma edição
         private void buttonEditarVenda_Click(object sender, EventArgs e)
         {
             novoCarroVenda = false;
             groupBoxDetalhesVendaECarroVendas.Enabled = true;
         }
+
+        ///Anula uma venda que esteja selecionada
         private void buttonAnularVenda_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesVendas.SelectedItem;
@@ -212,6 +217,7 @@ namespace RealStand
             labelTotalVendas.Text = selectedCliente.GetTotalVendas();
         }
 
+        ///Atualiza a listbox dos clientes de acordo com os campos procurados
         private void buttonFiltarVendas_Click(object sender, EventArgs e)
         {
             List<Cliente> clientes = new List<Cliente>();
@@ -236,6 +242,7 @@ namespace RealStand
             listBoxVendasDoCliente.DataSource = null;
         }
 
+        ///Emite uma fatura da venda selecionada
         private void buttonEmitirFaturaVendas_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesVendas.SelectedItem;
