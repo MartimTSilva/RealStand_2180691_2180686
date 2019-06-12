@@ -13,14 +13,16 @@ namespace RealStand
         bool newCarroAluguer = false;
         bool newAluguer = false;
 
+        ///Limpa input dos detalhes do aluguer
         void ClearAluguerFields()
         {
             dateTimePickerDataInicioAluguer.ResetText();
             dateTimePickerDataFimAluguer.ResetText();
-            textBoxQuilometragemAluguer.ResetText();
+            numericUpDownKMsAluguer.ResetText();
             maskedTextBoxValorAluguer.ResetText();
         }
 
+        ///Limpa inpuit dos detalhes do carro de aluguer
         private void ClearVehicleDetails()
         {
             numeroChassisMaskedTextBox.ResetText();
@@ -31,6 +33,7 @@ namespace RealStand
             maskedTextBoxMatriculaAluguer.ResetText();
         }
 
+        ///Faz um reset ao form/tab
         private void ResetFormAluguer()
         {
             ClearAluguerFields();
@@ -62,6 +65,7 @@ namespace RealStand
             listBoxCarrosAluguer.SelectedIndex = -1;
         }
 
+        ///Altera a variavel booleana para que quando seja guardado um carro de aluguer, seja possivel saber se é um carro novo ou uma edição
         private void buttonCriarCarroAluguer_Click(object sender, EventArgs e)
         {
             newCarroAluguer = true;
@@ -71,6 +75,7 @@ namespace RealStand
             ClearVehicleDetails();
         }
 
+        ///Cria ou altera um carro de aluguer
         private void buttonGuardarCarroAluguer_Click(object sender, EventArgs e)
         {
             if (CarroOficina.VerificaMatricula(maskedTextBoxMatriculaAluguer.Text)
@@ -119,6 +124,7 @@ namespace RealStand
             buttonEliminarCarroAluguer.Enabled = false;
         }
 
+        ///Altera a variavel booleana para que quando seja guardado um aluguer, seja possivel saber se é um aluguer novo ou uma edição
         private void buttonCriarAluguer_Click(object sender, EventArgs e)
         {
             newAluguer = true;
@@ -128,6 +134,7 @@ namespace RealStand
             ClearAluguerFields();
         }
 
+        ///Cria ou altera um aluguer do cliente selecionado
         private void buttonGuardarAluguer_Click(object sender, EventArgs e)
         {
             Cliente selectedcliente = (Cliente)listBoxClientesAluguer.SelectedItem;
@@ -150,7 +157,7 @@ namespace RealStand
                         DateTime.Parse(dateTimePickerDataInicioAluguer.Text),
                         DateTime.Parse(dateTimePickerDataFimAluguer.Text),
                         double.Parse(maskedTextBoxValorAluguer.Text.Replace('€', ' ')),
-                        long.Parse(textBoxQuilometragemAluguer.Text),
+                        long.Parse(numericUpDownKMsAluguer.Text),
                         selectedcliente,
                         selectedCarroAluguer
                     );
@@ -167,7 +174,7 @@ namespace RealStand
                 Aluguer selectedAluguer = (Aluguer)listBoxAluguer.SelectedItem;
                 selectedAluguer.DataInicio = dateTimePickerDataInicioAluguer.Value;
                 selectedAluguer.DataFim = dateTimePickerDataFimAluguer.Value;
-                selectedAluguer.Kms = long.Parse(textBoxQuilometragemAluguer.Text);
+                selectedAluguer.Kms = long.Parse(numericUpDownKMsAluguer.Text);
                 selectedAluguer.Valor = double.Parse(maskedTextBoxValorAluguer.Text.Replace('€', ' '));
             }
             standContainer.SaveChanges();
@@ -180,6 +187,7 @@ namespace RealStand
             ClearAluguerFields();
         }
 
+        ///Mostra toda a informação do carro de aluguer selecionado
         private void listBoxCarrosAluguer_Click(object sender, EventArgs e)
         {
             CarroAluguer selectedCarroAluguer = (CarroAluguer)listBoxCarrosAluguer.SelectedItem;
@@ -199,12 +207,14 @@ namespace RealStand
             buttonEliminarCarroAluguer.Enabled = true;
         }
 
+        ///Altera a variavel booleana para que quando seja guardado um carro de aluguer, seja possivel saber se é um carro novo ou uma edição
         private void buttonEditarCarroAluguer_Click(object sender, EventArgs e)
         {
             groupBoxCarroAluguer.Enabled = true;
             buttonGuardarCarroAluguer.Visible = true;
         }
 
+        ///Mostra toda a informação do aluguer selecionado
         private void listBoxAluguer_Click(object sender, EventArgs e)
         {
             Aluguer selectedAluguer = (Aluguer)listBoxAluguer.SelectedItem;
@@ -215,7 +225,7 @@ namespace RealStand
 
             dateTimePickerDataInicioAluguer.Value = selectedAluguer.DataInicio;
             dateTimePickerDataFimAluguer.Value = selectedAluguer.DataFim;
-            textBoxQuilometragemAluguer.Text = selectedAluguer.Kms.ToString();
+            numericUpDownKMsAluguer.Text = selectedAluguer.Kms.ToString();
             maskedTextBoxValorAluguer.Text = selectedAluguer.Valor.ToString();
 
             // Ativa os botoes de editar e apagar
@@ -223,13 +233,15 @@ namespace RealStand
             buttonEliminarAluguer.Enabled = true;
             buttonEmitirFaturaAluguer.Enabled = true;
         }
-
+    
+        ///Altera a variavel booleana para que quando seja guardado um aluguer, seja possivel saber se é um aluguer novo ou uma edição
         private void buttonEditarAluguer_Click(object sender, EventArgs e)
         {
             groupBoxAluguer.Enabled = true;
             buttonGuardarAluguer.Visible = true;
         }
 
+        ///Elimina um carro de aluguer
         private void buttonEliminarCarroAluguer_Click(object sender, EventArgs e)
         {
             CarroAluguer selectedCarroAluguer = (CarroAluguer)listBoxCarrosAluguer.SelectedItem;
@@ -249,6 +261,7 @@ namespace RealStand
             ClearVehicleDetails();
         }
 
+        ///Elimina um aluguer de um cliente selecionado
         private void buttonEliminarAluguer_Click(object sender, EventArgs e)
         {
             Aluguer selectedAluguer = (Aluguer)listBoxAluguer.SelectedItem;
@@ -272,6 +285,7 @@ namespace RealStand
             labelTotalGastoAluguer.Text = selectedCliente.GetTotalAluguer();
         }
 
+        ///Mostra na listbox de alugueres todos os alugueres do cliente selecionado
         private void listBoxClientesAluguer_Click(object sender, EventArgs e)
         {
             Cliente selectedcliente = (Cliente)listBoxClientesAluguer.SelectedItem;
@@ -291,6 +305,7 @@ namespace RealStand
             labelNifClienteSelecionadoAluguer.Text = selectedcliente.NIF;
         }
 
+        /// Procura um cliente por um campo escolhido
         private void buttonAluguerFiltrar_Click(object sender, EventArgs e)
         {
             List<Cliente> clientes = new List<Cliente>();
@@ -310,6 +325,7 @@ namespace RealStand
             listBoxClientesAluguer.SelectedIndex = -1;
         }
 
+        ///Emite uma fatura do aluguer selecionado
         private void buttonEmitirFaturaAluguer_Click(object sender, EventArgs e)
         {
             Cliente selectedCliente = (Cliente)listBoxClientesAluguer.SelectedItem;

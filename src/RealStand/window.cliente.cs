@@ -68,6 +68,7 @@ namespace RealStand
                 }
         }
 
+        ///Procura um cliente pelo campo selecionado
         private void buttonProcurarCliente_Click(object sender, EventArgs e)
         {
             List<Cliente> clientes = new List<Cliente>();

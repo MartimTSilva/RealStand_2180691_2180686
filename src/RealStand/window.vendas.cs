@@ -185,7 +185,7 @@ namespace RealStand
             }
         }
 
-        ///Altera a variavel booleana para que quando seja guardado um servico, seja possivel saber se é um novo ou uma edição
+        ///Altera a variavel booleana para que quando seja guardado uma venda, seja possivel saber se é uma nova ou uma edição
         private void buttonCriarVenda_Click(object sender, EventArgs e)
         {
             novoCarroVenda = true;
@@ -193,7 +193,7 @@ namespace RealStand
             groupBoxDetalhesVendaECarroVendas.Enabled = true;
         }
 
-        ///Altera a variavel booleana para que quando seja guardado um servico, seja possivel saber se é um novo ou uma edição
+        ///Altera a variavel booleana para que quando seja guardado uma venda, seja possivel saber se é uma nova ou uma edição
         private void buttonEditarVenda_Click(object sender, EventArgs e)
         {
             novoCarroVenda = false;
