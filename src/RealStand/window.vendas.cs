@@ -126,24 +126,26 @@ namespace RealStand
             string extras = textBoxExtrasVendas.Text;
             DateTime dataVenda = dateTimePickerDataVenda.Value;
             string estado = textBoxEstadoVendas.Text;
-            double valorVenda = double.Parse(maskedTextBoxValorVenda.Text.Replace('€', ' '));
+            double valorVenda;
+            try
+            {
+                valorVenda = double.Parse(maskedTextBoxValorVenda.Text.Replace('€', ' '));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Valor de venda não inserido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            if (Carro.VerificaNumeroChassis(numeroChassis) && Carro.VerificaMarca(marca) && Carro.VerificaModelo(modelo))
+            if (Carro.VerificaNumeroChassis(numeroChassis) && Carro.VerificaMarca(marca) && Carro.VerificaModelo(modelo)
+                && Carro.VerificaCombustivel(comboBoxCombustivelVendas.SelectedIndex) && extras != "" && estado != "")
             {
                 if (novoCarroVenda)
                 {
                     CarroVenda novoCarroVenda = new CarroVenda(extras, numeroChassis, marca, modelo, combustivel);
                     Venda novaVenda = new Venda(valorVenda, estado, dataVenda, novoCarroVenda);
-                    try
-                    {
-                        standContainer.Carros.Add(novoCarroVenda);
-                        selectedCliente.Venda.Add(novaVenda);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                        return;
-                    }
+                    standContainer.Carros.Add(novoCarroVenda);
+                    selectedCliente.Venda.Add(novaVenda);
                 }
                 else //Editar venda
                 {
@@ -169,19 +171,27 @@ namespace RealStand
             }
             else if (!Carro.VerificaNumeroChassis(numeroChassis))
             {
-                MessageBox.Show("Número de Chassi incompleto. São 17 caracteres");
+                MessageBox.Show("Número de Chassi incompleto", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!Carro.VerificaMarca(marca))
             {
-                MessageBox.Show("Marca não inserida");
+                MessageBox.Show("Marca não inserida", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!Carro.VerificaModelo(modelo))
             {
-                MessageBox.Show("Modelo não inserido");
+                MessageBox.Show("Modelo não inserido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!Carro.VerificaCombustivel(comboBoxCombustivelVendas.SelectedIndex))
             {
-                MessageBox.Show("Combustível não selecionado");
+                MessageBox.Show("Combustível não selecionado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (extras == "")
+            {
+                MessageBox.Show("Extras não inserido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (estado == "")
+            {
+                MessageBox.Show("Estado não inserido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -230,7 +240,7 @@ namespace RealStand
                     clientes = Cliente.SearchClientByNIF(standContainer, textBoxProcurarPorVendas.Text);
                     break;
                 default:
-                    MessageBox.Show("Têm de escolher um campo de procura!");
+                    MessageBox.Show("Têm de escolher um campo de procura!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
             }
             listBoxClientesVendas.DataSource = clientes;
@@ -264,7 +274,7 @@ namespace RealStand
                     file.WriteLine("_________________________________");
                     file.WriteLine("TOTAL A PAGAR: " + selectedVenda.Valor.ToString("0.00") + "€");
                 }
-                MessageBox.Show("Fatura Criada.");
+                MessageBox.Show("Fatura Criada.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
     }

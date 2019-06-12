@@ -209,7 +209,7 @@ namespace RealStand
             }
             catch (System.FormatException)
             {
-                MessageBox.Show("Valor da parcela incorreto.");
+                MessageBox.Show("Valor da parcela incorreto.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             string DescricaoParcela = textBoxDescricaoParcelaOficina.Text;
@@ -235,7 +235,7 @@ namespace RealStand
             }
             else if (!Parcela.VerificaDescricaoParcela(DescricaoParcela))
             {
-                MessageBox.Show("Descrição de parcela vazia.");
+                MessageBox.Show("Descrição de parcela vazia.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -301,7 +301,8 @@ namespace RealStand
             if (selectedCarroOficina.Servico.Count != 0)
             {
                 if (MessageBox.Show("O carro que está a tentar remover tem serviços ativos. \nTem a certeza que quer continuar? " +
-                "Todas as parcelas e serviços serão removidos.", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                "Todas as parcelas e serviços serão removidos.", "Confirmação", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     standContainer.Carros.Remove(selectedCarroOficina);
                     standContainer.SaveChanges();
@@ -342,7 +343,7 @@ namespace RealStand
             string combustivel = comboBoxCombustivelOficina.Text;
             if (CarroOficina.VerificaMatricula(matricula) && CarroOficina.VerificaKMs(kms)
                 && Carro.VerificaNumeroChassis(numeroChassis) && Carro.VerificaMarca(marca)
-                && Carro.VerificaModelo(modelo) & Carro.VerificaCombustivel(comboBoxCombustivelOficina.SelectedIndex))
+                && Carro.VerificaModelo(modelo) && Carro.VerificaCombustivel(comboBoxCombustivelOficina.SelectedIndex))
             {
                 if (novoCarroOficina) //Criar novo
                 {
@@ -378,27 +379,27 @@ namespace RealStand
             }
             else if (!CarroOficina.VerificaMatricula(matricula))
             {
-                MessageBox.Show("Matricula inválida");
+                MessageBox.Show("Matricula inválida", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!CarroOficina.VerificaKMs(kms))
             {
-                MessageBox.Show("Quilometragem inválida");
+                MessageBox.Show("Quilometragem inválida", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!Carro.VerificaNumeroChassis(numeroChassis))
             {
-                MessageBox.Show("Número de Chassi incompleto. São 17 caracteres");
+                MessageBox.Show("Número de Chassi incompleto. São 17 caracteres", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!Carro.VerificaMarca(marca))
             {
-                MessageBox.Show("Marca não inserida");
+                MessageBox.Show("Marca não inserida", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!Carro.VerificaModelo(modelo))
             {
-                MessageBox.Show("Modelo não inserido");
+                MessageBox.Show("Modelo não inserido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!Carro.VerificaCombustivel(comboBoxCombustivelOficina.SelectedIndex))
             {
-                MessageBox.Show("Combustível não selecionado");
+                MessageBox.Show("Combustível não selecionado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -417,7 +418,7 @@ namespace RealStand
             if (selectedServico.Parcela.Count != 0)
             {
                 if (MessageBox.Show("O serviço que está a tentar remover tem parcelas ativas. \nTem a certeza que quer continuar? " +
-                "Todas as parcelas serão eleminadas.", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                "Todas as parcelas serão eleminadas.", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     standContainer.Servicos.Remove(selectedServico);
                     standContainer.SaveChanges();
@@ -468,11 +469,12 @@ namespace RealStand
             }
             else if (!Servico.VerificaDatasServico(DataEntrega, DataSaida))
             {
-                MessageBox.Show("Erro! A data de entrada não pode ser mais recente que a data de saída.");
+                MessageBox.Show("A data de entrada não pode ser mais recente que a data de saída.", 
+                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!Servico.VerificaTipoServico(TipoServico))
             {
-                MessageBox.Show("Erro! Tipo de serviço não selecionado.");
+                MessageBox.Show("Tipo de serviço não selecionado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -514,7 +516,7 @@ namespace RealStand
                     clientes = Cliente.SearchClientByNIF(standContainer, textBoxProcurarPorOficina.Text);
                     break;
                 default:
-                    MessageBox.Show("Têm de escolher um campo de procura!");
+                    MessageBox.Show("Têm de escolher um campo de procura!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return;
             }
             listBoxClientesOficina.DataSource = clientes;
@@ -543,8 +545,10 @@ namespace RealStand
 
                 using (StreamWriter file = new StreamWriter(nomeFicheiro))
                 {
-                    file.WriteLine("\tREALSTAND\r\n\r\nNome: " + selectedCliente.Nome + "\r\n" + "NIF: " + selectedCliente.NIF + "\r\n" + "Tipo de Serviço: "
-                        + selectedServico.Tipo + "\r\nEntrada: " + selectedServico.DataEntrega.ToShortDateString() + "\r\nSaída: " + selectedServico.DataSaida.ToShortDateString() + "\r\n");
+                    file.WriteLine("\tREALSTAND\r\n\r\nNome: " + selectedCliente.Nome + "\r\n" + "NIF: " + 
+                        selectedCliente.NIF + "\r\n" + "Tipo de Serviço: "+ selectedServico.Tipo + "\r\nEntrada: " 
+                        + selectedServico.DataEntrega.ToShortDateString() + "\r\nSaída: " + 
+                        selectedServico.DataSaida.ToShortDateString() + "\r\n");
                     foreach (Parcela item in selectedServico.Parcela)
                     {
                         file.WriteLine("---------------------------------");
@@ -554,7 +558,7 @@ namespace RealStand
                     file.WriteLine("_________________________________");
                     file.WriteLine("TOTAL A PAGAR: " + selectedServico.GetTotal().ToString("0.00") + "€");
                 }
-                MessageBox.Show("Fatura Criada.");
+                MessageBox.Show("Fatura Criada.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
