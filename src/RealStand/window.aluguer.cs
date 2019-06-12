@@ -113,6 +113,10 @@ namespace RealStand
                 MessageBox.Show("Existem campos incompletos.");
             }
             ClearVehicleDetails();
+
+            // desativa os botoes de editar e apagar
+            buttonEditarCarroAluguer.Enabled = false;
+            buttonEliminarCarroAluguer.Enabled = false;
         }
 
         private void buttonCriarAluguer_Click(object sender, EventArgs e)
