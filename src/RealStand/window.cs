@@ -68,11 +68,7 @@ namespace RealStand
             toolStripStatusLabelDate.Text = DateTime.Now.ToString();
         }
 
-        /// <summary>
         /// Atualiza os dados quando muda de tab
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void tabControl1_Click(object sender, EventArgs e)
         {
             switch (tabControl1.SelectedIndex)
@@ -80,6 +76,7 @@ namespace RealStand
                 case 1:
                     clientesListBox.DataSource = standContainer.Clientes.ToList<Cliente>();
                     clientesListBox.SelectedIndex = -1;
+                    IniciaFormClientes();
                     break;
                 case 2:
                     listBoxClientesOficina.DataSource = standContainer.Clientes.ToList<Cliente>();

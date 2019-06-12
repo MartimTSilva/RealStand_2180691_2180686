@@ -291,9 +291,6 @@ namespace RealStand
             List<Cliente> clientes = new List<Cliente>();
             switch (comboBoxAluguerFiltrarPorCampo.SelectedIndex)
             {
-                case -1:
-                    MessageBox.Show("Têm de escolher um campo de procura!");
-                    break;
                 case 0:
                     clientes = Cliente.SearchClientByName(standContainer, textBoxAluguerFiltrarPor.Text);
                     break;
@@ -301,9 +298,11 @@ namespace RealStand
                     clientes = Cliente.SearchClientByNIF(standContainer, textBoxAluguerFiltrarPor.Text);
                     break;
                 default:
-                    break;
+                    MessageBox.Show("Têm de escolher um campo de procura!");
+                    return;
             }
             listBoxClientesAluguer.DataSource = clientes;
+            listBoxClientesAluguer.SelectedIndex = -1;
         }
 
         private void buttonEmitirFaturaAluguer_Click(object sender, EventArgs e)
@@ -322,7 +321,7 @@ namespace RealStand
                 using (StreamWriter file = new StreamWriter(nomeFicheiro))
                 {
                     file.WriteLine("\tREALSTAND\r\n\r\nNome: " + selectedCliente.Nome + "\r\n" + "NIF: " + selectedCliente.NIF 
-                        + "\r\nData de inicio: " + selectedAluguer.DataInicio + "\r\nData de fim: " + selectedAluguer.DataFim + "\r\n");
+                        + "\r\nData de inicio: " + selectedAluguer.DataInicio.ToShortDateString() + "\r\nData de fim: " + selectedAluguer.DataFim.ToShortDateString() + "\r\n");
                     file.WriteLine("---------------------------------");
                     file.WriteLine("Marca: " + selectedAluguer.CarroAluguer.Marca + "\r\nModelo: " + selectedAluguer.CarroAluguer.Modelo
                        + "\r\nMatrícula: " + selectedAluguer.CarroAluguer.Matricula);

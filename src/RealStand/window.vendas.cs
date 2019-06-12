@@ -223,9 +223,6 @@ namespace RealStand
             List<Cliente> clientes = new List<Cliente>();
             switch (comboBoxCampoVendas.SelectedIndex)
             {
-                case -1:
-                    MessageBox.Show("Têm de escolher um campo de procura!");
-                    break;
                 case 0:
                     clientes = Cliente.SearchClientByName(standContainer, textBoxProcurarPorVendas.Text);
                     break;
@@ -233,7 +230,8 @@ namespace RealStand
                     clientes = Cliente.SearchClientByNIF(standContainer, textBoxProcurarPorVendas.Text);
                     break;
                 default:
-                    break;
+                    MessageBox.Show("Têm de escolher um campo de procura!");
+                    return;
             }
             listBoxClientesVendas.DataSource = clientes;
             //Limpa
@@ -259,7 +257,7 @@ namespace RealStand
                 using (StreamWriter file = new StreamWriter(nomeFicheiro))
                 {
                     file.WriteLine("\tREALSTAND\r\n\r\n" + "Nome: " + selectedCliente.Nome + "\r\nNIF: " + selectedCliente.NIF
-                        + "\r\nData: " + selectedVenda.Data + "\r\n");
+                        + "\r\nData: " + selectedVenda.Data.ToShortDateString() + "\r\n");
                     file.WriteLine("---------------------------------");
                     file.WriteLine("Marca: " + selectedVenda.CarroVenda.Marca + "\r\nModelo: " + selectedVenda.CarroVenda.Modelo
                         + "\r\nNúmero de Chassi: " + selectedVenda.CarroVenda.NumeroChassis);
