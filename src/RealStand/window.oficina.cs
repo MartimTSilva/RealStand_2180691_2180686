@@ -298,8 +298,7 @@ namespace RealStand
         {
             Cliente selectedCliente = (Cliente)listBoxClientesOficina.SelectedItem;
             CarroOficina selectedCarroOficina = (CarroOficina)listBoxCarrosOficina.SelectedItem;
-            if (selectedCarroOficina.Servico.Count != 0)
-            {
+            
                 if (MessageBox.Show("O carro que está a tentar remover tem serviços ativos. \nTem a certeza que quer continuar? " +
                 "Todas as parcelas e serviços serão removidos.", "Confirmação", 
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
@@ -319,7 +318,7 @@ namespace RealStand
                     groupBoxServicosOficina.Enabled = false;
                     groupBoxParcelasOficina.Enabled = false;
                 }
-            }
+            
         }
 
         /// Ativa o botao de remover parcela sempre que uma parcela seja selecionada
